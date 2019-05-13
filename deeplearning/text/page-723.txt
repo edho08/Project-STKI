@@ -1,0 +1,20 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+1. The parametrization of each P (xi | xi-1, . . . , x1) by a neural network with (i - 1) × k inputs and k outputs (if the variables are discrete and take k values, encoded one-hot) allows one to estimate the conditional probability without requiring an exponential number of parameters (and examples), yet still is able to capture high-order dependencies between the random variables.
+2. Instead of having a different neural network for the prediction of each xi , a left-to-right connectivity illustrated in figure 20.9 allows one to merge all the neural networks into one. Equivalently, it means that the hidden layer features computed for predicting xi can be reused for predicting xi+k (k > 0). The hidden units are thus organized in groups that have the particularity that all the units in the i-th group only depend on the input values x1, . . . , xi. The parameters used to compute these hidden units are jointly optimized to improve the prediction of all the variables in the sequence. This is an instance of the reuse principle that recurs throughout deep learning in scenarios ranging from recurrent and convolutional network architectures to multi-task and transfer learning.
+Each P(xi | xi-1, . . . , x1) can represent a conditional distribution by having outputs of the neural network predict parameters of the conditional distribution of xi , as discussed in section 6.2.1.1. Although the original neural auto-regressive networks were initially evaluated in the context of purely discrete multivariate data (with a sigmoid output for a Bernoulli variable or softmax output for a multinoulli variable) it is natural to extend such models to continuous variables or joint distributions involving both discrete and continuous variables.
+
+20.10.10 NADE
+
+The neural autoregressive density estimator (NADE) is a very successful recent form of neural auto-regressive network (Larochelle and Murray, 2011). The connectivity is the same as for the original neural auto-regressive network of Bengio and Bengio (2000b) but NADE introduces an additional parameter sharing scheme, as illustrated in figure 20.10. The parameters of the hidden units of different groups j are shared.
+The weights Wj,k,i from the i-th input xi to the k -th element of the j-th group of hidden unit h(kj) (j  i) are shared among the groups:
+
+Wj,k,i = Wk,i.
+
+(20.83)
+
+The remaining weights, where j < i, are zero.
+
+708
+
+

@@ -1,0 +1,186 @@
+CHAPTER 19. APPROXIMATE INFERENCE
+
+analytically. However, in a software implementation, machine rounding error could result in 0 or 1 values. In software, we may wish to implement binary sparse coding using an unrestricted vector of variational parameters z and obtain h^ via the relation ^h =  (z ). We can thus safely compute log ^hi on a computer by using the identity log (zi) = -(-zi ) relating the sigmoid and the softplus.
+To begin our derivation of variational learning in the binary sparse coding model, we show that the use of this mean field approximation makes learning tractable.
+The evidence lower bound is given by
+
+L(v, , q)
+
+(19.29)
+
+=Ehq[log p(h, v)] + H(q)
+
+(19.30)
+
+=Ehq[lo gmp(h)
+
++
+
+log
+
+p(v | h) n
+
+-
+
+log
+
+q(h
+
+|
+
+v)]  m
+
+
+
+=Ehq
+
+log p(hi ) + log p(vi | h) - log q(hi | v)
+
+(19.31) (19.32)
+
+i=1
+
+i=1
+
+i=1
+
+=
+
+m
+
+ h^i(log
+
+(bi
+
+)
+
+-
+
+log
+
+h^i)
+
++
+
+(1
+
+-
+
+h^i)(log
+
+(-b
+
+i)
+
+-
+
+log(1
+
+-
+
+ h^i))
+
+(19.33)
+
+i=1
++ Ehq
+
+n log i
+
+i=1
+
+2
+
+exp
+
+ -
+
+i 2
+
+(vi
+
+ - Wi,:h)2
+
+=
+
+m
+
+ h^i(log
+
+(bi
+
+)
+
+-
+
+log
+
+h^i)
+
++
+
+(1
+
+-
+
+h^i)(log
+
+(-b
+
+i)
+
+-
+
+log(1
+
+-
+
+ h^i))
+
+(19.34) (19.35)
+
+i=1
+
+
+
+
+
+
+
+
+
++
+
+1 2
+
+n log
+i=1
+
+i 2
+
+-
+
+i  v2i
+
+-
+
+2viWi,: ^h
+
++
+
+ Wi2,jh^j
+j
+
++
+
+ Wi,jWi,k ^hj^hk .
+k=j
+
+(19.36)
+
+While these equations are somewhat unappealing aesthetically, they show that L can be expressed in a small number of simple arithmetic operations. The evidence lower bound L is therefore tractable. We can use L as a replacement for the intractable log-likelihood.
+In principle, we could simply run gradient ascent on both v and h and this would make a perfectly acceptable combined inference and training algorithm. Usually, however, we do not do this, for two reasons. First, this would require storing h^ for each v. We typically prefer algorithms that do not require perexample memory. It is difficult to scale learning algorithms to billions of examples if we must remember a dynamically updated vector associated with each example.
+
+642
+
+

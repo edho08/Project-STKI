@@ -1,0 +1,11 @@
+J ()
+
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+Figure 8.4: Optimization based on local downhill moves can fail if the local surface does not point toward the global solution. Here we provide an example of how this can occur, even if there are no saddle points and no local minima. This example cost function contains only asymptotes toward low values, not minima. The main cause of difficulty in this case is being initialized on the wrong side of the "mountain" and not being able to traverse it. In higher dimensional space, learning algorithms can often circumnavigate such mountains but the trajectory associated with doing so may be long and result in excessive training time, as illustrated in figure 8.2.
+of the process. Many existing research directions are aimed at finding good initial points for
+problems that have difficult global structure, rather than developing algorithms that use non-local moves.
+Gradient descent and essentially all learning algorithms that are effective for training neural networks are based on making small, local moves. The previous sections have primarily focused on how the correct direction of these local moves can be difficult to compute. We may be able to compute some properties of the objective function, such as its gradient, only approximately, with bias or variance in our estimate of the correct direction. In these cases, local descent may or may not define a reasonably short path to a valid solution, but we are not actually able to follow the local descent path. The objective function may have issues such as poor conditioning or discontinuous gradients, causing the region where the gradient provides a good model of the objective function to be very small. In these cases, local descent with steps of size  may define a reasonably short path to the solution, but we are only able to compute the local descent direction with steps of size   . In these cases, local descent may or may not define a path to the solution, but the path contains many steps, so following the path incurs a
+292
+
+

@@ -1,0 +1,98 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+z
+
+×
+
+x
+
+y
+
+y^ 
+
+u(1) dot
+
+u(2) +
+
+x
+
+w
+
+b
+
+(a)
+
+H relu
+
+U (1)
+
+U (2) +
+
+matmul
+
+X
+
+W
+
+b
+
+(b)
+
+u(2)
+
+sum
+
+y^ dot
+
+u(1) sqr
+
+x
+
+w
+
+u(3) ×
+
+
+(c)
+
+(d)
+
+Figure 6.8: compute z
+
+Examples of computational = xy. (b)The graph for the
+
+graphs. logistic
+
+(a)The graph using the regression prediction y^
+
+× =
+
+opxerawtio+n
+
+to b.
+
+Some of the intermediate expressions do not have names in the algebraic expression but need names in the graph. We simply name the i-th such variable u(i) . (c)The
+
+computational graph for the expression H = max{0, XW + b}, which computes a design
+
+matrix of rectified linear unit activations H given a design matrix containing a minibatch
+
+of inputs X . (d)Examples a­c applied at most one operation to each variable, but it
+
+is possible to apply more than one operation. Here we show a computation graph that
+
+applies weights
+
+more than are used to
+
+one operation make both the
+
+to the weights w of prediction y^ and the
+
+a linear regression model. weight decay penalty  i
+
+The w2i .
+
+206
+
+

@@ -1,0 +1,9 @@
+Notation
+This section provides a concise reference describing the notation used throughout this book. If you are unfamiliar with any of the corresponding mathematical concepts, we describe most of these ideas in chapters 2­4.
+Numbers and Arrays a A scalar (integer or real) a A vector A A matrix A A tensor In Identity matrix with n rows and n columns I Identity matrix with dimensionality implied by
+context e(i) Standard basis vector [0, . . . , 0, 1, 0, . . . , 0] with a
+1 at position i diag(a) A square, diagonal matrix with diagonal entries
+given by a a A scalar random variable a A vector-valued random variable A A matrix-valued random variable
+xi
+
+

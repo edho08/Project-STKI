@@ -1,0 +1,68 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+y MSE(train)
+
+Linear regression example
+3 2 1 0 -1 -2 -3
+-1.0 -0.5 0.0 0.5 1.0 x1
+
+Optimization of w
+0.55 0.50 0.45 0.40 0.35 0.30 0.25 0.20
+0.5 1.0 1.5 w1
+
+Figure 5.1: A linear regression problem, with a training set consisting of ten data points, each containing one feature. Because there is only one feature, the weight vector w contains only a single parameter to learn, w1. (Left)Observe that linear regression learns to set w1 such that the line y = w1x comes as close as possible to passing through all the training points. (Right)The plotted point indicates the value of w1 found by the normal equations, which we can see minimizes the mean squared error on the training set.
+
+
+
+w
+
+ X (train)w
+
+-
+
+y(train)
+
+
+
+ X(train)
+
+w
+
+-
+
+ y(train)
+
+=
+
+0
+
+(5.9)
+
+
+
+
+
+ w wX (train)X (train) w - 2wX(train)y (train) + y(train)y(train) = 0
+
+ 2X(train) X (train)w - 2X (train) y(train) = 0  w = X(train) X(train) -1 X (train)y(train)
+
+(5.10) (5.11)
+(5.12)
+
+The system of equations whose solution is given by equation 5.12 is known as the normal equations. Evaluating equation 5.12 constitutes a simple learning algorithm. For an example of the linear regression learning algorithm in action, see figure 5.1.
+
+It is worth noting that the term linear regression is often used to refer to
+
+a slightly more sophisticated model with one additional parameter--an intercept
+
+term b. In this model
+
+y^ = wx + b
+
+(5.13)
+
+so the mapping from parameters to predictions is still a linear function but the mapping from features to predictions is now an affine function. This extension to affine functions means that the plot of the model's predictions still looks like a line, but it need not pass through the origin. Instead of adding the bias parameter
+
+109
+
+

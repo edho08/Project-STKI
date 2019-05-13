@@ -1,0 +1,44 @@
+CHAPTER 16. STRUCTURED PROBABILISTIC MODELS FOR DEEP LEARNING
+
+Alice
+
+Bob
+
+Carol
+
+t0
+
+t1
+
+t2
+
+Figure 16.2: A directed graphical model depicting the relay race example. Alice's finishing time t0 influences Bob's finishing time t1, because Bob does not get to start running until Alice finishes. Likewise, Carol only gets to start running after Bob finishes, so Bob's finishing time t1 directly influences Carol's finishing time t2.
+
+that is, they point from one vertex to another. This direction is represented in the drawing with an arrow. The direction of the arrow indicates which variable's probability distribution is defined in terms of the other's. Drawing an arrow from a to b means that we define the probability distribution over b via a conditional distribution, with a as one of the variables on the right side of the conditioning bar. In other words, the distribution over b depends on the value of a.
+
+Continuing with the relay race example from section 16.1, suppose we name
+Alice's finishing time t0, Bob's finishing time t1, and Carol's finishing time t2. As we saw earlier, our estimate of t1 depends on t0. Our estimate of t2 depends directly on t1 but only indirectly on t0. We can draw this relationship in a directed graphical model, illustrated in figure 16.2.
+
+Formally, a directed graphical model defined on variables x is defined by a
+
+directed acyclic graph G whose vertices are the random variables in the model,
+
+and a set of local conditional probability distributions p(xi | P aG (xi)) where P aG(xi) gives the parents of xi in G. The probability distribution over x is given
+
+by
+
+p(x) = i p(xi | P aG(xi )).
+
+(16.1)
+
+In our relay race example, this means that, using the graph drawn in figure 16.2,
+
+p(t0, t1, t2) = p(t0)p(t1 | t0)p(t2 | t1).
+
+(16.2)
+
+This is our first time seeing a structured probabilistic model in action. We can examine the cost of using it, in order to observe how structured modeling has many advantages relative to unstructured modeling.
+Suppose we represented time by discretizing time ranging from minute 0 to minute 10 into 6 second chunks. This would make t0, t1 and t2 each be a discrete variable with 100 possible values. If we attempted to represent p (t0, t1, t2) with a table, it would need to store 999,999 values (100 values of t0 × 100 values of t1 × 100 values of t2, minus 1, since the probability of one of the configurations is made
+564
+
+

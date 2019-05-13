@@ -1,0 +1,36 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+ 
+   
+   
+
+ 
+
+Figure 8.6: The method of steepest descent applied to a quadratic cost surface. The method of steepest descent involves jumping to the point of lowest cost along the line defined by the gradient at the initial point on each step. This resolves some of the problems seen with using a fixed learning rate in figure 4.6, but even with the optimal step size the algorithm still makes back-and-forth progress toward the optimum. By definition, at the minimum of the objective along a given direction, the gradient at the final point is orthogonal to that direction.
+
+the form:
+
+dt = J () + tdt-1
+
+(8.29)
+
+where  t is a coefficient whose magnitude controls how much of the direction, dt-1, we should add back to the current search direction.
+Two directions, dt and dt-1, are defined as conjugate if dt Hdt-1 = 0, where H is the Hessian matrix.
+
+The straightforward way to impose conjugacy would involve calculation of the eigenvectors of H to choose t, which would not satisfy our goal of developing a method that is more computationally viable than Newton's method for large problems. Can we calculate the conjugate directions without resorting to these calculations? Fortunately the answer to that is yes.
+
+Two popular methods for computing the t are:
+
+1. Fletcher-Reeves:
+
+t
+
+=
+
+J (t)J (t) J (t-1 )J (t-1)
+
+(8.30)
+
+314
+
+

@@ -1,0 +1,28 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+of models to those with tractable mean field fixed point equations. The variational autoencoder also has the advantage that it increases a bound on the log-likelihood of the model, while the criteria for the MP-DBM and related models are more heuristic and have little probabilistic interpretation beyond making the results of approximate inference accurate. One disadvantage of the variational autoencoder is that it learns an inference network for only one problem, inferring z given x. The older methods are able to perform approximate inference over any subset of variables given any other subset of variables, because the mean field fixed point equations specify how to share parameters between the computational graphs for all of these different problems.
+One very nice property of the variational autoencoder is that simultaneously training a parametric encoder in combination with the generator network forces the model to learn a predictable coordinate system that the encoder can capture. This makes it an excellent manifold learning algorithm. See figure 20.6 for examples of low-dimensional manifolds learned by the variational autoencoder. In one of the cases demonstrated in the figure, the algorithm discovered two independent factors of variation present in images of faces: angle of rotation and emotional expression.
+
+20.10.4 Generative Adversarial Networks
+
+Generative adversarial networks or GANs (Goodfellow et al., 2014c) are another generative modeling approach based on differentiable generator networks.
+Generative adversarial networks are based on a game theoretic scenario in which the generator network must compete against an adversary. The generator network directly produces samples x = g(z; (g)). Its adversary, the discriminator network, attempts to distinguish between samples drawn from the training data and samples drawn from the generator. The discriminator emits a probability value given by d(x; (d)), indicating the probability that x is a real training example rather than a fake sample drawn from the model.
+The simplest way to formulate learning in generative adversarial networks is as a zero-sum game, in which a function v((g), (d)) determines the payoff of the discriminator. The generator receives -v((g), (d)) as its own payoff. During learning, each player attempts to maximize its own payoff, so that at convergence
+
+g = arg min max v(g, d).
+
+g
+
+d
+
+(20.80)
+
+The default choice for v is
+
+v( (g), (d) ) = Expdata log d(x) + E xpmodel log (1 - d(x)) .
+
+(20.81)
+
+699
+
+

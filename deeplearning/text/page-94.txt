@@ -1,0 +1,45 @@
+CHAPTER 3. PROBABILITY AND INFORMATION THEORY
+
+a
+
+b
+
+c
+
+d
+
+e
+
+Figure 3.8: An undirected graphical model over random variables a, b, c, d and e. This graph corresponds to probability distributions that can be factored as
+
+p(a, b, c, d, e) =
+
+1 Z
+
+(1)
+
+(a,
+
+b,
+
+c)(2)
+
+(b,
+
+d)(3)
+
+(c,
+
+e).
+
+(3.56)
+
+This graph allows us to quickly see some properties of the distribution. For example, a and c interact directly, but a and e interact only indirectly via c.
+
+probability distribution, but any probability distribution may be described in both ways.
+Throughout parts I and II of this book, we will use structured probabilistic models merely as a language to describe which direct probabilistic relationships different machine learning algorithms choose to represent. No further understanding of structured probabilistic models is needed until the discussion of research topics, in part III, where we will explore structured probabilistic models in much greater detail.
+This chapter has reviewed the basic concepts of probability theory that are most relevant to deep learning. One more set of fundamental mathematical tools remains: numerical methods.
+
+79
+
+

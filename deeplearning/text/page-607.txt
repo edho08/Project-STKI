@@ -1,0 +1,121 @@
+CHAPTER 17. MONTE CARLO METHODS
+
+provided that the variance of the individual terms, Var[f (x(i))], is bounded. To see
+this more clearly, consider the variance of s^n as n increases. The variance Var[s^n] decreases and converges to 0, so long as Var[f (x(i))] < :
+
+1  n Var[s^n] = n2 Var[f (x)]
+i=1
+= Var[f (x)] . n
+
+(17.6) (17.7)
+
+This convenient result also tells us how to estimate the uncertainty in a Monte
+
+Carlo average or equivalently the amount of expected error of the Monte Carlo approximation. We compute both the empirical average of the f (x(i)) and their empirical variance,1 and then divide the estimated variance by the number of
+
+samples n to obtain an estimator of Var[s^n]. The central limit theorem tells
+
+us that the distribution of the average, s^n, converges to a normal distribution
+
+with
+
+mean
+
+s
+
+and
+
+variance
+
+Var[f (x)] n
+
+.
+
+This
+
+allows
+
+us
+
+to
+
+estimate
+
+confidence
+
+intervals
+
+around the estimate s^n, using the cumulative distribution of the normal density.
+
+However, all this relies on our ability to easily sample from the base distribution
+
+p(x), but doing so is not always possible. When it is not feasible to sample from
+
+p, an alternative is to use importance sampling, presented in section 17.2. A
+
+more general approach is to form a sequence of estimators that converge towards
+
+the distribution of interest. That is the approach of Monte Carlo Markov chains
+
+(section 17.3).
+
+17.2 Importance Sampling
+
+An important step in the decomposition of the integrand (or summand) used by the
+
+Monte Carlo method in equation 17.2 is deciding which part of the integrand should
+
+play the role the probability p(x) and which part of the integrand should play the
+
+role of the quantity f(x) whose expected value (under that probability distribution)
+
+is to be estimated. There is no unique decomposition because p(x)f(x) can always
+
+be rewritten as
+
+p(x)f (x) = q(x)p(xq)(fx()x) ,
+
+(17.8)
+
+where
+
+we
+
+now
+
+sample
+
+from
+
+q
+
+and
+
+average
+
+pf q
+
+.
+
+In
+
+many
+
+cases,
+
+we
+
+wish
+
+to
+
+compute
+
+an expectation for a given p and an f, and the fact that the problem is specified
+
+1
+The unbiased estimator of the variance is often preferred, in which the sum of squared differences is divided by n - 1 instead of n.
+
+592
+
+

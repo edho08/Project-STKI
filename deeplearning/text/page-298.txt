@@ -1,0 +1,23 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+Gradient norm Classification error rate
+
+16 14 12 10
+8 6 4 2 0 -2 -50 0 50 100 150 200 250
+Training time (epochs)
+
+1.0 0.9 0.8 0.7 0.6 0.5 0.4 0.3 0.2 0.1
+0
+
+50 100 150 200 250 Training time (epochs)
+
+Figure 8.1: Gradient descent often does not arrive at a critical point of any kind. In this example, the gradient norm increases throughout training of a convolutional network used for object detection. (Left)A scatterplot showing how the norms of individual gradient evaluations are distributed over time. To improve legibility, only one gradient norm is plotted per epoch. The running average of all gradient norms is plotted as a solid curve. The gradient norm clearly increases over time, rather than decreasing as we would expect if the training process converged to a critical point. (Right)Despite the increasing gradient, the training process is reasonably successful. The validation set classification error decreases to a low level.
+
+the gHg term. In many cases, the gradient norm does not shrink significantly throughout learning, but the gHg term grows by more than an order of magnitude. The result is that learning becomes very slow despite the presence of a strong gradient because the learning rate must be shrunk to compensate for even stronger curvature. Figure 8.1 shows an example of the gradient increasing significantly during the successful training of a neural network.
+Though ill-conditioning is present in other settings besides neural network training, some of the techniques used to combat it in other contexts are less applicable to neural networks. For example, Newton's method is an excellent tool for minimizing convex functions with poorly conditioned Hessian matrices, but in the subsequent sections we will argue that Newton's method requires significant modification before it can be applied to neural networks.
+
+8.2.2 Local Minima
+One of the most prominent features of a convex optimization problem is that it can be reduced to the problem of finding a local minimum. Any local minimum is
+283
+
+

@@ -1,0 +1,24 @@
+CHAPTER 15. REPRESENTATION LEARNING
+illustrated in figure 15.2.
+y
+
+h(shared) Selection switch
+
+h(1)
+
+h(2)
+
+h(3)
+
+x(1)
+
+x(2)
+
+x(3)
+
+Figure 15.2: Example architecture for multi-task or transfer learning when the output variable y has the same semantics for all tasks while the input variable x has a different meaning (and possibly even a different dimension) for each task (or, for example, each user), called x(1) , x(2) and x(3) for three tasks. The lower levels (up to the selection switch) are task-specific, while the upper levels are shared. The lower levels learn to translate their task-specific input into a generic set of features.
+In the related case of domain adaptation, the task (and the optimal input-tooutput mapping) remains the same between each setting, but the input distribution is slightly different. For example, consider the task of sentiment analysis, which consists of determining whether a comment expresses positive or negative sentiment. Comments posted on the web come from many categories. A domain adaptation scenario can arise when a sentiment predictor trained on customer reviews of media content such as books, videos and music is later used to analyze comments about consumer electronics such as televisions or smartphones. One can imagine that there is an underlying function that tells whether any statement is positive, neutral or negative, but of course the vocabulary and style may vary from one domain to another, making it more difficult to generalize across domains. Simple unsupervised pretraining (with denoising autoencoders) has been found to be very successful for sentiment analysis with domain adaptation (Glorot et al., 2011b).
+A related problem is that of concept drift, which we can view as a form of transfer learning due to gradual changes in the data distribution over time. Both concept drift and transfer learning can be viewed as particular forms of
+537
+
+

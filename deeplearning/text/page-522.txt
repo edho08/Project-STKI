@@ -1,0 +1,72 @@
+CHAPTER 14. AUTOENCODERS
+
+why the features learned by the autoencoder are useful: they describe the latent variables that explain the input.
+
+Early work on sparse autoencoders (Ranzato et al., 2007a, 2008) explored
+
+various forms of sparsity and proposed a connection between the sparsity penalty
+
+and the log Z term that arises when applying maximum likelihood to an undirected
+
+probabilistic
+
+model
+
+p(x)
+
+=
+
+1 Z
+
+p~(x).
+
+The
+
+idea
+
+is
+
+that
+
+minimizing
+
+log Z
+
+prevents
+
+a
+
+probabilistic model from having high probability everywhere, and imposing sparsity
+
+on an autoencoder prevents the autoencoder from having low reconstruction
+
+error everywhere. In this case, the connection is on the level of an intuitive
+
+understanding of a general mechanism rather than a mathematical correspondence.
+
+The interpretation of the sparsity penalty as corresponding to log pmodel(h ) in a directed model pmodel(h)pmodel(x | h) is more mathematically straightforward.
+
+One way to achieve actual zeros in h for sparse (and denoising) autoencoders was introduced in Glorot et al. (2011b). The idea is to use rectified linear units to produce the code layer. With a prior that actually pushes the representations to zero (like the absolute value penalty), one can thus indirectly control the average number of zeros in the representation.
+
+14.2.2 Denoising Autoencoders
+
+Rather than adding a penalty  to the cost function, we can obtain an autoencoder that learns something useful by changing the reconstruction error term of the cost function.
+Traditionally, autoencoders minimize some function
+
+L(x, g(f (x)))
+
+(14.8)
+
+where L is a loss function penalizing g(f (x)) for being dissimilar from x, such as the L2 norm of their difference. This encourages g  f to learn to be merely an identity function if they have the capacity to do so.
+A denoising autoencoder or DAE instead minimizes
+
+L(x, g(f (x~))),
+
+(14.9)
+
+where x~ is a copy of x that has been corrupted by some form of noise. Denoising autoencoders must therefore undo this corruption rather than simply copying their input.
+Denoising training forces f and g to implicitly learn the structure of pdata (x), as shown by Alain and Bengio (2013) and Bengio et al. (2013c). Denoising
+
+507
+
+

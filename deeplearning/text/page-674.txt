@@ -1,0 +1,113 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+
+
+
+
+=
+
+1 Z
+
+ nh exp  cjhj
+
++
+
+ nh
+
+
+
+v W:,j hj
+
+j=1
+
+j=1
+
+=
+
+1 Z
+
+ nh
+
+
+
+exp cjhj
+
+ + v W:,j hj
+
+j=1
+
+(20.10) (20.11)
+
+Since we are conditioning on the visible units v , we can treat these as constant with respect to the distribution P (h | v ). The factorial nature of the conditional P (h | v) follows immediately from our ability to write the joint probability over the vector h as the product of (unnormalized) distributions over the individual elements, hj . It is now a simple matter of normalizing the distributions over the individual binary hj.
+
+P (hj
+
+=
+
+1
+
+|
+
+v)
+
+= =
+
+P~(hj = 1 | v) P~(hje=xp0|cjv)++vP~W(hj:,j= 1 | v) exp {0} + exp {cj + v W:,j}
+
+=  cj + vW:,j .
+
+(20.12) (20.13) (20.14)
+
+We can now express the full conditional over the hidden layer as the factorial
+
+distribution:
+
+P
+
+(h
+
+|
+
+v)
+
+=
+
+ nh
+
+
+
+ (2h
+
+-
+
+1)
+
+
+
+(c
+
++
+
+ Wv)
+
+.
+
+j
+
+j=1
+
+(20.15)
+
+A similar derivation will show that the other condition of interest to us, P (v | h), is also a factorial distribution:
+
+ nv P (v | h) =  ((2v - 1)  (b + W h))i .
+i=1
+
+(20.16)
+
+20.2.2 Training Restricted Boltzmann Machines
+Because the RBM admits efficient evaluation and differentiation of P~(v) and efficient MCMC sampling in the form of block Gibbs sampling, it can readily be trained with any of the techniques described in chapter 18 for training models that have intractable partition functions. This includes CD, SML (PCD), ratio matching and so on. Compared to other undirected models used in deep learning, the RBM is relatively straightforward to train because we can compute P(h | v)
+
+659
+
+

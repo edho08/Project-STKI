@@ -1,0 +1,43 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+are different. In software, we often phrase both as minimizing a cost function. Maximum likelihood thus becomes minimization of the negative log-likelihood (NLL), or equivalently, minimization of the cross entropy. The perspective of maximum likelihood as minimum KL divergence becomes helpful in this case because the KL divergence has a known minimum value of zero. The negative log-likelihood can actually become negative when x is real-valued.
+
+5.5.1 Conditional Log-Likelihood and Mean Squared Error
+
+The maximum likelihood estimator can readily be generalized to the case where our goal is to estimate a conditional probability P(y | x; ) in order to predict y given x . This is actually the most common situation because it forms the basis for most supervised learning. If X represents all our inputs and Y all our observed targets, then the conditional maximum likelihood estimator is
+
+ML = arg max P (Y | X; ).
+
+
+(5.62)
+
+If the examples are assumed to be i.i.d., then this can be decomposed into
+
+ML
+
+=
+
+arg
+
+ m max
+
+log
+
+P (y(i)
+
+|
+
+x(i);
+
+).
+
+
+
+i=1
+
+(5.63)
+
+Example: Linear Regression as Maximum Likelihood Linear regression, introduced earlier in section 5.1.4, may be justified as a maximum likelihood procedure. Previously, we motivated linear regression as an algorithm that learns to take an input x and produce an output value y^. The mapping from x to y^ is chosen to minimize mean squared error, a criterion that we introduced more or less arbitrarily. We now revisit linear regression from the point of view of maximum likelihood estimation. Instead of producing a single prediction y^, we now think of the model as producing a conditional distribution p(y | x). We can imagine that with an infinitely large training set, we might see several training examples with the same input value x but different values of y. The goal of the learning algorithm is now to fit the distribution p (y | x) to all of those different y values that are all compatible with x. To derive the same linear regression algorithm we obtained before, we define p(y | x) = N (y; y^(x; w), 2). The function y^(x; w) gives the prediction of the mean of the Gaussian. In this example, we assume that the variance is fixed to some constant  2 chosen by the user. We will see that this choice of the functional form of p(y | x) causes the maximum likelihood estimation procedure to yield the same learning algorithm as we developed before. Since the
+133
+
+

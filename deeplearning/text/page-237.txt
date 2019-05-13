@@ -1,0 +1,90 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+concerning how to perform differentiation. More generally, the field of automatic differentiation is concerned with how to compute derivatives algorithmically. The back-propagation algorithm described here is only one approach to automatic differentiation. It is a special case of a broader class of techniques called reverse mode accumulation. Other approaches evaluate the subexpressions of the chain rule in different orders. In general, determining the order of evaluation that results in the lowest computational cost is a difficult problem. Finding the optimal sequence of operations to compute the gradient is NP-complete (Naumann, 2008), in the sense that it may require simplifying algebraic expressions into their least expensive form.
+
+For example, suppose we have variables p1, p2, . . . , pn representing probabilities
+
+and variables z1, z2 , . . . , zn representing unnormalized log probabilities. Suppose
+
+we define
+
+qi =
+
+exp(zi) , i exp(zi)
+
+(6.57)
+
+where we build the softmax function out of exponentiation,  summation and division operations, and construct a cross-entropy loss J = - i pi log qi. A human mathematician can observe that the derivative of J with respect to zi takes a very
+simple form: qi - pi. The back-propagation algorithm is not capable of simplifying
+
+the gradient this way, and will instead explicitly propagate gradients through all of
+
+the logarithm and exponentiation operations in the original graph. Some software
+
+libraries such as Theano (Bergstra et al., 2010; Bastien et al., 2012) are able to
+
+perform some kinds of algebraic substitution to improve over the graph proposed
+
+by the pure back-propagation algorithm.
+
+When the forward graph G has a single output node and each partial derivative
+
+u(i) u(j)
+
+can be computed with a constant amount of computation, back-propagation
+
+guarantees that the number of computations for the gradient computation is of
+
+the same order as the number of computations for the forward computation: this
+
+can
+
+be
+
+seen
+
+in
+
+algorithm
+
+6.2
+
+because
+
+each
+
+local
+
+partial
+
+derivative
+
+u(i) u(j)
+
+needs
+
+to
+
+be computed only once along with an associated multiplication and addition for
+
+the recursive chain-rule formulation (equation 6.49). The overall computation is
+
+therefore O(# edges). However, it can potentially be reduced by simplifying the
+
+computational graph constructed by back-propagation, and this is an NP-complete
+
+task. Implementations such as Theano and TensorFlow use heuristics based on
+
+matching known simplification patterns in order to iteratively attempt to simplify
+
+the graph. We defined back-propagation only for the computation of a gradient of a
+
+scalar output but back-propagation can be extended to compute a Jacobian (either
+
+of k different scalar nodes in the graph, or of a tensor-valued node containing k
+
+values). A naive implementation may then need k times more computation: for
+
+222
+
+

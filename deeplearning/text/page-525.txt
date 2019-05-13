@@ -1,0 +1,35 @@
+CHAPTER 14. AUTOENCODERS
+
+Typically, the output variables are treated as being conditionally independent given h so that this probability distribution is inexpensive to evaluate, but some techniques such as mixture density outputs allow tractable modeling of outputs with correlations.
+
+pencoder(h | x)
+
+h pdecoder(x | h)
+
+x
+
+r
+
+Figure 14.2: The structure of a stochastic autoencoder, in which both the encoder and the decoder are not simple functions but instead involve some noise injection, meaning that their output can be seen as sampled from a distribution, pencoder(h | x) for the encoder and pdecoder(x | h) for the decoder.
+
+To make a more radical departure from the feedforward networks we have seen previously, we can also generalize the notion of an encoding function f (x) to an encoding distribution pencoder(h | x), as illustrated in figure 14.2.
+Any latent variable model pmodel (h, x) defines a stochastic encoder
+
+pencoder (h | x) = pmodel (h | x)
+
+(14.12)
+
+and a stochastic decoder
+
+pdecoder(x | h) = pmodel(x | h).
+
+(14.13)
+
+In general, the encoder and decoder distributions are not necessarily conditional distributions compatible with a unique joint distribution pmodel(x, h). Alain et al. (2015) showed that training the encoder and decoder as a denoising autoencoder will tend to make them compatible asymptotically (with enough capacity and examples).
+
+14.5 Denoising Autoencoders
+The denoising autoencoder (DAE) is an autoencoder that receives a corrupted data point as input and is trained to predict the original, uncorrupted data point as its output.
+The DAE training procedure is illustrated in figure 14.3. We introduce a corruption process C(~x | x) which represents a conditional distribution over
+510
+
+

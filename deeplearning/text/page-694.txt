@@ -1,0 +1,131 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+Mean and Covariance RBM The mcRBM uses its hidden units to independently encode the conditional mean and covariance of all observed units. The mcRBM hidden layer is divided into two groups of units: mean units and covariance units. The group that models the conditional mean is simply a Gaussian RBM. The other half is a covariance RBM (Ranzato et al., 2010a), also called a cRBM, whose components model the conditional covariance structure, as described below.
+Specifically, with binary mean units h(m) and binary covariance units h(c), the mcRBM model is defined as the combination of two energy functions:
+
+Emc(x, h (m), h(c)) = Em(x, h(m)) + Ec(x, h(c) ),
+
+(20.43)
+
+where Em is the standard Gaussian-Bernoulli RBM energy function:2
+
+Em(x, h(m))
+
+=
+
+1 xx 2
+
+-
+
+ xW:,jh(jm)
+
+ -
+
+b(jm)h(jm) ,
+
+j
+
+j
+
+(20.44)
+
+and Ec is the cRBM energy function that models the conditional covariance information:
+
+Ec (x, h(c)) =
+
+1 2
+
+
+
+h(jc)
+
+ x
+
+r(j)
+
+2
+
+-
+
+
+
+b(jc)
+
+h(jc)
+
+.
+
+j
+
+j
+
+(20.45)
+
+The parameter r(j) corresponds to the covariance weight vector associated with h(jc) and b(c) is a vector of covariance offsets. The combined energy function defines
+a joint distribution:
+
+pmc(x, h(m), h(c)) =
+
+1 Z
+
+
+
+
+
+exp -Emc(x, h(m), h(c)) ,
+
+(20.46)
+
+and a corresponding conditional distribution over the observations given h(m) and
+
+h(c) as a multivariate Gaussian distribution:
+
+
+
+
+
+
+
+
+
+pmc(x | h(m) , h(c)) = N x; Cxm|hc  W:,jh(jm) , Cxm|hc  .
+
+(20.47)
+
+j
+
+Note
+
+that
+
+the
+
+covariance
+
+matrix
+
+Cxm|hc
+
+=
+
+
+j
+
+h(jc)r (j) r(j)
+
++
+
+-1 I
+
+is
+
+non-diagonal
+
+and that W is the weight matrix associated with the Gaussian RBM modeling the
+
+2
+This version of the Gaussian-Bernoulli RBM energy function assumes the image data has zero mean, per pixel. Pixel offsets can easily be added to the model to account for nonzero pixel means.
+
+679
+
+

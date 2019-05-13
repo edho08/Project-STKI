@@ -1,0 +1,19 @@
+BIBLIOGRAPHY
+Inayoshi, H. and Kurita, T. (2005). Improved generalization by adding both autoassociation and hidden-layer noise to neural-network-based-classifiers. IEEE Workshop on Machine Learning for Signal Processing, pages 141---146. 515
+Ioffe, S. and Szegedy, C. (2015). Batch normalization: Accelerating deep network training by reducing internal covariate shift. 100, 317, 320
+Jacobs, R. A. (1988). Increased rates of convergence through learning rate adaptation. Neural networks , 1(4), 295­307. 307
+Jacobs, R. A., Jordan, M. I., Nowlan, S. J., and Hinton, G. E. (1991). Adaptive mixtures of local experts. Neural Computation, 3, 79­87. 189, 450
+Jaeger, H. (2003). Adaptive nonlinear system identification with echo state networks. In Advances in Neural Information Processing Systems 15 . 404
+Jaeger, H. (2007a). Discovering multiscale dynamical features with hierarchical echo state networks. Technical report, Jacobs University. 398
+Jaeger, H. (2007b). Echo state network. Scholarpedia, 2(9), 2330. 404
+Jaeger, H. (2012). Long short-term memory in echo state networks: Details of a simulation study. Technical report, Technical report, Jacobs University Bremen. 405
+Jaeger, H. and Haas, H. (2004). Harnessing nonlinearity: Predicting chaotic systems and saving energy in wireless communication. Science, 304(5667), 78­80. 27, 404
+Jaeger, H., Lukosevicius, M., Popovici, D., and Siewert, U. (2007). Optimization and applications of echo state networks with leaky- integrator neurons. Neural Networks , 20(3), 335­352. 407
+Jain, V., Murray, J. F., Roth, F., Turaga, S., Zhigulin, V., Briggman, K. L., Helmstaedter, M. N., Denk, W., and Seung, H. S. (2007). Supervised learning of image restoration with convolutional networks. In Computer Vision, 2007. ICCV 2007. IEEE 11th International Conference on, pages 1­8. IEEE. 359
+Jaitly, N. and Hinton, G. (2011). Learning a better representation of speech soundwaves using restricted Boltzmann machines. In Acoustics, Speech and Signal Processing (ICASSP), 2011 IEEE International Conference on, pages 5884­5887. IEEE. 458
+Jaitly, N. and Hinton, G. E. (2013). Vocal tract length perturbation (VTLP) improves speech recognition. In ICML'2013 . 241
+Jarrett, K., Kavukcuoglu, K., Ranzato, M., and LeCun, Y. (2009). What is the best multi-stage architecture for object recognition? In ICCV'09 . 16, 24, 27, 174, 193, 226, 363, 364, 523
+Jarzynski, C. (1997). Nonequilibrium equality for free energy differences. Phys. Rev. Lett., 78, 2690­2693. 625, 628
+746
+
+

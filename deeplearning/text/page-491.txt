@@ -1,0 +1,13 @@
+CHAPTER 12. APPLICATIONS
+is being expressed), then produce the translated words one at a time, each time focusing on a different part of the input sentence in order to gather the semantic details that are required to produce the next output word. That is exactly the idea that Bahdanau et al. (2015) first introduced. The attention mechanism used to focus on specific parts of the input sequence at each time step is illustrated in figure 12.6.
+We can think of an attention-based system as having three components:
+1. A process that " reads" raw data (such as source words in a source sentence), and converts them into distributed representations, with one feature vector associated with each word position.
+2. A list of feature vectors storing the output of the reader. This can be understood as a " memory" containing a sequence of facts, which can be retrieved later, not necessarily in the same order, without having to visit all of them.
+3. A process that " exploits" the content of the memory to sequentially perform a task, at each time step having the ability put attention on the content of one memory element (or a few, with a different weight).
+The third component generates the translated sentence. When words in a sentence written in one language are aligned with correspond-
+ing words in a translated sentence in another language, it becomes possible to relate the corresponding word embeddings. Earlier work showed that one could learn a kind of translation matrix relating the word embeddings in one language with the word embeddings in another (Kociský et al., 2014), yielding lower alignment error rates than traditional approaches based on the frequency counts in the phrase table. There is even earlier work on learning cross-lingual word vectors (Klementiev et al., 2012). Many extensions to this approach are possible. For example, more efficient cross-lingual alignment (Gouws et al., 2014) allows training on larger datasets.
+12.4.6 Historical Perspective
+The idea of distributed representations for symbols was introduced by Rumelhart et al. (1986a) in one of the first explorations of back-propagation, with symbols corresponding to the identity of family members and the neural network capturing the relationships between family members, with training examples forming triplets such as (Colin, Mother, Victoria). The first layer of the neural network learned a representation of each family member. For example, the features for Colin
+476
+
+

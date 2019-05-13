@@ -1,0 +1,18 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+of differentiable generator nets, the criteria are intractable because the data does not specify both the inputs z and the outputs x of the generator net. In the case of supervised learning, both the inputs x and the outputs y were given, and the optimization procedure needs only to learn how to produce the specified mapping. In the case of generative modeling, the learning procedure needs to determine how to arrange z space in a useful way and additionally how to map from z to x.
+Dosovitskiy et al. (2015) studied a simplified problem, where the correspondence between z and x is given. Specifically, the training data is computer-rendered imagery of chairs. The latent variables z are parameters given to the rendering engine describing the choice of which chair model to use, the position of the chair, and other configuration details that affect the rendering of the image. Using this synthetically generated data, a convolutional network is able to learn to map z descriptions of the content of an image to x approximations of rendered images. This suggests that contemporary differentiable generator networks have sufficient model capacity to be good generative models, and that contemporary optimization algorithms have the ability to fit them. The difficulty lies in determining how to train generator networks when the value of z for each x is not fixed and known ahead of each time.
+The following sections describe several approaches to training differentiable generator nets given only training samples of x.
+
+20.10.3 Variational Autoencoders
+
+The variational autoencoder or VAE (Kingma, 2013; Rezende et al., 2014) is a directed model that uses learned approximate inference and can be trained purely with gradient-based methods.
+To generate a sample from the model, the VAE first draws a sample z from the code distribution pmodel (z). The sample is then run through a differentiable generator network g(z ). Finally, x is sampled from a distribution pmodel(x; g(z)) = pmodel(x | z). However, during training, the approximate inference network (or encoder) q(z | x) is used to obtain z and pmodel(x | z) is then viewed as a decoder network.
+The key insight behind variational autoencoders is that they may be trained by maximizing the variational lower bound L(q) associated with data point x:
+
+L(q) = Ezq(z|x) log pmodel(z, x) + H(q(z | x)) = Ezq(z|x) log pmodel(x | z) - DKL(q(z | x)||pmodel(z))  log pmodel(x).
+696
+
+(20.76) (20.77) (20.78)
+
+

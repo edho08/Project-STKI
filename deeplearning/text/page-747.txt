@@ -1,0 +1,18 @@
+BIBLIOGRAPHY
+Courville, A., Desjardins, G., Bergstra, J., and Bengio, Y. (2014). The spike-and-slab RBM and extensions to discrete and sparse data distributions. Pattern Analysis and Machine Intelligence, IEEE Transactions on , 36(9), 1874­1887. 682
+Cover, T. M. and Thomas, J. A. (2006). Elements of Information Theory, 2nd Edition. Wiley-Interscience. 73
+Cox, D. and Pinto, N. (2011). Beyond simple features: A large-scale feature search approach to unconstrained face recognition. In Automatic Face & Gesture Recognition and Workshops (FG 2011), 2011 IEEE International Conference on , pages 8­15. IEEE. 363
+Cramér, H. (1946). Mathematical methods of statistics. Princeton University Press. 135, 295
+Crick, F. H. C. and Mitchison, G. (1983). The function of dream sleep. Nature, 304, 111­114. 609
+Cybenko, G. (1989). Approximation by superpositions of a sigmoidal function. Mathematics of Control, Signals, and Systems, 2, 303­314. 198
+Dahl, G. E., Ranzato, M., Mohamed, A., and Hinton, G. E. (2010). Phone recognition with the mean-covariance restricted Boltzmann machine. In NIPS'2010 . 23
+Dahl, G. E., Yu, D., Deng, L., and Acero, A. (2012). Context-dependent pre-trained deep neural networks for large vocabulary speech recognition. IEEE Transactions on Audio, Speech, and Language Processing, 20(1), 33­42. 459
+Dahl, G. E., Sainath, T. N., and Hinton, G. E. (2013). Improving deep neural networks for LVCSR using rectified linear units and dropout. In ICASSP'2013 . 460
+Dahl, G. E., Jaitly, N., and Salakhutdinov, R. (2014). Multi-task neural networks for QSAR predictions. arXiv:1406.1231. 26
+Dauphin, Y. and Bengio, Y. (2013). Stochastic ratio matching of RBMs for sparse high-dimensional inputs. In NIPS26 . NIPS Foundation. 619
+Dauphin, Y., Glorot, X., and Bengio, Y. (2011). Large-scale learning of embeddings with reconstruction sampling. In ICML'2011 . 471
+Dauphin, Y., Pascanu, R., Gulcehre, C., Cho, K., Ganguli, S., and Bengio, Y. (2014). Identifying and attacking the saddle point problem in high-dimensional non-convex optimization. In NIPS'2014 . 285, 286, 288
+Davis, A., Rubinstein, M., Wadhwa, N., Mysore, G., Durand, F., and Freeman, W. T. (2014). The visual microphone: Passive recovery of sound from video. ACM Transactions on Graphics (Proc. SIGGRAPH), 33(4), 79:1­79:10. 452
+732
+
+

@@ -1,0 +1,19 @@
+BIBLIOGRAPHY
+Schmidhuber, J. (2012). Self-delimiting neural networks. arXiv preprint arXiv:1210.0118 . 390
+Schölkopf, B. and Smola, A. J. (2002). Learning with kernels: Support vector machines, regularization, optimization, and beyond . MIT press. 704
+Schölkopf, B., Smola, A., and Müller, K.-R. (1998). Nonlinear component analysis as a kernel eigenvalue problem. Neural Computation, 10, 1299­1319. 164, 518
+Schölkopf, B., Burges, C. J. C., and Smola, A. J. (1999). Advances in Kernel Methods -- Support Vector Learning. MIT Press, Cambridge, MA. 18, 142
+Schölkopf, B., Janzing, D., Peters, J., Sgouritsa, E., Zhang, K., and Mooij, J. (2012). On causal and anticausal learning. In ICML'2012 , pages 1255­1262. 545
+Schuster, M. (1999). On supervised learning from sequential data with applications for speech recognition. 190
+Schuster, M. and Paliwal, K. (1997). Bidirectional recurrent neural networks. IEEE Transactions on Signal Processing , 45(11), 2673­2681. 395
+Schwenk, H. (2007). Continuous space language models. Computer speech and language, 21, 492­518. 466
+Schwenk, H. (2010). Continuous space language models for statistical machine translation. The Prague Bulletin of Mathematical Linguistics , 93, 137­146. 473
+Schwenk, H. (2014). Cleaned subset of WMT '14 dataset. 21
+Schwenk, H. and Bengio, Y. (1998). Training methods for adaptive boosting of neural networks. In M. Jordan, M. Kearns, and S. Solla, editors, Advances in Neural Information Processing Systems 10 (NIPS'97), pages 647­653. MIT Press. 258
+Schwenk, H. and Gauvain, J.-L. (2002). Connectionist language modeling for large vocabulary continuous speech recognition. In International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 765­768, Orlando, Florida. 466
+Schwenk, H., Costa-jussà, M. R., and Fonollosa, J. A. R. (2006). Continuous space language models for the IWSLT 2006 task. In International Workshop on Spoken Language Translation, pages 166­173. 473
+Seide, F., Li, G., and Yu, D. (2011). Conversational speech transcription using contextdependent deep neural networks. In Interspeech 2011 , pages 437­440. 23
+Sejnowski, T. (1987). Higher-order Boltzmann machines. In AIP Conference Proceedings 151 on Neural Networks for Computing , pages 398­403. American Institute of Physics Inc. 686
+767
+
+

@@ -1,0 +1,19 @@
+BIBLIOGRAPHY
+Coates, A., Huval, B., Wang, T., Wu, D., Catanzaro, B., and Andrew, N. (2013). Deep learning with COTS HPC systems. In S. Dasgupta and D. McAllester, editors, Proceedings of the 30th International Conference on Machine Learning (ICML-13), volume 28 (3), pages 1337­1345. JMLR Workshop and Conference Proceedings. 24, 27, 364, 447
+Cohen, N., Sharir, O., and Shashua, A. (2015). On the expressive power of deep learning: A tensor analysis. arXiv:1509.05009. 554
+Collobert, R. (2004). Large Scale Machine Learning. Ph.D. thesis, Université de Paris VI, LIP6. 197
+Collobert, R. (2011). Deep learning for efficient discriminative parsing. In AISTATS'2011 . 101, 477
+Collobert, R. and Weston, J. (2008a). A unified architecture for natural language processing: Deep neural networks with multitask learning. In ICML'2008 . 471, 477
+Collobert, R. and Weston, J. (2008b). A unified architecture for natural language processing: Deep neural networks with multitask learning. In ICML'2008 . 535
+Collobert, R., Bengio, S., and Bengio, Y. (2001). A parallel mixture of SVMs for very large scale problems. Technical Report IDIAP-RR-01-12, IDIAP. 450
+Collobert, R., Bengio, S., and Bengio, Y. (2002). Parallel mixture of SVMs for very large scale problems. Neural Computation, 14(5), 1105­1114. 450
+Collobert, R., Weston, J., Bottou, L., Karlen, M., Kavukcuoglu, K., and Kuksa, P. (2011a). Natural language processing (almost) from scratch. The Journal of Machine Learning Research , 12, 2493­2537. 328, 477, 535, 536
+Collobert, R., Kavukcuoglu, K., and Farabet, C. (2011b). Torch7: A Matlab-like environment for machine learning. In BigLearn, NIPS Workshop. 25, 214, 446
+Comon, P. (1994). Independent component analysis - a new concept? Signal Processing, 36, 287­314. 491
+Cortes, C. and Vapnik, V. (1995). Support vector networks. Machine Learning , 20, 273­297. 18, 141
+Couprie, C., Farabet, C., Najman, L., and LeCun, Y. (2013). Indoor semantic segmentation using depth information. In International Conference on Learning Representations (ICLR2013). 23, 201
+Courbariaux, M., Bengio, Y., and David, J.-P. (2015). Low precision arithmetic for deep learning. In Arxiv:1412.7024, ICLR'2015 Workshop. 452
+Courville, A., Bergstra, J., and Bengio, Y. (2011). Unsupervised models of images by spike-and-slab RBMs. In ICML'11 . 561, 681
+731
+
+

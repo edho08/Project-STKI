@@ -1,0 +1,18 @@
+BIBLIOGRAPHY
+Breiman, L. (1994). Bagging predictors. Machine Learning , 24(2), 123­140. 256
+Breiman, L., Friedman, J. H., Olshen, R. A., and Stone, C. J. (1984). Classification and Regression Trees. Wadsworth International Group, Belmont, CA. 146
+Bridle, J. S. (1990). Alphanets: a recurrent `neural' network architecture with a hidden Markov model interpretation. Speech Communication, 9(1), 83­92. 186
+Briggman, K., Denk, W., Seung, S., Helmstaedter, M. N., and Turaga, S. C. (2009). Maximin affinity learning of image segmentation. In NIPS'2009 , pages 1865­1873. 360
+Brown, P. F., Cocke, J., Pietra, S. A. D., Pietra, V. J. D., Jelinek, F., Lafferty, J. D., Mercer, R. L., and Roossin, P. S. (1990). A statistical approach to machine translation. Computational linguistics , 16(2), 79­85. 21
+Brown, P. F., Pietra, V. J. D., DeSouza, P. V., Lai, J. C., and Mercer, R. L. (1992). Classbased n-gram models of natural language. Computational Linguistics , 18, 467­479. 463
+Bryson, A. and Ho, Y. (1969). Applied optimal control: optimization, estimation, and control . Blaisdell Pub. Co. 225
+Bryson, Jr., A. E. and Denham, W. F. (1961). A steepest-ascent method for solving optimum programming problems. Technical Report BR-1303, Raytheon Company, Missle and Space Division. 225
+Bucilua, C., Caruana, R., and Niculescu-Mizil, A. (2006). Model compression. In Proceedings of the 12th ACM SIGKDD international conference on Knowledge discovery and data mining , pages 535­541. ACM. 448
+Burda, Y., Grosse, R., and Salakhutdinov, R. (2015). Importance weighted autoencoders. arXiv preprint arXiv:1509.00519 . 698
+Cai, M., Shi, Y., and Liu, J. (2013). Deep maxout neural networks for speech recognition. In Automatic Speech Recognition and Understanding (ASRU), 2013 IEEE Workshop on, pages 291­296. IEEE. 194
+Carreira-Perpiñan, M. A. and Hinton, G. E. (2005). On contrastive divergence learning. In R. G. Cowell and Z. Ghahramani, editors, Proceedings of the Tenth International Workshop on Artificial Intelligence and Statistics (AISTATS'05), pages 33­40. Society for Artificial Intelligence and Statistics. 611
+Caruana, R. (1993). Multitask connectionist learning. In Proc. 1993 Connectionist Models Summer School , pages 372­379. 244
+Cauchy, A. (1847). Méthode générale pour la résolution de systèmes d'équations simultanées. In Compte rendu des séances de l'académie des sciences, pages 536­538. 83, 225
+728
+
+

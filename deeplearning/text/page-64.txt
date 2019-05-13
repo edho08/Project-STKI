@@ -1,0 +1,55 @@
+CHAPTER 2. LINEAR ALGEBRA
+
+monotonically increasing for non-negative arguments.
+c  = arg min ||x - g(c)||22.
+c
+The function being minimized simplifies to
+
+(2.55)
+
+(x - g(c))(x - g(c))
+
+(2.56)
+
+(by the definition of the L2 norm, equation 2.30)
+
+= xx - xg(c) - g(c)x + g(c)g(c)
+
+(2.57)
+
+(by the distributive property) = xx - 2xg(c) + g(c)g(c)
+
+(2.58)
+
+(because the scalar g(c) x is equal to the transpose of itself).
+We can now change the function being minimized again, to omit the first term, since this term does not depend on c:
+
+c = arg min-2xg(c) + g(c)g(c).
+c
+
+(2.59)
+
+To make further progress, we must substitute in the definition of g(c):
+
+c = arg min -2xDc + cD Dc
+c
+= arg min -2x Dc + cIl c
+c
+(by the orthogonality and unit norm constraints on D)
+
+(2.60) (2.61)
+
+= arg min -2xDc + cc
+c
+
+(2.62)
+
+We can solve this optimization problem using vector calculus (see section 4.3 if you do not know how to do this):
+
+c(-2xDc + cc) = 0 - 2Dx + 2c = 0 c = D x.
+
+(2.63) (2.64) (2.65)
+
+49
+
+

@@ -1,0 +1,13 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+f x~ C(x~ | x) x
+
+h g
+ p(x | )
+x^
+
+Figure 20.11: Each step of the Markov chain associated with a trained denoising autoencoder, that generates the samples from the probabilistic model implicitly trained by the denoising log-likelihood criterion. Each step consists in (a) injecting noise via corruption process C in state x, yielding x~ , (b) encoding it with function f, yielding h = f (x~ ), (c) decoding the result with function g, yielding parameters  for the reconstruction distribution, and (d) given , sampling a new state from the reconstruction distribution p(x |  = g(f(x~ ))). In the typical squared reconstruction error case, g (h) = x^ , which estimates E[x | x~ ], corruption consists in adding Gaussian noise and sampling from p(x | ) consists in adding Gaussian noise, a second time, to the reconstruction x^ . The latter noise level should correspond to the mean squared error of reconstructions, whereas the injected noise is a hyperparameter that controls the mixing speed as well as the extent to which the estimator smooths the empirical distribution (Vincent, 2011). In the example illustrated here, only the C and p conditionals are stochastic steps (f and g are deterministic computations), although noise can also be injected inside the autoencoder, as in generative stochastic networks (Bengio et al., 2014).
+
+712
+
+

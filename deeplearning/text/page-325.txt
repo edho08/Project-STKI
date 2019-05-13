@@ -1,0 +1,63 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+Algorithm 8.6 RMSProp algorithm with Nesterov momentum
+
+Require: Global learning rate , decay rate , momentum coefficient .
+
+Require: Initial parameter , initial velocity v.
+
+Initialize accumulation variable r = 0
+
+while stopping criterion not met do
+
+Sample a minibatch of m examples from the training set {x(1), . . . , x(m)} with
+
+corresponding targets y(i).
+
+Compute Compute
+
+ignrtaedriiemntu: pgdate:m1~~ i+L(fv(x(i);~),
+
+y (i) )
+
+Accumulate gradient: r  r + (1 - )g  g
+
+Compute velocity update: v  v -   g. ( 1 applied element-wise)
+
+Apply update:    + v
+
+r
+
+r
+
+end while
+
+largely on the user's familiarity with the algorithm (for ease of hyperparameter tuning).
+
+8.6 Approximate Second-Order Methods
+
+In this section we discuss the application of second-order methods to the training of deep networks. See LeCun et al. (1998a) for an earlier treatment of this subject. For simplicity of exposition, the only objective function we examine is the empirical risk:
+
+J ()
+
+=
+
+Ex,yp^data (x,y)[L(f (x; ), y)]
+
+=
+
+1 m
+
+ m L(f (x(i); ), y(i)).
+
+i=1
+
+(8.25)
+
+However the methods we discuss here extend readily to more general objective functions that, for instance, include parameter regularization terms such as those discussed in chapter 7.
+
+8.6.1 Newton's Method
+In section 4.3, we introduced second-order gradient methods. In contrast to firstorder methods, second-order methods make use of second derivatives to improve optimization. The most widely used second-order method is Newton's method. We now describe Newton's method in more detail, with emphasis on its application to neural network training.
+310
+
+

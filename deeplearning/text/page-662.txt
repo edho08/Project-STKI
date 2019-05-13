@@ -1,0 +1,138 @@
+CHAPTER 19. APPROXIMATE INFERENCE
+
+ =
+
+ 1 p(x)
+
++
+
+2 p(x)x
+
++
+
+3 p(x)(x
+
+-
+
+µ)2
+
+-
+
+p(x)
+
+log
+
+ p(x)
+
+dx
+
+-
+
+1
+
+-
+
+µ2
+
+-
+
+23.
+
+(19.51)
+
+To minimize the Lagrangian with respect to p, we set the functional derivatives equal to 0:
+
+x,
+
+L p(x)
+
+=
+
+1
+
++
+
+2 x +
+
+3(x
+
+-
+
+µ)2 -
+
+1
+
+-
+
+log p(x)
+
+=
+
+0.
+
+(19.52)
+
+This condition now tells us the functional form of p(x). By algebraically
+
+re-arranging the equation, we obtain
+
+p(x)
+
+=
+
+ exp 1
+
++
+
+2x +
+
+3(x
+
+-
+
+µ)2
+
+ -1 .
+
+(19.53)
+
+We never assumed directly that p( x) would take this functional form; we
+
+obtained the expression itself by analytically minimizing a functional. To finish
+
+the minimization problem, we must choose the  values to ensure that all of our
+
+constraints are satisfied. We are free to choose any  values, because the gradient
+
+of the Lagrangian with respect to the  variables is zero so long as the constraints
+
+are satisfied. To satisfy all of the constraints, we may set 1 = 1 - log  2 ,
+
+2
+
+=
+
+0,
+
+and
+
+3
+
+=
+
+-
+
+1 22
+
+to obtain
+
+p(x) = N (x; µ, 2).
+
+(19.54)
+
+This is one reason for using the normal distribution when we do not know the true distribution. Because the normal distribution has the maximum entropy, we impose the least possible amount of structure by making this assumption.
+While examining the critical points of the Lagrangian functional for the entropy, we found only one critical point, corresponding to maximizing the entropy for fixed variance. What about the probability distribution function that minimizes the entropy? Why did we not find a second critical point corresponding to the minimum? The reason is that there is no specific function that achieves minimal entropy. As functions place more probability density on the two points x = µ +  and x = µ - , and place less probability density on all other values of x, they lose entropy while maintaining the desired variance. However, any function placing exactly zero mass on all but two points does not integrate to one, and is not a valid probability distribution. There thus is no single minimal entropy probability distribution function, much as there is no single minimal positive real number. Instead, we can say that there is a sequence of probability distributions converging toward putting mass only on these two points. This degenerate scenario may be
+
+647
+
+

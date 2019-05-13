@@ -1,0 +1,65 @@
+CHAPTER 3. PROBABILITY AND INFORMATION THEORY
+
+mathematical object called a generalized function that is defined in terms of its properties when integrated. We can think of the Dirac delta function as being the limit point of a series of functions that put less and less mass on all points other than zero.
+
+By defining p(x) to be  shifted by -µ we obtain an infinitely narrow and infinitely high peak of probability mass where x = µ.
+
+A common use of the Dirac delta distribution is as a component of an empirical
+
+distribution,
+
+p^(x) = 1  m (x - x(i)) m
+i=1
+
+(3.28)
+
+which
+
+puts probability mass
+
+1 m
+
+on each of the m points x(1) , . . . , x(m)
+
+forming
+
+a
+
+given dataset or collection of samples. The Dirac delta distribution is only necessary
+
+to define the empirical distribution over continuous variables. For discrete variables,
+
+the situation is simpler: an empirical distribution can be conceptualized as a
+
+multinoulli distribution, with a probability associated to each possible input value
+
+that is simply equal to the empirical frequency of that value in the training set.
+
+We can view the empirical distribution formed from a dataset of training examples as specifying the distribution that we sample from when we train a model on this dataset. Another important perspective on the empirical distribution is that it is the probability density that maximizes the likelihood of the training data (see section 5.5).
+
+3.9.6 Mixtures of Distributions
+
+It is also common to define probability distributions by combining other simpler
+
+probability distributions. One common way of combining distributions is to
+
+construct a mixture distribution. A mixture distribution is made up of several
+
+component distributions. On each trial, the choice of which component distribution
+
+generates the sample is determined by sampling a component identity from a
+
+multinoulli distribution:
+
+ P (x) = P (c = i)P (x | c = i)
+
+(3.29)
+
+i
+
+where P (c) is the multinoulli distribution over component identities.
+We have already seen one example of a mixture distribution: the empirical distribution over real-valued variables is a mixture distribution with one Dirac component for each training example.
+
+66
+
+

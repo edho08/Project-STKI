@@ -1,0 +1,17 @@
+BIBLIOGRAPHY
+Larochelle, H. and Murray, I. (2011). The Neural Autoregressive Distribution Estimator. In AISTATS'2011 . 705, 708, 709
+Larochelle, H., Erhan, D., and Bengio, Y. (2008). Zero-data learning of new tasks. In AAAI Conference on Artificial Intelligence. 539
+Larochelle, H., Bengio, Y., Louradour, J., and Lamblin, P. (2009). Exploring strategies for training deep neural networks. Journal of Machine Learning Research, 10, 1­40. 535
+Lasserre, J. A., Bishop, C. M., and Minka, T. P. (2006). Principled hybrids of generative and discriminative models. In Proceedings of the Computer Vision and Pattern Recognition Conference (CVPR'06), pages 87­94, Washington, DC, USA. IEEE Computer Society. 244, 253
+Le, Q., Ngiam, J., Chen, Z., hao Chia, D. J., Koh, P. W., and Ng, A. (2010). Tiled convolutional neural networks. In J. Lafferty, C. K. I. Williams, J. Shawe-Taylor, R. Zemel, and A. Culotta, editors, Advances in Neural Information Processing Systems 23 (NIPS'10), pages 1279­1287. 352
+Le, Q., Ngiam, J., Coates, A., Lahiri, A., Prochnow, B., and Ng, A. (2011). On optimization methods for deep learning. In Proc. ICML'2011 . ACM. 316
+Le, Q., Ranzato, M., Monga, R., Devin, M., Corrado, G., Chen, K., Dean, J., and Ng, A. (2012). Building high-level features using large scale unsupervised learning. In ICML'2012 . 24, 27
+Le Roux, N. and Bengio, Y. (2008). Representational power of restricted Boltzmann machines and deep belief networks. Neural Computation, 20(6), 1631­1649. 553, 655
+Le Roux, N. and Bengio, Y. (2010). Deep belief networks are compact universal approximators. Neural Computation , 22(8), 2192­2207. 553
+LeCun, Y. (1985). Une procédure d'apprentissage pour Réseau à seuil assymétrique. In Cognitiva 85: A la Frontière de l'Intelligence Artificielle, des Sciences de la Connaissance et des Neurosciences, pages 599­604, Paris 1985. CESTA, Paris. 225
+LeCun, Y. (1986). Learning processes in an asymmetric threshold network. In F. FogelmanSoulié, E. Bienenstock, and G. Weisbuch, editors, Disordered Systems and Biological Organization , pages 233­240. Springer-Verlag, Les Houches, France. 352
+LeCun, Y. (1987). Modèles connexionistes de l'apprentissage. Ph.D. thesis, Université de Paris VI. 18, 502, 515
+LeCun, Y. (1989). Generalization and network design strategies. Technical Report CRG-TR-89-4, University of Toronto. 330, 352
+751
+
+

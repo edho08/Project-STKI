@@ -1,0 +1,63 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+To generalize to the case of a discrete variable with n values, we now need to produce a vector y^, with y^i = P (y = i | x). We require not only that each element of y^i be between 0 and 1, but also that the entire vector sums to 1 so that it represents a valid probability distribution. The same approach that worked for the Bernoulli distribution generalizes to the multinoulli distribution. First, a linear layer predicts unnormalized log probabilities:
+
+z = W  h + b,
+
+(6.28)
+
+where zi = log P~(y = i | x). The softmax function can then exponentiate and normalize z to obtain the desired y^. Formally, the softmax function is given by
+
+softmax(z)i
+
+=
+
+exp(zi) . j exp(zj )
+
+(6.29)
+
+As with the logistic sigmoid, the use of the exp function works very well when
+
+training the softmax to output a target value y using maximum log-likelihood. In
+
+this case, we wish to maximize log P (y = i; z) = log softmax (z )i. Defining the softmax in terms of exp is natural because the log in the log-likelihood can undo the exp of the softmax:
+
+ log softmax(z)i = zi - log exp(zj ).
+
+(6.30)
+
+j
+
+The first term of equation 6.30 shows that the input zi always has a direct
+
+contribution to the cost function. Because this term cannot saturate, we know
+
+that learning can proceed, even if the contribution of zi to the second term of
+
+equation 6.30 becomes very small. When maximizing the log-likelihood, the first
+
+term encourages zi to be pushed up, while the second term encourages all of z to be pushed down. To gain some intuition for the second term, log j exp(zj ), observe that this term can be roughly approximated by maxj zj. This approximation is
+
+based on the idea that exp(zk) is insignificant for any zk that is noticeably less than
+
+maxj zj. The intuition we can gain from this approximation is that the negative
+
+log-likelihood cost function always strongly penalizes the most active incorrect
+
+prediction. If the -zi term
+
+tahnedcotrhreecltoagnswjeerxapl(rzeja)dyhmasaxthjezjla=rgezsit
+
+input terms
+
+to the softmax, then will roughly cancel.
+
+This example will then contribute little to the overall training cost, which will be
+
+dominated by other examples that are not yet correctly classified.
+
+So far we have discussed only a single example. Overall, unregularized maximum likelihood will drive the model to learn parameters that drive the softmax to predict
+
+185
+
+

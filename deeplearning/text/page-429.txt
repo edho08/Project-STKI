@@ -1,0 +1,31 @@
+CHAPTER 10. SEQUENCE MODELING: RECURRENT AND RECURSIVE NETS
+
+decay slowly enough that consecutive steps have approximately the same learning rate. A step size that is appropriate for a relatively linear part of the landscape is often inappropriate and causes uphill motion if we enter a more curved part of the landscape on the next step.
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+Figure 10.17: Example of the effect of gradient clipping in a recurrent network with two parameters w and b. Gradient clipping can make gradient descent perform more reasonably in the vicinity of extremely steep cliffs. These steep cliffs commonly occur in recurrent networks near where a recurrent network behaves approximately linearly. The cliff is exponentially steep in the number of time steps because the weight matrix is multiplied by itself once for each time step. (Left)Gradient descent without gradient clipping overshoots the bottom of this small ravine, then receives a very large gradient from the cliff face. The large gradient catastrophically propels the parameters outside the axes of the plot. (Right)Gradient descent with gradient clipping has a more moderate reaction to the cliff. While it does ascend the cliff face, the step size is restricted so that it cannot be propelled away from steep region near the solution. Figure adapted with permission from Pascanu et al. (2013).
+
+A simple type of solution has been in use by practitioners for many years: clipping the gradient. There are different instances of this idea (Mikolov, 2012; Pascanu et al., 2013). One option is to clip the parameter gradient from a minibatch element-wise (Mikolov, 2012) just before the parameter update. Another is to clip the norm ||g|| of the gradient g (Pascanu et al., 2013) just before the parameter update:
+
+if ||g|| > v
+
+g
+
+
+
+gv ||g||
+
+(10.48) (10.49)
+
+414
+
+

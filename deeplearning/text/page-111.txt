@@ -1,0 +1,100 @@
+CHAPTER 4. NUMERICAL COMPUTATION
+
+· The inequality constraints exhibit "complementary slackness":   h(x) = 0. For more information about the KKT approach, see Nocedal and Wright (2006).
+
+4.5 Example: Linear Least Squares
+
+Suppose we want to find the value of x that minimizes
+
+f
+
+(x)
+
+=
+
+1 2
+
+||Ax
+
+-
+
+b||22.
+
+(4.21)
+
+There are specialized linear algebra algorithms that can solve this problem efficiently. However, we can also explore how to solve it using gradient-based optimization as a simple example of how these techniques work.
+First, we need to obtain the gradient:
+
+x f (x) = A (Ax - b) = AAx - A b.
+
+(4.22)
+
+We can then follow this gradient downhill, taking small steps. See algorithm 4.1 for details.
+
+Algorithm
+
+4.1
+
+An
+
+algorithm
+
+to
+
+minimize
+
+f(x)
+
+=
+
+1 2
+
+||Ax
+
+-
+
+b||22
+
+with
+
+respect
+
+to
+
+x
+
+using gradient descent, starting from an arbitrary value of x.
+
+Set the step size () and tolerance () to small, positive numbers.
+
+while x
+
+x||A-AAx -AAx-b|A|2 >b
+
+do
+
+end while
+
+One can also solve this problem using Newton's method. In this case, because the true function is quadratic, the quadratic approximation employed by Newton's method is exact, and the algorithm converges to the global minimum in a single step.
+
+Now suppose we wish to minimize the same function, but subject to the
+
+constraint xx  1. To do so, we introduce the Lagrangian
+
+
+
+
+
+L(x, ) = f (x) +  x x - 1 .
+
+(4.23)
+
+We can now solve the problem
+
+min max L(x, ).
+x ,0
+96
+
+(4.24)
+
+

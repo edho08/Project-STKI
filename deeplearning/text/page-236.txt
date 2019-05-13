@@ -1,0 +1,14 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+matrix, resulting in O(w) multiply-adds, where w is the number of weights. During the backward propagation stage, we multiply by the transpose of each weight matrix, which has the same computational cost. The main memory cost of the algorithm is that we need to store the input to the nonlinearity of the hidden layer. This value is stored from the time it is computed until the backward pass has returned to the same point. The memory cost is thus O(mnh), where m is the number of examples in the minibatch and nh is the number of hidden units.
+6.5.8 Complications
+Our description of the back-propagation algorithm here is simpler than the implementations actually used in practice.
+As noted above, we have restricted the definition of an operation to be a function that returns a single tensor. Most software implementations need to support operations that can return more than one tensor. For example, if we wish to compute both the maximum value in a tensor and the index of that value, it is best to compute both in a single pass through memory, so it is most efficient to implement this procedure as a single operation with two outputs.
+We have not described how to control the memory consumption of backpropagation. Back-propagation often involves summation of many tensors together. In the naive approach, each of these tensors would be computed separately, then all of them would be added in a second step. The naive approach has an overly high memory bottleneck that can be avoided by maintaining a single buffer and adding each value to that buffer as it is computed.
+Real-world implementations of back-propagation also need to handle various data types, such as 32-bit floating point, 64-bit floating point, and integer values. The policy for handling each of these types takes special care to design.
+Some operations have undefined gradients, and it is important to track these cases and determine whether the gradient requested by the user is undefined.
+Various other technicalities make real-world differentiation more complicated. These technicalities are not insurmountable, and this chapter has described the key intellectual tools needed to compute derivatives, but it is important to be aware that many more subtleties exist.
+6.5.9 Differentiation outside the Deep Learning Community
+The deep learning community has been somewhat isolated from the broader computer science community and has largely developed its own cultural attitudes
+221
+
+

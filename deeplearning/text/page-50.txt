@@ -1,0 +1,80 @@
+CHAPTER 2. LINEAR ALGEBRA
+
+Matrix product operations have many useful properties that make mathematical
+
+analysis of matrices more convenient. For example, matrix multiplication is
+
+distributive:
+
+A(B + C) = AB + AC.
+
+(2.6)
+
+It is also associative:
+
+A(BC) = (AB)C.
+
+(2.7)
+
+Matrix multiplication is not commutative (the condition AB = BA does not
+
+always hold), unlike scalar multiplication. However, the dot product between two
+
+vectors is commutative:
+
+xy = yx.
+
+(2.8)
+
+The transpose of a matrix product has a simple form: (AB) = B A.
+
+(2.9)
+
+This allows us to demonstrate equation 2.8, by exploiting the fact that the value
+
+of such a product is a scalar and therefore equal to its own transpose:
+
+x y
+
+=
+
+ xy
+
+
+
+=
+
+yx.
+
+(2.10)
+
+Since the focus of this textbook is not linear algebra, we do not attempt to develop a comprehensive list of useful properties of the matrix product here, but the reader should be aware that many more exist.
+
+We now know enough linear algebra notation to write down a system of linear
+
+equations:
+
+Ax = b
+
+(2.11)
+
+where A  Rm×n is a known matrix, b  Rm is a known vector, and x  Rn is a vector of unknown variables we would like to solve for. Each element xi of x is one of these unknown variables. Each row of A and each element of b provide another constraint. We can rewrite equation 2.11 as:
+
+A1,:x = b1
+
+(2.12)
+
+or, even more explicitly, as:
+
+A2,:x = b2 ...
+Am,:x = bm
+
+(2.13) (2.14) (2.15)
+
+A1,1 x1 + A1,2x2 + · · · + A1,nxn = b1
+
+(2.16)
+
+35
+
+

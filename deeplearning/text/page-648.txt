@@ -1,0 +1,57 @@
+CHAPTER 19. APPROXIMATE INFERENCE
+
+19.1 Inference as Optimization
+
+Many approaches to confronting the problem of difficult inference make use of the observation that exact inference can be described as an optimization problem. Approximate inference algorithms may then be derived by approximating the underlying optimization problem.
+To construct the optimization problem, assume we have a probabilistic model consisting of observed variables v and latent variables h. We would like to compute the log probability of the observed data, log p(v; ). Sometimes it is too difficult to compute log p(v; ) if it is costly to marginalize out h. Instead, we can compute a lower bound L(v, , q) on log p(v; ). This bound is called the evidence lower bound (ELBO). Another commonly used name for this lower bound is the negative variational free energy. Specifically, the evidence lower bound is defined to be
+
+L(v, , q) = log p(v; ) - DKL (q(h | v)p(h | v; ))
+
+(19.1)
+
+where q is an arbitrary probability distribution over h.
+Because the difference between log p(v) and L(v, , q) is given by the KL divergence and because the KL divergence is always non-negative, we can see that L always has at most the same value as the desired log probability. The two are equal if and only if q is the same distribution as p(h | v).
+Surprisingly, L can be considerably easier to compute for some distributions q. Simple algebra shows that we can rearrange L into a much more convenient form:
+
+L(v, , q) = log p(v; ) - DKL(q(h | v)p(h | v; ))
+
+q(h | v) = log p(v; ) - Ehq log p(h | v)
+
+=
+
+log
+
+p(v;
+
+)
+
+-
+
+Ehq
+
+log
+
+q(h | v)
+p(h,v;)
+
+p(v;)
+
+= log p(v; ) - Ehq [log q(h | v) - log p(h, v; ) + log p(v; )]
+
+= - Ehq [log q(h | v) - log p(h, v; )] .
+
+(19.2) (19.3)
+(19.4)
+(19.5) (19.6)
+
+This yields the more canonical definition of the evidence lower bound,
+
+L(v, , q) = Ehq [log p(h, v)] + H (q).
+
+(19.7)
+
+For an appropriate choice of q, L is tractable to compute. For any choice of q, L provides a lower bound on the likelihood. For q(h | v) that are better
+
+633
+
+

@@ -1,0 +1,93 @@
+CHAPTER 3. PROBABILITY AND INFORMATION THEORY
+
+The parameter µ still gives the mean of the distribution, though now it is vector-valued. The parameter  gives the covariance matrix of the distribution. As in the univariate case, when we wish to evaluate the PDF several times for many different values of the parameters, the covariance is not a computationally efficient way to parametrize the distribution, since we need to invert  to evaluate the PDF. We can instead use a precision matrix :
+
+N
+
+(x;
+
+µ,
+
+-1)
+
+=
+
+
+
+det() (2) n
+
+exp
+
+ -
+
+1(x 2
+
+-
+
+µ)(x
+
+-
+
+ µ)
+
+.
+
+(3.24)
+
+We often fix the covariance matrix to be a diagonal matrix. An even simpler version is the isotropic Gaussian distribution, whose covariance matrix is a scalar times the identity matrix.
+
+3.9.4 Exponential and Laplace Distributions
+
+In the context of deep learning, we often want to have a probability distribution
+
+with a sharp point at x = 0. To accomplish this, we can use the exponential
+
+distribution:
+
+p(x; ) = 1x0 exp (-x) .
+
+(3.25)
+
+The exponential distribution uses the indicator function 1x0 to assign probability zero to all negative values of x.
+
+A closely related probability distribution that allows us to place a sharp peak
+
+of probability mass at an arbitrary point µ is the Laplace distribution
+
+Laplace(x;
+
+µ,
+
+)
+
+=
+
+1 2
+
+exp
+
+ -
+
+|x
+
+- 
+
+µ|
+
+ .
+
+(3.26)
+
+3.9.5 The Dirac Distribution and Empirical Distribution
+
+In some cases, we wish to specify that all of the mass in a probability distribution clusters around a single point. This can be accomplished by defining a PDF using the Dirac delta function, (x):
+
+p(x) = (x - µ).
+
+(3.27)
+
+The Dirac delta function is defined such that it is zero-valued everywhere except 0, yet integrates to 1. The Dirac delta function is not an ordinary function that associates each value x with a real-valued output, instead it is a different kind of
+
+65
+
+

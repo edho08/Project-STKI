@@ -1,0 +1,26 @@
+CHAPTER 4. NUMERICAL COMPUTATION
+
+The smallest-norm solution to the unconstrained least squares problem may be found using the Moore-Penrose pseudoinverse: x = A+ b. If this point is feasible, then it is the solution to the constrained problem. Otherwise, we must find a solution where the constraint is active. By differentiating the Lagrangian with respect to x, we obtain the equation
+
+AAx - Ab + 2x = 0.
+
+(4.25)
+
+This tells us that the solution will take the form
+
+x = (AA + 2I) -1A b.
+
+(4.26)
+
+The magnitude of  must be chosen such that the result obeys the constraint. We can find this value by performing gradient ascent on . To do so, observe
+
+ L(x, ) = xx - 1. 
+
+(4.27)
+
+When the norm of x exceeds 1, this derivative is positive, so to follow the derivative uphill and increase the Lagrangian with respect to , we increase . Because the coefficient on the xx penalty has increased, solving the linear equation for x will now yield a solution with smaller norm. The process of solving the linear equation and adjusting  continues until x has the correct norm and the derivative on  is 0.
+This concludes the mathematical preliminaries that we use to develop machine learning algorithms. We are now ready to build and analyze some full-fledged learning systems.
+
+97
+
+

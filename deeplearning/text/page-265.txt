@@ -1,0 +1,41 @@
+CHAPTER 7. REGULARIZATION FOR DEEP LEARNING
+
+Algorithm 7.3 Meta-algorithm using early stopping to determine at what objective value we start to overfit, then continue training until that value is reached.
+Let X(train) and y(train) be the training set. Split X(train) and y(train) into (X(subtrain) , X (valid)) and (y(subtrain) , y(valid)) respectively. Run early stopping (algorithm 7.1) starting from random  using X(subtrain) and y(subtrain) for training data and X(valid) and y(valid) for validation data. This updates .   J (, X (subtrain), y(subtrain)) while J (, X(valid), y (valid)) >  do
+Train on X(train) and y(train) for n steps. end while
+
+is the actual mechanism by which early stopping regularizes the model? Bishop (1995a) and Sjöberg and Ljung (1995) argued that early stopping has the effect of restricting the optimization procedure to a relatively small volume of parameter space in the neighborhood of the initial parameter value o, as illustrated in figure 7.4. More specifically, imagine taking  optimization steps (corresponding to  training iterations) and with learning rate . We can view the product  as a measure of effective capacity. Assuming the gradient is bounded, restricting both the number of iterations and the learning rate limits the volume of parameter space reachable from o. In this sense,  behaves as if it were the reciprocal of the coefficient used for weight decay.
+Indeed, we can show how--in the case of a simple linear model with a quadratic error function and simple gradient descent--early stopping is equivalent to L2 regularization.
+In order to compare with classical L2 regularization, we examine a simple setting where the only parameters are linear weights ( = w). We can model the cost function J with a quadratic approximation in the neighborhood of the empirically optimal value of the weights w:
+
+J^()
+
+=
+
+J (w)
+
++
+
+1 (w 2
+
+-
+
+w ) H (w
+
+-
+
+w),
+
+(7.33)
+
+where H is the Hessian matrix of J with respect to w evaluated at w. Given the assumption that w is a minimum of J(w), we know that H is positive semidefinite.
+
+Under a local Taylor series approximation, the gradient is given by:
+
+wJ^(w) = H(w - w).
+
+(7.34)
+
+250
+
+

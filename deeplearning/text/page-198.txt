@@ -1,0 +1,37 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+where  is the logistic sigmoid function described in section 3.10.
+We can think of the sigmoid output unit as having two components. First, it uses a linear layer to compute z = wh + b. Next, it uses the sigmoid activation function to convert z into a probability.
+We omit the dependence on x for the moment to discuss how to define a probability distribution over y using the value z . The sigmoid can be motivated by constructing an unnormalized probability distribution P~(y), which does not sum to 1. We can then divide by an appropriate constant to obtain a valid probability distribution. If we begin with the assumption that the unnormalized log probabilities are linear in y and z, we can exponentiate to obtain the unnormalized probabilities. We then normalize to see that this yields a Bernoulli distribution controlled by a sigmoidal transformation of z:
+
+log P~(y) = yz
+
+P~(y) = exp(yz)
+
+P (y)
+
+=
+
+exp(yz)
+
+1
+y=0
+
+exp(y z)
+
+P (y) =  ((2y - 1)z) .
+
+(6.20) (6.21) (6.22)
+(6.23)
+
+Probability distributions based on exponentiation and normalization are common throughout the statistical modeling literature. The z variable defining such a distribution over binary variables is called a logit.
+This approach to predicting the probabilities in log-space is natural to use with maximum likelihood learning. Because the cost function used with maximum likelihood is - log P(y | x), the log in the cost function undoes the exp of the sigmoid. Without this effect, the saturation of the sigmoid could prevent gradientbased learning from making good progress. The loss function for maximum likelihood learning of a Bernoulli parametrized by a sigmoid is
+
+J() = - log P (y | x) = - log  ((2y - 1)z) =  ((1 - 2y)z) .
+
+(6.24) (6.25) (6.26)
+
+This derivation makes use of some properties from section 3.10. By rewriting the loss in terms of the softplus function, we can see that it saturates only when (1 - 2y)z is very negative. Saturation thus occurs only when the model already has the right answer--when y = 1 and z is very positive, or y = 0 and z is very negative. When z has the wrong sign, the argument to the softplus function,
+183
+
+

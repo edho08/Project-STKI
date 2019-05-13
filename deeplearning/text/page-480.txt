@@ -1,0 +1,56 @@
+CHAPTER 12. APPLICATIONS
+
+multiple latent variables (Mnih and Hinton, 2007).
+
+-6
+
+22
+
+France
+
+-7
+
+ChRinuassian
+
+21
+
+-8 EFrnegnlicshh
+
+22000098
+
+-9 -10 -11 -12 -13
+
+20
+
+Germany Iraq Ontario
+AUsEsEneUimuAoArnfborflrpiyciecaan
+
+19 Japan
+
+EuropeaBnritishNorCtChaannaaddiaan 18
+
+2004 2003 1995
+
+2007 2006 2001
+
+2005
+
+2000 1999
+
+2002 119999781996
+
+-14
+
+South
+
+17
+
+-34 -32 -30 -28 -26 35.0 35.5 36.0 36.5 37.0 37.5 38.0
+
+Figure 12.3: Two-dimensional visualizations of word embeddings obtained from a neural machine translation model (Bahdanau et al., 2015), zooming in on specific areas where semantically related words have embedding vectors that are close to each other. Countries appear on the left and numbers on the right. Keep in mind that these embeddings are 2-D for the purpose of visualization. In real applications, embeddings typically have higher dimensionality and can simultaneously capture many kinds of similarity between words.
+
+12.4.3 High-Dimensional Outputs
+In many natural language applications, we often want our models to produce words (rather than characters) as the fundamental unit of the output. For large vocabularies, it can be very computationally expensive to represent an output distribution over the choice of a word, because the vocabulary size is large. In many applications, V contains hundreds of thousands of words. The naive approach to representing such a distribution is to apply an affine transformation from a hidden representation to the output space, then apply the softmax function. Suppose we have a vocabulary V with size |V|. The weight matrix describing the linear component of this affine transformation is very large, because its output dimension is |V|. This imposes a high memory cost to represent the matrix, and a high computational cost to multiply by it. Because the softmax is normalized across all |V| outputs, it is necessary to perform the full matrix multiplication at training time as well as test time--we cannot calculate only the dot product with the weight vector for the correct output. The high computational costs of the output layer thus arise both at training time (to compute the likelihood and its gradient) and at test time (to compute probabilities for all or selected words). For specialized
+465
+
+

@@ -1,0 +1,151 @@
+CHAPTER 4. NUMERICAL COMPUTATION
+
+where  is the learning rate, a positive scalar determining the size of the step. We can choose  in several different ways. A popular approach is to set  to a small constant. Sometimes, we can solve for the step size that makes the directional derivative vanish. Another approach is to evaluate f (x - xf (x)) for several values of  and choose the one that results in the smallest objective function value. This last strategy is called a line search.
+Steepest descent converges when every element of the gradient is zero (or, in practice, very close to zero). In some cases, we may be able to avoid running this iterative algorithm, and just jump directly to the critical point by solving the equation x f (x) = 0 for x.
+Although gradient descent is limited to optimization in continuous spaces, the general concept of repeatedly making a small move (that is approximately the best small move) towards better configurations can be generalized to discrete spaces. Ascending an objective function of discrete parameters is called hill climbing (Russel and Norvig, 2003).
+
+4.3.1 Beyond the Gradient: Jacobian and Hessian Matrices
+
+Sometimes we need to find all of the partial derivatives of a function whose input
+
+and output are both vectors. The matrix containing all such partial derivatives is
+
+known as a Jacobian matrix. Specifically, if we have a function f : Rm  Rn,
+
+then
+
+the
+
+Jacobian
+
+matrix
+
+J
+
+
+
+Rn×m
+
+of
+
+f
+
+is
+
+defined
+
+such
+
+that
+
+J i,j
+
+=
+
+ xj
+
+f
+
+(x)i.
+
+We are also sometimes interested in a derivative of a derivative. This is known
+
+as a second derivative. For example, for a function f : Rn  R, the derivative
+
+with
+
+respect
+
+to
+
+xi
+
+of
+
+the
+
+derivative
+
+of
+
+f
+
+with
+
+respect
+
+to
+
+xj
+
+is
+
+denoted
+
+as
+
+2 xi x
+
+j
+
+f
+
+.
+
+In
+
+a
+
+single
+
+dimension,
+
+we
+
+can
+
+denote
+
+d2 dx2
+
+f
+
+by
+
+f (x).
+
+The
+
+second
+
+derivative
+
+tells
+
+us how the first derivative will change as we vary the input. This is important
+
+because it tells us whether a gradient step will cause as much of an improvement
+
+as we would expect based on the gradient alone. We can think of the second
+
+derivative as measuring curvature. Suppose we have a quadratic function (many
+
+functions that arise in practice are not quadratic but can be approximated well
+
+as quadratic, at least locally). If such a function has a second derivative of zero,
+
+then there is no curvature. It is a perfectly flat line, and its value can be predicted
+
+using only the gradient. If the gradient is 1, then we can make a step of size 
+
+along the negative gradient, and the cost function will decrease by . If the second
+
+derivative is negative, the function curves downward, so the cost function will
+
+actually decrease by more than . Finally, if the second derivative is positive, the
+
+function curves upward, so the cost function can decrease by less than . See
+
+86
+
+

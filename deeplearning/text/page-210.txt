@@ -1,0 +1,73 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+architectures, the LSTM, propagates information through time via summation--a particular straightforward kind of such linear activation. This is discussed further in section 10.10.
+
+6.3.2 Logistic Sigmoid and Hyperbolic Tangent
+
+Prior to the introduction of rectified linear units, most neural networks used the logistic sigmoid activation function
+
+g(z) = (z)
+
+(6.38)
+
+or the hyperbolic tangent activation function
+
+g(z) = tanh(z).
+
+(6.39)
+
+These activation functions are closely related because tanh(z) = 2(2z) - 1.
+
+We have already seen sigmoid units as output units, used to predict the probability that a binary variable is 1. Unlike piecewise linear units, sigmoidal units saturate across most of their domain--they saturate to a high value when z is very positive, saturate to a low value when z is very negative, and are only strongly sensitive to their input when z is near 0. The widespread saturation of sigmoidal units can make gradient-based learning very difficult. For this reason, their use as hidden units in feedforward networks is now discouraged. Their use as output units is compatible with the use of gradient-based learning when an appropriate cost function can undo the saturation of the sigmoid in the output layer.
+
+When a sigmoidal activation function must be used, the hyperbolic tangent
+
+activation function typically performs better than the logistic sigmoid. It resembles
+
+the
+
+identity
+
+function
+
+more
+
+closely,
+
+in
+
+the
+
+sense
+
+that
+
+tanh(0)
+
+=
+
+0
+
+while
+
+ (0)
+
+=
+
+1 2
+
+.
+
+Because tanh is similar to the identity function near 0, training a deep neural
+
+network y^ = w tanh(U  tanh(V x)) resembles training a linear model y^ =
+
+w UV x so long as the activations of the network can be kept small. This
+
+makes training the tanh network easier.
+
+Sigmoidal activation functions are more common in settings other than feedforward networks. Recurrent networks, many probabilistic models, and some autoencoders have additional requirements that rule out the use of piecewise linear activation functions and make sigmoidal units more appealing despite the drawbacks of saturation.
+
+195
+
+

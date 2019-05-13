@@ -1,0 +1,5 @@
+CHAPTER 15. REPRESENTATION LEARNING
+ possible is marginal independence, P (h) = i P (hi), but linear dependencies or those captured by a shallow autoencoder are also reasonable assumptions. This can be seen in many laws of physics, and is assumed when plugging a linear predictor or a factorized prior on top of a learned representation. The concept of representation learning ties together all of the many forms of deep learning. Feedforward and recurrent networks, autoencoders and deep probabilistic models all learn and exploit representations. Learning the best possible representation remains an exciting avenue of research.
+557
+
+

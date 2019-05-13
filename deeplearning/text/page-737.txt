@@ -1,0 +1,19 @@
+BIBLIOGRAPHY
+Bahdanau, D., Cho, K., and Bengio, Y. (2015). Neural machine translation by jointly learning to align and translate. In ICLR'2015, arXiv:1409.0473 . 25, 101, 397, 418, 420, 465, 475, 476
+Bahl, L. R., Brown, P., de Souza, P. V., and Mercer, R. L. (1987). Speech recognition with continuous-parameter hidden Markov models. Computer, Speech and Language , 2, 219­234. 458
+Baldi, P. and Hornik, K. (1989). Neural networks and principal component analysis: Learning from examples without local minima. Neural Networks, 2, 53­58. 286
+Baldi, P., Brunak, S., Frasconi, P., Soda, G., and Pollastri, G. (1999). Exploiting the past and the future in protein secondary structure prediction. Bioinformatics , 15(11), 937­946. 395
+Baldi, P., Sadowski, P., and Whiteson, D. (2014). Searching for exotic particles in high-energy physics with deep learning. Nature communications, 5. 26
+Ballard, D. H., Hinton, G. E., and Sejnowski, T. J. (1983). Parallel vision computation. Nature . 452
+Barlow, H. B. (1989). Unsupervised learning. Neural Computation, 1, 295­311. 147
+Barron, A. E. (1993). Universal approximation bounds for superpositions of a sigmoidal function. IEEE Trans. on Information Theory, 39, 930­945. 199
+Bartholomew, D. J. (1987). Latent variable models and factor analysis. Oxford University Press. 490
+Basilevsky, A. (1994). Statistical Factor Analysis and Related Methods: Theory and Applications . Wiley. 490
+Bastien, F., Lamblin, P., Pascanu, R., Bergstra, J., Goodfellow, I. J., Bergeron, A., Bouchard, N., and Bengio, Y. (2012). Theano: new features and speed improvements. Deep Learning and Unsupervised Feature Learning NIPS 2012 Workshop. 25, 82, 214, 222, 446
+Basu, S. and Christensen, J. (2013). Teaching classification boundaries to humans. In AAAI'2013 . 329
+Baxter, J. (1995). Learning internal representations. In Proceedings of the 8th International Conference on Computational Learning Theory (COLT'95), pages 311­320, Santa Cruz, California. ACM Press. 245
+Bayer, J. and Osendorfer, C. (2014). Learning stochastic recurrent networks. ArXiv e-prints. 265
+Becker, S. and Hinton, G. (1992). A self-organizing neural network that discovers surfaces in random-dot stereograms. Nature, 355, 161­163. 541
+722
+
+

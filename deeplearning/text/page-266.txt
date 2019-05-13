@@ -1,0 +1,49 @@
+CHAPTER 7. REGULARIZATION FOR DEEP LEARNING
+
+w w~
+
+w w~
+
+w2 w2
+
+w1
+
+w1
+
+Figure 7.4: An illustration of the effect of early stopping. (Left)The solid contour lines
+indicate the contours of the negative log-likelihood. The dashed line indicates the trajectory taken by SGD beginning from the origin. Rather than stopping at the point w that
+minimizes the cost, early stopping results in the trajectory stopping at an earlier point w~. (Right)An illustration of the effect of L2 regularization for comparison. The dashed circles indicate the contours of the L2 penalty, which causes the minimum of the total cost to lie
+nearer the origin than the minimum of the unregularized cost.
+
+We are going to study the trajectory followed by the parameter vector during
+training. For simplicity, let us set the initial parameter vector to the origin,3 that is w (0) = 0. Let us study the approximate behavior of gradient descent on J by analyzing gradient descent on J^:
+
+w() = w(-1) - wJ^(w(-1) ) = w(-1) - H (w(-1) - w )
+w() - w = (I - H)(w(-1) - w).
+
+(7.35) (7.36) (7.37)
+
+Let us now rewrite this expression in the space of the eigenvectors of H , exploiting the eigendecomposition of H: H = QQ, where  is a diagonal matrix and Q
+is an orthonormal basis of eigenvectors.
+
+w() - w = (I - QQ)(w(-1) - w) Q(w() - w) = (I - )Q (w(-1) - w )
+
+(7.38) (7.39)
+
+3
+For neural networks, to obtain symmetry breaking between hidden units, we cannot initialize
+
+all the parameters to 0, as discussed in section 6.2. However, the argument holds for any other
+
+initial
+
+value
+
+w
+
+(0)
+.
+
+251
+
+

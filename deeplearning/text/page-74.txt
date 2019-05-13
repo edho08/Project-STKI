@@ -1,0 +1,52 @@
+CHAPTER 3. PROBABILITY AND INFORMATION THEORY
+
+The name "marginal probability" comes from the process of computing marginal probabilities on paper. When the values of P (x, y ) are written in a grid with different values of x in rows and different values of y in columns, it is natural to sum across a row of the grid, then write P(x) in the margin of the paper just to the right of the row.
+
+For continuous variables, we need to use integration instead of summation: 
+
+p(x) = p(x, y)dy.
+
+(3.4)
+
+3.5 Conditional Probability
+
+In many cases, we are interested in the probability of some event, given that some other event has happened. This is called a conditional probability. We denote the conditional probability that y = y given x = x as P(y = y | x = x). This conditional probability can be computed with the formula
+
+P (y
+
+=
+
+y
+
+|
+
+x
+
+=
+
+x)
+
+=
+
+P (y = y, x = P (x = x)
+
+x) .
+
+(3.5)
+
+The conditional probability is only defined when P(x = x) > 0. We cannot compute the conditional probability conditioned on an event that never happens.
+It is important not to confuse conditional probability with computing what would happen if some action were undertaken. The conditional probability that a person is from Germany given that they speak German is quite high, but if a randomly selected person is taught to speak German, their country of origin does not change. Computing the consequences of an action is called making an intervention query. Intervention queries are the domain of causal modeling, which we do not explore in this book.
+
+3.6 The Chain Rule of Conditional Probabilities
+
+Any joint probability distribution over many random variables may be decomposed into conditional distributions over only one variable:
+
+P (x(1), . . . , x(n)) = P (x(1))ni=2P (x(i) | x(1), . . . , x(i-1)).
+
+(3.6)
+
+This observation is known as the chain rule or product rule of probability. It follows immediately from the definition of conditional probability in equation 3.5.
+
+59
+
+

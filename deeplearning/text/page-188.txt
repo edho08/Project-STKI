@@ -1,0 +1,33 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+Original x space
+1
+
+Learned h space
+1
+
+x2 h2
+
+0
+
+0
+
+0
+
+1
+
+x1
+
+0
+
+1
+
+2
+
+h1
+
+Figure 6.1: Solving the XOR problem by learning a representation. The bold numbers printed on the plot indicate the value that the learned function must output at each point. (Left)A linear model applied directly to the original input cannot implement the XOR function. When x1 = 0, the model's output must increase as x2 increases. When x1 = 1, the model's output must decrease as x2 increases. A linear model must apply a fixed coefficient w2 to x2. The linear model therefore cannot use the value of x1 to change the coefficient on x2 and cannot solve this problem. (Right)In the transformed space represented by the features extracted by a neural network, a linear model can now solve the problem. In our example solution, the two points that must have output 1 have been collapsed into a single point in feature space. In other words, the nonlinear features have mapped both x = [1, 0]  and x = [0, 1] to a single point in feature space, h = [1 ,0] . The linear model can now describe the function as increasing in h1 and decreasing in h2. In this example, the motivation for learning the feature space is only to make the model capacity greater so that it can fit the training set. In more realistic applications, learned representations can also help the model to generalize.
+
+173
+
+

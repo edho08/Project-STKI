@@ -1,0 +1,18 @@
+CHAPTER 4. NUMERICAL COMPUTATION
+
+  
+
+  
+
+
+
+  
+    
+
+Figure 4.5: A saddle point containing both positive and negative curvature. The function in this example is f (x) = x21 - x22. Along the axis corresponding to x1, the function curves upward. This axis is an eigenvector of the Hessian and has a positive eigenvalue.
+Along the axis corresponding to x2, the function curves downward. This direction is an eigenvector of the Hessian with negative eigenvalue. The name "saddle point" derives from the saddle-like shape of this function. This is the quintessential example of a function with a saddle point. In more than one dimension, it is not necessary to have an eigenvalue
+of 0 in order to get a saddle point: it is only necessary to have both positive and negative eigenvalues. We can think of a saddle point with both signs of eigenvalues as being a local maximum within one cross section and a local minimum within another cross section.
+
+90
+
+

@@ -1,0 +1,45 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+Maximizing the log-likelihood is then equivalent to minimizing the mean squared error.
+The maximum likelihood framework makes it straightforward to learn the covariance of the Gaussian too, or to make the covariance of the Gaussian be a function of the input. However, the covariance must be constrained to be a positive definite matrix for all inputs. It is difficult to satisfy such constraints with a linear output layer, so typically other output units are used to parametrize the covariance. Approaches to modeling the covariance are described shortly, in section 6.2.2.4.
+Because linear units do not saturate, they pose little difficulty for gradientbased optimization algorithms and may be used with a wide variety of optimization algorithms.
+
+6.2.2.2 Sigmoid Units for Bernoulli Output Distributions
+
+Many tasks require predicting the value of a binary variable y . Classification problems with two classes can be cast in this form.
+
+The maximum-likelihood approach is to define a Bernoulli distribution over y conditioned on x.
+
+A Bernoulli distribution is defined by just a single number. The neural net needs to predict only P(y = 1 | x). For this number to be a valid probability, it must lie in the interval [0, 1].
+
+Satisfying this constraint requires some careful design effort. Suppose we were
+
+to use a linear unit, and threshold its value to obtain a valid probability:
+
+
+
+
+
+
+
+P (y = 1 | x) = max 0, min 1, wh + b .
+
+(6.18)
+
+This would indeed define a valid conditional distribution, but we would not be able to train it very effectively with gradient descent. Any time that wh + b strayed outside the unit interval, the gradient of the output of the model with respect to its parameters would be 0. A gradient of 0 is typically problematic because the learning algorithm no longer has a guide for how to improve the corresponding parameters.
+
+Instead, it is better to use a different approach that ensures there is always a strong gradient whenever the model has the wrong answer. This approach is based on using sigmoid output units combined with maximum likelihood.
+
+A sigmoid output unit is defined by
+
+
+
+
+
+y^ =  wh + b
+
+(6.19)
+
+182
+
+

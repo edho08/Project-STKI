@@ -1,0 +1,19 @@
+BIBLIOGRAPHY
+Goodfellow, I. J., Shlens, J., and Szegedy, C. (2014b). Explaining and harnessing adversarial examples. CoRR, abs/1412.6572. 268, 269, 271, 555, 556
+Goodfellow, I. J., Pouget-Abadie, J., Mirza, M., Xu, B., Warde-Farley, D., Ozair, S., Courville, A., and Bengio, Y. (2014c). Generative adversarial networks. In NIPS'2014 . 544, 689, 699, 701, 704
+Goodfellow, I. J., Bulatov, Y., Ibarz, J., Arnoud, S., and Shet, V. (2014d). Multi-digit number recognition from Street View imagery using deep convolutional neural networks. In International Conference on Learning Representations . 25, 101, 201, 202, 203, 391, 422, 449
+Goodfellow, I. J., Vinyals, O., and Saxe, A. M. (2015). Qualitatively characterizing neural network optimization problems. In International Conference on Learning Representations. 285, 286, 287, 291
+Goodman, J. (2001). Classes for fast maximum entropy training. In International Conference on Acoustics, Speech and Signal Processing (ICASSP), Utah. 467
+Gori, M. and Tesi, A. (1992). On the problem of local minima in backpropagation. IEEE Transactions on Pattern Analysis and Machine Intelligence, PAMI-14(1), 76­86. 284
+Gosset, W. S. (1908). The probable error of a mean. Biometrika, 6(1), 1­25. Originally published under the pseudonym "Student". 21
+Gouws, S., Bengio, Y., and Corrado, G. (2014). BilBOWA: Fast bilingual distributed representations without word alignments. Technical report, arXiv:1410.2455. 476, 539
+Graf, H. P. and Jackel, L. D. (1989). Analog electronic neural network circuits. Circuits and Devices Magazine, IEEE , 5(4), 44­49. 451
+Graves, A. (2011). Practical variational inference for neural networks. In NIPS'2011 . 242
+Graves, A. (2012). Supervised Sequence Labelling with Recurrent Neural Networks . Studies in Computational Intelligence. Springer. 374, 395, 411, 460
+Graves, A. (2013). Generating sequences with recurrent neural networks. Technical report, arXiv:1308.0850. 190, 410, 415, 420
+Graves, A. and Jaitly, N. (2014). Towards end-to-end speech recognition with recurrent neural networks. In ICML'2014 . 410
+Graves, A. and Schmidhuber, J. (2005). Framewise phoneme classification with bidirectional LSTM and other neural network architectures. Neural Networks , 18(5), 602­610. 395
+Graves, A. and Schmidhuber, J. (2009). Offline handwriting recognition with multidimensional recurrent neural networks. In D. Koller, D. Schuurmans, Y. Bengio, and L. Bottou, editors, NIPS'2008 , pages 545­552. 395
+739
+
+

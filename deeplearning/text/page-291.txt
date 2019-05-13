@@ -1,0 +1,32 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+solvable by an optimization algorithm. However, when we do not know pdata(x, y) but only have a training set of samples, we have a machine learning problem.
+The simplest way to convert a machine learning problem back into an optimization problem is to minimize the expected loss on the training set. This means replacing the true distribution p(x, y) with the empirical distribution p^(x, y) defined by the training set. We now minimize the empirical risk
+
+Ex,yp^data(x,y)[L(f (x;
+
+),
+
+y)]
+
+=
+
+1 m
+
+ m L(f (x(i) ; ),
+
+y(i) )
+
+i=1
+
+(8.3)
+
+where m is the number of training examples.
+The training process based on minimizing this average training error is known as empirical risk minimization. In this setting, machine learning is still very similar to straightforward optimization. Rather than optimizing the risk directly, we optimize the empirical risk, and hope that the risk decreases significantly as well. A variety of theoretical results establish conditions under which the true risk can be expected to decrease by various amounts.
+However, empirical risk minimization is prone to overfitting. Models with high capacity can simply memorize the training set. In many cases, empirical risk minimization is not really feasible. The most effective modern optimization algorithms are based on gradient descent, but many useful loss functions, such as 0-1 loss, have no useful derivatives (the derivative is either zero or undefined everywhere). These two problems mean that, in the context of deep learning, we rarely use empirical risk minimization. Instead, we must use a slightly different approach, in which the quantity that we actually optimize is even more different from the quantity that we truly want to optimize.
+
+8.1.2 Surrogate Loss Functions and Early Stopping
+Sometimes, the loss function we actually care about (say classification error) is not one that can be optimized efficiently. For example, exactly minimizing expected 0-1 loss is typically intractable (exponential in the input dimension), even for a linear classifier (Marcotte and Savard, 1992). In such situations, one typically optimizes a surrogate loss function instead, which acts as a proxy but has advantages. For example, the negative log-likelihood of the correct class is typically used as a surrogate for the 0-1 loss. The negative log-likelihood allows the model to estimate the conditional probability of the classes, given the input, and if the model can do that well, then it can pick the classes that yield the least classification error in expectation.
+276
+
+

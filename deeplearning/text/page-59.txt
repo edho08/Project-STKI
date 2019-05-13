@@ -1,0 +1,26 @@
+CHAPTER 2. LINEAR ALGEBRA
+
+cases, the decomposition exists, but may involve complex rather than real numbers.
+
+Fortunately, in this book, we usually need to decompose only a specific class of
+
+matrices that have a simple decomposition. Specifically, every real symmetric
+
+matrix can be decomposed into an expression using only real-valued eigenvectors
+
+and eigenvalues:
+
+A = QQ,
+
+(2.41)
+
+where Q is an orthogonal matrix composed of eigenvectors of A, and  is a diagonal matrix. The eigenvalue i,i is associated with the eigenvector in column i of Q, denoted as Q:,i. Because Q is an orthogonal matrix, we can think of A as scaling space by i in direction v(i). See figure 2.3 for an example.
+While any real symmetric matrix A is guaranteed to have an eigendecomposition, the eigendecomposition may not be unique. If any two or more eigenvectors share the same eigenvalue, then any set of orthogonal vectors lying in their span are also eigenvectors with that eigenvalue, and we could equivalently choose a Q using those eigenvectors instead. By convention, we usually sort the entries of  in descending order. Under this convention, the eigendecomposition is unique only if all of the eigenvalues are unique.
+The eigendecomposition of a matrix tells us many useful facts about the matrix. The matrix is singular if and only if any of the eigenvalues are zero. The eigendecomposition of a real symmetric matrix can also be used to optimize quadratic expressions of the form f(x) = x Ax subject to ||x||2 = 1. Whenever x is equal to an eigenvector of A, f takes on the value of the corresponding eigenvalue. The maximum value of f within the constraint region is the maximum eigenvalue and its minimum value within the constraint region is the minimum eigenvalue.
+A matrix whose eigenvalues are all positive is called positive definite. A matrix whose eigenvalues are all positive or zero-valued is called positive semidefinite. Likewise, if all eigenvalues are negative, the matrix is negative definite, and if all eigenvalues are negative or zero-valued, it is negative semidefinite. Positive semidefinite matrices are interesting because they guarantee that x, xAx  0. Positive definite matrices additionally guarantee that xAx = 0  x = 0.
+
+2.8 Singular Value Decomposition
+In section 2.7, we saw how to decompose a matrix into eigenvectors and eigenvalues. The singular value decomposition (SVD) provides another way to factorize a matrix, into singular vectors and singular values. The SVD allows us to discover some of the same kind of information as the eigendecomposition. However,
+44
+
+

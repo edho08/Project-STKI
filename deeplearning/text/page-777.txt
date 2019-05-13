@@ -1,0 +1,17 @@
+BIBLIOGRAPHY
+Pham, P.-H., Jelaca, D., Farabet, C., Martini, B., LeCun, Y., and Culurciello, E. (2012). NeuFlow: dataflow vision processing system-on-a-chip. In Circuits and Systems (MWSCAS), 2012 IEEE 55th International Midwest Symposium on, pages 1044­1047. IEEE. 451
+Pinheiro, P. H. O. and Collobert, R. (2014). Recurrent convolutional neural networks for scene labeling. In ICML'2014 . 359
+Pinheiro, P. H. O. and Collobert, R. (2015). From image-level to pixel-level labeling with convolutional networks. In Conference on Computer Vision and Pattern Recognition (CVPR). 359
+Pinto, N., Cox, D. D., and DiCarlo, J. J. (2008). Why is real-world visual object recognition hard? PLoS Comput Biol , 4. 456
+Pinto, N., Stone, Z., Zickler, T., and Cox, D. (2011). Scaling up biologically-inspired computer vision: A case study in unconstrained face recognition on facebook. In Computer Vision and Pattern Recognition Workshops (CVPRW), 2011 IEEE Computer Society Conference on, pages 35­42. IEEE. 363
+Pollack, J. B. (1990). Recursive distributed representations. Artificial Intelligence, 46(1), 77­105. 401
+Polyak, B. and Juditsky, A. (1992). Acceleration of stochastic approximation by averaging. SIAM J. Control and Optimization, 30(4), 838­855. 322
+Polyak, B. T. (1964). Some methods of speeding up the convergence of iteration methods. USSR Computational Mathematics and Mathematical Physics, 4(5), 1­17. 296
+Poole, B., Sohl-Dickstein, J., and Ganguli, S. (2014). Analyzing noise in autoencoders and deep networks. CoRR, abs/1406.1831. 241
+Poon, H. and Domingos, P. (2011). Sum-product networks: A new deep architecture. In Proceedings of the Twenty-seventh Conference in Uncertainty in Artificial Intelligence (UAI), Barcelona, Spain. 554
+Presley, R. K. and Haggard, R. L. (1994). A fixed point implementation of the backpropagation learning algorithm. In Southeastcon'94. Creative Technology Transfer-A Global Affair., Proceedings of the 1994 IEEE , pages 136­138. IEEE. 451
+Price, R. (1958). A useful theorem for nonlinear devices having Gaussian inputs. IEEE Transactions on Information Theory, 4(2), 69­72. 689
+Quiroga, R. Q., Reddy, L., Kreiman, G., Koch, C., and Fried, I. (2005). Invariant visual representation by single neurons in the human brain. Nature, 435(7045), 1102­1107. 366
+762
+
+

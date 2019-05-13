@@ -1,0 +1,25 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+In neural network applications, we typically choose z to be drawn from some simple distribution, such as a unit uniform or unit Gaussian distribution, and achieve more complex distributions by allowing the deterministic portion of the network to reshape its input.
+The idea of propagating gradients or optimizing through stochastic operations dates back to the mid-twentieth century (Price, 1958; Bonnet, 1964) and was first used for machine learning in the context of reinforcement learning (Williams, 1992). More recently, it has been applied to variational approximations (Opper and Archambeau, 2009) and stochastic or generative neural networks (Bengio et al., 2013b; Kingma, 2013; Kingma and Welling, 2014b,a; Rezende et al., 2014; Goodfellow et al., 2014c). Many networks, such as denoising autoencoders or networks regularized with dropout, are also naturally designed to take noise as an input without requiring any special reparametrization to make the noise independent from the model.
+
+20.9.1 Back-Propagating through Discrete Stochastic Operations
+
+When a model emits a discrete variable y, the reparametrization trick is not
+
+applicable. Suppose that the model takes inputs x and parameters , both
+
+encapsulated in the vector  , and combines them with random noise z to produce
+
+y:
+
+y = f (z; ).
+
+(20.58)
+
+Because y is discrete, f must be a step function. The derivatives of a step function are not useful at any point. Right at each step boundary, the derivatives are undefined, but that is a small problem. The large problem is that the derivatives are zero almost everywhere, on the regions between step boundaries. The derivatives of any cost function J (y) therefore do not give any information for how to update the model parameters .
+The REINFORCE algorithm (REward Increment = Non-negative Factor × Offset Reinforcement × Characteristic Eligibility) provides a framework defining a family of simple but powerful solutions (Williams, 1992). The core idea is that even though J (f (z ;)) is a step function with useless derivatives, the expected cost Ezp(z)J (f (z; )) is often a smooth function amenable to gradient descent. Although that expectation is typically not tractable when y is high-dimensional (or is the result of the composition of many discrete stochastic decisions), it can be estimated without bias using a Monte Carlo average. The stochastic estimate of the gradient can be used with SGD or other stochastic gradient-based optimization techniques.
+
+689
+
+

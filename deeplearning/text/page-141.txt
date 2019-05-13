@@ -1,0 +1,134 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+Recall that the Gaussian probability density function is given by
+
+
+
+
+
+p(x(i); µ,  2) =  1 exp 22
+
+- 12
+
+(x(i) - 2
+
+µ)2
+
+.
+
+(5.29)
+
+A common estimator of the Gaussian mean parameter is known as the sample
+
+mean:
+
+µ^m
+
+=
+
+1 m
+
+ m
+
+x(i)
+
+i=1
+
+(5.30)
+
+To determine the bias of the sample mean, we are again interested in calculating its expectation:
+
+bias(µ^ m )
+
+= =
+
+E[µ^m] 1
+E m
+
+-µ
+
+ m
+
+ x(i)
+
+-
+
+µ
+
+ =1
+
+i=1
+ m E
+
+ x(i)
+
+
+
+-
+
+µ
+
+=
+
+
+
+m 1
+
+i=1
+ m
+
+ µ
+
+-
+
+µ
+
+m
+
+i=1
+
+= µ-µ= 0
+
+(5.31) (5.32) (5.33) (5.34) (5.35)
+
+Thus we find that the sample mean is an unbiased estimator of Gaussian mean parameter.
+
+Example: Estimators of the Variance of a Gaussian Distribution As an example, we compare two different estimators of the variance parameter 2 of a Gaussian distribution. We are interested in knowing if either estimator is biased.
+The first estimator of 2 we consider is known as the sample variance:
+
+^2m
+
+=
+
+1 m
+
+ m
+
+ x
+
+(i)
+
+-
+
+µ^
+
+2
+m
+
+,
+
+i=1
+
+(5.36)
+
+where µ^m is the sample mean, defined above. More formally, we are interested in
+
+computing
+
+bias(^ 2m) = E[^m2 ] - 2
+
+(5.37)
+
+126
+
+

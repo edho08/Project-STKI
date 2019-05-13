@@ -1,0 +1,111 @@
+CHAPTER 2. LINEAR ALGEBRA
+
+This makes the algorithm efficient: we can optimally encode x just using a matrix-vector operation. To encode a vector, we apply the encoder function
+
+f (x) = Dx.
+
+(2.66)
+
+Using a further matrix multiplication, we can also define the PCA reconstruction
+
+operation:
+
+r(x) = g (f (x)) = DDx.
+
+(2.67)
+
+Next, we need to choose the encoding matrix D. To do so, we revisit the idea of minimizing the L 2 distance between inputs and reconstructions. Since we will use the same matrix D to decode all of the points, we can no longer consider the points in isolation. Instead, we must minimize the Frobenius norm of the matrix of errors computed over all dimensions and all points:
+
+D
+
+=
+
+arg
+
+min
+
+
+
+ x(ji)
+
+2 - r(x(i))j
+
+subject
+
+to
+
+DD
+
+=
+
+Il
+
+D
+
+i,j
+
+(2.68)
+
+To derive the algorithm for finding D, we will start by considering the case where l = 1. In this case, D is just a single vector, d. Substituting equation 2.67 into equation 2.68 and simplifying D into d, the problem reduces to
+
+d = arg min  ||x(i) - ddx(i)||22 subject to ||d||2 = 1.
+
+d
+
+i
+
+(2.69)
+
+The above formulation is the most direct way of performing the substitution,
+
+but is not the most stylistically pleasing way to write the equation. It places the scalar value dx (i) on the right of the vector d. It is more conventional to write
+
+scalar coefficients on the left of vector they operate on. We therefore usually write
+
+such a formula as
+
+d = arg min  ||x(i) - dx (i)d||22 subject to ||d||2 = 1,
+
+d
+
+i
+
+(2.70)
+
+or, exploiting the fact that a scalar is its own transpose, as
+
+d
+
+=
+
+arg
+
+ min
+
+||x(i)
+
+-
+
+x(i)dd||22
+
+subject
+
+to
+
+||d||2
+
+=
+
+1.
+
+d
+
+i
+
+(2.71)
+
+The reader should aim to become familiar with such cosmetic rearrangements.
+
+50
+
+

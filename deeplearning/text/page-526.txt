@@ -1,0 +1,31 @@
+CHAPTER 14. AUTOENCODERS
+
+h g
+f
+
+x~
+
+L
+
+C(x~ | x) x
+
+Figure 14.3: The computational graph of the cost function for a denoising autoencoder, which is trained to reconstruct the clean data point x from its corrupted version x~. This is accomplished by minimizing the loss L = - log pdecoder(x | h = f(x~)), where x~ is a corrupted version of the data example x, obtained through a given corruption process C(x~ | x). Typically the distribution pdecoder is a factorial distribution whose mean parameters are emitted by a feedforward network g.
+
+corrupted samples x~, given a data sample x. The autoencoder then learns a reconstruction distribution preconstruct (x | x~ ) estimated from training pairs (x, x~), as follows:
+
+1. Sample a training example x from the training data.
+
+2. Sample a corrupted version x~ from C(x~ | x = x).
+
+3. Use (x, x~) as a training example for estimating the autoencoder reconstruction distribution preconstruct(x | ~x) = pdecoder (x | h) with h the output of encoder f (x~) and pdecoder typically defined by a decoder g(h).
+
+Typically we can simply perform gradient-based approximate minimization (such as minibatch gradient descent) on the negative log-likelihood - log pdecoder(x | h). So long as the encoder is deterministic, the denoising autoencoder is a feedforward network and may be trained with exactly the same techniques as any other feedforward network.
+We can therefore view the DAE as performing stochastic gradient descent on the following expectation:
+
+- Exp^data (x)Ex~C(~x|x) log pdecoder (x | h = f (x~)) where p^data(x) is the training distribution.
+
+(14.14)
+
+511
+
+

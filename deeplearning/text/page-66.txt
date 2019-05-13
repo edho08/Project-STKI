@@ -1,0 +1,99 @@
+CHAPTER 2. LINEAR ALGEBRA
+
+At this point, it can be helpful to rewrite the problem in terms of a single
+design matrix of examples, rather than as a sum over separate example vectors. This will allow us to use more compact notation. Let X  Rm×n be the matrix defined by stacking all of the vectors describing the points, such that Xi,: = x (i) . We can now rewrite the problem as
+
+d = arg min ||X - Xdd||2F subject to dd = 1.
+d
+
+(2.72)
+
+Disregarding the constraint for the moment, we can simplify the Frobenius norm
+
+portion as follows:
+
+arg
+
+min ||X
+
+-
+
+X
+
+dd
+
+||
+
+2 F
+
+=
+
+arg
+
+min
+
+Tr
+
+d X
+
+-
+
+X dd
+
+ X
+
+-
+
+ X dd
+
+(2.73) (2.74)
+
+d
+
+(by equation 2.49)
+
+= arg min Tr(XX - X Xdd - ddXX + dd XXdd)
+d
+
+(2.75)
+
+= arg min Tr(X X) - Tr(XXdd) - Tr(ddX X) + Tr(ddXXdd )
+
+d
+= arg min - Tr(XXdd) - Tr(ddXX) + Tr(ddX Xdd )
+
+(2.76) (2.77)
+
+d
+
+(because terms not involving d do not affect the arg min)
+
+= arg min -2 Tr(X Xdd) + Tr(ddXXdd )
+d
+
+(2.78)
+
+(because we can cycle the order of the matrices inside a trace, equation 2.52)
+
+= arg min -2 Tr(X Xdd) + Tr(XXdddd )
+d
+
+(2.79)
+
+(using the same property again) At this point, we re-introduce the constraint:
+
+arg min -2 Tr(XXdd ) + Tr(XXdddd) subject to dd = 1
+d
+= arg min -2 Tr(XXdd) + Tr(X Xdd) subject to dd = 1
+d
+(due to the constraint)
+
+(2.80) (2.81)
+
+= arg min - Tr(XXdd ) subject to dd = 1
+d
+51
+
+(2.82)
+
+

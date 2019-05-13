@@ -1,0 +1,138 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+Algorithm 6.1 A procedure that performs the computations mapping ni inputs u(1) to u(ni) to an output u(n). This defines a computational graph where each node computes numerical value u(i) by applying a function f (i) to the set of arguments A(i) that comprises the values of previous nodes u(j), j < i, with j  P a(u(i)). The
+input to the computational graph is the vector x, and is set into the first ni nodes u(1) to u(ni) . The output of the computational graph is read off the last (output) node u(n).
+for i = 1, . . . , ni do u(i)  xi
+end for
+for i = ni + 1, . . . , n do A(i)  {u(j) | j  P a(u(i) )} u(i)  f (i)(A(i))
+end for return u(n)
+
+using the chain rule with respect to scalar output u(n):
+
+ u(n)
+
+ u(n) u(i)
+
+u(j) =
+
+u (i) u(j)
+
+i:jP a(u(i) )
+
+(6.49)
+
+as specified by algorithm 6.2. The subgraph B contains exactly one edge for each
+
+edge from node u(j) to node u(i) of G. The edge from u(j) to u(i) is associated with
+
+the
+
+computation
+
+of
+
+. u (i)
+u(j)
+
+In
+
+addition,
+
+a
+
+dot
+
+product
+
+is
+
+performed
+
+for
+
+each
+
+node,
+
+between the gradient already computed with respect to nodes u(i) that are children
+
+of
+
+u(j)
+
+and
+
+the
+
+vector
+
+containing
+
+the
+
+partial
+
+derivatives
+
+u (i) u(j)
+
+for
+
+the
+
+same
+
+children
+
+nodes u(i) . To summarize, the amount of computation required for performing
+
+the back-propagation scales linearly with the number of edges in G, where the
+
+computation for each edge corresponds to computing a partial derivative (of one
+
+node with respect to one of its parents) as well as performing one multiplication
+
+and one addition. Below, we generalize this analysis to tensor-valued nodes, which
+
+is just a way to group multiple scalar values in the same node and enable more
+
+efficient implementations.
+
+The back-propagation algorithm is designed to reduce the number of common
+
+subexpressions without regard to memory. Specifically, it performs on the order
+
+of one Jacobian product per node in the graph. This can be seen from the fact
+
+that backprop (algorithm 6.2) visits each edge from node u (j) to node u(i) of
+
+the
+
+graph
+
+exactly
+
+once
+
+in
+
+order
+
+to
+
+obtain
+
+the
+
+associated
+
+partial
+
+derivative
+
+. u(i)
+u(j)
+
+209
+
+

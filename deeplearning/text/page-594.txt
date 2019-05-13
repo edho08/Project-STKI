@@ -1,0 +1,35 @@
+CHAPTER 16. STRUCTURED PROBABILISTIC MODELS FOR DEEP LEARNING
+
+a
+
+b
+
+a
+
+b
+
+a
+
+b
+
+d
+
+c
+
+d
+
+c
+
+d
+
+c
+
+Figure 16.12: Converting an undirected model to a directed model. (Left)This undirected model cannot be converted directed to a directed model because it has a loop of length four with no chords. Specifically, the undirected model encodes two different independences that no directed model can capture simultaneously: ac | {b, d} and bd | {a, c}. (Center)To convert the undirected model to a directed model, we must triangulate the graph, by ensuring that all loops of greater than length three have a chord. To do so, we can either add an edge connecting a and c or we can add an edge connecting b and d. In this example, we choose to add the edge connecting a and c. (Right)To finish the conversion process, we must assign a direction to each edge. When doing so, we must not create any directed cycles. One way to avoid directed cycles is to impose an ordering over the nodes, and always point each edge from the node that comes earlier in the ordering to the node that comes later in the ordering. In this example, we use the variable names to impose alphabetical order.
+
+these chords discards some of the independence information that was encoded in U. The graph formed by adding chords to U is known as a chordal or triangulated graph, because all the loops can now be described in terms of smaller, triangular loops. To build a directed graph D from the chordal graph, we need to also assign directions to the edges. When doing so, we must not create a directed cycle in D, or the result does not define a valid directed probabilistic model. One way to assign directions to the edges in D is to impose an ordering on the random variables, then point each edge from the node that comes earlier in the ordering to the node that comes later in the ordering. See figure 16.12 for a demonstration.
+16.2.7 Factor Graphs
+Factor graphs are another way of drawing undirected models that resolve an ambiguity in the graphical representation of standard undirected model syntax. In an undirected model, the scope of every  function must be a subset of some clique in the graph. Ambiguity arises because it is not clear if each clique actually has a corresponding factor whose scope encompasses the entire clique--for example, a clique containing three nodes may correspond to a factor over all three nodes, or may correspond to three factors that each contain only a pair of the nodes.
+
+579
+
+

@@ -1,0 +1,45 @@
+CHAPTER 2. LINEAR ALGEBRA
+
+solution.
+So far we have discussed matrix inverses as being multiplied on the left. It is also possible to define an inverse that is multiplied on the right:
+
+AA-1 = I.
+
+(2.29)
+
+For square matrices, the left inverse and right inverse are equal.
+
+2.5 Norms
+
+Sometimes we need to measure the size of a vector. In machine learning, we usually measure the size of vectors using a function called a norm . Formally, the Lp norm
+
+is given by
+
+
+
+1
+
+||x||p =  |xi|p p
+
+(2.30)
+
+i
+
+for p  R, p  1.
+
+Norms, including the Lp norm, are functions mapping vectors to non-negative
+
+values. On an intuitive level, the norm of a vector x measures the distance from the origin to the point x. More rigorously, a norm is any function f that satisfies
+
+the following properties:
+
+· f (x) = 0  x = 0 · f (x + y)  f(x) + f (y) (the triangle inequality) ·   R, f (x) = ||f (x)
+
+The L2 norm, with p = 2, is known as the Euclidean norm. It is simply the Euclidean distance from the origin to the point identified by x. The L2 norm is used so frequently in machine learning that it is often denoted simply as ||x||, with
+the subscript 2 omitted. It is also common to measure the size of a vector using the squared L2 norm, which can be calculated simply as xx.
+The squared L2 norm is more convenient to work with mathematically and computationally than the L2 norm itself. For example, the derivatives of the squared L2 norm with respect to each element of x each depend only on the corresponding element of x, while all of the derivatives of the L2 norm depend on the entire vector. In many contexts, the squared L2 norm may be undesirable
+because it increases very slowly near the origin. In several machine learning
+
+39
+
+

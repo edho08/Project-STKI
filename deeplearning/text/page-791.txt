@@ -1,0 +1,19 @@
+BIBLIOGRAPHY
+Wikipedia (2015). List of animals by number of neurons -- Wikipedia, the free encyclopedia. [Online; accessed 4-March-2015]. 24, 27
+Williams, C. K. I. and Agakov, F. V. (2002). Products of Gaussians and Probabilistic Minor Component Analysis. Neural Computation, 14(5), 1169н1182. 682
+Williams, C. K. I. and Rasmussen, C. E. (1996). Gaussian processes for regression. In D. Touretzky, M. Mozer, and M. Hasselmo, editors, Advances in Neural Information Processing Systems 8 (NIPS'95), pages 514н520. MIT Press, Cambridge, MA. 142
+Williams, R. J. (1992). Simple statistical gradient-following algorithms connectionist reinforcement learning. Machine Learning , 8, 229н256. 688, 689
+Williams, R. J. and Zipser, D. (1989). A learning algorithm for continually running fully recurrent neural networks. Neural Computation, 1, 270н280. 223
+Wilson, D. R. and Martinez, T. R. (2003). The general inefficiency of batch training for gradient descent learning. Neural Networks , 16(10), 1429н1451. 279
+Wilson, J. R. (1984). Variance reduction techniques for digital simulation. American Journal of Mathematical and Management Sciences, 4(3), 277нн312. 690
+Wiskott, L. and Sejnowski, T. J. (2002). Slow feature analysis: Unsupervised learning of invariances. Neural Computation, 14(4), 715н770. 494
+Wolpert, D. and MacReady, W. (1997). No free lunch theorems for optimization. IEEE Transactions on Evolutionary Computation, 1, 67н82. 293
+Wolpert, D. H. (1996). The lack of a priori distinction between learning algorithms. Neural Computation, 8(7), 1341н1390. 116
+Wu, R., Yan, S., Shan, Y., Dang, Q., and Sun, G. (2015). Deep image: Scaling up image recognition. arXiv:1501.02876. 447
+Wu, Z. (1997). Global continuation for distance geometry problems. SIAM Journal of Optimization, 7, 814н836. 327
+Xiong, H. Y., Barash, Y., and Frey, B. J. (2011). Bayesian prediction of tissue-regulated splicing using RNA sequence and cellular context. Bioinformatics, 27(18), 2554н2562. 265
+Xu, K., Ba, J. L., Kiros, R., Cho, K., Courville, A., Salakhutdinov, R., Zemel, R. S., and Bengio, Y. (2015). Show, attend and tell: Neural image caption generation with visual attention. In ICML'2015, arXiv:1502.03044 . 102, 410, 691
+Yildiz, I. B., Jaeger, H., and Kiebel, S. J. (2012). Re-visiting the echo state property. Neural networks , 35, 1н9. 405
+776
+
+

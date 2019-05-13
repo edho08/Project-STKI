@@ -1,0 +1,45 @@
+CHAPTER 10. SEQUENCE MODELING: RECURRENT AND RECURSIVE NETS
+
+y (t-1)
+
+y (t)
+
+y (t+1)
+
+L(t-1)
+
+R
+
+o(t-1)
+
+V
+
+W
+
+W
+
+h(... )
+
+h(t-1)
+
+U x(t-1)
+
+L(t)
+R o(t)
+V W
+h(t)
+U x(t)
+
+L(t+1)
+R o(t+1)
+V W
+h(t+1)
+U x(t+1)
+
+h(... )
+
+Figure 10.10: A conditional recurrent neural network mapping a variable-length sequence of x values into a distribution over sequences of y values of the same length. Compared to figure 10.3, this RNN contains connections from the previous output to the current state. These connections allow this RNN to model an arbitrary distribution over sequences of y given sequences of x of the same length. The RNN of figure 10.3 is only able to represent distributions in which the y values are conditionally independent from each other given the x values.
+
+393
+
+

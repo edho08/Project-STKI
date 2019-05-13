@@ -1,0 +1,41 @@
+CHAPTER 12. APPLICATIONS
+
+(0)
+
+(1)
+
+(0,0)
+
+(0,1)
+
+(1,0)
+
+(1,1)
+
+w0
+
+w1
+
+w2
+
+w3
+
+w4
+
+w5
+
+w6
+
+w7
+
+(0,0,0) (0,0,1) (0,1,0) (0,1,1) (1,0,0) (1,0,1) (1,1,0) (1,1,1)
+
+Figure 12.4: Illustration of a simple hierarchy of word categories, with 8 words w0, . . . , w7 organized into a three level hierarchy. The leaves of the tree represent actual specific words. Internal nodes represent groups of words. Any node can be indexed by the sequence of binary decisions (0=left, 1=right) to reach the node from the root. Super-class (0) contains the classes (0, 0) and (0, 1), which respectively contain the sets of words {w0, w1} and {w2, w3 }, and similarly super-class (1) contains the classes (1, 0) and (1, 1), which respectively contain the words (w4, w5 ) and (w6, w7). If the tree is sufficiently balanced, the maximum depth (number of binary decisions) is on the order of the logarithm of the number of words |V|: the choice of one out of |V| words can be obtained by doing O(log |V|) operations (one for each of the nodes on the path from the root). In this example, computing the probability of a word y can be done by multiplying three probabilities, associated with the binary decisions to move left or right at each node on the path from the root to a node y. Let bi(y) be the i-th binary decision when traversing the tree towards the value y. The probability of sampling an output y decomposes into a product of conditional probabilities, using the chain rule for conditional probabilities, with each node indexed by the prefix of these bits. For example, node (1, 0) corresponds to the prefix (b0 (w4 ) = 1, b1(w4) = 0), and the probability of w4 can be decomposed as follows:
+
+P (y = w4) = P (b0 = 1, b1 = 0, b2 = 0) = P (b0 = 1)P (b1 = 0 | b0 = 1)P (b2 = 0 | b0 = 1, b1 = 0).
+
+(12.11) (12.12)
+
+468
+
+

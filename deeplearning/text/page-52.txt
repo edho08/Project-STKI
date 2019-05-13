@@ -1,0 +1,54 @@
+CHAPTER 2. LINEAR ALGEBRA
+
+x = A-1b.
+
+(2.25)
+
+Of course, this process depends on it being possible to find A-1. We discuss the conditions for the existence of A-1 in the following section.
+When A-1 exists, several different algorithms exist for finding it in closed form.
+In theory, the same inverse matrix can then be used to solve the equation many times for different values of b. However, A -1 is primarily useful as a theoretical
+tool, and should not actually be used in practice for most software applications. Because A-1 can be represented with only limited precision on a digital computer,
+algorithms that make use of the value of b can usually obtain more accurate
+estimates of x.
+
+2.4 Linear Dependence and Span
+
+In order for A-1 to exist, equation 2.11 must have exactly one solution for every value of b. However, it is also possible for the system of equations to have no solutions or infinitely many solutions for some values of b. It is not possible to have more than one but less than infinitely many solutions for a particular b; if both x and y are solutions then
+
+z = x + (1 - )y
+
+(2.26)
+
+is also a solution for any real .
+
+To analyze how many solutions the equation has, we can think of the columns
+
+of A as specifying different directions we can travel from the origin (the point
+
+specified by the vector of all zeros), and determine how many ways there are of
+
+reaching b. In this view, each element of x specifies how far we should travel in
+
+each of these directions, with xi specifying how far to move in the direction of
+
+column i:
+
+ Ax = xiA:,i.
+
+(2.27)
+
+i
+
+In general, this kind of operation is called a linear combination. Formally, a linear combination of some set of vectors {v(1), . . . , v(n)} is given by multiplying each vector v(i) by a corresponding scalar coefficient and adding the results:
+
+ civ(i).
+
+(2.28)
+
+i
+
+The span of a set of vectors is the set of all points obtainable by linear combination of the original vectors.
+
+37
+
+

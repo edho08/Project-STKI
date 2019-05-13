@@ -1,0 +1,23 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+(i.i.d.) data points. A point estimator or statistic is any function of the data:
+
+^m = g(x(1) , . . . , x(m) ).
+
+(5.19)
+
+The definition does not require that g return a value that is close to the true  or even that the range of g is the same as the set of allowable values of . This definition of a point estimator is very general and allows the designer of an estimator great flexibility. While almost any function thus qualifies as an estimator, a good estimator is a function whose output is close to the true underlying  that generated the training data.
+For now, we take the frequentist perspective on statistics. That is, we assume that the true parameter value  is fixed but unknown, while the point estimate ^ is a function of the data. Since the data is drawn from a random process, any function of the data is random. Therefore ^ is a random variable.
+Point estimation can also refer to the estimation of the relationship between input and target variables. We refer to these types of point estimates as function estimators.
+
+Function Estimation As we mentioned above, sometimes we are interested in performing function estimation (or function approximation). Here we are trying to predict a variable y given an input vector x. We assume that there is a function f (x) that describes the approximate relationship between y and x. For example, we may assume that y = f(x) + , where  stands for the part of y that is not predictable from x. In function estimation, we are interested in approximating f with a model or estimate f^. Function estimation is really just the same as estimating a parameter ; the function estimator f^ is simply a point estimator in function space. The linear regression example (discussed above in section 5.1.4) and the polynomial regression example (discussed in section 5.2) are both examples of scenarios that may be interpreted either as estimating a parameter w or estimating a function f^ mapping from x to y.
+We now review the most commonly studied properties of point estimators and discuss what they tell us about these estimators.
+
+5.4.2 Bias
+The bias of an estimator is defined as: bias(^m) = E(^m) - 
+
+(5.20)
+
+124
+
+

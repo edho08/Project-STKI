@@ -1,0 +1,54 @@
+CHAPTER 2. LINEAR ALGEBRA
+
+
+
+
+
+100
+
+0 1 0 
+
+001
+
+Figure 2.2: Example identity matrix: This is I3.
+
+A2,1 x1 + A2,2x2 + · · · + A2,nxn = b2 ...
+
+(2.17) (2.18)
+
+A m,1x1 + Am,2x2 + · · · + Am,nxn = bm .
+
+(2.19)
+
+Matrix-vector product notation provides a more compact representation for equations of this form.
+
+2.3 Identity and Inverse Matrices
+
+Linear algebra offers a powerful tool called matrix inversion that allows us to analytically solve equation 2.11 for many values of A.
+To describe matrix inversion, we first need to define the concept of an identity matrix. An identity matrix is a matrix that does not change any vector when we multiply that vector by that matrix. We denote the identity matrix that preserves n-dimensional vectors as In. Formally, In  Rn×n, and
+
+x  Rn, Inx = x.
+
+(2.20)
+
+The structure of the identity matrix is simple: all of the entries along the main
+
+diagonal are 1, while all of the other entries are zero. See figure 2.2 for an example.
+
+The matrix inverse of A is denoted as A-1, and it is defined as the matrix
+
+such that
+
+A-1A = In.
+
+(2.21)
+
+We can now solve equation 2.11 by the following steps:
+
+Ax = b A-1Ax = A -1b
+In x = A-1b
+36
+
+(2.22) (2.23) (2.24)
+
+

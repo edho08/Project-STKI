@@ -1,0 +1,74 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+There are many ways of parametrizing Gaussian-Bernoulli RBMs. One choice
+
+is whether to use a covariance matrix or a precision matrix for the Gaussian
+
+distribution. Here we present the precision formulation. The modification to obtain
+
+the covariance formulation is straightforward. We wish to have the conditional
+
+distribution
+
+p(v | h) = N (v; W h, -1).
+
+(20.38)
+
+We can find the terms we need to add to the energy function by expanding the unnormalized log conditional distribution:
+
+log N (v; W h, -1) = - 1 (v - W h)  (v - W h) + f (). 2
+
+(20.39)
+
+Here f encapsulates all the terms that are a function only of the parameters and not the random variables in the model. We can discard f because its only role is to normalize the distribution, and the partition function of whatever energy function we choose will carry out that role.
+If we include all of the terms (with their sign flipped) involving v from equation 20.39 in our energy function and do not add any other terms involving v, then our energy function will represent the desired conditional p(v | h).
+We have some freedom regarding the other conditional distribution, p(h | v). Note that equation 20.39 contains a term
+
+1hW 2
+
+
+
+W
+
+h.
+
+(20.40)
+
+This term cannot be included in its entirety because it includes hihj terms. These
+
+correspond to edges between the hidden units. If we included these terms, we
+
+would have a linear factor model instead of a restricted Boltzmann machine. When
+
+designing our Boltzmann machine, we simply omit these hi hj cross terms. Omitting
+
+them does not change the conditional p(v | h) so equation 20.39 is still respected.
+
+However, we still have a choice about whether to include the terms involving only
+
+a single hi. If we assume a diagonal precision matrix, we find that for each hidden
+
+unit hi we have a term
+
+12h
+
+i
+
+
+j
+
+j
+
+W
+
+j2,i.
+
+(20.41)
+
+In the above, we used the fact that h2i = hi because hi  {0, 1}. If we include this term (with its sign flipped) in the energy function, then it will naturally bias hi to be turned off when the weights for that unit are large and connected to visible
+units with high precision. The choice of whether or not to include this bias term
+does not affect the family of distributions the model can represent (assuming that
+
+677
+
+

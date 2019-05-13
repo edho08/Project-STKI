@@ -1,0 +1,126 @@
+CHAPTER 10. SEQUENCE MODELING: RECURRENT AND RECURSIVE NETS
+
+to the unrolled computational graph. No specialized algorithms are necessary. Gradients obtained by back-propagation may then be used with any general-purpose gradient-based techniques to train an RNN.
+To gain some intuition for how the BPTT algorithm behaves, we provide an example of how to compute gradients by BPTT for the RNN equations above (equation 10.8 and equation 10.12). The nodes of our computational graph include the parameters U , V , W , b and c as well as the sequence of nodes indexed by t for x(t), h(t) , o(t) and L(t). For each node N we need to compute the gradient NL recursively, based on the gradient computed at nodes that follow it in the graph. We start the recursion with the nodes immediately preceding the final loss
+
+L L(t) = 1.
+
+(10.17)
+
+In this derivation we assume that the outputs o(t) are used as the argument to the
+
+softmax function to obtain the vector y^ of probabilities over the output. We also assume that the loss is the negative log-likelihood of the true target y(t) given the
+
+input so far. The gradient o(t)L on the outputs at time step t, for all i, t, is as
+
+follows:
+
+(o(t) L)i =
+
+L  o(i t)
+
+=
+
+L L(t) L(t) o(it)
+
+= y^i(t) - 1i,y(t) .
+
+(10.18)
+
+We work our way backwards, starting from the end of the sequence. At the final time step  , h() only has o() as a descendent, so its gradient is simple:
+
+ L () = V   () L.
+
+h
+
+o
+
+(10.19)
+
+We can then iterate backwards in time to back-propagate gradients through time, from t =  - 1 down to t = 1, noting that h(t) (for t < ) has as descendents both o(t) and h(t+1). Its gradient is thus given by
+
+ (t)
+h
+
+L
+
+=
+
+
+
+ h(t+1)  h(t)
+
+
+
+( (t+1)
+h
+
+L)
+
++
+
+  o(t)  h(t)
+
+
+
+( (t)L)
+o
+
+=
+
+W
+
+
+
+(
+h
+
+(t+1)L)
+
+diag
+
+ 1
+
+-
+
+ h(t+1)
+
+ 2
+
++
+
+V
+
+
+
+(o(t) L)
+
+(10.20) (10.21)
+
+where
+
+diag
+
+ 1
+
+- h(t+1) 2
+
+indicates
+
+the
+
+diagonal
+
+matrix
+
+containing
+
+the
+
+elements
+
+1 - (h(it+1) )2 . This is the Jacobian of the hyperbolic tangent associated with the hidden unit i at time t + 1.
+
+385
+
+

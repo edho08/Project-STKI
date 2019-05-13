@@ -1,0 +1,39 @@
+CHAPTER 7. REGULARIZATION FOR DEEP LEARNING
+
+robust to small changes anywhere along the manifold where the unlabeled data lies. The assumption motivating this approach is that different classes usually lie on disconnected manifolds, and a small perturbation should not be able to jump from one class manifold to another class manifold.
+
+7.14 Tangent Distance, Tangent Prop, and Manifold Tangent Classifier
+
+Many machine learning algorithms aim to overcome the curse of dimensionality by assuming that the data lies near a low-dimensional manifold, as described in section 5.11.3.
+
+One of the early attempts to take advantage of the manifold hypothesis is the tangent distance algorithm (Simard et al., 1993, 1998). It is a non-parametric nearest-neighbor algorithm in which the metric used is not the generic Euclidean distance but one that is derived from knowledge of the manifolds near which probability concentrates. It is assumed that we are trying to classify examples and that examples on the same manifold share the same category. Since the classifier should be invariant to the local factors of variation that correspond to movement on the manifold, it would make sense to use as nearest-neighbor distance between points x1 and x2 the distance between the manifolds M1 and M2 to which they respectively belong. Although that may be computationally difficult (it would
+require solving an optimization problem, to find the nearest pair of points on M1 and M2), a cheap alternative that makes sense locally is to approximate Mi by its tangent plane at xi and measure the distance between the two tangents, or between a tangent plane and a point. That can be achieved by solving a low-dimensional linear system (in the dimension of the manifolds). Of course, this algorithm requires one to specify the tangent vectors.
+
+In a related spirit, the tangent prop algorithm (Simard et al., 1992) (figure 7.9)
+trains a neural net classifier with an extra penalty to make each output f(x) of
+the neural net locally invariant to known factors of variation. These factors of
+variation correspond to movement along the manifold near which examples of the
+same class concentrate. Local invariance is achieved by requiring xf (x) to be orthogonal to the known manifold tangent vectors v(i) at x , or equivalently that the directional derivative of f at x in the directions v (i) be small by adding a
+regularization penalty :
+
+(f )
+
+=
+
+
+
+ (xf (x))
+
+v(i)
+
+2
+
+.
+
+i
+
+(7.67)
+
+270
+
+

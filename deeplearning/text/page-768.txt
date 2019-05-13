@@ -1,0 +1,20 @@
+BIBLIOGRAPHY
+Levenberg, K. (1944). A method for the solution of certain non-linear problems in least squares. Quarterly Journal of Applied Mathematics , II(2), 164­168. 312
+L'Hôpital, G. F. A. (1696). Analyse des infiniment petits, pour l'intelligence des lignes courbes. Paris: L'Imprimerie Royale. 225
+Li, Y., Swersky, K., and Zemel, R. S. (2015). Generative moment matching networks. CoRR, abs/1502.02761. 703
+Lin, T., Horne, B. G., Tino, P., and Giles, C. L. (1996). Learning long-term dependencies is not as difficult with NARX recurrent neural networks. IEEE Transactions on Neural Networks, 7(6), 1329­1338. 407
+Lin, Y., Liu, Z., Sun, M., Liu, Y., and Zhu, X. (2015). Learning entity and relation embeddings for knowledge graph completion. In Proc. AAAI'15 . 484
+Linde, N. (1992). The machine that changed the world, episode 3. Documentary miniseries. 2
+Lindsey, C. and Lindblad, T. (1994). Review of hardware neural networks: a user's perspective. In Proc. Third Workshop on Neural Networks: From Biology to High Energy Physics , pages 195­­202, Isola d'Elba, Italy. 451
+Linnainmaa, S. (1976). Taylor expansion of the accumulated rounding error. BIT Numerical Mathematics , 16(2), 146­160. 225
+LISA (2008). Deep learning tutorials: Restricted Boltzmann machines. Technical report, LISA Lab, Université de Montréal. 589
+Long, P. M. and Servedio, R. A. (2010). Restricted Boltzmann machines are hard to approximately evaluate or simulate. In Proceedings of the 27th International Conference on Machine Learning (ICML'10). 658
+Lotter, W., Kreiman, G., and Cox, D. (2015). Unsupervised learning of visual structure using predictive generative networks. arXiv preprint arXiv:1511.06380 . 544, 545
+Lovelace, A. (1842). Notes upon L. F. Menabrea's " Sketch of the Analytical Engine invented by Charles Babbage". 1
+Lu, L., Zhang, X., Cho, K., and Renals, S. (2015). A study of the recurrent neural network encoder-decoder for large vocabulary speech recognition. In Proc. Interspeech . 461
+Lu, T., Pál, D., and Pál, M. (2010). Contextual multi-armed bandits. In International Conference on Artificial Intelligence and Statistics , pages 485­492. 480
+Luenberger, D. G. (1984). Linear and Nonlinear Programming. Addison Wesley. 316
+Lukosevicius, M. and Jaeger, H. (2009). Reservoir computing approaches to recurrent neural network training. Computer Science Review, 3(3), 127­149. 404
+753
+
+

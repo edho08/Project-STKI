@@ -1,0 +1,81 @@
+CHAPTER 3. PROBABILITY AND INFORMATION THEORY
+
+3.3.2 Continuous Variables and Probability Density Functions
+
+When working with continuous random variables, we describe probability distributions using a probability density function (PDF) rather than a probability mass function. To be a probability density function, a function p must satisfy the following properties:
+
+· The domain of p must be the set of all possible states of x.
+
+· x  x, p(x)  0. Note that we do not require p(x)  1. 
+· p(x)dx = 1.
+
+A probability density function p(x) does not give the probability of a specific state directly, instead the probability of landing inside an infinitesimal region with volume x is given by p(x)x.
+
+We can integrate the density function to find the actual probability mass of a
+
+set of points. Specifically, the probability that x lies in some set S is given by the
+
+integral of p (x) over that set. In the univariate example, the probability that x lies in the interval [a, b] is given by [a,b]p(x)dx.
+
+For an example of a probability density function corresponding to a specific
+
+probability density over a continuous random variable, consider a uniform distribu-
+
+tion on an interval of the real numbers. We can do this with a function u(x; a, b),
+
+where a and b are the endpoints of the interval, with b > a. The ";" notation means
+
+"parametrized by"; we consider x to be the argument of the function, while a and
+
+b are parameters that define the function. To ensure that there is no probability
+
+mass outside the interval, we say u(x; a, b) = 0 for all x  [a, b]. Within [a, b],
+
+u(x; a, b)
+
+=
+
+1 b-a
+
+.
+
+We
+
+can
+
+see
+
+that
+
+this
+
+is
+
+nonnegative
+
+everywhere.
+
+Additionally,
+
+it
+
+integrates to 1. We often denote that x follows the uniform distribution on [a, b]
+
+by writing x  U(a, b).
+
+3.4 Marginal Probability
+
+Sometimes we know the probability distribution over a set of variables and we want to know the probability distribution over just a subset of them. The probability distribution over the subset is known as the marginal probability distribution.
+
+For example, suppose we have discrete random variables x and y, and we know
+
+P (x, y). We can find P (x) with the sum rule: 
+x  x, P (x = x) = P (x = x, y = y).
+
+(3.3)
+
+y
+
+58
+
+

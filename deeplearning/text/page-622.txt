@@ -1,0 +1,44 @@
+CHAPTER 18. CONFRONTING THE PARTITION FUNCTION
+
+= Exp(x) log p~(x).
+
+(18.13)
+
+This derivation made use of summation over discrete x, but a similar result
+
+applies using integration over continuous x. In the continuous version of the
+
+derivation, we use Leibniz's rule for differentiation under the integral sign to obtain
+
+the identity
+
+
+
+
+
+ p~(x)dx = p~(x)dx.
+
+(18.14)
+
+This identity is applicable only under certain regularity conditions on p~ and p~(x). In measure theoretic terms, the conditions are: (i) The unnormalized distribution p~
+must be a Lebesgue-integrable function of x for every value of ; (ii) The gradient
+p~(x) must exist for all  and almost all x; (iii) There must exist an integrable function R(x) that bounds  p~(x) in the sense that maxi |i p~(x)|  R(x) for all  and almost all x. Fortunately, most machine learning models of interest have
+these properties.
+
+This identity
+
+ log Z = Exp(x)  log p~(x)
+
+(18.15)
+
+is the basis for a variety of Monte Carlo methods for approximately maximizing the likelihood of models with intractable partition functions.
+
+The Monte Carlo approach to learning undirected models provides an intuitive framework in which we can think of both the positive phase and the negative phase. In the positive phase, we increase log p~(x) for x drawn from the data. In the negative phase, we decrease the partition function by decreasing log p~(x) drawn from the model distribution.
+
+In the deep learning literature, it is common to parametrize log p~ in terms of an energy function (equation 16.7). In this case, we can interpret the positive phase as pushing down on the energy of training examples and the negative phase as pushing up on the energy of samples drawn from the model, as illustrated in figure 18.1.
+
+18.2 Stochastic Maximum Likelihood and Contrastive Divergence
+The naive way of implementing equation 18.15 is to compute it by burning in a set of Markov chains from a random initialization every time the gradient is needed. When learning is performed using stochastic gradient descent, this means the chains must be burned in once per gradient step. This approach leads to the
+607
+
+

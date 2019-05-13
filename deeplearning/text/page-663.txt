@@ -1,0 +1,37 @@
+CHAPTER 19. APPROXIMATE INFERENCE
+
+described as a mixture of Dirac distributions. Because Dirac distributions are not described by a single probability distribution function, no Dirac or mixture of Dirac distribution corresponds to a single specific point in function space. These distributions are thus invisible to our method of solving for a specific point where the functional derivatives are zero. This is a limitation of the method. Distributions such as the Dirac must be found by other methods, such as guessing the solution and then proving that it is correct.
+
+19.4.3 Continuous Latent Variables
+
+When our graphical model contains continuous latent variables, we may still perform variational inference and learning by maximizing L. However, we must now use calculus of variations when maximizing L with respect to q(h | v).
+
+In most cases, practitioners need not solve any calculus of variations problems
+
+themselves. Instead, there is a general equation for the mean field fixed point
+
+updates. If we make the mean field approximation
+
+ q(h | v) = q(hi | v),
+
+(19.55)
+
+i
+
+and fix q(hj | v) for all j = i, then the optimal q(hi | v ) may be obtained by normalizing the unnormalized distribution
+
+
+
+
+
+q~(hi | v) = exp Eh-iq(h-i |v) log p~(v, h)
+
+(19.56)
+
+so long as p does not assign 0 probability to any joint configuration of variables. Carrying out the expectation inside the equation will yield the correct functional form of q(hi | v). It is only necessary to derive functional forms of q directly using calculus of variations if one wishes to develop a new form of variational learning; equation 19.56 yields the mean field approximation for any probabilistic model.
+Equation 19.56 is a fixed point equation, designed to be iteratively applied for each value of i repeatedly until convergence. However, it also tells us more than that. It tells us the functional form that the optimal solution will take, whether we arrive there by fixed point equations or not. This means we can take the functional form from that equation but regard some of the values that appear in it as parameters, that we can optimize with any optimization algorithm we like.
+As an example, consider a very simple probabilistic model, with latent variables h  R2 and just one visible variable, v. Suppose that p(h) = N (h; 0, I) and p(v | h) = N (v ;wh; 1). We could actually simplify this model by integrating out h; the result is just a Gaussian distribution over v. The model itself is not
+
+648
+
+

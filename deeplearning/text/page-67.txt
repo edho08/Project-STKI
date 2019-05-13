@@ -1,0 +1,19 @@
+CHAPTER 2. LINEAR ALGEBRA
+
+= arg max Tr(XXdd ) subject to dd = 1
+d
+= arg max Tr(d X Xd) subject to dd = 1
+d
+
+(2.83) (2.84)
+
+This optimization problem may be solved using eigendecomposition. Specifically, the optimal d is given by the eigenvector of XX corresponding to the largest
+eigenvalue.
+
+This derivation is specific to the case of l = 1 and recovers only the first principal component. More generally, when we wish to recover a basis of principal components, the matrix D is given by the l eigenvectors corresponding to the largest eigenvalues. This may be shown using proof by induction. We recommend writing this proof as an exercise.
+
+Linear algebra is one of the fundamental mathematical disciplines that is necessary to understand deep learning. Another key area of mathematics that is ubiquitous in machine learning is probability theory, presented next.
+
+52
+
+

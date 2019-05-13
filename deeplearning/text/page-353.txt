@@ -1,0 +1,50 @@
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+s1
+
+s2
+
+s3
+
+s4
+
+s5
+
+x1
+
+x2
+
+x3
+
+x4
+
+x5
+
+s1
+
+s2
+
+s3
+
+s4
+
+s5
+
+x1
+
+x2
+
+x3
+
+x4
+
+x5
+
+Figure 9.5: Parameter sharing: Black arrows indicate the connections that use a particular parameter in two different models. (Top)The black arrows indicate uses of the central element of a 3-element kernel in a convolutional model. Due to parameter sharing, this single parameter is used at all input locations. (Bottom)The single black arrow indicates the use of the central element of the weight matrix in a fully connected model. This model has no parameter sharing so the parameter is used only once.
+
+for every location, we learn only one set. This does not affect the runtime of forward propagation--it is still O(k × n)--but it does further reduce the storage requirements of the model to k parameters. Recall that k is usually several orders of magnitude less than m. Since m and n are usually roughly the same size, k is practically insignificant compared to m × n. Convolution is thus dramatically more efficient than dense matrix multiplication in terms of the memory requirements and statistical efficiency. For a graphical depiction of how parameter sharing works, see figure 9.5.
+As an example of both of these first two principles in action, figure 9.6 shows how sparse connectivity and parameter sharing can dramatically improve the efficiency of a linear function for detecting edges in an image.
+In the case of convolution, the particular form of parameter sharing causes the layer to have a property called equivariance to translation. To say a function is equivariant means that if the input changes, the output changes in the same way. Specifically, a function f (x) is equivariant to a function g if f(g(x)) = g(f (x)). In the case of convolution, if we let g be any function that translates the input, i.e., shifts it, then the convolution function is equivariant to g. For example, let I be a function giving image brightness at integer coordinates. Let g be a function
+338
+
+

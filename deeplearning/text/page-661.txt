@@ -1,0 +1,99 @@
+CHAPTER 19. APPROXIMATE INFERENCE
+
+To gain some intuition for this identity, one can think of f(x) as being a vector
+with uncountably many elements, indexed by a real vector x. In this (somewhat
+incomplete view), the identity providing the functional derivatives is the same as we would obtain for a vector   Rn indexed by positive integers:
+
+ i
+
+ g(j, j)
+j
+
+=
+
+ i
+
+g(i
+
+,
+
+i).
+
+(19.47)
+
+Many results in other machine learning publications are presented using the more general Euler-Lagrange equation which allows g to depend on the derivatives of f as well as the value of f , but we do not need this fully general form for the results presented in this book.
+To optimize a function with respect to a vector, we take the gradient of the function with respect to the vector and solve for the point where every element of the gradient is equal to zero. Likewise, we can optimize a functional by solving for the function where the functional derivative at every point is equal to zero.
+As an example of how this process works, consider the problem of finding the probability distribution function over x  R that has maximal differential entropy. Recall that the entropy of a probability distribution p(x) is defined as
+
+H [p] = -Ex log p(x).
+
+(19.48)
+
+For continuous values, the expectation is an integral: 
+H [p] = - p(x) log p(x)dx.
+
+(19.49)
+
+We cannot simply maximize H[p ] with respect to the function p(x), because the
+
+result might not be a probability distribution. Instead, we need to use Lagrange
+
+multipliers to add a constraint that p(x) integrates to 1. Also, the entropy
+
+increases without bound as the variance increases. This makes the question of
+
+which distribution has the greatest entropy uninteresting. Instead, we ask which distribution has maximal entropy for fixed variance 2. Finally, the problem
+
+is underdetermined because the distribution can be shifted arbitrarily without
+
+changing the entropy. To impose a unique solution, we add a constraint that the
+
+mean of the distribution be µ. The Lagrangian functional for this optimization
+
+problem is
+
+ L[p] = 1
+
+p(x)dx
+
+-
+
+ 1
+
++
+
+2
+
+(E[x]
+
+-
+
+µ)+
+
+
+
+3
+
+ E[(x
+
+-
+
+µ)2
+
+]
+
+-
+
+2
+
+
+
++
+
+H[p]
+
+(19.50)
+
+646
+
+

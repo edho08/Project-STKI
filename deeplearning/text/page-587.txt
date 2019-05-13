@@ -1,0 +1,37 @@
+CHAPTER 16. STRUCTURED PROBABILISTIC MODELS FOR DEEP LEARNING
+
+a
+
+s
+
+b
+
+a
+
+s
+
+b
+
+(a)
+
+(b)
+
+Figure 16.6: (a) The path between random variable a and random variable b through s is active, because s is not observed. This means that a and b are not separated. (b) Here s is shaded in, to indicate that it is observed. Because the only path between a and b is through s, and that path is inactive, we can conclude that a and b are separated given s.
+
+called the free energy: 
+F(x) = - log exp (-E(x, h)) .
+
+(16.8)
+
+h
+
+In this book, we usually prefer the more general log p~model(x) formulation.
+
+16.2.5 Separation and D-Separation
+The edges in a graphical model tell us which variables directly interact. We often need to know which variables indirectly interact. Some of these indirect interactions can be enabled or disabled by observing other variables. More formally, we would like to know which subsets of variables are conditionally independent from each other, given the values of other subsets of variables.
+Identifying the conditional independences in a graph is very simple in the case of undirected models. In this case, conditional independence implied by the graph is called separation. We say that a set of variables A is separated from another set of variables B given a third set of variables S if the graph structure implies that A is independent from B given S. If two variables a and b are connected by a path involving only unobserved variables, then those variables are not separated. If no path exists between them, or all paths contain an observed variable, then they are separated. We refer to paths involving only unobserved variables as "active" and paths including an observed variable as "inactive."
+When we draw a graph, we can indicate observed variables by shading them in. See figure 16.6 for a depiction of how active and inactive paths in an undirected model look when drawn in this way. See figure 16.7 for an example of reading separation from an undirected graph.
+Similar concepts apply to directed models, except that in the context of directed models, these concepts are referred to as d-separation. The "d" stands for "dependence." D-separation for directed graphs is defined the same as separation
+572
+
+

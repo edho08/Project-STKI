@@ -1,0 +1,58 @@
+CONTENTS
+
+dy dx y x xy
+X y
+Xy
+f x 2xf (x) or H (f )(x) f (x)dx  f (x)dx
+S
+
+Calculus Derivative of y with respect to x
+Partial derivative of y with respect to x Gradient of y with respect to x Matrix derivatives of y with respect to X Tensor containing derivatives of y with respect to X Jacobian matrix J  Rm×n of f : Rn  Rm The Hessian matrix of f at input point x Definite integral over the entire domain of x
+Definite integral with respect to x over the set S
+
+Probability and Information Theory
+
+ab
+
+The random variables a and b are independent
+
+ab | c
+
+They are conditionally independent given c
+
+P (a)
+
+A probability distribution over a discrete variable
+
+p(a)
+
+A probability distribution over a continuous vari-
+
+able, or over a variable whose type has not been
+
+specified
+
+aP
+
+Random variable a has distribution P
+
+ExP [f (x)] or Ef (x) Expectation of f (x) with respect to P (x)
+
+Var(f (x))
+
+Variance of f (x) under P (x)
+
+Cov(f (x), g(x)) Covariance of f (x) and g(x) under P (x)
+
+H (x)
+
+Shannon entropy of the random variable x
+
+DKL(P Q) N (x; µ, )
+
+Kullback-Leibler divergence of P and Q
+Gaussian distribution over x with mean µ and covariance 
+
+xiii
+
+

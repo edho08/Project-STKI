@@ -1,0 +1,14 @@
+CHAPTER 15. REPRESENTATION LEARNING
+
+Ground Truth
+
+MSE
+
+Adversarial
+
+Figure 15.6: Predictive generative networks provide an example of the importance of learning which features are salient. In this example, the predictive generative network has been trained to predict the appearance of a 3-D model of a human head at a specific viewing angle. (Left)Ground truth. This is the correct image, that the network should emit. (Center)Image produced by a predictive generative network trained with mean squared error alone. Because the ears do not cause an extreme difference in brightness compared to the neighboring skin, they were not sufficiently salient for the model to learn to represent them. (Right)Image produced by a model trained with a combination of mean squared error and adversarial loss. Using this learned cost function, the ears are salient because they follow a predictable pattern. Learning which underlying causes are important and relevant enough to model is an important active area of research. Figures graciously provided by Lotter et al. (2015).
+recognizable shape and consistent position means that a feedforward network can easily learn to detect them, making them highly salient under the generative adversarial framework. See figure 15.6 for example images. Generative adversarial networks are only one step toward determining which factors should be represented. We expect that future research will discover better ways of determining which factors to represent, and develop mechanisms for representing different factors depending on the task.
+A benefit of learning the underlying causal factors, as pointed out by Schölkopf et al. (2012), is that if the true generative process has x as an effect and y as a cause, then modeling p(x | y) is robust to changes in p(y). If the cause-effect relationship was reversed, this would not be true, since by Bayes' rule, p( x | y) would be sensitive to changes in p(y). Very often, when we consider changes in distribution due to different domains, temporal non-stationarity, or changes in the nature of the task, the causal mechanisms remain invariant (the laws of the universe are constant) while the marginal distribution over the underlying causes can change. Hence, better generalization and robustness to all kinds of changes can
+545
+
+

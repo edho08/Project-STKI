@@ -1,0 +1,21 @@
+CHAPTER 12. APPLICATIONS
+
+information (Chorowski et al., 2014; Lu et al., 2015).
+
+12.4 Natural Language Processing
+Natural language processing (NLP) is the use of human languages, such as English or French, by a computer. Computer programs typically read and emit specialized languages designed to allow efficient and unambiguous parsing by simple programs. More naturally occurring languages are often ambiguous and defy formal description. Natural language processing includes applications such as machine translation, in which the learner must read a sentence in one human language and emit an equivalent sentence in another human language. Many NLP applications are based on language models that define a probability distribution over sequences of words, characters or bytes in a natural language.
+As with the other applications discussed in this chapter, very generic neural network techniques can be successfully applied to natural language processing. However, to achieve excellent performance and to scale well to large applications, some domain-specific strategies become important. To build an efficient model of natural language, we must usually use techniques that are specialized for processing sequential data. In many cases, we choose to regard natural language as a sequence of words, rather than a sequence of individual characters or bytes. Because the total number of possible words is so large, word-based language models must operate on an extremely high-dimensional and sparse discrete space. Several strategies have been developed to make models of such a space efficient, both in a computational and in a statistical sense.
+
+12.4.1 n-grams
+
+A language model defines a probability distribution over sequences of tokens in a natural language. Depending on how the model is designed, a token may be a word, a character, or even a byte. Tokens are always discrete entities. The earliest successful language models were based on models of fixed-length sequences of tokens called n-grams. An n-gram is a sequence of n tokens.
+Models based on n-grams define the conditional probability of the n-th token given the preceding n - 1 tokens. The model uses products of these conditional distributions to define the probability distribution over longer sequences:
+
+ P (x1 , . . . , x ) = P (x1, . . . , xn-1) P (xt | xt-n+1, . . . , xt-1).
+t=n
+
+(12.5)
+
+461
+
+

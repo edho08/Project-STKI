@@ -1,0 +1,25 @@
+CHAPTER 3. PROBABILITY AND INFORMATION THEORY
+
+3.13 Information Theory
+
+Information theory is a branch of applied mathematics that revolves around quantifying how much information is present in a signal. It was originally invented to study sending messages from discrete alphabets over a noisy channel, such as communication via radio transmission. In this context, information theory tells how to design optimal codes and calculate the expected length of messages sampled from specific probability distributions using various encoding schemes. In the context of machine learning, we can also apply information theory to continuous variables where some of these message length interpretations do not apply. This field is fundamental to many areas of electrical engineering and computer science. In this textbook, we mostly use a few key ideas from information theory to characterize probability distributions or quantify similarity between probability distributions. For more detail on information theory, see Cover and Thomas (2006) or MacKay (2003).
+The basic intuition behind information theory is that learning that an unlikely event has occurred is more informative than learning that a likely event has occurred. A message saying "the sun rose this morning" is so uninformative as to be unnecessary to send, but a message saying "there was a solar eclipse this morning" is very informative.
+We would like to quantify information in a way that formalizes this intuition. Specifically,
+
+· Likely events should have low information content, and in the extreme case, events that are guaranteed to happen should have no information content whatsoever.
+· Less likely events should have higher information content.
+· Independent events should have additive information. For example, finding out that a tossed coin has come up as heads twice should convey twice as much information as finding out that a tossed coin has come up as heads once.
+
+In order to satisfy all three of these properties, we define the self-information
+
+of an event x = x to be
+
+I(x) = - log P (x).
+
+(3.48)
+
+In this book, we always use log to mean the natural logarithm, with base e. Our definition of I (x) is therefore written in units of nats. One nat is the amount of
+
+73
+
+

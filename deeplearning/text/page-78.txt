@@ -1,0 +1,71 @@
+CHAPTER 3. PROBABILITY AND INFORMATION THEORY
+
+parametrized by a vector p  [0, 1]k-1, where pi gives the probability of the i-th state. The final, k-th state's probability is given by 1 - 1p. Note that we must constrain 1p  1. Multinoulli distributions are often used to refer to distributions over categories of objects, so we do not usually assume that state 1 has numerical value 1, etc. For this reason, we do not usually need to compute the expectation or variance of multinoulli-distributed random variables.
+The Bernoulli and multinoulli distributions are sufficient to describe any distribution over their domain. They are able to describe any distribution over their domain not so much because they are particularly powerful but rather because their domain is simple; they model discrete variables for which it is feasible to enumerate all of the states. When dealing with continuous variables, there are uncountably many states, so any distribution described by a small number of parameters must impose strict limits on the distribution.
+
+3.9.3 Gaussian Distribution
+
+The most commonly used distribution over real numbers is the normal distribution, also known as the Gaussian distribution:
+
+N
+
+(x;
+
+µ,
+
+2)
+
+=
+
+
+
+1 22
+
+exp
+
+ -
+
+1
+
+2
+
+2
+
+(x
+
+-
+
+ µ)2
+
+.
+
+(3.21)
+
+See figure 3.1 for a plot of the density function.
+The two parameters µ  R and   (0, ) control the normal distribution. The parameter µ gives the coordinate of the central peak. This is also the mean of the distribution: E[x] = µ. The standard deviation of the distribution is given by , and the variance by 2.
+
+When we evaluate the PDF, we need to square and invert . When we need to frequently evaluate the PDF with different parameter values, a more efficient way of parametrizing the distribution is to use a parameter   (0, ) to control the precision or inverse variance of the distribution:
+
+
+
+
+
+
+
+N (x; µ, -1) =
+
+ 2
+
+exp
+
+-1 (x - µ)2 2
+
+.
+
+(3.22)
+
+Normal distributions are a sensible choice for many applications. In the absence of prior knowledge about what form a distribution over the real numbers should take, the normal distribution is a good default choice for two major reasons.
+
+63
+
+

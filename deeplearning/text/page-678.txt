@@ -1,0 +1,63 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+h(12)
+
+h(22)
+
+h(32)
+
+h(11)
+
+h(21)
+
+h(31)
+
+h(41)
+
+v1
+
+v2
+
+v3
+
+Figure 20.2: The graphical model for a deep Boltzmann machine with one visible layer (bottom) and two hidden layers. Connections are only between units in neighboring layers. There are no intralayer layer connections.
+
+20.4 Deep Boltzmann Machines
+
+A deep Boltzmann machine or DBM (Salakhutdinov and Hinton, 2009a) is another kind of deep, generative model. Unlike the deep belief network (DBN), it is an entirely undirected model. Unlike the RBM, the DBM has several layers of latent variables (RBMs have just one). But like the RBM, within each layer, each of the variables are mutually independent, conditioned on the variables in the neighboring layers. See figure 20.2 for the graph structure. Deep Boltzmann machines have been applied to a variety of tasks including document modeling (Srivastava et al., 2013).
+
+Like RBMs and DBNs, DBMs typically contain only binary units--as we assume for simplicity of our presentation of the model--but it is straightforward to include real-valued visible units.
+
+A DBM is an energy-based model, meaning that the the joint probability
+distribution over the model variables is parametrized by an energy function E . In
+the case of a deep Boltzmann machine with one visible layer, v, and three hidden layers, h(1), h(2) and h(3), the joint probability is given by:
+
+P
+
+
+
+
+
+v, h(1), h(2), h(3)
+
+=
+
+1 Z()
+
+exp
+
+
+
+
+
+-E(v, h(1), h(2), h(3) ; ) .
+
+(20.24)
+
+To simplify our presentation, we omit the bias parameters below. The DBM energy function is then defined as follows:
+
+E(v, h(1) , h(2), h(3); ) = -vW (1)h(1) - h(1)W (2)h(2) - h(2)W (3)h(3). (20.25)
+
+663
+
+

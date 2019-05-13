@@ -1,0 +1,80 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+z f
+y f
+x f
+w
+
+z f
+y f
+x f
+w
+
+f  dz dy
+
+f  dy dx
+
+× dz dx
+
+f  dx dw
+
+× dz dw
+
+Figure 6.10: An example of the symbol-to-symbol approach to computing derivatives. In
+
+this approach, the back-propagation algorithm does not need to ever access any actual
+
+specific numeric values. Instead, it adds nodes to a computational graph describing how
+
+to compute these derivatives. A generic graph evaluation engine can later compute the
+
+derivatives for any specific numeric values. (Left)In this example, we begin with a graph
+
+representing z = f (f(f (w))). (Right)We run the back-propagation algorithm, instructing
+
+it
+
+to
+
+construct
+
+the
+
+graph
+
+for
+
+the
+
+expression
+
+corresponding
+
+to
+
+dz dw
+
+.
+
+In
+
+this
+
+example,
+
+we
+
+do
+
+not explain how the back-propagation algorithm works. The purpose is only to illustrate
+
+what the desired result is: a computational graph with a symbolic description of the
+
+derivative.
+
+Some approaches to back-propagation take a computational graph and a set of numerical values for the inputs to the graph, then return a set of numerical values describing the gradient at those input values. We call this approach "symbolto-number" differentiation. This is the approach used by libraries such as Torch (Collobert et al., 2011b) and Caffe (Jia, 2013).
+Another approach is to take a computational graph and add additional nodes to the graph that provide a symbolic description of the desired derivatives. This is the approach taken by Theano (Bergstra et al., 2010; Bastien et al., 2012) and TensorFlow (Abadi et al., 2015). An example of how this approach works is illustrated in figure 6.10. The primary advantage of this approach is that the derivatives are described in the same language as the original expression. Because the derivatives are just another computational graph, it is possible to run back-propagation again, differentiating the derivatives in order to obtain higher derivatives. Computation of higher-order derivatives is described in section 6.5.10.
+We will use the latter approach and describe the back-propagation algorithm in
+214
+
+

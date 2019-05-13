@@ -1,0 +1,77 @@
+CHAPTER 17. MONTE CARLO METHODS
+
+integrals at reduced cost. Sometimes we use this to provide a significant speedup to a costly but tractable sum, as in the case when we subsample the full training cost with minibatches. In other cases, our learning algorithm requires us to approximate an intractable sum or integral, such as the gradient of the log partition function of an undirected model. In many other cases, sampling is actually our goal, in the sense that we want to train a model that can sample from the training distribution.
+
+17.1.2 Basics of Monte Carlo Sampling
+
+When a sum or an integral cannot be computed exactly (for example the sum has an exponential number of terms and no exact simplification is known) it is often possible to approximate it using Monte Carlo sampling. The idea is to view the sum or integral as if it was an expectation under some distribution and to approximate the expectation by a corresponding average. Let
+
+ s = p(x)f (x) = Ep[f (x)]
+
+(17.1)
+
+x
+
+or
+
+
+
+s = p(x)f (x)dx = Ep[f (x)]
+
+(17.2)
+
+be the sum or integral to estimate, rewritten as an expectation, with the constraint that p is a probability distribution (for the sum) or a probability density (for the integral) over random variable x.
+We can approximate s by drawing n samples x(1), . . . , x(n) from p and then forming the empirical average
+
+s^n
+
+=
+
+1 n
+
+n f (x(i)).
+
+i=1
+
+(17.3)
+
+This approximation is justified by a few different properties. The first trivial observation is that the estimator s^ is unbiased, since
+
+E[s^n]
+
+=
+
+1 n
+
+n E[f (x(i))]
+
+=
+
+1 n ns
+
+=
+
+s.
+
+i=1
+
+i=1
+
+(17.4)
+
+But in addition, the law of large numbers states that if the samples x(i) are i.i.d., then the average converges almost surely to the expected value:
+
+lim
+n
+
+s^n
+
+=
+
+s,
+
+591
+
+(17.5)
+
+

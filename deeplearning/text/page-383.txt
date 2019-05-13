@@ -1,0 +1,41 @@
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+Lang and Hinton (1988) introduced the use of back-propagation to train time-delay neural networks (TDNNs). To use contemporary terminology, TDNNs are one-dimensional convolutional networks applied to time series. Backpropagation applied to these models was not inspired by any neuroscientific observation and is considered by some to be biologically implausible. Following the success of back-propagation-based training of TDNNs, (LeCun et al., 1989) developed the modern convolutional network by applying the same training algorithm to 2-D convolution applied to images.
+
+So far we have described how simple cells are roughly linear and selective for certain features, complex cells are more nonlinear and become invariant to some transformations of these simple cell features, and stacks of layers that alternate between selectivity and invariance can yield grandmother cells for very specific phenomena. We have not yet described precisely what these individual cells detect. In a deep, nonlinear network, it can be difficult to understand the function of individual cells. Simple cells in the first layer are easier to analyze, because their responses are driven by a linear function. In an artificial neural network, we can just display an image of the convolution kernel to see what the corresponding channel of a convolutional layer responds to. In a biological neural network, we do not have access to the weights themselves. Instead, we put an electrode in the neuron itself, display several samples of white noise images in front of the animal's retina, and record how each of these samples causes the neuron to activate. We can then fit a linear model to these responses in order to obtain an approximation of the neuron's weights. This approach is known as reverse correlation (Ringach and Shapley, 2004).
+
+Reverse correlation shows us that most V1 cells have weights that are described
+
+by Gabor functions. The Gabor function describes the weight at a 2-D point
+
+in the image. We can think of an image as being a function of 2-D coordinates,
+
+I(x, y). Likewise, we can think of a simple cell as sampling the image at a set of
+
+locations, defined by a set of x coordinates X and a set of y coordinates, Y, and
+
+applying weights that are also a function of the location, w(x, y). From this point
+
+of view, the response of a simple cell to an image is given by
+
+
+
+s(I) =
+
+w(x, y)I(x, y).
+
+(9.15)
+
+xX yY
+
+Specifically, w(x, y) takes the form of a Gabor function: w(x, y; , x, y, f, , x0, y0,  ) =  exp -xx2 - y y2 cos(f x + ), (9.16)
+
+where
+
+x = (x - x0 ) cos( ) + (y - y0) sin( )
+
+(9.17)
+
+368
+
+

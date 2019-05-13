@@ -1,0 +1,19 @@
+BIBLIOGRAPHY
+Bornschein, J., Shabanian, S., Fischer, A., and Bengio, Y. (2015). Training bidirectional Helmholtz machines. Technical report, arXiv:1506.03877. 693
+Boser, B. E., Guyon, I. M., and Vapnik, V. N. (1992). A training algorithm for optimal margin classifiers. In COLT '92: Proceedings of the fifth annual workshop on Computational learning theory, pages 144­152, New York, NY, USA. ACM. 18, 141
+Bottou, L. (1998). Online algorithms and stochastic approximations. In D. Saad, editor, Online Learning in Neural Networks. Cambridge University Press, Cambridge, UK. 296
+Bottou, L. (2011). From machine learning to machine reasoning. Technical report, arXiv.1102.1808. 401
+Bottou, L. (2015). Multilayer neural networks. Deep Learning Summer School. 440
+Bottou, L. and Bousquet, O. (2008). The tradeoffs of large scale learning. In NIPS'2008 . 282, 295
+Boulanger-Lewandowski, N., Bengio, Y., and Vincent, P. (2012). Modeling temporal dependencies in high-dimensional sequences: Application to polyphonic music generation and transcription. In ICML'12 . 685, 686
+Boureau, Y., Ponce, J., and LeCun, Y. (2010). A theoretical analysis of feature pooling in vision algorithms. In Proc. International Conference on Machine learning (ICML'10). 345
+Boureau, Y., Le Roux, N., Bach, F., Ponce, J., and LeCun, Y. (2011). Ask the locals: multi-way local pooling for image recognition. In Proc. International Conference on Computer Vision (ICCV'11). IEEE. 345
+Bourlard, H. and Kamp, Y. (1988). Auto-association by multilayer perceptrons and singular value decomposition. Biological Cybernetics , 59, 291­294. 502
+Bourlard, H. and Wellekens, C. (1989). Speech pattern discrimination and multi-layered perceptrons. Computer Speech and Language , 3, 1­19. 459
+Boyd, S. and Vandenberghe, L. (2004). Convex Optimization . Cambridge University Press, New York, NY, USA. 93
+Brady, M. L., Raghavan, R., and Slawny, J. (1989). Back-propagation fails to separate where perceptrons succeed. IEEE Transactions on Circuits and Systems, 36, 665­674. 284
+Brakel, P., Stroobandt, D., and Schrauwen, B. (2013). Training energy-based models for time-series imputation. Journal of Machine Learning Research , 14, 2771­2797. 674, 698
+Brand, M. (2003). Charting a manifold. In NIPS'2002 , pages 961­968. MIT Press. 164, 518
+727
+
+

@@ -1,0 +1,84 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+appropriate cost function for modeling binary data. More appropriate approaches are described in section 6.2.2.2.
+
+Evaluated on our whole training set, the MSE loss function is
+
+J() =
+
+1 4
+
+ (f (x) - f (x; ))2
+
+.
+
+xX
+
+(6.1)
+
+Now we must choose the form of our model, f (x; ). Suppose that we choose a linear model, with  consisting of w and b. Our model is defined to be
+
+f (x; w, b) = xw + b.
+
+(6.2)
+
+We can minimize J( ) in closed form with respect to w and b using the normal
+
+equations.
+
+After
+
+solving
+
+the
+
+normal
+
+equations,
+
+we
+
+obtain
+
+w
+
+=
+
+0
+
+and
+
+b
+
+=
+
+1 2
+
+.
+
+The
+
+linear
+
+model simply outputs 0.5 everywhere. Why does this happen? Figure 6.1 shows
+
+how a linear model is not able to represent the XOR function. One way to solve
+
+this problem is to use a model that learns a different feature space in which a
+
+linear model is able to represent the solution.
+
+Specifically, we will introduce a very simple feedforward network with one
+hidden layer containing two hidden units. See figure 6.2 for an illustration of
+this model. This feedforward network has a vector of hidden units h that are computed by a function f (1)(x; W , c). The values of these hidden units are then
+used as the input for a second layer. The second layer is the output layer of the
+network. The output layer is still just a linear regression model, but now it is
+applied to h rather than to x . The network now contains two functions chained together: h = f(1)(x; W , c) and y = f(2)(h; w, b), with the complete model being f (x; W , c, w, b) = f (2)(f (1)(x)).
+What function should f(1) compute? Linear models have served us well so far, and it may be tempting to make f(1) be linear as well. Unfortunately, if f(1) were
+linear, then the feedforward network as a whole would remain a linear function of its input. Ignoring the intercept terms for the moment, suppose f(1)(x ) = W x and f(2)(h) = hw. Then f (x) = wW x. We could represent this function as f (x) = x w where w = W w.
+
+Clearly, we must use a nonlinear function to describe the features. Most neural networks do so using an affine transformation controlled by learned parameters, followed by a fixed, nonlinear function called an activation function. We use that strategy here, by defining h = g(W x + c), where W provides the weights of a linear transformation and c the biases. Previously, to describe a linear regression
+
+172
+
+

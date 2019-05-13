@@ -1,0 +1,41 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+X and y, the cost function
+
+J (w, b) = -Ex,yp^data log pmodel (y | x),
+
+(5.100)
+
+the model specification pmodel(y | x) = N (y; xw + b, 1), and, in most cases, the optimization algorithm defined by solving for where the gradient of the cost is zero using the normal equations.
+
+By realizing that we can replace any of these components mostly independently from the others, we can obtain a very wide variety of algorithms.
+
+The cost function typically includes at least one term that causes the learning process to perform statistical estimation. The most common cost function is the negative log-likelihood, so that minimizing the cost function causes maximum likelihood estimation.
+
+The cost function may also include additional terms, such as regularization
+
+terms. For example, we can add weight decay to the linear regression cost function
+
+to obtain
+
+J (w, b) = ||w||22 - Ex,yp^data log pmodel (y | x).
+
+(5.101)
+
+This still allows closed-form optimization.
+
+If we change the model to be nonlinear, then most cost functions can no longer be optimized in closed form. This requires us to choose an iterative numerical optimization procedure, such as gradient descent.
+
+The recipe for constructing a learning algorithm by combining models, costs, and optimization algorithms supports both supervised and unsupervised learning. The linear regression example shows how to support supervised learning. Unsupervised learning can be supported by defining a dataset that contains only X and providing an appropriate unsupervised cost and model. For example, we can obtain the first PCA vector by specifying that our loss function is
+
+J (w) = Exp^data ||x - r(x; w)||22
+
+(5.102)
+
+while our model is defined to have w with norm one and reconstruction function r(x) = wxw.
+In some cases, the cost function may be a function that we cannot actually evaluate, for computational reasons. In these cases, we can still approximately minimize it using iterative numerical optimization so long as we have some way of approximating its gradients.
+Most machine learning algorithms make use of this recipe, though it may not immediately be obvious. If a machine learning algorithm seems especially unique or
+
+154
+
+

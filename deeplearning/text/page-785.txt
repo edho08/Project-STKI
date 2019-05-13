@@ -1,0 +1,19 @@
+BIBLIOGRAPHY
+Sparkes, B. (1996). The Red and the Black: Studies in Greek Pottery. Routledge. 1
+Spitkovsky, V. I., Alshawi, H., and Jurafsky, D. (2010). From baby steps to leapfrog: how "less is more" in unsupervised dependency parsing. In HLT'10 . 328
+Squire, W. and Trapp, G. (1998). Using complex variables to estimate derivatives of real functions. SIAM Rev., 40(1), 110нн112. 439
+Srebro, N. and Shraibman, A. (2005). Rank, trace-norm and max-norm. In Proceedings of the 18th Annual Conference on Learning Theory, pages 545н560. Springer-Verlag. 238
+Srivastava, N. (2013). Improving Neural Networks With Dropout. Master's thesis, U. Toronto. 535
+Srivastava, N. and Salakhutdinov, R. (2012). Multimodal learning with deep Boltzmann machines. In NIPS'2012 . 541
+Srivastava, N., Salakhutdinov, R. R., and Hinton, G. E. (2013). Modeling documents with deep Boltzmann machines. arXiv preprint arXiv:1309.6865 . 663
+Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I., and Salakhutdinov, R. (2014). Dropout: A simple way to prevent neural networks from overfitting. Journal of Machine Learning Research, 15, 1929н1958. 258, 265, 267, 672
+Srivastava, R. K., Greff, K., and Schmidhuber, J. (2015). Highway networks. arXiv:1505.00387 . 326
+Steinkrau, D., Simard, P. Y., and Buck, I. (2005). Using GPUs for machine learning algorithms. 2013 12th International Conference on Document Analysis and Recognition, 0, 1115н1119. 445
+Stoyanov, V., Ropson, A., and Eisner, J. (2011). Empirical risk minimization of graphical model parameters given approximate inference, decoding, and model structure. In Proceedings of the 14th International Conference on Artificial Intelligence and Statistics (AISTATS), volume 15 of JMLR Workshop and Conference Proceedings, pages 725н733, Fort Lauderdale. Supplementary material (4 pages) also available. 674, 698
+Sukhbaatar, S., Szlam, A., Weston, J., and Fergus, R. (2015). Weakly supervised memory networks. arXiv preprint arXiv:1503.08895 . 418
+Supancic, J. and Ramanan, D. (2013). Self-paced learning for long-term tracking. In CVPR'2013 . 328
+Sussillo, D. (2014). Random walks: Training very deep nonlinear feed-forward networks with smart initialization. CoRR, abs/1412.6558. 290, 303, 305, 403
+Sutskever, I. (2012). Training Recurrent Neural Networks. Ph.D. thesis, Department of computer science, University of Toronto. 406, 413
+770
+
+

@@ -1,0 +1,14 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+a)
+
+b)
+
+c)
+
+d)
+
+Figure 20.4: The deep Boltzmann machine training procedure used to classify the MNIST dataset (Salakhutdinov and Hinton, 2009a; Srivastava et al., 2014). (a)Train an RBM by using CD to approximately maximize log P(v). (b)Train a second RBM that models h(1) and target class y by using CD-k to approximately maximize log P (h(1) , y) where h(1) is drawn from the first RBM's posterior conditioned on the data. Increase k from 1 to 20 during learning. (c)Combine the two RBMs into a DBM. Train it to approximately maximize log P(v, y) using stochastic maximum likelihood with k = 5. (d)Delete y from the model. Define a new set of features h(1) and h(2) that are obtained by running mean field inference in the model lacking y. Use these features as input to an MLP whose structure is the same as an additional pass of mean field, with an additional output layer for the estimate of y. Initialize the MLP's weights to be the same as the DBM's weights. Train the MLP to approximately maximize log P (y | v) using stochastic gradient descent and dropout. Figure reprinted from (Goodfellow et al., 2013b).
+672
+
+

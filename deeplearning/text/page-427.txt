@@ -1,0 +1,107 @@
+CHAPTER 10. SEQUENCE MODELING: RECURRENT AND RECURSIVE NETS
+
+Some answers to these questions are given with the recent work on gated RNNs,
+
+whose units are also known as gated recurrent units or GRUs (Cho et al., 2014b;
+
+Chung et al., 2014, 2015a; Jozefowicz et al., 2015; Chrupala et al., 2015). The main
+
+difference with the LSTM is that a single gating unit simultaneously controls the
+
+forgetting factor and the decision to update the state unit. The update equations
+
+are the following:
+
+
+
+
+
+h(it) = u(it-1)h(it-1) + (1 - u(it-1)) bi +  Ui,j x(jt-1) +  Wi,j r(jt-1) h(jt-1)  ,
+
+j
+
+j
+
+(10.45)
+
+where u stands for "update" gate and r for "reset" gate. Their value is defined as
+
+usual:
+
+
+
+
+
+u(it)
+
+=
+
+
+
+bui
+
++
+
+
+
+Uiu,jx
+
+(t) j
+
+ +
+
+Wiu,j h(jt) 
+
+j
+
+j
+
+(10.46)
+
+and
+
+
+
+
+
+ri(t)
+
+=
+
+
+
+b
+
+r i
+
++
+
+
+
+U
+
+r i,j
+
+x(jt)
+
++
+
+
+
+Wir,j h(jt) 
+
+.
+
+(10.47)
+
+j
+
+j
+
+The reset and updates gates can individually "ignore" parts of the state vector. The update gates act like conditional leaky integrators that can linearly gate any dimension, thus choosing to copy it (at one extreme of the sigmoid) or completely ignore it (at the other extreme) by replacing it by the new "target state" value (towards which the leaky integrator wants to converge). The reset gates control which parts of the state get used to compute the next target state, introducing an additional nonlinear effect in the relationship between past state and future state.
+
+Many more variants around this theme can be designed. For example the reset gate (or forget gate) output could be shared across multiple hidden units. Alternately, the product of a global gate (covering a whole group of units, such as an entire layer) and a local gate (per unit) could be used to combine global control and local control. However, several investigations over architectural variations of the LSTM and GRU found no variant that would clearly beat both of these across a wide range of tasks (Greff et al., 2015; Jozefowicz et al., 2015). Greff et al. (2015) found that a crucial ingredient is the forget gate, while Jozefowicz et al. (2015) found that adding a bias of 1 to the LSTM forget gate, a practice advocated by Gers et al. (2000), makes the LSTM as strong as the best of the explored architectural variants.
+
+412
+
+

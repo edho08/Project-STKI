@@ -1,0 +1,75 @@
+CHAPTER 3. PROBABILITY AND INFORMATION THEORY
+
+s.
+
+With
+
+probability
+
+1 2
+
+,
+
+we choose
+
+the
+
+value
+
+of s
+
+to
+
+be
+
+1.
+
+Otherwise,
+
+we
+
+choose
+
+the value of s to be -1. We can then generate a random variable y by assigning
+
+y = sx. Clearly, x and y are not independent, because x completely determines
+
+the magnitude of y. However, Cov(x, y) = 0.
+
+The covariance matrix of a random vector x  Rn is an n × n matrix, such
+
+that
+
+Cov(x)i,j = Cov(xi, x j).
+
+(3.14)
+
+The diagonal elements of the covariance give the variance:
+
+Cov(xi, xi) = Var(xi ).
+
+(3.15)
+
+3.9 Common Probability Distributions
+Several simple probability distributions are useful in many contexts in machine learning.
+
+3.9.1 Bernoulli Distribution
+
+The Bernoulli distribution is a distribution over a single binary random variable. It is controlled by a single parameter   [0, 1], which gives the probability of the random variable being equal to 1. It has the following properties:
+
+P (x = 1) = 
+
+(3.16)
+
+P (x = 0) = 1 -  P (x = x) = x(1 - )1-x
+Ex[x] =  Varx(x) = (1 - )
+
+(3.17) (3.18) (3.19) (3.20)
+
+3.9.2 Multinoulli Distribution
+The multinoulli or categorical distribution is a distribution over a single discrete variable with k different states, where k is finite.1 The multinoulli distribution is
+1
+"Multinoulli" is a term that was recently coined by Gustavo Lacerdo and popularized by Murphy (2012). The multinoulli distribution is a special case of the multinomial distribution. A multinomial distribution is the distribution over vectors in {0, . . . , n} k representing how many times each of the k categories is visited when n samples are drawn from a multinoulli distribution. Many texts use the term "multinomial" to refer to multinoulli distributions without clarifying that they refer only to the n = 1 case.
+62
+
+

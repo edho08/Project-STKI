@@ -1,0 +1,48 @@
+CHAPTER 18. CONFRONTING THE PARTITION FUNCTION
+
+that interact with each other. However, pseudolikelihood is still useful for deep learning, because it can be used to train single layer models, or deep models using approximate inference methods that are not based on lower bounds.
+Pseudolikelihood has a much greater cost per gradient step than SML, due to its explicit computation of all of the conditionals. However, generalized pseudolikelihood and similar criteria can still perform well if only one randomly selected conditional is computed per example (Goodfellow et al., 2013b), thereby bringing the computational cost down to match that of SML.
+Though the pseudolikelihood estimator does not explicitly minimize log Z , it can still be thought of as having something resembling a negative phase. The denominators of each conditional distribution result in the learning algorithm suppressing the probability of all states that have only one variable differing from a training example.
+See Marlin and de Freitas (2011) for a theoretical analysis of the asymptotic efficiency of pseudolikelihood.
+
+18.4 Score Matching and Ratio Matching
+
+Score matching (Hyvärinen, 2005) provides another consistent means of training a model without estimating Z or its derivatives. The name score matching comes from terminology in which the derivatives of a log density with respect to its argument, x log p(x), are called its score. The strategy used by score matching is to minimize the expected squared difference between the derivatives of the model's log density with respect to the input and the derivatives of the data's log density with respect to the input:
+
+L(x, ) =
+
+1 2
+
+||
+
+x
+
+log
+
+pmodel
+
+(x;
+
+)
+
+-
+
+x
+
+log
+
+p data (x)||22
+
+1 J () = 2Epdata(x)L(x, )
+
+  = min J()
+
+
+
+(18.22) (18.23) (18.24)
+
+This objective function avoids the difficulties associated with differentiating the partition function Z because Z is not a function of x and therefore xZ = 0. Initially, score matching appears to have a new difficulty: computing the score of the data distribution requires knowledge of the true distribution generating the training data, pdata. Fortunately, minimizing the expected value of L(x, ) is
+
+617
+
+

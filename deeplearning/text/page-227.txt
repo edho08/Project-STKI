@@ -1,0 +1,12 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+applying the back-propagation algorithm to this graph. Algorithms 6.3 and 6.4 are demonstrations that are chosen to be simple and
+straightforward to understand. However, they are specialized to one specific problem.
+Modern software implementations are based on the generalized form of backpropagation described in section 6.5.6 below, which can accommodate any computational graph by explicitly manipulating a data structure for representing symbolic computation.
+Algorithm 6.3 Forward propagation through a typical deep neural network and the computation of the cost function. The loss L(y^, y) depends on the output y^ and on the target y (see section 6.2.1.1 for examples of loss functions). To obtain the total cost J , the loss may be added to a regularizer ( ), where  contains all the parameters (weights and biases). Algorithm 6.4 shows how to compute gradients of J with respect to parameters W and b. For simplicity, this demonstration uses only a single input example x. Practical applications should use a minibatch. See section 6.5.7 for a more realistic demonstration. Require: Network depth, l Require: W (i), i  {1, . . . , l}, the weight matrices of the model Require: b(i), i  {1, . . . , l}, the bias parameters of the model Require: x, the input to process Require: y, the target output
+h(0) = x for k = 1, . . . , l do
+a (k) = b(k) + W (k) h(k-1) h(k) = f (a(k) ) end for y^ = h(l) J = L(y^, y) + ()
+6.5.5 Symbol-to-Symbol Derivatives
+Algebraic expressions and computational graphs both operate on symbols, or variables that do not have specific values. These algebraic and graph-based representations are called symbolic representations. When we actually use or train a neural network, we must assign specific values to these symbols. We replace a symbolic input to the network x with a specific numeric value, such as [1.2, 3.765, -1.8].
+212
+
+

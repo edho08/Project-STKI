@@ -1,0 +1,10 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+Algorithm 5.1 The k-fold cross-validation algorithm. It can be used to estimate generalization error of a learning algorithm A when the given dataset D is too small for a simple train/test or train/valid split to yield accurate estimation of generalization error, because the mean of a loss L on a small test set may have too high variance. The dataset D contains as elements the abstract examples z(i) (for the i-th example), which could stand for an (input,target) pair z(i) = (x(i) , y(i)) in the case of supervised learning, or for just an input z(i) = x(i) in the case of unsupervised learning. The algorithm returns the vector of errors e for each example in D, whose mean is the estimated generalization error. The errors on individual examples can be used to compute a confidence interval around the mean (equation 5.47). While these confidence intervals are not well-justified after the use of cross-validation, it is still common practice to use them to declare that algorithm A is better than algorithm B only if the confidence interval of the error of algorithm A lies below and does not intersect the confidence interval of algorithm B. Define KFoldXV(D, A, L, k): Require: D, the given dataset, with elements z(i) Require: A, the learning algorithm, seen as a function that takes a dataset as
+input and outputs a learned function Require: L, the loss function, seen as a function from a learned function f and
+an example z(i)  D to a scalar  R Require: k, the number of folds
+Split D into k mutually exclusive subsets Di, whose union is D. for i from 1 to k do
+fi = A(D\Di) for z(j) in Di do
+ej = L(fi , z(j)) end for end for Return e
+123
+
+

@@ -1,0 +1,18 @@
+BIBLIOGRAPHY
+Radford, A., Metz, L., and Chintala, S. (2015). Unsupervised representation learning with deep convolutional generative adversarial networks. arXiv preprint arXiv:1511.06434 . 552, 701, 702
+Raiko, T., Yao, L., Cho, K., and Bengio, Y. (2014). Iterative neural autoregressive distribution estimator (NADE-k). Technical report, arXiv:1406.1485. 676, 709
+Raina, R., Madhavan, A., and Ng, A. Y. (2009). Large-scale deep unsupervised learning using graphics processors. In L. Bottou and M. Littman, editors, Proceedings of the Twenty-sixth International Conference on Machine Learning (ICML'09), pages 873­880, New York, NY, USA. ACM. 27, 446
+Ramsey, F. P. (1926). Truth and probability. In R. B. Braithwaite, editor, The Foundations of Mathematics and other Logical Essays , chapter 7, pages 156­198. McMaster University Archive for the History of Economic Thought. 56
+Ranzato, M. and Hinton, G. H. (2010). Modeling pixel means and covariances using factorized third-order Boltzmann machines. In CVPR'2010 , pages 2551­2558. 680
+Ranzato, M., Poultney, C., Chopra, S., and LeCun, Y. (2007a). Efficient learning of sparse representations with an energy-based model. In NIPS'2006 . 14, 19, 507, 528, 530
+Ranzato, M., Huang, F., Boureau, Y., and LeCun, Y. (2007b). Unsupervised learning of invariant feature hierarchies with applications to object recognition. In Proceedings of the Computer Vision and Pattern Recognition Conference (CVPR'07). IEEE Press. 364
+Ranzato, M., Boureau, Y., and LeCun, Y. (2008). Sparse feature learning for deep belief networks. In NIPS'2007 . 507
+Ranzato, M., Krizhevsky, A., and Hinton, G. E. (2010a). Factored 3-way restricted Boltzmann machines for modeling natural images. In Proceedings of AISTATS 2010 . 678, 679
+Ranzato, M., Mnih, V., and Hinton, G. (2010b). Generating more realistic images using gated MRFs. In NIPS'2010 . 680
+Rao, C. (1945). Information and the accuracy attainable in the estimation of statistical parameters. Bulletin of the Calcutta Mathematical Society, 37, 81­89. 135, 295
+Rasmus, A., Valpola, H., Honkala, M., Berglund, M., and Raiko, T. (2015). Semi-supervised learning with ladder network. arXiv preprint arXiv:1507.02672 . 426, 530
+Recht, B., Re, C., Wright, S., and Niu, F. (2011). Hogwild: A lock-free approach to parallelizing stochastic gradient descent. In NIPS'2011 . 447
+Reichert, D. P., Seriès, P., and Storkey, A. J. (2011). Neuronal adaptation for samplingbased probabilistic inference in perceptual bistability. In Advances in Neural Information Processing Systems, pages 2357­2365. 666
+763
+
+

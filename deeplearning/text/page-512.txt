@@ -1,0 +1,30 @@
+CHAPTER 13. LINEAR FACTOR MODELS
+
+Training sparse coding with maximum likelihood is intractable. Instead, the training alternates between encoding the data and training the decoder to better reconstruct the data given the encoding. This approach will be justified further as a principled approximation to maximum likelihood later, in section 19.3.
+For models such as PCA, we have seen the use of a parametric encoder function that predicts h and consists only of multiplication by a weight matrix. The encoder that we use with sparse coding is not a parametric encoder. Instead, the encoder is an optimization algorithm, that solves an optimization problem in which we seek the single most likely code value:
+
+h = f (x) = arg max p(h | x).
+h
+
+(13.15)
+
+When combined with equation 13.13 and equation 13.12, this yields the following optimization problem:
+
+arg max p(h | x)
+h
+= arg max log p(h | x)
+h
+= arg min ||h||1 + ||x - W h||22,
+h
+
+(13.16) (13.17) (13.18)
+
+where we have dropped terms not depending on h and divided by positive scaling factors to simplify the equation.
+Due to the imposition of an L1 norm on h, this procedure will yield a sparse h (See section 7.1.2).
+To train the model rather than just perform inference, we alternate between minimization with respect to h and minimization with respect to W . In this presentation, we treat  as a hyperparameter. Typically it is set to 1 because its role in this optimization problem is shared with  and there is no need for both hyperparameters. In principle, we could also treat  as a parameter of the model and learn it. Our presentation here has discarded some terms that do not depend on h but do depend on . To learn , these terms must be included, or  will collapse to 0.
+Not all approaches to sparse coding explicitly build a p(h) and a p(x | h). Often we are just interested in learning a dictionary of features with activation values that will often be zero when extracted using this inference procedure.
+If we sample h from a Laplace prior, it is in fact a zero probability event for an element of h to actually be zero. The generative model itself is not especially sparse, only the feature extractor is. Goodfellow et al. (2013d) describe approximate
+
+497
+
+

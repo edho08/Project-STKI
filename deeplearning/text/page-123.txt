@@ -1,0 +1,90 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+then increasing the value of that feature increases the value of our prediction y^. If a feature receives a negative weight, then increasing the value of that feature decreases the value of our prediction. If a feature's weight is large in magnitude, then it has a large effect on the prediction. If a feature's weight is zero, it has no effect on the prediction.
+
+We thus have a definition of our task T : to predict y from x by outputting y^ = w x. Next we need a definition of our performance measure, P .
+
+Suppose that we have a design matrix of m example inputs that we will not
+use for training, only for evaluating how well the model performs. We also have
+a vector of regression targets providing the correct value of y for each of these
+examples. Because this dataset will only be used for evaluation, we call it the test set. We refer to the design matrix of inputs as X(test) and the vector of regression targets as y(test).
+
+One way of measuring the performance of the model is to compute the mean squared error of the model on the test set. If y^(test) gives the predictions of the
+model on the test set, then the mean squared error is given by
+
+MSEtest
+
+=
+
+1 m
+
+(y^(test)
+
+- y(test))2i .
+
+i
+
+(5.4)
+
+Intuitively, one can see that this error measure decreases to 0 when y^(test) = y(test). We can also see that
+
+MSEtest
+
+=
+
+1 ||^y(test) m
+
+- y(test)||22 ,
+
+(5.5)
+
+so the error increases whenever the Euclidean distance between the predictions and the targets increases.
+
+To make a machine learning algorithm, we need to design an algorithm that will improve the weights w in a way that reduces MSEtest when the algorithm is allowed to gain experience by observing a training set (X(train), y(train)). One intuitive way of doing this (which we will justify later, in section 5.5.1) is just to minimize the mean squared error on the training set, MSEtrain.
+To minimize MSEtrain, we can simply solve for where its gradient is 0:
+
+wMSEtrain = 0
+
+
+
+w
+
+1 m
+
+||y^(train)
+
+-
+
+y (train)
+
+||
+
+2 2
+
+=
+
+0
+
+
+
+1 m
+
+w||X(train)w
+
+-
+
+y
+
+(train)||
+
+2 2
+
+=
+
+0
+
+108
+
+(5.6) (5.7) (5.8)
+
+

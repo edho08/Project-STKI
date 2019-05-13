@@ -1,0 +1,17 @@
+BIBLIOGRAPHY
+Glorot, X., Bordes, A., and Bengio, Y. (2011b). Domain adaptation for large-scale sentiment classification: A deep learning approach. In ICML'2011 . 507, 537
+Goldberger, J., Roweis, S., Hinton, G. E., and Salakhutdinov, R. (2005). Neighbourhood components analysis. In L. Saul, Y. Weiss, and L. Bottou, editors, Advances in Neural Information Processing Systems 17 (NIPS'04). MIT Press. 115
+Gong, S., McKenna, S., and Psarrou, A. (2000). Dynamic Vision: From Images to Face Recognition. Imperial College Press. 165, 519
+Goodfellow, I., Le, Q., Saxe, A., and Ng, A. (2009). Measuring invariances in deep networks. In NIPS'2009 , pages 646­654. 255
+Goodfellow, I., Koenig, N., Muja, M., Pantofaru, C., Sorokin, A., and Takayama, L. (2010). Help me help you: Interfaces for personal robots. In Proc. of Human Robot Interaction (HRI), Osaka, Japan. ACM Press, ACM Press. 100
+Goodfellow, I. J. (2010). Technical report: Multidimensional, downsampled convolution for autoencoders. Technical report, Université de Montréal. 357
+Goodfellow, I. J. (2014). On distinguishability criteria for estimating generative models. In International Conference on Learning Representations, Workshops Track . 622, 700, 701
+Goodfellow, I. J., Courville, A., and Bengio, Y. (2011). Spike-and-slab sparse coding for unsupervised feature discovery. In NIPS Workshop on Challenges in Learning Hierarchical Models. 532, 538
+Goodfellow, I. J., Warde-Farley, D., Mirza, M., Courville, A., and Bengio, Y. (2013a). Maxout networks. In S. Dasgupta and D. McAllester, editors, ICML'13 , pages 1319­ 1327. 193, 264, 344, 365, 455
+Goodfellow, I. J., Mirza, M., Courville, A., and Bengio, Y. (2013b). Multi-prediction deep Boltzmann machines. In NIPS26 . NIPS Foundation. 100, 617, 671, 672, 673, 674, 675, 698
+Goodfellow, I. J., Warde-Farley, D., Lamblin, P., Dumoulin, V., Mirza, M., Pascanu, R., Bergstra, J., Bastien, F., and Bengio, Y. (2013c). Pylearn2: a machine learning research library. arXiv preprint arXiv:1308.4214 . 25, 446
+Goodfellow, I. J., Courville, A., and Bengio, Y. (2013d). Scaling up spike-and-slab models for unsupervised feature learning. IEEE Transactions on Pattern Analysis and Machine Intelligence, 35(8), 1902­1914. 497, 498, 499, 650, 683
+Goodfellow, I. J., Mirza, M., Xiao, D., Courville, A., and Bengio, Y. (2014a). An empirical investigation of catastrophic forgeting in gradient-based neural networks. In ICLR'2014 . 194
+738
+
+

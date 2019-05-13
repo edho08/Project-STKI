@@ -1,0 +1,13 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+J()
+
+Projection 1 of 
+
+Projection 2 of 
+
+Figure 8.2: A visualization of the cost function of a neural network. Image adapted with permission from Goodfellow et al. (2015). These visualizations appear similar for feedforward neural networks, convolutional networks, and recurrent networks applied to real object recognition and natural language processing tasks. Surprisingly, these visualizations usually do not show many conspicuous obstacles. Prior to the success of stochastic gradient descent for training very large models beginning in roughly 2012, neural net cost function surfaces were generally believed to have much more non-convex structure than is revealed by these projections. The primary obstacle revealed by this projection is a saddle point of high cost near where the parameters are initialized, but, as indicated by the blue path, the SGD training trajectory escapes this saddle point readily. Most of training time is spent traversing the relatively flat valley of the cost function, which may be due to high noise in the gradient, poor conditioning of the Hessian matrix in this region, or simply the need to circumnavigate the tall "mountain" visible in the figure via an indirect arcing path.
+
+287
+
+

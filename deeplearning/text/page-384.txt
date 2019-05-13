@@ -1,0 +1,68 @@
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+and
+
+y = -(x - x0) sin( ) + (y - y0) cos( ).
+
+(9.18)
+
+Here, , x, y, f, , x0, y0, and  are parameters that control the properties of the Gabor function. Figure 9.18 shows some examples of Gabor functions with different settings of these parameters.
+
+The parameters x0, y0, and  define a coordinate system. We translate and rotate x and y to form x and y. Specifically, the simple cell will respond to image
+
+features centered at the point (x0, y 0), and it will respond to changes in brightness as we move along a line rotated  radians from the horizontal.
+
+Viewed as a function of x and y , the function w then responds to changes in brightness as we move along the x axis. It has two important factors: one is a
+
+Gaussian function and the other is a cosine function.
+
+The
+
+Gaussian
+
+factor
+
+
+
+exp
+
+ -x
+
+x2
+
+-
+
+yy2 
+
+can
+
+be
+
+seen
+
+as
+
+a
+
+gating
+
+term
+
+that
+
+ensures the simple cell will only respond to values near where x and y are both
+
+zero, in other words, near the center of the cell's receptive field. The scaling factor
+
+ adjusts the total magnitude of the simple cell's response, while x and  y control how quickly its receptive field falls off.
+
+The cosine factor cos(f x + ) controls how the simple cell responds to changing brightness along the x axis. The parameter f controls the frequency of the cosine
+and  controls its phase offset.
+
+Altogether, this cartoon view of simple cells means that a simple cell responds to a specific spatial frequency of brightness in a specific direction at a specific location. Simple cells are most excited when the wave of brightness in the image has the same phase as the weights. This occurs when the image is bright where the
+weights are positive and dark where the weights are negative. Simple cells are most inhibited when the wave of brightness is fully out of phase with the weights--when the image is dark where the weights are positive and bright where the weights are negative.
+The cartoon view of a complex cell is that it computes the L2 norm of the 2-D vector containing two simple cells' responses: c( I) = s0(I)2 + s1(I)2. An important special case occurs when s1 has all of the same parameters as s0 except for , and  is set such that s1 is one quarter cycle out of phase with s0. In this case, s0 and s1 form a quadrature pair. A complex cell defined in this way responds when the Gaussian reweighted image I(x, y) exp (-x x2 - yy2) contains a high amplitude sinusoidal wave with frequency f in direction  near (x0 , y0), regardless of the phase offset of this wave. In other words, the complex cell is invariant to small translations of the image in direction  , or to negating the image
+
+369
+
+

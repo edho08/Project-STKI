@@ -1,0 +1,16 @@
+BIBLIOGRAPHY
+Cayton, L. (2005). Algorithms for manifold learning. Technical Report CS2008-0923, UCSD. 164
+Chandola, V., Banerjee, A., and Kumar, V. (2009). Anomaly detection: A survey. ACM computing surveys (CSUR), 41(3), 15. 102
+Chapelle, O., Weston, J., and Schölkopf, B. (2003). Cluster kernels for semi-supervised learning. In S. Becker, S. Thrun, and K. Obermayer, editors, Advances in Neural Information Processing Systems 15 (NIPS'02), pages 585­592, Cambridge, MA. MIT Press. 244
+Chapelle, O., Schölkopf, B., and Zien, A., editors (2006). Semi-Supervised Learning. MIT Press, Cambridge, MA. 244, 541
+Chellapilla, K., Puri, S., and Simard, P. (2006). High Performance Convolutional Neural Networks for Document Processing. In Guy Lorette, editor, Tenth International Workshop on Frontiers in Handwriting Recognition, La Baule (France). Université de Rennes 1, Suvisoft. http://www.suvisoft.com. 24, 27, 445
+Chen, B., Ting, J.-A., Marlin, B. M., and de Freitas, N. (2010). Deep learning of invariant spatio-temporal features from video. NIPS*2010 Deep Learning and Unsupervised Feature Learning Workshop. 360
+Chen, S. F. and Goodman, J. T. (1999). An empirical study of smoothing techniques for language modeling. Computer, Speech and Language, 13(4), 359­393. 462, 463, 473
+Chen, T., Du, Z., Sun, N., Wang, J., Wu, C., Chen, Y., and Temam, O. (2014a). DianNao: A small-footprint high-throughput accelerator for ubiquitous machine-learning. In Proceedings of the 19th international conference on Architectural support for programming languages and operating systems, pages 269­284. ACM. 451
+Chen, T., Li, M., Li, Y., Lin, M., Wang, N., Wang, M., Xiao, T., Xu, B., Zhang, C., and Zhang, Z. (2015). MXNet: A flexible and efficient machine learning library for heterogeneous distributed systems. arXiv preprint arXiv:1512.01274 . 25
+Chen, Y., Luo, T., Liu, S., Zhang, S., He, L., Wang, J., Li, L., Chen, T., Xu, Z., Sun, N., et al. (2014b). DaDianNao: A machine-learning supercomputer. In Microarchitecture (MICRO), 2014 47th Annual IEEE/ACM International Symposium on, pages 609­622. IEEE. 451
+Chilimbi, T., Suzue, Y., Apacible, J., and Kalyanaraman, K. (2014). Project Adam: Building an efficient and scalable deep learning training system. In 11th USENIX Symposium on Operating Systems Design and Implementation (OSDI'14). 447
+Cho, K., Raiko, T., and Ilin, A. (2010). Parallel tempering is efficient for learning restricted Boltzmann machines. In IJCNN'2010 . 603, 614
+729
+
+

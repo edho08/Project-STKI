@@ -1,0 +1,32 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+in section 20.10.10 below, we can introduce a form of parameter sharing that brings both a statistical advantage (fewer unique parameters) and a computational advantage (less computation). This is one more instance of the recurring deep learning motif of reuse of features.
+
+x1
+
+x2
+
+x3
+
+x4
+
+P (x1) P (x2 | x1)
+
+P (x3 | x1, x2) P (x4 | x1, x2, x3)
+
+x1
+
+x2
+
+x3
+
+x4
+
+Figure 20.8: A fully visible belief network predicts the i-th variable from the i - 1 previous ones. (Top)The directed graphical model for an FVBN. (Bottom)Corresponding computational graph, in the case of the logistic FVBN, where each prediction is made by a linear predictor.
+
+20.10.8 Linear Auto-Regressive Networks
+The simplest form of auto-regressive network has no hidden units and no sharing of parameters or features. Each P (xi | xi-1, . . . , x1) is parametrized as a linear model (linear regression for real-valued data, logistic regression for binary data, softmax regression for discrete data). This model was introduced by Frey (1998) and has O(d2 ) parameters when there are d variables to model. It is illustrated in figure 20.8.
+If the variables are continuous, a linear auto-regressive model is merely another way to formulate a multivariate Gaussian distribution, capturing linear pairwise interactions between the observed variables.
+Linear auto-regressive networks are essentially the generalization of linear classification methods to generative modeling. They therefore have the same
+706
+
+

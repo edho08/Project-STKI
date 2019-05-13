@@ -1,0 +1,10 @@
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+Output Tensor
+Input Tensor
+Spatial coordinates
+Figure 9.15: A convolutional network with the first two output channels connected to only the first two input channels, and the second two output channels connected to only the second two input channels.
+354
+
+Channel coordinates
+
+

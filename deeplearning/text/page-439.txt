@@ -1,0 +1,31 @@
+CHAPTER 11. PRACTICAL METHODOLOGY
+
+network designed to detect a disease outputs y^ = P (y = 1 | x), estimating the
+
+probability that a person whose medical results are described by features x has
+
+the disease. We choose to report a detection whenever this score exceeds some
+
+threshold. By varying the threshold, we can trade precision for recall. In many
+
+cases, we wish to summarize the performance of the classifier with a single number
+
+rather than a curve. To do so, we can convert precision p and recall r into an
+
+F-score given by
+
+2pr F = p + r.
+
+(11.1)
+
+Another option is to report the total area lying beneath the PR curve.
+
+In some applications, it is possible for the machine learning system to refuse to make a decision. This is useful when the machine learning algorithm can estimate how confident it should be about a decision, especially if a wrong decision can be harmful and if a human operator is able to occasionally take over. The Street View transcription system provides an example of this situation. The task is to transcribe the address number from a photograph in order to associate the location where the photo was taken with the correct address in a map. Because the value of the map degrades considerably if the map is inaccurate, it is important to add an address only if the transcription is correct. If the machine learning system thinks that it is less likely than a human being to obtain the correct transcription, then the best course of action is to allow a human to transcribe the photo instead. Of course, the machine learning system is only useful if it is able to dramatically reduce the amount of photos that the human operators must process. A natural performance metric to use in this situation is coverage. Coverage is the fraction of examples for which the machine learning system is able to produce a response. It is possible to trade coverage for accuracy. One can always obtain 100% accuracy by refusing to process any example, but this reduces the coverage to 0%. For the Street View task, the goal for the project was to reach human-level transcription accuracy while maintaining 95% coverage. Human-level performance on this task is 98% accuracy.
+
+Many other metrics are possible. We can for example, measure click-through rates, collect user satisfaction surveys, and so on. Many specialized application areas have application-specific criteria as well.
+
+What is important is to determine which performance metric to improve ahead of time, then concentrate on improving this metric. Without clearly defined goals, it can be difficult to tell whether changes to a machine learning system make progress or not.
+
+424
+
+

@@ -1,0 +1,17 @@
+BIBLIOGRAPHY
+Tang, Y. and Eliasmith, C. (2010). Deep networks for robust visual recognition. In Proceedings of the 27th International Conference on Machine Learning, June 21-24, 2010, Haifa, Israel . 241
+Tang, Y., Salakhutdinov, R., and Hinton, G. (2012). Deep mixtures of factor analysers. arXiv preprint arXiv:1206.4635 . 489
+Taylor, G. and Hinton, G. (2009). Factored conditional restricted Boltzmann machines for modeling motion style. In L. Bottou and M. Littman, editors, Proceedings of the Twenty-sixth International Conference on Machine Learning (ICML'09), pages 1025­1032, Montreal, Quebec, Canada. ACM. 685
+Taylor, G., Hinton, G. E., and Roweis, S. (2007). Modeling human motion using binary latent variables. In B. Schölkopf, J. Platt, and T. Hoffman, editors, Advances in Neural Information Processing Systems 19 (NIPS'06), pages 1345­1352. MIT Press, Cambridge, MA. 685
+Teh, Y., Welling, M., Osindero, S., and Hinton, G. E. (2003). Energy-based models for sparse overcomplete representations. Journal of Machine Learning Research, 4, 1235­1260. 491
+Tenenbaum, J., de Silva, V., and Langford, J. C. (2000). A global geometric framework for nonlinear dimensionality reduction. Science, 290(5500), 2319­2323. 164, 518, 533
+Theis, L., van den Oord, A., and Bethge, M. (2015). A note on the evaluation of generative models. arXiv:1511.01844. 698, 719
+Thompson, J., Jain, A., LeCun, Y., and Bregler, C. (2014). Joint training of a convolutional network and a graphical model for human pose estimation. In NIPS'2014 . 360
+Thrun, S. (1995). Learning to play the game of chess. In NIPS'1994 . 271
+Tibshirani, R. J. (1995). Regression shrinkage and selection via the lasso. Journal of the Royal Statistical Society B , 58, 267­288. 236
+Tieleman, T. (2008). Training restricted Boltzmann machines using approximations to the likelihood gradient. In W. W. Cohen, A. McCallum, and S. T. Roweis, editors, Proceedings of the Twenty-fifth International Conference on Machine Learning (ICML'08), pages 1064­1071. ACM. 612
+Tieleman, T. and Hinton, G. (2009). Using fast weights to improve persistent contrastive divergence. In L. Bottou and M. Littman, editors, Proceedings of the Twenty-sixth International Conference on Machine Learning (ICML'09), pages 1033­1040. ACM. 614
+Tipping, M. E. and Bishop, C. M. (1999). Probabilistic principal components analysis. Journal of the Royal Statistical Society B , 61(3), 611­622. 491
+772
+
+

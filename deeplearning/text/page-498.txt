@@ -1,0 +1,40 @@
+CHAPTER 12. APPLICATIONS
+
+do not. For example, we can define the relation "is less than" on the set of entities {1, 2,3} by defining the set of ordered pairs S = {(1,2), (1, 3), (2, 3)}. Once this relation is defined, we can use it like a verb. Because (1, 2)  S, we say that 1 is less than 2. Because (2,1)  S, we can not say that 2 is less than 1. Of course, the entities that are related to one another need not be numbers. We could define a relation is_a_type_of containing tuples like (dog, mammal).
+In the context of AI, we think of a relation as a sentence in a syntactically simple and highly structured language. The relation plays the role of a verb, while two arguments to the relation play the role of its subject and object. These sentences take the form of a triplet of tokens
+
+(subject, verb, object)
+
+(12.21)
+
+with values
+
+(entityi, relationj, entityk).
+
+(12.22)
+
+We can also define an attribute, a concept analogous to a relation, but taking
+
+only one argument:
+
+(entityi, attribute j).
+
+(12.23)
+
+For example, we could define the has_fur attribute, and apply it to entities like dog.
+
+Many applications require representing relations and reasoning about them. How should we best do this within the context of neural networks?
+
+Machine learning models of course require training data. We can infer relations between entities from training datasets consisting of unstructured natural language.
+There are also structured databases that identify relations explicitly. A common structure for these databases is the relational database, which stores this same kind of information, albeit not formatted as three token sentences. When a database is intended to convey commonsense knowledge about everyday life or expert knowledge about an application area to an artificial intelligence system, we call the database a knowledge base. Knowledge bases range from general ones like Freebase, OpenCyc, WordNet, or Wikibase, 1 etc. to more specialized knowledge bases, like GeneOntology.2 Representations for entities and relations can be learned by considering each triplet in a knowledge base as a training example and maximizing a training objective that captures their joint distribution (Bordes et al., 2013a).
+
+1
+Respectively available from these web sites:
+
+freebase.com, cyc.com/opencyc, wordnet.
+
+princeton.edu, wikiba.se 2geneontology.org
+
+483
+
+

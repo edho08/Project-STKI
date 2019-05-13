@@ -1,0 +1,75 @@
+CHAPTER 16. STRUCTURED PROBABILISTIC MODELS FOR DEEP LEARNING
+
+A state of 1 indicates good health, while a state of 0 indicates poor health (having been infected with a cold). Both of you are usually healthy, so the corresponding state has the highest affinity. The state where only one of you is sick has the lowest affinity, because this is a rare state. The state where both of you are sick (because one of you has infected the other) is a higher affinity state, though still not as common as the state where both are healthy.
+To complete the model, we would need to also define a similar factor for the clique containing hy and hr .
+
+16.2.3 The Partition Function
+
+While the unnormalized probability distribution is guaranteed to be non-negative
+
+everywhere, it is not guaranteed to sum or integrate to 1. To obtain a valid
+
+probability distribution, we must use the corresponding normalized probability
+
+distribution:4
+
+p(x)
+
+=
+
+1 Z
+
+p~(x)
+
+(16.4)
+
+where Z is the value that results in the probability distribution summing or
+
+integrating to 1:
+
+
+
+Z = p~(x)dx.
+
+(16.5)
+
+You can think of Z as a constant when the  functions are held constant. Note that if the  functions have parameters, then Z is a function of those parameters. It is common in the literature to write Z with its arguments omitted to save space. The normalizing constant Z is known as the partition function, a term borrowed from statistical physics.
+Since Z is an integral or sum over all possible joint assignments of the state x it is often intractable to compute. In order to be able to obtain the normalized probability distribution of an undirected model, the model structure and the definitions of the  functions must be conducive to computing Z efficiently. In the context of deep learning, Z is usually intractable. Due to the intractability of computing Z exactly, we must resort to approximations. Such approximate algorithms are the topic of chapter 18.
+One important consideration to keep in mind when designing undirected models is that it is possible to specify the factors in such a way that Z does not exist. This happens if some of the variables in the model are continuous and the integral
+
+4
+A
+
+distribution
+
+defined
+
+by
+
+normalizing
+
+a
+
+product
+
+of
+
+clique
+
+potentials
+
+is
+
+also
+
+called
+
+a
+
+Gibbs
+
+distribution.
+
+568
+
+

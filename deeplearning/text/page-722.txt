@@ -1,0 +1,32 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+advantages and disadvantages as linear classifiers. Like linear classifiers, they may be trained with convex loss functions, and sometimes admit closed form solutions (as in the Gaussian case). Like linear classifiers, the model itself does not offer a way of increasing its capacity, so capacity must be raised using techniques like basis expansions of the input or the kernel trick.
+
+P (x1)
+
+P (x2 | x1)
+
+P (x3 | x1, x2) P (x4 | x1, x2, x3)
+
+h1
+
+h2
+
+h3
+
+x1
+
+x2
+
+x3
+
+x4
+
+Figure 20.9: A neural auto-regressive network predicts the i-th variable xi from the i - 1 previous ones, but is parametrized so that features (groups of hidden units denoted hi) that are functions of x1, . . . , xi can be reused in predicting all of the subsequent variables xi+1, xi+2 , . . . , xd.
+
+20.10.9 Neural Auto-Regressive Networks
+Neural auto-regressive networks (Bengio and Bengio, 2000a,b) have the same left-to-right graphical model as logistic auto-regressive networks (figure 20.8) but employ a different parametrization of the conditional distributions within that graphical model structure. The new parametrization is more powerful in the sense that its capacity can be increased as much as needed, allowing approximation of any joint distribution. The new parametrization can also improve generalization by introducing a parameter sharing and feature sharing principle common to deep learning in general. The models were motivated by the objective of avoiding the curse of dimensionality arising out of traditional tabular graphical models, sharing the same structure as figure 20.8. In tabular discrete probabilistic models, each conditional distribution is represented by a table of probabilities, with one entry and one parameter for each possible configuration of the variables involved. By using a neural network instead, two advantages are obtained:
+
+707
+
+

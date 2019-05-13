@@ -1,0 +1,154 @@
+CHAPTER 10. SEQUENCE MODELING: RECURRENT AND RECURSIVE NETS
+
+Once the gradients on the internal nodes of the computational graph are
+obtained, we can obtain the gradients on the parameter nodes. Because the
+parameters are shared across many time steps, we must take some care when
+denoting calculus operations involving these variables. The equations we wish to
+implement use the bprop method of section 6.5.6, that computes the contribution
+of a single edge in the computational graph to the gradient. However, the W f operator used in calculus takes into account the contribution of W to the value
+of f due to all edges in the computational graph. To resolve this ambiguity, we introduce dummy variables W(t) that are defined to be copies of W but with each W (t) used only at time step t. We may then use  (t) to denote the contribution
+W
+of the weights at time step t to the gradient.
+
+Using this notation, the gradient on the remaining parameters is given by:
+
+cL
+
+=
+
+
+
+
+
+ o(t) c
+
+
+
+o(t)
+
+L
+
+=
+
+
+
+ o(t) L
+
+(10.22)
+
+t
+
+t
+
+bL
+
+=
+
+
+t
+
+
+
+ h(t)
+ b(t) 
+
+
+
+
+h
+
+
+L (t)
+
+=
+
+ diag 1 -
+t
+
+h(t)2  (t) L (10.23)
+h
+
+V L
+
+=
+
+
+t
+
+
+i
+
+
+
+L  o(i t)
+
+V 
+
+o(it)
+
+=
+
+
+t
+
+(o(t)L)
+
+h(t)
+
+
+
+(10.24)
+
+WL
+
+= =
+
+
+t
+
+
+
+i
+diag
+
+1h-L(it)h(t)W2(t) h((it)h(t)
+
+L)
+
+h(t-1)
+
+(10.25) (10.26)
+
+t
+
+
+
+
+
+UL
+
+= =
+
+
+t
+
+
+
+i
+diag
+
+1h-L(it)h(t)U(2t) h((it)
+
+(t) L) x(t)
+
+h
+
+(10.27) (10.28)
+
+t
+
+We do not need to compute the gradient with respect to x(t) for training because it does not have any parameters as ancestors in the computational graph defining the loss.
+
+386
+
+

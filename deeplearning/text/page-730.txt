@@ -1,0 +1,14 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+Markov chain, in addition to the visible variables (usually denoted x). A GSN is parametrized by two conditional probability distributions which
+specify one step of the Markov chain:
+1. p(x(k) | h(k) ) tells how to generate the next visible variable given the current latent state. Such a "reconstruction distribution" is also found in denoising autoencoders, RBMs, DBNs and DBMs.
+2. p(h(k) | h(k-1), x(k-1) ) tells how to update the latent state variable, given the previous latent state and visible variable.
+Denoising autoencoders and GSNs differ from classical probabilistic models (directed or undirected) in that they parametrize the generative process itself rather than the mathematical specification of the joint distribution of visible and latent variables. Instead, the latter is defined implicitly, if it exists, as the stationary distribution of the generative Markov chain. The conditions for existence of the stationary distribution are mild and are the same conditions required by standard MCMC methods (see section 17.3). These conditions are necessary to guarantee that the chain mixes, but they can be violated by some choices of the transition distributions (for example, if they were deterministic).
+One could imagine different training criteria for GSNs. The one proposed and evaluated by Bengio et al. (2014) is simply reconstruction log-probability on the visible units, just like for denoising autoencoders. This is achieved by clamping x(0) = x to the observed example and maximizing the probability of generating x at some subsequent time steps, i.e., maximizing log p(x(k) = x | h(k) ), where h(k) is sampled from the chain, given x(0) = x. In order to estimate the gradient of log p(x(k) = x | h(k)) with respect to the other pieces of the model, Bengio et al. (2014) use the reparametrization trick, introduced in section 20.9.
+The walk-back training protocol (described in section 20.11.3) was used (Bengio et al., 2014) to improve training convergence of GSNs.
+20.12.1 Discriminant GSNs
+The original formulation of GSNs (Bengio et al., 2014) was meant for unsupervised learning and implicitly modeling p(x) for observed data x, but it is possible to modify the framework to optimize p(y | x).
+For example, Zhou and Troyanskaya (2014) generalize GSNs in this way, by only back-propagating the reconstruction log-probability over the output variables, keeping the input variables fixed. They applied this successfully to model sequences
+715
+
+

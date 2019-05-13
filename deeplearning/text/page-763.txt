@@ -1,0 +1,18 @@
+BIBLIOGRAPHY
+Kamyshanska, H. and Memisevic, R. (2015). The potential energy of an autoencoder. IEEE Transactions on Pattern Analysis and Machine Intelligence. 515
+Karpathy, A. and Li, F.-F. (2015). Deep visual-semantic alignments for generating image descriptions. In CVPR'2015 . arXiv:1412.2306. 102
+Karpathy, A., Toderici, G., Shetty, S., Leung, T., Sukthankar, R., and Fei-Fei, L. (2014). Large-scale video classification with convolutional neural networks. In CVPR. 21
+Karush, W. (1939). Minima of Functions of Several Variables with Inequalities as Side Constraints . Master's thesis, Dept. of Mathematics, Univ. of Chicago. 95
+Katz, S. M. (1987). Estimation of probabilities from sparse data for the language model component of a speech recognizer. IEEE Transactions on Acoustics, Speech, and Signal Processing , ASSP-35(3), 400­401. 462, 473
+Kavukcuoglu, K., Ranzato, M., and LeCun, Y. (2008). Fast inference in sparse coding algorithms with applications to object recognition. Technical report, Computational and Biological Learning Lab, Courant Institute, NYU. Tech Report CBLL-TR-2008-12-01. 523
+Kavukcuoglu, K., Ranzato, M.-A., Fergus, R., and LeCun, Y. (2009). Learning invariant features through topographic filter maps. In CVPR'2009 . 523
+Kavukcuoglu, K., Sermanet, P., Boureau, Y.-L., Gregor, K., Mathieu, M., and LeCun, Y. (2010). Learning convolutional feature hierarchies for visual recognition. In NIPS'2010 . 364, 523
+Kelley, H. J. (1960). Gradient theory of optimal flight paths. ARS Journal, 30(10), 947­954. 225
+Khan, F., Zhu, X., and Mutlu, B. (2011). How do humans teach: On curriculum learning and teaching dimension. In Advances in Neural Information Processing Systems 24 (NIPS'11), pages 1449­1457. 328
+Kim, S. K., McAfee, L. C., McMahon, P. L., and Olukotun, K. (2009). A highly scalable restricted Boltzmann machine FPGA implementation. In Field Programmable Logic and Applications, 2009. FPL 2009. International Conference on, pages 367­372. IEEE. 451
+Kindermann, R. (1980). Markov Random Fields and Their Applications (Contemporary Mathematics ; V. 1). American Mathematical Society. 566
+Kingma, D. and Ba, J. (2014). Adam: A method for stochastic optimization. arXiv preprint arXiv:1412.6980 . 308
+Kingma, D. and LeCun, Y. (2010). Regularized estimation of image statistics by score matching. In NIPS'2010 . 513, 620
+748
+
+

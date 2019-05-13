@@ -1,0 +1,25 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+f(t) =
+
+ t v(t).
+
+(8.20)
+
+The momentum algorithm then consists of solving the differential equations via
+
+numerical simulation. A simple numerical method for solving differential equations
+
+is Euler's method, which simply consists of simulating the dynamics defined by
+
+the equation by taking small, finite steps in the direction of each gradient.
+
+This explains the basic form of the momentum update, but what specifically are the forces? One force is proportional to the negative gradient of the cost function: - J (). This force pushes the particle downhill along the cost function surface. The gradient descent algorithm would simply take a single step based on each gradient, but the Newtonian scenario used by the momentum algorithm instead uses this force to alter the velocity of the particle. We can think of the particle as being like a hockey puck sliding down an icy surface. Whenever it descends a steep part of the surface, it gathers speed and continues sliding in that direction until it begins to go uphill again.
+
+One other force is necessary. If the only force is the gradient of the cost function, then the particle might never come to rest. Imagine a hockey puck sliding down one side of a valley and straight up the other side, oscillating back and forth forever, assuming the ice is perfectly frictionless. To resolve this problem, we add one other force, proportional to -v(t). In physics terminology, this force corresponds to viscous drag, as if the particle must push through a resistant medium such as syrup. This causes the particle to gradually lose energy over time and eventually converge to a local minimum.
+
+Why do we use -v(t) and viscous drag in particular? Part of the reason to use -v(t) is mathematical convenience--an integer power of the velocity is easy to work with. However, other physical systems have other kinds of drag based on other integer powers of the velocity. For example, a particle traveling through the air experiences turbulent drag, with force proportional to the square of the velocity, while a particle moving along the ground experiences dry friction, with a force of constant magnitude. We can reject each of these options. Turbulent drag, proportional to the square of the velocity, becomes very weak when the velocity is small. It is not powerful enough to force the particle to come to rest. A particle with a non-zero initial velocity that experiences only the force of turbulent drag will move away from its initial position forever, with the distance from the starting point growing like O(log t). We must therefore use a lower power of the velocity. If we use a power of zero, representing dry friction, then the force is too strong. When the force due to the gradient of the cost function is small but non-zero, the constant force due to friction can cause the particle to come to rest before reaching a local minimum. Viscous drag avoids both of these problems--it is weak enough
+
+299
+
+

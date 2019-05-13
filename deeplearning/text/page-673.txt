@@ -1,0 +1,93 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+We begin with the binary version of the restricted Boltzmann machine, but as we see later there are extensions to other types of visible and hidden units.
+
+More formally, let the observed layer consist of a set of n v binary random variables which we refer to collectively with the vector v. We refer to the latent or
+
+hidden layer of nh binary random variables as h.
+
+Like the general Boltzmann machine, the restricted Boltzmann machine is an
+
+energy-based model with the joint probability distribution specified by its energy
+
+function:
+
+P (v
+
+=
+
+v, h = h)
+
+=
+
+1 Z
+
+exp (-E(v, h)) .
+
+(20.4)
+
+The energy function for an RBM is given by
+
+E(v, h) = -bv - ch - vW h,
+
+(20.5)
+
+and Z is the normalizing constant known as the partition function:
+
+
+
+Z=
+
+exp {-E(v, h)} .
+
+(20.6)
+
+vh
+
+It is apparent from the definition of the partition function Z that the naive method of computing Z (exhaustively summing over all states) could be computationally intractable, unless a cleverly designed algorithm could exploit regularities in the probability distribution to compute Z faster. In the case of restricted Boltzmann machines, Long and Servedio (2010) formally proved that the partition function Z is intractable. The intractable partition function Z implies that the normalized joint probability distribution P (v) is also intractable to evaluate.
+
+20.2.1 Conditional Distributions
+
+Though P (v) is intractable, the bipartite graph structure of the RBM has the very special property that its conditional distributions P(h | v) and P (v | h) are factorial and relatively simple to compute and to sample from.
+
+Deriving the conditional distributions from the joint distribution is straightforward:
+
+P (h, v)
+
+P (h | v) =
+
+P (v)
+
+=
+
+1 P (v)
+
+1 Z
+
+exp
+
+ bv
+
++
+
+ch
+
++
+
+ vW h
+
+=
+
+1 Z
+
+ exp ch
+
++
+
+ vW h
+
+(20.7) (20.8) (20.9)
+
+658
+
+

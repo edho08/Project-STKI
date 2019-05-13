@@ -1,0 +1,57 @@
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+Input
+
+a
+
+b
+
+c
+
+d
+
+e
+
+f
+
+g
+
+h
+
+i
+
+j
+
+k
+
+l
+
+Output
+
+Kernel
+
+w
+
+x
+
+y
+
+z
+
+aw + bx + ey + f z
+
+bw + cx + fy + gz
+
+cw + dx + gy + hz
+
+ew + f x + iy + jz
+
+fw + gx + jy + kz
+
+gw + hx + ky + lz
+
+Figure 9.1: An example of 2-D convolution without kernel-flipping. In this case we restrict the output to only positions where the kernel lies entirely within the image, called "valid" convolution in some contexts. We draw boxes with arrows to indicate how the upper-left element of the output tensor is formed by applying the kernel to the corresponding upper-left region of the input tensor.
+
+334
+
+

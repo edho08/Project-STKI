@@ -1,0 +1,47 @@
+CHAPTER 1. INTRODUCTION
+
+Number of neurons (logarithmic scale)
+
+1011 1010 109 108 107 106 105 104 103 102 101 100 10-1 10-2
+
+12 1950
+
+17
+14 8 11 3
+
+16 19 20 18
+
+1985
+
+13
+
+6
+
+12 15
+
+9 5
+
+10
+
+4
+
+7
+
+2000 2015
+
+Human Octopus Frog
+Bee Ant
+Leech Roundworm
+2056 Sponge
+
+Year
+
+Figure 1.11: Since the introduction of hidden units, artificial neural networks have doubled
+
+in size roughly every 2.4 years. Biological neural network sizes from Wikipedia (2015).
+
+1. Perceptron (Rosenblatt, 1958, 1962) 2. Adaptive linear element (Widrow and Hoff, 1960) 3. Neocognitron (Fukushima, 1980) 4. Early back-propagation network (Rumelhart et al., 1986b) 5. Recurrent neural network for speech recognition (Robinson and Fallside, 1991) 6. Multilayer perceptron for speech recognition (Bengio et al., 1991) 7. Mean field sigmoid belief network (Saul et al., 1996) 8. LeNet-5 (LeCun et al., 1998b) 9. Echo state network (Jaeger and Haas, 2004) 10. Deep belief network (Hinton et al., 2006) 11. GPU-accelerated convolutional network (Chellapilla et al., 2006) 12. Deep Boltzmann machine (Salakhutdinov and Hinton, 2009a) 13. GPU-accelerated deep belief network (Raina et al., 2009) 14. Unsupervised convolutional network (Jarrett et al., 2009) 15. GPU-accelerated multilayer perceptron (Ciresan et al., 2010) 16. OMP-1 network (Coates and Ng, 2011) 17. Distributed autoencoder (Le et al., 2012) 18. Multi-GPU convolutional network (Krizhevsky et al., 2012) 19. COTS HPC unsupervised convolutional network (Coates et al., 2013) 20. GoogLeNet (Szegedy et al., 2014a)
+
+27
+
+

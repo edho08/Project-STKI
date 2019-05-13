@@ -1,0 +1,19 @@
+BIBLIOGRAPHY
+Hubel, D. H. and Wiesel, T. N. (1959). Receptive fields of single neurons in the cat's striate cortex. Journal of Physiology , 148, 574­591. 364
+Hubel, D. H. and Wiesel, T. N. (1962). Receptive fields, binocular interaction, and functional architecture in the cat's visual cortex. Journal of Physiology (London), 160, 106­154. 364
+Huszar, F. (2015). How (not) to train your generative model: schedule sampling, likelihood, adversary? arXiv:1511.05101 . 698
+Hutter, F., Hoos, H., and Leyton-Brown, K. (2011). Sequential model-based optimization for general algorithm configuration. In LION-5 . Extended version as UBC Tech report TR-2010-10. 436
+Hyotyniemi, H. (1996). Turing machines are recurrent neural networks. In STeP'96 , pages 13­24. 379
+Hyvärinen, A. (1999). Survey on independent component analysis. Neural Computing Surveys, 2, 94­128. 491
+Hyvärinen, A. (2005). Estimation of non-normalized statistical models using score matching. Journal of Machine Learning Research, 6, 695­709. 513, 617
+Hyvärinen, A. (2007a). Connections between score matching, contrastive divergence, and pseudolikelihood for continuous-valued variables. IEEE Transactions on Neural Networks, 18, 1529­1531. 618
+Hyvärinen, A. (2007b). Some extensions of score matching. Computational Statistics and Data Analysis, 51, 2499­2512. 618
+Hyvärinen, A. and Hoyer, P. O. (1999). Emergence of topography and complex cell properties from natural images using extensions of ica. In NIPS , pages 827­833. 493
+Hyvärinen, A. and Pajunen, P. (1999). Nonlinear independent component analysis: Existence and uniqueness results. Neural Networks, 12(3), 429­439. 493
+Hyvärinen, A., Karhunen, J., and Oja, E. (2001a). Independent Component Analysis. Wiley-Interscience. 491
+Hyvärinen, A., Hoyer, P. O., and Inki, M. O. (2001b). Topographic independent component analysis. Neural Computation , 13(7), 1527­1558. 493
+Hyvärinen, A., Hurri, J., and Hoyer, P. O. (2009). Natural Image Statistics: A probabilistic approach to early computational vision. Springer-Verlag. 370
+Iba, Y. (2001). Extended ensemble Monte Carlo. International Journal of Modern Physics, C12, 623­656. 603
+745
+
+

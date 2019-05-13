@@ -1,0 +1,60 @@
+CHAPTER 18. CONFRONTING THE PARTITION FUNCTION
+
+If the distribution p0 is close to p1, equation 18.44 can be an effective way of estimating the partition function (Minka, 2005). Unfortunately, most of the time p1 is both complicated (usually multimodal) and defined over a high dimensional space. It is difficult to find a tractable p0 that is simple enough to evaluate while still being close enough to p1 to result in a high quality approximation. If p0 and p1 are not close, most samples from p0 will have low probability under p1 and therefore make (relatively) negligible contribution to the sum in equation 18.44.
+
+Having few samples with significant weights in this sum will result in an
+
+estimator that is of poor quality due to high variance. This can be understood
+
+quantitatively through an estimate of the variance of our estimate Z^1:
+
+ V^ar Z^1
+
+=
+
+Z0 K2
+
+ K
+
+ p~1(x(k)
+
+)
+
+k=1 p~0(x(k))
+
+-
+
+2 Z^1 .
+
+(18.46)
+
+This quantity is largest when there is significant deviation in the values of the
+
+importance
+
+weights
+
+p~1(x(k) p~0(x(k)
+
+)).
+
+We now turn to two related strategies developed to cope with the challeng-
+
+ing task of estimating partition functions for complex distributions over high-
+
+dimensional spaces: annealed importance sampling and bridge sampling. Both
+
+start with the simple importance sampling strategy introduced above and both
+
+attempt to overcome the problem of the proposal p0 being too far from p 1 by
+
+introducing intermediate distributions that attempt to bridge the gap between p0
+
+and p1.
+
+18.7.1 Annealed Importance Sampling
+In situations where DKL(p0p1) is large (i.e., where there is little overlap between p0 and p1), a strategy called annealed importance sampling (AIS) attempts to bridge the gap by introducing intermediate distributions (Jarzynski, 1997; Neal, 2001). Consider a sequence of distributions p 0, . . . , pn, with 0 = 0 < 1 < · · · < n-1 < n = 1 so that the first and last distributions in the sequence are p0 and p1 respectively.
+This approach allows us to estimate the partition function of a multimodal distribution defined over a high-dimensional space (such as the distribution defined by a trained RBM). We begin with a simpler model with a known partition function (such as an RBM with zeroes for weights) and estimate the ratio between the two model's partition functions. The estimate of this ratio is based on the estimate of the ratios of a sequence of many similar distributions, such as the sequence of RBMs with weights interpolating between zero and the learned weights.
+625
+
+

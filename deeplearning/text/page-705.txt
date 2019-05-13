@@ -1,0 +1,139 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+The simplest version of REINFORCE can be derived by simply differentiating the expected cost:
+
+ Ez[J (y)] = J (y)p(y)
+
+(20.59)
+
+y
+
+E[J(y)] 
+
+=
+
+
+
+J
+
+(y)
+
+p(y) 
+
+y
+
+=  J (y)p(y)  log p(y)
+
+y
+
+
+
+1
+
+ m
+
+J (y(i) ) log p(y(i)) .
+
+m
+
+
+
+y(i)p(y), i=1
+
+(20.60) (20.61) (20.62)
+
+Equation 20.60 relies on the assumption that J does not reference  directly. It is
+
+trivial to extend the approach to relax this assumption. Equation 20.61 exploits
+
+the
+
+derivative
+
+rule
+
+for
+
+the
+
+logarithm,
+
+ log p(y) 
+
+=
+
+1 p(y)
+
+p(y) 
+
+.
+
+Equation
+
+20.62
+
+gives
+
+an unbiased Monte Carlo estimator of the gradient.
+
+Anywhere we write p(y) in this section, one could equally write p(y | x). This is because p(y) is parametrized by , and  contains both  and x, if x is present.
+
+One issue with the above simple REINFORCE estimator is that it has a very
+
+high variance, so that many samples of y need to be drawn to obtain a good
+
+estimator of the gradient, or equivalently, if only one sample is drawn, SGD will
+
+converge very slowly and will require a smaller learning rate. It is possible to
+
+considerably reduce the variance of that estimator by using variance reduction
+
+methods (Wilson, 1984; L'Ecuyer, 1994). The idea is to modify the estimator so
+
+that its expected value remains unchanged but its variance get reduced. In the
+
+context of REINFORCE, the proposed variance reduction methods involve the
+
+computation of a baseline that is used to offset J (y). Note that any offset b()
+
+that does not depend on y would not change the expectation of the estimated
+
+gradient because
+
+ Ep(y) 
+
+log p(y) 
+
+=
+
+ p(y) 
+
+log p(y) 
+
+y
+
+=
+
+ p(y) 
+
+y
+
+=
+
+
+
+ p(y) =
+
+ 1 = 0,
+
+
+
+
+
+y
+
+(20.63) (20.64) (20.65)
+
+690
+
+

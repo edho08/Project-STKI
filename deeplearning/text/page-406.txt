@@ -1,0 +1,20 @@
+CHAPTER 10. SEQUENCE MODELING: RECURRENT AND RECURSIVE NETS
+
+time steps. Without this extra input, the RNN might generate sequences that end abruptly, such as a sentence that ends before it is complete. This approach is based on the decomposition
+
+P (x(1), . . . , x()) = P ( )P (x(1), . . . , x() |  ).
+
+(10.34)
+
+The strategy of predicting  directly is used for example by Goodfellow et al. (2014d).
+
+10.2.4 Modeling Sequences Conditioned on Context with RNNs
+In the previous section we described how an RNN could correspond to a directed graphical model over a sequence of random variables y(t) with no inputs x. Of course, our development of RNNs as in equation 10.8 included a sequence of inputs x(1), x(2), . . . , x(). In general, RNNs allow the extension of the graphical model view to represent not only a joint distribution over the y variables but also a conditional distribution over y given x. As discussed in the context of feedforward networks in section 6.2.1.1, any model representing a variable P (y; ) can be reinterpreted as a model representing a conditional distribution P (y| ) with  = . We can extend such a model to represent a distribution P ( y | x) by using the same P(y | ) as before, but making  a function of x. In the case of an RNN, this can be achieved in different ways. We review here the most common and obvious choices.
+Previously, we have discussed RNNs that take a sequence of vectors x(t) for t = 1, . . . ,  as input. Another option is to take only a single vector x as input. When x is a fixed-size vector, we can simply make it an extra input of the RNN that generates the y sequence. Some common ways of providing an extra input to an RNN are:
+1. as an extra input at each time step, or
+2. as the initial state h(0), or
+3. both.
+The first and most common approach is illustrated in figure 10.9. The interaction between the input x and each hidden unit vector h(t) is parametrized by a newly introduced weight matrix R that was absent from the model of only the sequence of y values. The same product xR is added as additional input to the hidden units at every time step. We can think of the choice of x as determining the value
+391
+
+

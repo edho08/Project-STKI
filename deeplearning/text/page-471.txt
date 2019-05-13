@@ -1,0 +1,34 @@
+CHAPTER 12. APPLICATIONS
+
+Raw input
+1.5
+0.0
+
+GCN,  = 0
+
+GCN,  = 10-2
+
+x1
+
+-1.5
+
+-1.5 0.0 1.5 -1.5 0.0 1.5 -1.5 0.0 1.5
+
+x0
+
+x0
+
+x0
+
+Figure 12.1: GCN maps examples onto a sphere. (Left)Raw input data may have any norm.
+(Center)GCN with  = 0 maps all non-zero examples perfectly onto a sphere. Here we use s = 1 and  = 10-8. Because we use GCN based on normalizing the standard deviation rather than the L2 norm, the resulting sphere is not the unit sphere. (Right)Regularized
+GCN, with  > 0, draws examples toward the sphere but does not completely discard the variation in their norm. We leave s and  the same as before.
+
+equal variance, so that the multivariate normal distribution used by PCA has spherical contours. Sphering is more commonly known as whitening.
+Global contrast normalization will often fail to highlight image features we would like to stand out, such as edges and corners. If we have a scene with a large dark area and a large bright area (such as a city square with half the image in the shadow of a building) then global contrast normalization will ensure there is a large difference between the brightness of the dark area and the brightness of the light area. It will not, however, ensure that edges within the dark region stand out.
+This motivates local contrast normalization. Local contrast normalization ensures that the contrast is normalized across each small window, rather than over the image as a whole. See figure 12.2 for a comparison of global and local contrast normalization.
+Various definitions of local contrast normalization are possible. In all cases, one modifies each pixel by subtracting a mean of nearby pixels and dividing by a standard deviation of nearby pixels. In some cases, this is literally the mean and standard deviation of all pixels in a rectangular window centered on the pixel to be modified (Pinto et al., 2008). In other cases, this is a weighted mean and weighted standard deviation using Gaussian weights centered on the pixel to be modified. In the case of color images, some strategies process different color
+
+456
+
+

@@ -1,0 +1,126 @@
+CHAPTER 17. MONTE CARLO METHODS
+
+Another approach is to use biased importance sampling, which has the advantage of not requiring normalized p or q. In the case of discrete variables, the biased importance sampling estimator is given by
+
+s^BIS
+
+=
+
+n
+i=1
+
+p(x(i) q(x(i)
+
+) )
+
+f
+
+(x(i) )
+
+n p(x(i))
+
+i=1 q(x(i))
+
+=
+
+n
+i=1
+
+p(x(i) q~(x(i)
+
+) )
+
+f
+
+(x(i) )
+
+n p(x(i))
+
+i=1 q~(x(i))
+
+=
+
+n
+i=1
+
+p~(x(i) q~(x(i)
+
+) )
+
+f
+
+(x(i)
+
+n p~(x(i))
+
+)
+
+,
+
+i=1 q~(x(i))
+
+(17.14) (17.15) (17.16)
+
+where p~ and q~ are the unnormalized forms of p and q and the x(i) are the samples from q. This estimator is biased because E[s^BIS] = s, except asymptotically when n   and the denominator of equation 17.14 converges to 1. Hence this estimator is called asymptotically unbiased.
+
+Although a good choice of q can greatly improve the efficiency of Monte Carlo
+
+estimation, a poor choice of q can make the efficiency much worse. Going back to
+
+equation
+
+17.12,
+
+we see
+
+that
+
+if
+
+there
+
+are
+
+samples
+
+of
+
+q
+
+for
+
+which
+
+p(x)|f (x)| q(x)
+
+is
+
+large,
+
+then the variance of the estimator can get very large. This may happen when
+
+q(x) is tiny while neither p(x) nor f (x) are small enough to cancel it. The q
+
+distribution is usually chosen to be a very simple distribution so that it is easy
+
+to sample from. When x is high-dimensional, this simplicity in q causes it to match p or p|f | poorly. When q(x(i) )  p(x(i))|f (x(i))|, importance sampling
+
+collects useless samples (summing tiny numbers or zeros). On the other hand, when
+
+q(x(i))  p(x(i))|f(x(i) )|, which will happen more rarely, the ratio can be huge.
+
+Because these latter events are rare, they may not show up in a typical sample,
+
+yielding typical underestimation of s , compensated rarely by gross overestimation.
+
+Such very large or very small numbers are typical when x is high dimensional,
+
+because in high dimension the dynamic range of joint probabilities can be very
+
+large.
+
+In spite of this danger, importance sampling and its variants have been found very useful in many machine learning algorithms, including deep learning algorithms. For example, see the use of importance sampling to accelerate training in neural language models with a large vocabulary (section 12.4.3.3) or other neural nets with a large number of outputs. See also how importance sampling has been used to estimate a partition function (the normalization constant of a probability
+
+594
+
+

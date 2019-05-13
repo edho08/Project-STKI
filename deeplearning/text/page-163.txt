@@ -1,0 +1,34 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+x2 z2
+
+20 10
+0 -10 -20
+-20 -10 0 10 20 x1
+
+20 10
+0 -10 -20
+-20 -10 0 10 20 z1
+
+Figure 5.8: PCA learns a linear projection that aligns the direction of greatest variance with the axes of the new space. (Left)The original data consists of samples of x . In this space, the variance might occur along directions that are not axis-aligned. (Right)The transformed data z = xW now varies most along the axis z1. The direction of second most variance is now along z2.
+
+representation that has lower dimensionality than the original input. It also learns a representation whose elements have no linear correlation with each other. This is a first step toward the criterion of learning representations whose elements are statistically independent. To achieve full independence, a representation learning algorithm must also remove the nonlinear relationships between variables.
+PCA learns an orthogonal, linear transformation of the data that projects an input x to a representation z as shown in figure 5.8. In section 2.12, we saw that we could learn a one-dimensional representation that best reconstructs the original data (in the sense of mean squared error) and that this representation actually corresponds to the first principal component of the data. Thus we can use PCA as a simple and effective dimensionality reduction method that preserves as much of the information in the data as possible (again, as measured by least-squares reconstruction error). In the following, we will study how the PCA representation decorrelates the original data representation X.
+Let us consider the m × n-dimensional design matrix X. We will assume that the data has a mean of zero, E[x] = 0. If this is not the case, the data can easily be centered by subtracting the mean from all examples in a preprocessing step.
+The unbiased sample covariance matrix associated with X is given by:
+
+Var[x]
+
+=
+
+m
+
+1 -
+
+1 XX.
+
+(5.85)
+
+148
+
+

@@ -1,0 +1,71 @@
+CHAPTER 17. MONTE CARLO METHODS
+
+from the start as an expectation suggests that this p and f would be a natural choice of decomposition. However, the original specification of the problem may not be the the optimal choice in terms of the number of samples required to obtain a given level of accuracy. Fortunately, the form of the optimal choice q can be derived easily. The optimal q corresponds to what is called optimal importance sampling.
+Because of the identity shown in equation 17.8, any Monte Carlo estimator
+
+s^p
+
+=
+
+1 n
+
+n
+
+f (x(i) )
+
+i=1,x(i) p
+
+(17.9)
+
+can be transformed into an importance sampling estimator
+
+1 n p(x(i))f (x(i))
+
+s^q = n
+
+q(x(i)) .
+
+i=1,x(i) q
+
+(17.10)
+
+We see readily that the expected value of the estimator does not depend on q:
+
+Eq [s^q] = Eq[s^p ] = s.
+
+(17.11)
+
+However, the variance of an importance sampling estimator can be greatly sensitive to the choice of q. The variance is given by
+
+Var[s^q
+
+]
+
+=
+
+Var[p(x)f (x)]/n. q(x)
+
+(17.12)
+
+The minimum variance occurs when q is
+
+q (x)
+
+=
+
+p(x)|f Z
+
+(x)|
+
+,
+
+(17.13)
+
+where Z is the normalization constant, chosen so that q (x) sums or integrates to 1 as appropriate. Better importance sampling distributions put more weight where the integrand is larger. In fact, when f(x) does not change sign, Var [s^q ] = 0, meaning that a single sample is sufficient when the optimal distribution is used. Of course, this is only because the computation of q has essentially solved the original problem, so it is usually not practical to use this approach of drawing a single sample from the optimal distribution.
+
+Any choice of sampling distribution q is valid (in the sense of yielding the correct expected value) and q is the optimal one (in the sense of yielding minimum variance). Sampling from q  is usually infeasible, but other choices of q can be
+feasible while still reducing the variance somewhat.
+
+593
+
+

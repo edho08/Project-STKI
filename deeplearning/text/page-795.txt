@@ -1,0 +1,14 @@
+INDEX
+
+Dot product, 33, 139 Double backprop, 268 Doubly block circulant matrix, 330 Dream sleep, 605, 647 DropConnect, 263 Dropout, 255, 422, 427, 428, 666, 683 Dynamic structure, 445
+E-step, 629 Early stopping, 244, 246, 270, 271, 422 EBM, see energy-based model Echo state network, 23, 26, 401 Effective capacity, 113 Eigendecomposition, 41 Eigenvalue, 41 Eigenvector, 41 ELBO, see evidence lower bound Element-wise product, see Hadamard prod-
+uct, see Hadamard product EM, see expectation maximization Embedding, 512 Empirical distribution, 65 Empirical risk, 274 Empirical risk minimization, 274 Encoder, 4 Energy function, 565 Energy-based model, 565, 591, 648, 657 Ensemble methods, 252 Epoch, 244 Equality constraint, 93 Equivariance, 335 Error function, see objective function ESN, see echo state network Euclidean norm, 38 Euler-Lagrange equation, 641 Evidence lower bound, 628, 655 Example, 98 Expectation, 59 Expectation maximization, 629 Expected value, see expectation Explaining away, 570, 626, 639 Exploitation, 477 Exploration, 477 Exponential distribution, 64
+
+F-score, 420 Factor (graphical model), 563 Factor analysis, 486 Factor graph, 575 Factors of variation, 4 Feature, 98 Feature selection, 234 Feedforward neural network, 166 Fine-tuning, 321 Finite differences, 436 Forget gate, 304 Forward propagation, 201 Fourier transform, 357, 359 Fovea, 363 FPCD, 610 Free energy, 567, 674 Freebase, 479 Frequentist probability, 54 Frequentist statistics, 134 Frobenius norm, 45 Fully-visible Bayes network, 699 Functional derivatives, 640 FVBN, see fully-visible Bayes network
+Gabor function, 365 GANs, see generative adversarial networks Gated recurrent unit, 422 Gaussian distribution, see normal distribu-
+tion Gaussian kernel, 140 Gaussian mixture, 66, 187 GCN, see global contrast normalization GeneOntology, 479 Generalization, 109 Generalized Lagrange function, see general-
+ized Lagrangian Generalized Lagrangian, 93 Generative adversarial networks, 683, 693 Generative moment matching networks, 696 Generator network, 687 Gibbs distribution, 564 Gibbs sampling, 577, 595 Global contrast normalization, 451 GPU, see graphics processing unit Gradient, 83
+
+780
+
+

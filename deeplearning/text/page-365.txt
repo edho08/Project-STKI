@@ -1,0 +1,55 @@
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+s1
+
+s2
+
+s3
+
+Strided convolution
+
+x1
+
+x2
+
+x3
+
+x4
+
+x5
+
+s1
+
+s2
+
+s3
+
+Downsampling
+
+z1
+
+z2
+
+z3
+
+z4
+
+z5
+
+Convolution
+
+x1
+
+x2
+
+x3
+
+x4
+
+x5
+
+Figure 9.12: Convolution with a stride. In this example, we use a stride of two. (Top)Convolution with a stride length of two implemented in a single operation. (Bottom)Convolution with a stride greater than one pixel is mathematically equivalent to convolution with unit stride followed by downsampling. Obviously, the two-step approach involving downsampling is computationally wasteful, because it computes many values that are then discarded.
+
+350
+
+

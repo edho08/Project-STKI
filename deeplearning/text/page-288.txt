@@ -1,0 +1,5 @@
+CHAPTER 7. REGULARIZATION FOR DEEP LEARNING
+will be revisited periodically by most of the remaining chapters. Another central theme of machine learning is optimization, described next.
+273
+
+

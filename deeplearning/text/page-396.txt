@@ -1,0 +1,131 @@
+CHAPTER 10. SEQUENCE MODELING: RECURRENT AND RECURSIVE NETS
+
+t = 1 to t =  , we apply the following update equations:
+a(t) = b + W h(t-1) + U x(t) h(t) = tanh(a(t)) o(t) = c + V h(t) y^(t) = softmax(o(t))
+
+(10.8) (10.9) (10.10) (10.11)
+
+where the parameters are the bias vectors b and c along with the weight matrices
+
+U , V and W , respectively for input-to-hidden, hidden-to-output and hidden-to-
+
+hidden connections. This is an example of a recurrent network that maps an
+
+input sequence to an output sequence of the same length. The total loss for a
+
+given sequence of x values paired with a sequence of y values would then be just the sum of the losses over all the time steps. For example, if L(t) is the negative
+
+log-likelihood of y (t) given x(1), . . . , x(t) , then
+
+
+
+
+
+L {x(1), . . . , x() }, {y(1) , . . . , y()}
+
+(10.12)
+
+=  L(t)
+
+(10.13)
+
+=
+
+t
+-
+
+ log pmodel
+
+ y(t)
+
+|
+
+{x(1),
+
+...
+
+,
+
+ x (t)} ,
+
+(10.14)
+
+t
+
+where
+
+pmodel
+
+ y
+
+(t)
+
+|
+
+{x(1)
+
+,
+
+.
+
+.
+
+.
+
+,
+
+x(t)
+
+ }
+
+is
+
+given
+
+by
+
+reading
+
+the
+
+entry
+
+for
+
+y(t)
+
+from
+
+the
+
+model's output vector y^(t). Computing the gradient of this loss function with respect
+
+to the parameters is an expensive operation. The gradient computation involves
+
+performing a forward propagation pass moving left to right through our illustration
+
+of the unrolled graph in figure 10.3, followed by a backward propagation pass
+
+moving right to left through the graph. The runtime is O( ) and cannot be reduced
+
+by parallelization because the forward propagation graph is inherently sequential;
+
+each time step may only be computed after the previous one. States computed
+
+in the forward pass must be stored until they are reused during the backward
+
+pass, so the memory cost is also O( ). The back-propagation algorithm applied
+
+to the unrolled graph with O( ) cost is called back-propagation through time
+
+or BPTT and is discussed further in section 10.2.2. The network with recurrence
+
+between hidden units is thus very powerful but also expensive to train. Is there an
+
+alternative?
+
+10.2.1 Teacher Forcing and Networks with Output Recurrence
+The network with recurrent connections only from the output at one time step to the hidden units at the next time step (shown in figure 10.4) is strictly less powerful
+381
+
+

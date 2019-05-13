@@ -1,0 +1,50 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+y
+
+h1
+
+h2
+
+x1
+
+x2
+
+y
+w h
+W x
+
+Figure 6.2: An example of a feedforward network, drawn in two different styles. Specifically, this is the feedforward network we use to solve the XOR example. It has a single hidden layer containing two units. (Left)In this style, we draw every unit as a node in the graph. This style is very explicit and unambiguous but for networks larger than this example it can consume too much space. (Right)In this style, we draw a node in the graph for each entire vector representing a layer's activations. This style is much more compact. Sometimes we annotate the edges in this graph with the name of the parameters that describe the relationship between two layers. Here, we indicate that a matrix W describes the mapping from x to h, and a vector w describes the mapping from h to y. We typically omit the intercept parameters associated with each layer when labeling this kind of drawing.
+
+model, we used a vector of weights and a scalar bias parameter to describe an affine transformation from an input vector to an output scalar. Now, we describe an affine transformation from a vector x to a vector h, so an entire vector of bias parameters is needed. The activation function g is typically chosen to be a function that is applied element-wise, with hi = g(xW:,i + ci). In modern neural networks, the default recommendation is to use the rectified linear unit or ReLU (Jarrett et al., 2009; Nair and Hinton, 2010; Glorot et al., 2011a) defined by the activation function g(z) = max{0, z} depicted in figure 6.3.
+We can now specify our complete network as
+
+f (x; W , c, w, b) = w max{0, W x + c} + b.
+
+(6.3)
+
+We can now specify a solution to the XOR problem. Let
+
+
+
+
+
+W=
+
+11 11
+
+,
+
+
+
+c=
+
+0 -1
+
+,
+
+174
+
+(6.4) (6.5)
+
+

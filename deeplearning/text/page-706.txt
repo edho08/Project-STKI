@@ -1,0 +1,181 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+which means that
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ep(y)
+
+(J
+
+(y)
+
+-
+
+b(
+
+))
+
+
+
+log p(y) 
+
+= Ep(y)
+
+J (y) log p(y) 
+
+- b()Ep(y)
+
+ log p(y) 
+
+
+
+
+
+= Ep(y)
+
+J
+
+(y)
+
+
+
+log p(y) 
+
+.
+
+(20.66) (20.67)
+
+Furthermore, we can obtain the optimal b() by computing the variance of (J(y) -
+
+bth(at))thliosgop(pyt)imuanldberaspe(lyin)eabnd(m)iinisimdiizffienrgenwtitfohr
+
+respect to b(). each element i
+
+What of the
+
+we find is vector :
+
+b ()i
+
+=
+
+ EpE(yp)(yJ) (y )loglpoi(gyp)i(2y)
+
+2
+
+
+
+.
+
+(20.68)
+
+The gradient estimator with respect to i then becomes
+
+(J
+
+(y)
+
+-
+
+b(
+
+)
+
+i)
+
+
+
+log p(y)  i
+
+(20.69)
+
+where b( )i estimates the above b( )i. The estimate b is usually obtained by
+
+adding extra outputs
+
+Ep(y)
+
+[J
+
+(y
+
+)
+
+
+
+log p(y)  i
+
+2
+
+]
+
+taontdheEnpe(uy)ralnleogtwpi(oyr)k2anfodrtreaaicnhingeltehmeennetwoofutp.utTs thoeesestiemxatrtae
+
+outputs can be trained with the mean squared error objective, using respectively
+
+J(
+
+y)
+
+
+
+log p(y) i
+
+2
+
+and
+
+ log p(y)2 i
+
+as
+
+targets
+
+when
+
+y
+
+is sampled from p(y), for a given
+
+. The estimate b may then be recovered by substituting these estimates into
+
+equation 20.68. Mnih and Gregor (2014) preferred to use a single shared output
+
+(across all elements i of ) trained with the target J(y), using as baseline b() 
+
+Ep(y) [J (y)].
+
+Variance reduction methods have been introduced in the reinforcement learning
+
+context (Sutton et al., 2000; Weaver and Tao, 2001), generalizing previous work
+
+on the case of binary reward by Dayan (1990). See Bengio et al. (2013b), Mnih
+
+and Gregor (2014), Ba et al. (2014), Mnih et al. (2014), or Xu et al. (2015) for
+
+examples of modern uses of the REINFORCE algorithm with reduced variance in
+
+the context of deep learning. In addition to the use of an input-dependent baseline
+
+b(), Mnih and Gregor (2014) found that the scale of ( J(y) - b( )) could be
+
+adjusted during training by dividing it by its standard deviation estimated by a
+
+moving average during training, as a kind of adaptive learning rate, to counter
+
+the effect of important variations that occur during the course of training in the
+
+691
+
+

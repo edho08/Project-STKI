@@ -1,0 +1,130 @@
+INDEX
+
+Noise-contrastive estimation, 616
+
+Preprocessing, 450
+
+Non-parametric model, 113
+
+Pretraining, 320, 524
+
+Norm, xiv, 38
+
+Primary visual cortex, 362
+
+Normal distribution, 62, 63, 124
+
+Principal components analysis, 47, 145, 146,
+
+Normal equations, 108, 108, 111, 232
+
+486, 626
+
+Normalized initialization, 301
+
+Prior probability distribution, 134
+
+Numerical differentiation, see finite differ- Probabilistic max pooling, 677
+
+ences
+
+Probabilistic PCA, 486, 487, 627
+
+Object detection, 449 Object recognition, 449 Objective function, 81 OMP-k, see orthogonal matching pursuit One-shot learning, 534 Operation, 202 Optimization, 79, 81 Orthodox statistics, see frequentist statistics Orthogonal matching pursuit, 26, 252
+
+Probability density function, 57 Probability distribution, 55 Probability mass function, 55 Probability mass function estimation, 102 Product of experts, 566 Product rule of probability, see chain rule
+of probability PSD, see predictive sparse decomposition Pseudolikelihood, 611
+
+Orthogonal matrix, 41
+
+Quadrature pair, 366
+
+Orthogonality, 40
+
+Quasi-Newton methods, 314
+
+Output layer, 166
+
+Radial basis function, 195
+
+Parallel distributed processing, 17
+
+Random search, 431
+
+Parameter initialization, 298, 403
+
+Random variable, 55
+
+Parameter sharing, 249, 332, 370, 372, 386 Ratio matching, 614
+
+Parameter tying, see Parameter sharing RBF, 195
+
+Parametric model, 113
+
+RBM, see restricted Boltzmann machine
+
+Parametric ReLU, 191
+
+Recall, 420
+
+Partial derivative, 83
+
+Receptive field, 334
+
+Partition function, 564, 601, 663
+
+Recommender Systems, 474
+
+PCA, see principal components analysis Rectified linear unit, 170, 191, 422, 503
+
+PCD, see stochastic maximum likelihood Recurrent network, 26
+
+Perceptron, 15, 26
+
+Recurrent neural network, 375
+
+Persistent contrastive divergence, see stochas- Regression, 99
+
+tic maximum likelihood
+
+Regularization, 119, 119, 176, 226, 427
+
+Perturbation analysis, see reparametrization Regularizer, 118
+
+trick
+
+REINFORCE, 683
+
+Point estimator, 121
+
+Reinforcement learning, 24, 105, 476, 683
+
+Policy, 476
+
+Relational database, 479
+
+Pooling, 327, 677
+
+Relations, 478
+
+Positive definite, 88
+
+Reparametrization trick, 682
+
+Positive phase, 466, 602, 604, 650, 662
+
+Representation learning, 3
+
+Precision, 420
+
+Representational capacity, 113
+
+Precision (of a normal distribution), 62, 64 Restricted Boltzmann machine, 353, 456,
+
+Predictive sparse decomposition, 519
+
+475, 583, 626, 650, 651, 666, 670,
+
+783
+
+

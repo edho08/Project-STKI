@@ -1,0 +1,36 @@
+CHAPTER 3. PROBABILITY AND INFORMATION THEORY
+
+When the identity of the distribution is clear from the context, we may simply write the name of the random variable that the expectation is over, as in Ex[f (x)]. If it is clear which random variable the expectation is over, we may omit the subscript entirely, as in E[f (x)]. By default, we can assume that E[·] averages over the values of all the random variables inside the brackets. Likewise, when there is no ambiguity, we may omit the square brackets.
+Expectations are linear, for example,
+
+Ex[f (x) + g(x)] = Ex[f (x)] + Ex[g(x)],
+
+(3.11)
+
+when  and  are not dependent on x.
+
+The variance gives a measure of how much the values of a function of a random
+
+variable x vary as we sample different values of x from its probability distribution:
+
+
+
+
+
+Var(f (x)) = E (f(x) - E[f(x)])2 .
+
+(3.12)
+
+When the variance is low, the values of f (x) cluster near their expected value. The square root of the variance is known as the standard deviation.
+The covariance gives some sense of how much two values are linearly related to each other, as well as the scale of these variables:
+
+Cov(f(x), g(y)) = E [(f(x) - E [f(x)]) (g(y) - E [g(y)])] .
+
+(3.13)
+
+High absolute values of the covariance mean that the values change very much and are both far from their respective means at the same time. If the sign of the covariance is positive, then both variables tend to take on relatively high values simultaneously. If the sign of the covariance is negative, then one variable tends to take on a relatively high value at the times that the other takes on a relatively low value and vice versa. Other measures such as correlation normalize the contribution of each variable in order to measure only how much the variables are related, rather than also being affected by the scale of the separate variables.
+The notions of covariance and dependence are related, but are in fact distinct concepts. They are related because two variables that are independent have zero covariance, and two variables that have non-zero covariance are dependent. However, independence is a distinct property from covariance. For two variables to have zero covariance, there must be no linear dependence between them. Independence is a stronger requirement than zero covariance, because independence also excludes nonlinear relationships. It is possible for two variables to be dependent but have zero covariance. For example, suppose we first sample a real number x from a uniform distribution over the interval [-1, 1]. We next sample a random variable
+
+61
+
+

@@ -1,0 +1,41 @@
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+Output of softmax: 1,000 class probabilities
+
+Output of softmax: 1,000 class probabilities
+
+Output of softmax: 1,000 class probabilities
+
+Output of matrix multiply: 1,000 units
+
+Output of matrix multiply: 1,000 units
+
+Output of average pooling: 1x1x1,000
+
+Output of reshape to vector:
+16,384 units
+Output of pooling with stride 4: 16x16x64
+Output of convolution + ReLU: 64x64x64
+Output of pooling with stride 4: 64x64x64
+Output of convolution + ReLU: 256x256x64
+Input image: 256x256x3
+
+Output of reshape to vector: 576 units
+Output of pooling to 3x3 grid: 3x3x64
+Output of convolution + ReLU: 64x64x64
+Output of pooling with stride 4: 64x64x64
+Output of convolution + ReLU: 256x256x64
+Input image: 256x256x3
+
+Output of convolution: 16x16x1,000
+Output of pooling with stride 4: 16x16x64
+Output of convolution + ReLU: 64x64x64
+Output of pooling with stride 4: 64x64x64
+Output of convolution + ReLU: 256x256x64
+Input image: 256x256x3
+
+Figure 9.11: Examples of architectures for classification with convolutional networks. The specific strides and depths used in this figure are not advisable for real use; they are designed to be very shallow in order to fit onto the page. Real convolutional networks also often involve significant amounts of branching, unlike the chain structures used here for simplicity. (Left)A convolutional network that processes a fixed image size. After alternating between convolution and pooling for a few layers, the tensor for the convolutional feature map is reshaped to flatten out the spatial dimensions. The rest of the network is an ordinary feedforward network classifier, as described in chapter 6. (Center)A convolutional network that processes a variable-sized image, but still maintains a fully connected section. This network uses a pooling operation with variably-sized pools but a fixed number of pools, in order to provide a fixed-size vector of 576 units to the fully connected portion of the network. (Right)A convolutional network that does not have any fully connected weight layer. Instead, the last convolutional layer outputs one feature map per class. The model presumably learns a map of how likely each class is to occur at each spatial location. Averaging a feature map down to a single value provides the argument to the softmax classifier at the top.
+
+346
+
+

@@ -1,0 +1,63 @@
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+POOLING STAGE
+
+...
+
+1.
+
+1.
+
+1.
+
+0.2
+
+...
+
+...
+
+0.1
+
+1.
+
+0.2
+
+0.1
+
+...
+
+DETECTOR STAGE
+
+POOLING STAGE
+
+...
+
+0.3
+
+1.
+
+1.
+
+1.
+
+...
+
+...
+
+0.3
+
+0.1
+
+1.
+
+0.2
+
+...
+
+DETECTOR STAGE
+
+Figure 9.8: Max pooling introduces invariance. (Top)A view of the middle of the output of a convolutional layer. The bottom row shows outputs of the nonlinearity. The top row shows the outputs of max pooling, with a stride of one pixel between pooling regions and a pooling region width of three pixels. (Bottom)A view of the same network, after the input has been shifted to the right by one pixel. Every value in the bottom row has changed, but only half of the values in the top row have changed, because the max pooling units are only sensitive to the maximum value in the neighborhood, not its exact location.
+
+343
+
+

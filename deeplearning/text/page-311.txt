@@ -1,0 +1,174 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+and Bousquet (2008) argue that it therefore may not be worthwhile to pursue
+
+an
+
+optimization
+
+algorithm
+
+that
+
+converges
+
+faster
+
+than
+
+O(
+
+1 k
+
+)
+
+for
+
+machine
+
+learning
+
+tasks--faster convergence presumably corresponds to overfitting. Moreover, the
+
+asymptotic analysis obscures many advantages that stochastic gradient descent
+
+has after a small number of steps. With large datasets, the ability of SGD to make
+
+rapid initial progress while evaluating the gradient for only very few examples
+
+outweighs its slow asymptotic convergence. Most of the algorithms described in
+
+the remainder of this chapter achieve benefits that matter in practice but are lost
+
+in
+
+the
+
+constant
+
+factors
+
+obscured
+
+by
+
+the
+
+O(
+
+1 k
+
+)
+
+asymptotic
+
+analysis.
+
+One
+
+can
+
+also
+
+trade off the benefits of both batch and stochastic gradient descent by gradually
+
+increasing the minibatch size during the course of learning.
+
+For more information on SGD, see Bottou (1998).
+
+8.3.2 Momentum
+
+While stochastic gradient descent remains a very popular optimization strategy, learning with it can sometimes be slow. The method of momentum (Polyak, 1964) is designed to accelerate learning, especially in the face of high curvature, small but consistent gradients, or noisy gradients. The momentum algorithm accumulates an exponentially decaying moving average of past gradients and continues to move in their direction. The effect of momentum is illustrated in figure 8.5.
+
+Formally, the momentum algorithm introduces a variable v that plays the role
+
+of velocity--it is the direction and speed at which the parameters move through
+
+parameter space. The velocity is set to an exponentially decaying average of the
+
+negative gradient. The name momentum derives from a physical analogy, in
+
+which the negative gradient is a force moving a particle through parameter space,
+
+according to Newton's laws of motion. Momentum in physics is mass times velocity.
+
+In the momentum learning algorithm, we assume unit mass, so the velocity vector v
+
+may also be regarded as the momentum of the particle. A hyperparameter   [0, 1)
+
+determines how quickly the contributions of previous gradients exponentially decay.
+
+The update rule is given by:
+
+v
+
+
+
+v
+
+-
+
+ 
+
+
+
+1 m
+
+ m
+
+L(f (x(i);
+
+),
+
+ y (i))
+
+,
+
+i=1
+
+(8.15)
+
+   + v.
+
+(8.16)
+
+The
+
+velocity
+
+v
+
+accumulates
+
+the
+
+gradient
+
+elements
+
+
+
+
+
+1 m
+
+m
+i=1
+
+L(f
+
+(x(i);
+
+),
+
+y(i)
+
+ ).
+
+The larger  is relative to , the more previous gradients affect the current direction.
+
+The SGD algorithm with momentum is given in algorithm 8.2.
+
+296
+
+

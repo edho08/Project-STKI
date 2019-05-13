@@ -1,0 +1,108 @@
+CHAPTER 10. SEQUENCE MODELING: RECURRENT AND RECURSIVE NETS
+
+internal state is thus updated as follows, but with a conditional self-loop weight
+
+fi(t):
+
+
+
+
+
+s(it)
+
+=
+
+fi(t)s(it-1)
+
++
+
+g (it)
+
+b i +
+
+
+
+Ui,jx
+
+(t) j
+
++
+
+ Wi,j
+
+h(jt-1)
+
+
+
+,
+
+(10.41)
+
+j
+
+j
+
+where b, U and W respectively denote the biases, input weights and recurrent weights into the LSTM cell. The external input gate unit g(it) is computed
+similarly to the forget gate (with a sigmoid unit to obtain a gating value between
+
+0 and 1), but with its own parameters:
+
+
+
+
+
+g(it)
+
+=
+
+
+
+bgi
+
++
+
+
+
+Uig,jx
+
+(t) j
+
++
+
+ Wig,jh(jt-1)
+
+.
+
+j
+
+j
+
+(10.42)
+
+The output h(it) of the LSTM cell can also be shut off, via the output gate q (it),
+
+which also uses a sigmoid unit for gating:
+
+ h(it) = tanh s(it) q(it)
+
+
+(10.43) 
+
+qi(t) =  boi +  Uio,jx(jt) +  Wio,j h(jt-1) 
+
+(10.44)
+
+j
+
+j
+
+which has parameters bo, U o, W o for its biases, input weights and recurrent weights, respectively. Among the variants, one can choose to use the cell state s(it) as an extra input (with its weight) into the three gates of the i-th unit, as shown
+in figure 10.16. This would require three additional parameters.
+
+LSTM networks have been shown to learn long-term dependencies more easily than the simple recurrent architectures, first on artificial data sets designed for testing the ability to learn long-term dependencies (Bengio et al., 1994; Hochreiter and Schmidhuber, 1997; Hochreiter et al., 2001), then on challenging sequence processing tasks where state-of-the-art performance was obtained (Graves, 2012; Graves et al., 2013; Sutskever et al., 2014). Variants and alternatives to the LSTM have been studied and used and are discussed next.
+
+10.10.2 Other Gated RNNs
+Which pieces of the LSTM architecture are actually necessary? What other successful architectures could be designed that allow the network to dynamically control the time scale and forgetting behavior of different units?
+411
+
+

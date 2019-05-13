@@ -1,0 +1,17 @@
+BIBLIOGRAPHY
+Hinton, G. E. and Salakhutdinov, R. (2006). Reducing the dimensionality of data with neural networks. Science, 313(5786), 504­507. 509, 524, 528, 529, 534
+Hinton, G. E. and Sejnowski, T. J. (1986). Learning and relearning in Boltzmann machines. In D. E. Rumelhart and J. L. McClelland, editors, Parallel Distributed Processing, volume 1, chapter 7, pages 282­317. MIT Press, Cambridge. 570, 654
+Hinton, G. E. and Sejnowski, T. J. (1999). Unsupervised learning: foundations of neural computation . MIT press. 541
+Hinton, G. E. and Shallice, T. (1991). Lesioning an attractor network: investigations of acquired dyslexia. Psychological review, 98(1), 74. 13
+Hinton, G. E. and Zemel, R. S. (1994). Autoencoders, minimum description length, and Helmholtz free energy. In NIPS'1993 . 502
+Hinton, G. E., Sejnowski, T. J., and Ackley, D. H. (1984). Boltzmann machines: Constraint satisfaction networks that learn. Technical Report TR-CMU-CS-84-119, Carnegie-Mellon University, Dept. of Computer Science. 570, 654
+Hinton, G. E., McClelland, J., and Rumelhart, D. (1986). Distributed representations. In D. E. Rumelhart and J. L. McClelland, editors, Parallel Distributed Processing: Explorations in the Microstructure of Cognition, volume 1, pages 77­109. MIT Press, Cambridge. 17, 225, 526
+Hinton, G. E., Revow, M., and Dayan, P. (1995a). Recognizing handwritten digits using mixtures of linear models. In G. Tesauro, D. Touretzky, and T. Leen, editors, Advances in Neural Information Processing Systems 7 (NIPS'94), pages 1015­1022. MIT Press, Cambridge, MA. 489
+Hinton, G. E., Dayan, P., Frey, B. J., and Neal, R. M. (1995b). The wake-sleep algorithm for unsupervised neural networks. Science, 268, 1558­1161. 504, 651
+Hinton, G. E., Dayan, P., and Revow, M. (1997). Modelling the manifolds of images of handwritten digits. IEEE Transactions on Neural Networks , 8, 65­74. 499
+Hinton, G. E., Welling, M., Teh, Y. W., and Osindero, S. (2001). A new view of ICA. In Proceedings of 3rd International Conference on Independent Component Analysis and Blind Signal Separation (ICA'01), pages 746­751, San Diego, CA. 491
+Hinton, G. E., Osindero, S., and Teh, Y. (2006). A fast learning algorithm for deep belief nets. Neural Computation , 18, 1527­1554. 14, 19, 27, 143, 528, 529, 660, 661
+Hinton, G. E., Deng, L., Yu, D., Dahl, G. E., Mohamed, A., Jaitly, N., Senior, A., Vanhoucke, V., Nguyen, P., Sainath, T. N., and Kingsbury, B. (2012b). Deep neural networks for acoustic modeling in speech recognition: The shared views of four research groups. IEEE Signal Process. Mag., 29(6), 82­97. 101
+743
+
+

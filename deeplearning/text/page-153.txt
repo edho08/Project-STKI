@@ -1,0 +1,219 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+where µ0 and 0 are the prior distribution mean vector and covariance matrix respectively. 1
+With the prior thus specified, we can now proceed in determining the posterior distribution over the model parameters.
+
+p(w | X, y)  p(y | X, w)p(w)
+
+(5.74)
+
+
+
+exp
+
+ -
+
+1 2
+
+(y
+
+-
+
+X
+
+w)
+
+(y
+
+-
+
+X
+
+ w)
+
+exp
+
+
+
+-
+
+1 (w
+2
+
+-
+
+µ0)
+
+-0 1(w
+
+-
+
+µ
+
+ 0)
+
+(5.75)
+
+
+
+exp
+
+ -
+
+1 2
+
+ -2yX w
+
++ w XXw
+
++
+
+w-0 1 w
+
+-
+
+ 2µ0 -0 1w .
+
+(5.76)
+
+We
+
+now define
+
+m
+
+=
+
+ X
+
+X
+
++
+
+-0 1-1
+
+and
+
+µm
+
+=
+
+m
+
+ X y
+
++
+
+-0 1
+
+µ0
+
+ .
+
+Using
+
+these new variables, we find that the posterior may be rewritten as a Gaussian
+
+distribution:
+
+p(w
+
+|
+
+X,
+
+y)
+
+ 
+
+exp exp
+
+ -
+ -
+
+1 2 1 2
+
+(w (w
+
+- -
+
+µm µm
+
+) )
+
+-m1(w -m1(w
+
+- -
+
+µ µ
+
+m) + 
+m) .
+
+1 2
+
+ µ m-m1 µ m
+
+(5.77) (5.78)
+
+All terms that do not include the parameter vector w have been omitted; they are implied by the fact that the distribution must be normalized to integrate to 1. Equation 3.23 shows how to normalize a multivariate Gaussian distribution.
+
+Examining this posterior distribution allows us to gain some intuition for the
+
+effect
+
+of
+
+Bayesian
+
+inference.
+
+In
+
+most
+
+situations,
+
+we
+
+set
+
+µ0
+
+to 0.
+
+If
+
+we
+
+set
+
+0
+
+=
+
+1 
+
+I
+
+,
+
+then µm gives the same estimate of w as does frequentist linear regression with a
+
+weight decay penalty of ww. One difference is that the Bayesian estimate is
+
+undefined if  is set to zero---we are not allowed to begin the Bayesian learning
+
+process with an infinitely wide prior on w. The more important difference is that
+
+the Bayesian estimate provides a covariance matrix, showing how likely all the
+
+different values of w are, rather than providing only the estimate µm.
+
+5.6.1 Maximum A Posteriori (MAP) Estimation
+While the most principled approach is to make predictions using the full Bayesian posterior distribution over the parameter  , it is still often desirable to have a
+1
+Unless there is a reason to assume a particular covariance structure, we typically assume a diagonal covariance matrix 0 = diag(0).
+138
+
+

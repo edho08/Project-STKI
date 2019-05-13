@@ -1,0 +1,30 @@
+CHAPTER 10. SEQUENCE MODELING: RECURRENT AND RECURSIVE NETS
+can be mitigated by introducing skip connections in the hidden-to-hidden path, as illustrated in figure 10.13c.
+10.6 Recursive Neural Networks
+L
+
+o
+
+y
+
+U W
+
+UW
+
+UW
+
+V x(1)
+
+V x(2)
+
+V x(3)
+
+V x(4)
+
+Figure 10.14: A recursive network has a computational graph that generalizes that of the recurrent network from a chain to a tree. A variable-size sequence x(1), x (2), . . . , x(t) can be mapped to a fixed-size representation (the output o), with a fixed set of parameters (the weight matrices U, V , W ). The figure illustrates a supervised learning case in which some target y is provided which is associated with the whole sequence.
+Recursive neural networks2 represent yet another generalization of recurrent networks, with a different kind of computational graph, which is structured as a deep tree, rather than the chain-like structure of RNNs. The typical computational graph for a recursive network is illustrated in figure 10.14. Recursive neural
+2
+We suggest to not abbreviate "recursive neural network" as "RNN" to avoid confusion with "recurrent neural network."
+400
+
+

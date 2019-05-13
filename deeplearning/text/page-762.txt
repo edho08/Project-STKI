@@ -1,0 +1,18 @@
+BIBLIOGRAPHY
+Jaynes, E. T. (2003). Probability Theory: The Logic of Science. Cambridge University Press. 53
+Jean, S., Cho, K., Memisevic, R., and Bengio, Y. (2014). On using very large target vocabulary for neural machine translation. arXiv:1412.2007. 474, 475
+Jelinek, F. and Mercer, R. L. (1980). Interpolated estimation of Markov source parameters from sparse data. In E. S. Gelsema and L. N. Kanal, editors, Pattern Recognition in Practice. North-Holland, Amsterdam. 462, 473
+Jia, Y. (2013). Caffe: An open source convolutional architecture for fast feature embedding. http://caffe.berkeleyvision.org/. 25, 214
+Jia, Y., Huang, C., and Darrell, T. (2012). Beyond spatial pyramids: Receptive field learning for pooled image features. In Computer Vision and Pattern Recognition (CVPR), 2012 IEEE Conference on , pages 3370­3377. IEEE. 345
+Jim, K.-C., Giles, C. L., and Horne, B. G. (1996). An analysis of noise in recurrent neural networks: convergence and generalization. IEEE Transactions on Neural Networks, 7(6), 1424­1438. 242
+Jordan, M. I. (1998). Learning in Graphical Models. Kluwer, Dordrecht, Netherlands. 18
+Joulin, A. and Mikolov, T. (2015). Inferring algorithmic patterns with stack-augmented recurrent nets. arXiv preprint arXiv:1503.01007 . 418
+Jozefowicz, R., Zaremba, W., and Sutskever, I. (2015). An empirical evaluation of recurrent network architectures. In ICML'2015 . 306, 412
+Judd, J. S. (1989). Neural Network Design and the Complexity of Learning . MIT press. 293
+Jutten, C. and Herault, J. (1991). Blind separation of sources, part I: an adaptive algorithm based on neuromimetic architecture. Signal Processing, 24, 1­10. 491
+Kahou, S. E., Pal, C., Bouthillier, X., Froumenty, P., Gülçehre, c., Memisevic, R., Vincent, P., Courville, A., Bengio, Y., Ferrari, R. C., Mirza, M., Jean, S., Carrier, P. L., Dauphin, Y., Boulanger-Lewandowski, N., Aggarwal, A., Zumer, J., Lamblin, P., Raymond, J.-P., Desjardins, G., Pascanu, R., Warde-Farley, D., Torabi, A., Sharma, A., Bengio, E., Côté, M., Konda, K. R., and Wu, Z. (2013). Combining modality specific deep neural networks for emotion recognition in video. In Proceedings of the 15th ACM on International Conference on Multimodal Interaction. 201
+Kalchbrenner, N. and Blunsom, P. (2013). Recurrent continuous translation models. In EMNLP'2013 . 474, 475
+Kalchbrenner, N., Danihelka, I., and Graves, A. (2015). Grid long short-term memory. arXiv preprint arXiv:1507.01526 . 395
+747
+
+

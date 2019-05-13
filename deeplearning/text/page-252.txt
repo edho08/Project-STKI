@@ -1,0 +1,40 @@
+CHAPTER 7. REGULARIZATION FOR DEEP LEARNING
+
+From the point of view of learning via maximization with respect to w, we can ignore the log  - log 2 terms because they do not depend on w.
+
+7.2 Norm Penalties as Constrained Optimization
+
+Consider the cost function regularized by a parameter norm penalty: J~(; X, y) = J(; X, y) + ().
+
+(7.25)
+
+Recall from section 4.4 that we can minimize a function subject to constraints by constructing a generalized Lagrange function, consisting of the original objective function plus a set of penalties. Each penalty is a product between a coefficient, called a Karush­Kuhn­Tucker (KKT) multiplier, and a function representing whether the constraint is satisfied. If we wanted to constrain () to be less than some constant k, we could construct a generalized Lagrange function
+
+L(, ; X, y) = J(; X, y) + (() - k).
+
+(7.26)
+
+The solution to the constrained problem is given by
+
+ = arg min max L(, ).
+ ,0
+
+(7.27)
+
+As described in section 4.4, solving this problem requires modifying both  and . Section 4.5 provides a worked example of linear regression with an L2 constraint. Many different procedures are possible--some may use gradient descent, while others may use analytical solutions for where the gradient is zero--but in all procedures  must increase whenever () > k and decrease whenever () < k . All positive  encourage () to shrink. The optimal value  will encourage () to shrink, but not so strongly to make () become less than k.
+To gain some insight into the effect of the constraint, we can fix  and view the problem as just a function of :
+
+  = arg min L(, ) = arg min J(; X, y) + ().
+
+
+
+
+
+(7.28)
+
+This is exactly the same as the regularized training problem of minimizing J~.
+We can thus think of a parameter norm penalty as imposing a constraint on the weights. If  is the L2 norm, then the weights are constrained to lie in an L2 ball. If  is the L1 norm, then the weights are constrained to lie in a region of
+
+237
+
+

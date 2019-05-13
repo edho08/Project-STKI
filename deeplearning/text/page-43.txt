@@ -1,0 +1,35 @@
+CHAPTER 1. INTRODUCTION
+
+0.30
+
+ILSVRC classification error rate
+
+0.25
+
+0.20
+
+0.15
+
+0.10
+
+0.05
+
+0.00 2010
+
+2011
+
+2012
+
+2013
+
+2014
+
+2015
+
+Year
+
+Figure 1.12: Since deep networks reached the scale necessary to compete in the ImageNet Large Scale Visual Recognition Challenge, they have consistently won the competition every year, and yielded lower and lower error rates each time. Data from Russakovsky et al. (2014b) and He et al. (2015).
+
+28
+
+

@@ -1,0 +1,73 @@
+CHAPTER 10. SEQUENCE MODELING: RECURRENT AND RECURSIVE NETS
+
+information flow forward in time (computing outputs and losses) and backward in time (computing gradients) by explicitly showing the path along which this information flows.
+
+10.2 Recurrent Neural Networks
+Armed with the graph unrolling and parameter sharing ideas of section 10.1, we can design a wide variety of recurrent neural networks.
+
+y
+
+y (t-1)
+
+y (t)
+
+y (t+1)
+
+L
+
+L(t-1)
+
+L(t)
+
+L(t+1)
+
+o
+
+o(t-1)
+
+o(t)
+
+o(t+1)
+
+V
+
+Unfold
+
+W
+
+V
+
+W
+
+W
+
+V W
+
+V W
+
+h
+
+h(... )
+
+h(t-1)
+
+h(t)
+
+h(t+1)
+
+h(... )
+
+U x
+
+U x(t-1)
+
+U x(t)
+
+U x(t+1)
+
+Figure 10.3: The computational graph to compute the training loss of a recurrent network that maps an input sequence of x values to a corresponding sequence of output o values. A loss L measures how far each o is from the corresponding training target y . When using softmax outputs, we assume o is the unnormalized log probabilities. The loss L internally computes y^ = softmax(o) and compares this to the target y. The RNN has input to hidden connections parametrized by a weight matrix U, hidden-to-hidden recurrent connections parametrized by a weight matrix W , and hidden-to-output connections parametrized by a weight matrix V . Equation 10.8 defines forward propagation in this model. (Left)The RNN and its loss drawn with recurrent connections. (Right)The same seen as an timeunfolded computational graph, where each node is now associated with one particular time instance.
+Some examples of important design patterns for recurrent neural networks include the following:
+
+378
+
+

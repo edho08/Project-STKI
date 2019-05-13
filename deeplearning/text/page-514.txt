@@ -1,0 +1,19 @@
+CHAPTER 13. LINEAR FACTOR MODELS
+
+Figure 13.2: Example samples and weights from a spike and slab sparse coding model trained on the MNIST dataset. (Left)The samples from the model do not resemble the training examples. At first glance, one might assume the model is poorly fit. (Right)The weight vectors of the model have learned to represent penstrokes and sometimes complete digits. The model has thus learned useful features. The problem is that the factorial prior over features results in random subsets of features being combined. Few such subsets are appropriate to form a recognizable MNIST digit. This motivates the development of generative models that have more powerful distributions over their latent codes. Figure reproduced with permission from Goodfellow et al. (2013d).
+
+factorial distribution on the deepest code layer, as well as the development of more sophisticated shallow models.
+
+13.5 Manifold Interpretation of PCA
+
+Linear factor models including PCA and factor analysis can be interpreted as learning a manifold (Hinton et al., 1997). We can view probabilistic PCA as defining a thin pancake-shaped region of high probability--a Gaussian distribution that is very narrow along some axes, just as a pancake is very flat along its vertical axis, but is elongated along other axes, just as a pancake is wide along its horizontal axes. This is illustrated in figure 13.3. PCA can be interpreted as aligning this pancake with a linear manifold in a higher-dimensional space. This interpretation applies not just to traditional PCA but also to any linear autoencoder that learns matrices W and V with the goal of making the reconstruction of x lie as close to x as possible,
+
+Let the encoder be
+
+h = f (x) = W (x - µ).
+
+(13.19)
+
+499
+
+

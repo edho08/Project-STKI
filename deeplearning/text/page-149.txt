@@ -1,0 +1,67 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+examples are assumed to be i.i.d., the conditional log-likelihood (equation 5.63) is given by
+
+ m log p(y(i) | x(i); )
+
+i=1
+
+=
+
+-
+
+m log 
+
+-
+
+m 2
+
+log(2)
+
+ m -
+
+y^(i) - y(i)2
+
+2 2
+
+,
+
+i=1
+
+(5.64) (5.65)
+
+where y^(i) is the output of the linear regression on the i-th input x(i) and m is the
+
+number of the training examples. Comparing the log-likelihood with the mean
+
+squared error,
+
+MSEtrain
+
+=
+
+1 m
+
+ m ||y^
+
+(i)
+
+-
+
+y(i)||2 ,
+
+i=1
+
+(5.66)
+
+we immediately see that maximizing the log-likelihood with respect to w yields the same estimate of the parameters w as does minimizing the mean squared error. The two criteria have different values but the same location of the optimum. This justifies the use of the MSE as a maximum likelihood estimation procedure. As we will see, the maximum likelihood estimator has several desirable properties.
+
+5.5.2 Properties of Maximum Likelihood
+The main appeal of the maximum likelihood estimator is that it can be shown to be the best estimator asymptotically, as the number of examples m  , in terms of its rate of convergence as m increases.
+Under appropriate conditions, the maximum likelihood estimator has the property of consistency (see section 5.4.5 above), meaning that as the number of training examples approaches infinity, the maximum likelihood estimate of a parameter converges to the true value of the parameter. These conditions are:
+· The true distribution pdata must lie within the model family pmodel(·; ). Otherwise, no estimator can recover pdata .
+· The true distribution pdata must correspond to exactly one value of . Otherwise, maximum likelihood can recover the correct pdata , but will not be able to determine which value of  was used by the data generating processing.
+There are other inductive principles besides the maximum likelihood estimator, many of which share the property of being consistent estimators. However,
+134
+
+

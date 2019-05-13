@@ -1,0 +1,16 @@
+CHAPTER 13. LINEAR FACTOR MODELS
+
+optimal reconstruction error (choosing µ, b, V and W as above) is
+
+min E[||x - x^||2] = D i .
+i=d+1
+
+(13.23)
+
+Hence, if the covariance has rank d , the eigenvalues d+1 to D are 0 and reconstruction error is 0.
+Furthermore, one can also show that the above solution can be obtained by maximizing the variances of the elements of h, under orthogonal W , instead of minimizing reconstruction error.
+Linear factor models are some of the simplest generative models and some of the simplest models that learn a representation of data. Much as linear classifiers and linear regression models may be extended to deep feedforward networks, these linear factor models may be extended to autoencoder networks and deep probabilistic models that perform the same tasks but with a much more powerful and flexible model family.
+
+501
+
+

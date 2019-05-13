@@ -1,0 +1,29 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+are working until quite late in the training process. Software implementations of DBMs need to have many different components for CD training of individual RBMs, PCD training of the full DBM, and training based on back-propagation through the MLP. Finally, the MLP on top of the Boltzmann machine loses many of the advantages of the Boltzmann machine probabilistic model, such as being able to perform inference when some input values are missing.
+
+There are two main ways to resolve the joint training problem of the deep Boltzmann machine. The first is the centered deep Boltzmann machine (Montavon and Muller, 2012), which reparametrizes the model in order to make the Hessian of the cost function better-conditioned at the beginning of the learning process. This yields a model that can be trained without a greedy layer-wise pretraining stage. The resulting model obtains excellent test set log-likelihood and produces high quality samples. Unfortunately, it remains unable to compete with appropriately regularized MLPs as a classifier. The second way to jointly train a deep Boltzmann machine is to use a multi-prediction deep Boltzmann machine (Goodfellow et al., 2013b). This model uses an alternative training criterion that allows the use of the back-propagation algorithm in order to avoid the problems with MCMC estimates of the gradient. Unfortunately, the new criterion does not lead to good likelihood or samples, but, compared to the MCMC approach, it does lead to superior classification performance and ability to reason well about missing inputs.
+
+The centering trick for the Boltzmann machine is easiest to describe if we
+
+return to the general view of a Boltzmann machine as consisting of a set of units
+
+x with a weight matrix U and biases b. Recall from equation 20.2 that he energy
+
+function is given by
+
+E(x) = -xU x - bx.
+
+(20.36)
+
+Using different sparsity patterns in the weight matrix U, we can implement structures of Boltzmann machines, such as RBMs, or DBMs with different numbers of layers. This is accomplished by partitioning x into visible and hidden units and zeroing out elements of U for units that do not interact. The centered Boltzmann machine introduces a vector µ that is subtracted from all of the states:
+
+E(x; U , b) = -(x - µ) U (x - µ) - (x - µ)b.
+
+(20.37)
+
+Typically µ is a hyperparameter fixed at the beginning of training. It is usually chosen to make sure that x - µ  0 when the model is initialized. This reparametrization does not change the set of probability distributions that the model can represent, but it does change the dynamics of stochastic gradient descent applied to the likelihood. Specifically, in many cases, this reparametrization results
+
+673
+
+

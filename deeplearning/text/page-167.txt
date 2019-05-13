@@ -1,0 +1,71 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+gradient descent algorithm introduced in section 4.3.
+A recurring problem in machine learning is that large training sets are necessary for good generalization, but large training sets are also more computationally expensive.
+The cost function used by a machine learning algorithm often decomposes as a sum over training examples of some per-example loss function. For example, the negative conditional log-likelihood of the training data can be written as
+
+J ()
+
+=
+
+Ex,yp^data L(x, y, )
+
+=
+
+1 m
+
+ m L(x(i) , y(i), )
+
+i=1
+
+(5.96)
+
+where L is the per-example loss L(x, y, ) = - log p(y | x; ). For these additive cost functions, gradient descent requires computing
+
+ J ()
+
+=
+
+1  m m
+
+L(x(i), y(i), ).
+
+i=1
+
+(5.97)
+
+The computational cost of this operation is O(m). As the training set size grows to billions of examples, the time to take a single gradient step becomes prohibitively long.
+The insight of stochastic gradient descent is that the gradient is an expectation. The expectation may be approximately estimated using a small set of samples. Specifically, on each step of the algorithm, we can sample a minibatch of examples B = {x(1), . . . , x(m)} drawn uniformly from the training set. The minibatch size m is typically chosen to be a relatively small number of examples, ranging from 1 to a few hundred. Crucially, m is usually held fixed as the training set size m grows. We may fit a training set with billions of examples using updates computed on only a hundred examples.
+The estimate of the gradient is formed as
+
+g
+
+=
+
+1 m
+
+
+
+ m
+
+L(x(i) ,
+
+y(i) ,
+
+).
+
+i=1
+
+(5.98)
+
+using examples from the minibatch B. The stochastic gradient descent algorithm then follows the estimated gradient downhill:
+
+   - g,
+
+(5.99)
+
+where  is the learning rate.
+
+152
+
+

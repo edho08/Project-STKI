@@ -1,0 +1,135 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+We begin by evaluating the term E[^m2 ]:
+
+E[^m2 ]
+
+=E
+
+ 1 m
+
+ m
+
+ x(i)
+
+-
+
+2  µ^ m
+
+i=1
+
+= m - 1 2 m
+
+(5.38) (5.39)
+
+Returning
+
+to
+
+equation
+
+5.37,
+
+we
+
+conclude
+
+that
+
+the
+
+bias
+
+of
+
+^
+
+2 m
+
+is
+
+-2/m.
+
+Therefore,
+
+the sample variance is a biased estimator.
+
+The unbiased sample variance estimator
+
+~2m
+
+=
+
+1 m-1
+
+ m
+
+ x(i)
+
+i=1
+
+2 - µ^m
+
+(5.40)
+
+provides an alternative approach. As the name suggests this estimator is unbiased.
+
+That is, we find that E[~2m] = 2:
+
+E[~2m]
+
+=
+
+E
+
+ m
+
+1 -
+
+1
+
+ m
+
+ x(i)
+
+-
+
+2 µ^m
+
+i=1
+
+(5.41)
+
+= =
+
+m m-
+m m-
+
+1E[^mm2 -] 1m
+
+1
+
+
+2
+
+(5.42) (5.43)
+
+= 2.
+
+(5.44)
+
+We have two estimators: one is biased and the other is not. While unbiased estimators are clearly desirable, they are not always the "best" estimators. As we will see we often use biased estimators that possess other important properties.
+
+5.4.3 Variance and Standard Error
+
+Another property of the estimator that we might want to consider is how much we expect it to vary as a function of the data sample. Just as we computed the expectation of the estimator to determine its bias, we can compute its variance. The variance of an estimator is simply the variance
+
+Var(^)
+
+(5.45)
+
+where the random variable is the training set. Alternately, the square root of the variance is called the standard error, denoted SE(^).
+
+127
+
+

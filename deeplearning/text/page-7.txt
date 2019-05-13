@@ -1,0 +1,63 @@
+CONTENTS
+
+18.3 Pseudolikelihood . . . . . . . . . . . . . . . . . . . . . . . . . . . 615 18.4 Score Matching and Ratio Matching . . . . . . . . . . . . . . . . 617 18.5 Denoising Score Matching . . . . . . . . . . . . . . . . . . . . . . 619 18.6 Noise-Contrastive Estimation . . . . . . . . . . . . . . . . . . . . 620 18.7 Estimating the Partition Function . . . . . . . . . . . . . . . . . . 623
+
+19 Approximate Inference
+
+631
+
+19.1 Inference as Optimization . . . . . . . . . . . . . . . . . . . . . . 633
+
+19.2 Expectation Maximization . . . . . . . . . . . . . . . . . . . . . . 634
+
+19.3 MAP Inference and Sparse Coding . . . . . . . . . . . . . . . . . 635
+
+19.4 Variational Inference and Learning . . . . . . . . . . . . . . . . . 638
+
+19.5 Learned Approximate Inference . . . . . . . . . . . . . . . . . . . 651
+
+20 Deep Generative Models
+
+654
+
+20.1 Boltzmann Machines . . . . . . . . . . . . . . . . . . . . . . . . . 654
+
+20.2 Restricted Boltzmann Machines . . . . . . . . . . . . . . . . . . . 656
+
+20.3 Deep Belief Networks . . . . . . . . . . . . . . . . . . . . . . . . . 660
+
+20.4 Deep Boltzmann Machines . . . . . . . . . . . . . . . . . . . . . . 663
+
+20.5 Boltzmann Machines for Real-Valued Data . . . . . . . . . . . . . 676
+
+20.6 Convolutional Boltzmann Machines . . . . . . . . . . . . . . . . . 683
+
+20.7 Boltzmann Machines for Structured or Sequential Outputs . . . . 685
+
+20.8 Other Boltzmann Machines . . . . . . . . . . . . . . . . . . . . . 686
+
+20.9 Back-Propagation through Random Operations . . . . . . . . . . 687
+
+20.10 Directed Generative Nets . . . . . . . . . . . . . . . . . . . . . . . 692
+
+20.11 Drawing Samples from Autoencoders . . . . . . . . . . . . . . . . 711
+
+20.12 Generative Stochastic Networks . . . . . . . . . . . . . . . . . . . 714
+
+20.13 Other Generation Schemes . . . . . . . . . . . . . . . . . . . . . . 716
+
+20.14 Evaluating Generative Models . . . . . . . . . . . . . . . . . . . . 717
+
+20.15 Conclusion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 720
+
+Bibliography
+
+721
+
+Index
+
+777
+
+vi
+
+

@@ -1,0 +1,42 @@
+CHAPTER 14. AUTOENCODERS
+Input Tangent vectors point
+
+Local PCA (no sharing across regions)
+
+Contractive autoencoder
+
+Figure 14.10: Illustration of tangent vectors of the manifold estimated by local PCA
+
+and by a contractive autoencoder. The location on the manifold is defined by the input
+
+image of a dog drawn from the CIFAR-10 dataset. The tangent vectors are estimated
+
+by the leading singular vectors of the Jacobian
+
+matrix
+
+h x
+
+of
+
+the input-to-code
+
+mapping.
+
+Although both local PCA and the CAE can capture local tangents, the CAE is able to
+
+form more accurate estimates from limited training data because it exploits parameter
+
+sharing across different locations that share a subset of active hidden units. The CAE
+
+tangent directions typically correspond to moving or changing parts of the object (such as
+
+the head or legs). Images reproduced with permission from Rifai et al. (2011c).
+
+if we do not impose some sort of scale on the decoder. For example, the encoder could consist of multiplying the input by a small constant  and the decoder could consist of dividing the code by . As  approaches 0, the encoder drives the contractive penalty (h) to approach 0 without having learned anything about the distribution. Meanwhile, the decoder maintains perfect reconstruction. In Rifai et al. (2011a), this is prevented by tying the weights of f and g. Both f and g are standard neural network layers consisting of an affine transformation followed by an element-wise nonlinearity, so it is straightforward to set the weight matrix of g to be the transpose of the weight matrix of f .
+
+14.8 Predictive Sparse Decomposition
+Predictive sparse decomposition (PSD) is a model that is a hybrid of sparse coding and parametric autoencoders (Kavukcuoglu et al., 2008). A parametric encoder is trained to predict the output of iterative inference. PSD has been applied to unsupervised feature learning for object recognition in images and video (Kavukcuoglu et al., 2009, 2010; Jarrett et al., 2009; Farabet et al., 2011), as well as for audio (Henaff et al., 2011). The model consists of an encoder f (x) and a decoder g(h) that are both parametric. During training, h is controlled by the
+523
+
+

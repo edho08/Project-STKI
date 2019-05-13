@@ -1,0 +1,35 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+due to triggering some early stopping criterion based on overfitting) expresses a prior that the final parameters should be close to the initial parameters. Recall from section 7.8 that gradient descent with early stopping is equivalent to weight decay for some models. In the general case, gradient descent with early stopping is not the same as weight decay, but does provide a loose analogy for thinking about the effect of initialization. We can think of initializing the parameters  to 0 as being similar to imposing a Gaussian prior p( ) with mean 0 . From this point of view, it makes sense to choose 0 to be near 0. This prior says that it is more likely that units do not interact with each other than that they do interact. Units interact only if the likelihood term of the objective function expresses a strong preference for them to interact. On the other hand, if we initialize 0 to large values, then our prior specifies which units should interact with each other, and how they should interact.
+
+Some heuristics are available for choosing the initial scale of the weights. One
+
+heuristic is to initialize the weights of a fully connected layer with m inputs and
+
+n outputs by sampling each weight from U (- 1m , 1m), while Glorot and Bengio
+
+(2010) suggest using the normalized initialization
+
+
+
+
+
+
+
+Wi,j  U -
+
+6, m+n
+
+6 m+n
+
+.
+
+(8.23)
+
+This latter heuristic is designed to compromise between the goal of initializing all layers to have the same activation variance and the goal of initializing all layers to have the same gradient variance. The formula is derived using the assumption that the network consists only of a chain of matrix multiplications, with no nonlinearities. Real neural networks obviously violate this assumption, but many strategies designed for the linear model perform reasonably well on its nonlinear counterparts.
+Saxe et al. (2013) recommend initializing to random orthogonal matrices, with a carefully chosen scaling or gain factor g that accounts for the nonlinearity applied at each layer. They derive specific values of the scaling factor for different types of nonlinear activation functions. This initialization scheme is also motivated by a model of a deep network as a sequence of matrix multiplies without nonlinearities. Under such a model, this initialization scheme guarantees that the total number of training iterations required to reach convergence is independent of depth.
+Increasing the scaling factor g pushes the network toward the regime where activations increase in norm as they propagate forward through the network and gradients increase in norm as they propagate backward. Sussillo (2014) showed that setting the gain factor correctly is sufficient to train networks as deep as
+
+303
+
+

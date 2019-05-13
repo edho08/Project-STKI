@@ -1,0 +1,30 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+transforming an underlying random value z  N (z; 0, 1) to obtain a sample from
+
+the desired distribution:
+
+y = µ + z
+
+(20.55)
+
+We are now able to back-propagate through the sampling operation, by regarding it as a deterministic operation with an extra input z. Crucially, the extra input is a random variable whose distribution is not a function of any of the variables whose derivatives we want to calculate. The result tells us how an infinitesimal change in µ or  would change the output if we could repeat the sampling operation again with the same value of z.
+Being able to back-propagate through this sampling operation allows us to incorporate it into a larger graph. We can build elements of the graph on top of the output of the sampling distribution. For example, we can compute the derivatives of some loss function J(y). We can also build elements of the graph whose outputs are the inputs or the parameters of the sampling operation. For example, we could build a larger graph with µ = f (x; ) and  = g(x; ). In this augmented graph, we can use back-propagation through these functions to derive J (y).
+The principle used in this Gaussian sampling example is more generally applicable. We can express any probability distribution of the form p(y; ) or p (y | x; ) as p(y | ), where  is a variable containing both parameters , and if applicable, the inputs x. Given a value y sampled from distribution p(y | ), where  may in turn be a function of other variables, we can rewrite
+
+y  p(y | )
+
+(20.56)
+
+as
+
+y = f (z; ),
+
+(20.57)
+
+where z is a source of randomness. We may then compute the derivatives of y with respect to  using traditional tools such as the back-propagation algorithm applied to f, so long as f is continuous and differentiable almost everywhere. Crucially,  must not be a function of z , and z must not be a function of . This technique is often called the reparametrization trick, stochastic back-propagation or perturbation analysis.
+The requirement that f be continuous and differentiable of course requires y to be continuous. If we wish to back-propagate through a sampling process that produces discrete-valued samples, it may still be possible to estimate a gradient on , using reinforcement learning algorithms such as variants of the REINFORCE algorithm (Williams, 1992), discussed in section 20.9.1.
+
+688
+
+

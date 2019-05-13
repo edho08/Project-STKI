@@ -1,0 +1,19 @@
+BIBLIOGRAPHY
+Wang, Z., Zhang, J., Feng, J., and Chen, Z. (2014a). Knowledge graph and text jointly embedding. In Proc. EMNLP'2014 . 484
+Wang, Z., Zhang, J., Feng, J., and Chen, Z. (2014b). Knowledge graph embedding by translating on hyperplanes. In Proc. AAAI'2014 . 484
+Warde-Farley, D., Goodfellow, I. J., Courville, A., and Bengio, Y. (2014). An empirical analysis of dropout in piecewise linear networks. In ICLR'2014 . 262, 266, 267
+Wawrzynek, J., Asanovic, K., Kingsbury, B., Johnson, D., Beck, J., and Morgan, N. (1996). Spert-II: A vector microprocessor system. Computer , 29(3), 79­86. 451
+Weaver, L. and Tao, N. (2001). The optimal reward baseline for gradient-based reinforcement learning. In Proc. UAI'2001 , pages 538­545. 691
+Weinberger, K. Q. and Saul, L. K. (2004). Unsupervised learning of image manifolds by semidefinite programming. In CVPR'2004 , pages 988­995. 164, 519
+Weiss, Y., Torralba, A., and Fergus, R. (2008). Spectral hashing. In NIPS , pages 1753­1760. 525
+Welling, M., Zemel, R. S., and Hinton, G. E. (2002). Self supervised boosting. In Advances in Neural Information Processing Systems, pages 665­672. 703
+Welling, M., Hinton, G. E., and Osindero, S. (2003a). Learning sparse topographic representations with products of Student-t distributions. In NIPS'2002 . 680
+Welling, M., Zemel, R., and Hinton, G. E. (2003b). Self-supervised boosting. In S. Becker, S. Thrun, and K. Obermayer, editors, Advances in Neural Information Processing Systems 15 (NIPS'02), pages 665­672. MIT Press. 622
+Welling, M., Rosen-Zvi, M., and Hinton, G. E. (2005). Exponential family harmoniums with an application to information retrieval. In L. Saul, Y. Weiss, and L. Bottou, editors, Advances in Neural Information Processing Systems 17 (NIPS'04), volume 17, Cambridge, MA. MIT Press. 676
+Werbos, P. J. (1981). Applications of advances in nonlinear sensitivity analysis. In Proceedings of the 10th IFIP Conference, 31.8 - 4.9, NYC , pages 762­770. 225
+Weston, J., Bengio, S., and Usunier, N. (2010). Large scale image annotation: learning to rank with joint word-image embeddings. Machine Learning , 81(1), 21­35. 401
+Weston, J., Chopra, S., and Bordes, A. (2014). Memory networks. arXiv preprint arXiv:1410.3916 . 418, 485
+Widrow, B. and Hoff, M. E. (1960). Adaptive switching circuits. In 1960 IRE WESCON Convention Record , volume 4, pages 96­104. IRE, New York. 15, 21, 24, 27
+775
+
+

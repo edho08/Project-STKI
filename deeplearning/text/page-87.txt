@@ -1,0 +1,137 @@
+CHAPTER 3. PROBABILITY AND INFORMATION THEORY
+
+measure zero. Because the exceptions occupy a negligible amount of space, they can be safely ignored for many applications. Some important results in probability theory hold for all discrete values but only hold "almost everywhere" for continuous values.
+
+Another technical detail of continuous variables relates to handling continuous
+random variables that are deterministic functions of one another. Suppose we have
+two random variables, x and y, such that y = g(x), where g is an invertible, continuous, differentiable transformation. One might expect that py (y) = px(g-1(y)). This is actually not the case.
+
+As a simple example, suppose we have scalar random variables x and y. Suppose
+
+y
+
+=
+
+x 2
+
+and x
+
+
+
+U (0,
+
+everywhere except the
+
+1). If we use
+
+interval
+
+[0 ,
+
+1 2
+
+],
+
+the and
+
+rule py (y) it will be 1
+
+= px (2y) then py will be 0 on this interval. This means
+
+
+
+py (y)dy
+
+=
+
+1, 2
+
+(3.43)
+
+which violates the definition of a probability distribution. This is a common mistake. The problem with this approach is that it fails to account for the distortion of space introduced by the function g. Recall that the probability of x lying in an infinitesimally small region with volume x is given by p (x)x . Since g can expand or contract space, the infinitesimal volume surrounding x in x space may have different volume in y space.
+
+To see how to correct the problem, we return to the scalar case. We need to
+
+preserve the property
+
+|py(g(x))dy| = |px(x)dx|.
+
+(3.44)
+
+Solving from this, we obtain py(y) = px(g -1(y)) xy 
+
+(3.45)
+
+or equivalently
+
+px(x)
+
+=
+
+py(g(x))
+
+
+
+g(x) x
+
+
+
+.
+
+(3.46)
+
+In higher dimensions, the derivative generalizes to the determinant of the Jacobian
+
+matrix--the
+
+matrix
+
+with
+
+Ji,j =
+
+xi yj
+
+.
+
+Thus,
+
+for
+
+real-valued
+
+vectors
+
+x
+
+and
+
+y,
+
+p x(x)
+
+=
+
+py
+
+(g(x))
+
+
+
+det
+
+
+
+
+
+g(x)
+
+x
+
+ .
+
+(3.47)
+
+72
+
+

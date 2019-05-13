@@ -1,0 +1,19 @@
+BIBLIOGRAPHY
+Frobenius, G. (1908). Über matrizen aus positiven elementen, s. B. Preuss. Akad. Wiss. Berlin, Germany. 597
+Fukushima, K. (1975). Cognitron: A self-organizing multilayered neural network. Biological Cybernetics , 20, 121­136. 16, 226, 528
+Fukushima, K. (1980). Neocognitron: A self-organizing neural network model for a mechanism of pattern recognition unaffected by shift in position. Biological Cybernetics , 36, 193­202. 16, 24, 27, 226, 367
+Gal, Y. and Ghahramani, Z. (2015). Bayesian convolutional neural networks with Bernoulli approximate variational inference. arXiv preprint arXiv:1506.02158 . 264
+Gallinari, P., LeCun, Y., Thiria, S., and Fogelman-Soulie, F. (1987). Memoires associatives distribuees. In Proceedings of COGNITIVA 87 , Paris, La Villette. 515
+Garcia-Duran, A., Bordes, A., Usunier, N., and Grandvalet, Y. (2015). Combining two and three-way embeddings models for link prediction in knowledge bases. arXiv preprint arXiv:1506.00999 . 484
+Garofolo, J. S., Lamel, L. F., Fisher, W. M., Fiscus, J. G., and Pallett, D. S. (1993). Darpa timit acoustic-phonetic continous speech corpus cd-rom. nist speech disc 1-1.1. NASA STI/Recon Technical Report N , 93, 27403. 459
+Garson, J. (1900). The metric system of identification of criminals, as used in Great Britain and Ireland. The Journal of the Anthropological Institute of Great Britain and Ireland , (2), 177­227. 21
+Gers, F. A., Schmidhuber, J., and Cummins, F. (2000). Learning to forget: Continual prediction with LSTM. Neural computation, 12(10), 2451­2471. 410, 412
+Ghahramani, Z. and Hinton, G. E. (1996). The EM algorithm for mixtures of factor analyzers. Technical Report CRG-TR-96-1, Dpt. of Comp. Sci., Univ. of Toronto. 489
+Gillick, D., Brunk, C., Vinyals, O., and Subramanya, A. (2015). Multilingual language processing from bytes. arXiv preprint arXiv:1512.00103 . 477
+Girshick, R., Donahue, J., Darrell, T., and Malik, J. (2015). Region-based convolutional networks for accurate object detection and segmentation. 426
+Giudice, M. D., Manera, V., and Keysers, C. (2009). Programmed to learn? The ontogeny of mirror neurons. Dev. Sci., 12(2), 350­­363. 656
+Glorot, X. and Bengio, Y. (2010). Understanding the difficulty of training deep feedforward neural networks. In AISTATS'2010 . 303
+Glorot, X., Bordes, A., and Bengio, Y. (2011a). Deep sparse rectifier neural networks. In AISTATS'2011 . 16, 174, 197, 226, 227
+737
+
+

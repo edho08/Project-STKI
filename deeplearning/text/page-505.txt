@@ -1,0 +1,46 @@
+CHAPTER 13. LINEAR FACTOR MODELS
+
+sample from. Next we sample the real-valued observable variables given the factors:
+
+x = W h + b + noise
+
+(13.2)
+
+where the noise is typically Gaussian and diagonal (independent across dimensions). This is illustrated in figure 13.1.
+
+h1
+
+h2
+
+h3
+
+x1
+
+x2
+
+x3
+
+x = W h + b + noise
+
+Figure 13.1: The directed graphical model describing the linear factor model family, in which we assume that an observed data vector x is obtained by a linear combination of independent latent factors h, plus some noise. Different models, such as probabilistic PCA, factor analysis or ICA, make different choices about the form of the noise and of the prior p(h).
+
+13.1 Probabilistic PCA and Factor Analysis
+
+Probabilistic PCA (principal components analysis), factor analysis and other linear factor models are special cases of the above equations (13.1 and 13.2) and only differ in the choices made for the noise distribution and the model's prior over latent variables h before observing x.
+In factor analysis (Bartholomew, 1987; Basilevsky, 1994), the latent variable prior is just the unit variance Gaussian
+
+h  N (h; 0, I)
+
+(13.3)
+
+while the observed variables xi are assumed to be conditionally independent, given h. Specifically, the noise is assumed to be drawn from a diagonal covariance Gaussian distribution, with covariance matrix  = diag(2), with 2 = [21, 22, . . . , n2] a vector of per-variable variances.
+The role of the latent variables is thus to capture the dependencies between
+the different observed variables xi. Indeed, it can easily be shown that x is just a multivariate normal random variable, with
+
+x  N (x; b, W W  + ).
+
+(13.4)
+
+490
+
+

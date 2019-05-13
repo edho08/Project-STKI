@@ -1,0 +1,72 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+Algorithm 8.5 The RMSProp algorithm
+
+Require: Global learning rate , decay rate .
+
+Require: Initial parameter  Require: Small constant , usually 10-6, used to stabilize division by small
+
+numbers.
+
+Initialize accumulation variables r = 0
+
+while stopping criterion not met do
+
+Sample a minibatch of m examples from the training set {x(1), . . . , x(m)} with
+
+corresponding targets y(i).
+
+Compute
+
+gradient:
+
+g
+
+
+
+1 m
+
+
+
+
+i
+
+L(f (x(i);
+
+),
+
+y(i) )
+
+Accumulate squared gradient: r  r + (1 - )g  g
+
+Compute
+
+parameter
+
+update:
+
+
+
+=
+
+-
+
+ +r
+
+g.
+
+( 1 applied element-wise)
++r
+
+Apply update:    + 
+
+end while
+
+bias corrections to the estimates of both the first-order moments (the momentum term) and the (uncentered) second-order moments to account for their initialization at the origin (see algorithm 8.7). RMSProp also incorporates an estimate of the (uncentered) second-order moment, however it lacks the correction factor. Thus, unlike in Adam, the RMSProp second-order moment estimate may have high bias early in training. Adam is generally regarded as being fairly robust to the choice of hyperparameters, though the learning rate sometimes needs to be changed from the suggested default.
+8.5.4 Choosing the Right Optimization Algorithm
+In this section, we discussed a series of related algorithms that each seek to address the challenge of optimizing deep models by adapting the learning rate for each model parameter. At this point, a natural question is: which algorithm should one choose?
+Unfortunately, there is currently no consensus on this point. Schaul et al. (2014) presented a valuable comparison of a large number of optimization algorithms across a wide range of learning tasks. While the results suggest that the family of algorithms with adaptive learning rates (represented by RMSProp and AdaDelta) performed fairly robustly, no single best algorithm has emerged.
+Currently, the most popular optimization algorithms actively in use include SGD, SGD with momentum, RMSProp, RMSProp with momentum, AdaDelta and Adam. The choice of which algorithm to use, at this point, seems to depend
+309
+
+

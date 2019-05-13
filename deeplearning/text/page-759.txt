@@ -1,0 +1,18 @@
+BIBLIOGRAPHY
+Hinton, G. E., Srivastava, N., Krizhevsky, A., Sutskever, I., and Salakhutdinov, R. (2012c). Improving neural networks by preventing co-adaptation of feature detectors. Technical report, arXiv:1207.0580. 238, 263, 267
+Hinton, G. E., Vinyals, O., and Dean, J. (2014). Dark knowledge. Invited talk at the BayLearn Bay Area Machine Learning Symposium. 448
+Hochreiter, S. (1991). Untersuchungen zu dynamischen neuronalen Netzen. Diploma thesis, T.U. München. 18, 401, 403
+Hochreiter, S. and Schmidhuber, J. (1995). Simplifying neural nets by discovering flat minima. In Advances in Neural Information Processing Systems 7 , pages 529­536. MIT Press. 243
+Hochreiter, S. and Schmidhuber, J. (1997). Long short-term memory. Neural Computation, 9(8), 1735­1780. 18, 410, 411
+Hochreiter, S., Bengio, Y., and Frasconi, P. (2001). Gradient flow in recurrent nets: the difficulty of learning long-term dependencies. In J. Kolen and S. Kremer, editors, Field Guide to Dynamical Recurrent Networks. IEEE Press. 411
+Holi, J. L. and Hwang, J.-N. (1993). Finite precision error analysis of neural network hardware implementations. Computers, IEEE Transactions on, 42(3), 281­290. 451
+Holt, J. L. and Baker, T. E. (1991). Back propagation simulations using limited precision calculations. In Neural Networks, 1991., IJCNN-91-Seattle International Joint Conference on , volume 2, pages 121­126. IEEE. 451
+Hornik, K., Stinchcombe, M., and White, H. (1989). Multilayer feedforward networks are universal approximators. Neural Networks , 2, 359­366. 198
+Hornik, K., Stinchcombe, M., and White, H. (1990). Universal approximation of an unknown mapping and its derivatives using multilayer feedforward networks. Neural networks, 3(5), 551­560. 198
+Hsu, F.-H. (2002). Behind Deep Blue: Building the Computer That Defeated the World Chess Champion . Princeton University Press, Princeton, NJ, USA. 2
+Huang, F. and Ogata, Y. (2002). Generalized pseudo-likelihood estimates for Markov random fields on lattice. Annals of the Institute of Statistical Mathematics, 54(1), 1­18. 616
+Huang, P.-S., He, X., Gao, J., Deng, L., Acero, A., and Heck, L. (2013). Learning deep structured semantic models for web search using clickthrough data. In Proceedings of the 22nd ACM international conference on Conference on information & knowledge management , pages 2333­2338. ACM. 480
+Hubel, D. and Wiesel, T. (1968). Receptive fields and functional architecture of monkey striate cortex. Journal of Physiology (London), 195, 215­243. 364
+744
+
+

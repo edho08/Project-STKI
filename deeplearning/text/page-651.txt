@@ -1,0 +1,46 @@
+CHAPTER 19. APPROXIMATE INFERENCE
+
+of latent variable models, this means computing
+
+h = arg max p(h | v).
+h
+
+(19.9)
+
+This is known as maximum a posteriori inference, abbreviated MAP inference.
+
+MAP inference is usually not thought of as approximate inference--it does compute the exact most likely value of h. However, if we wish to develop a learning process based on maximizing L(v, h, q), then it is helpful to think of MAP inference as a procedure that provides a value of q. In this sense, we can think of MAP inference as approximate inference, because it does not provide the optimal q.
+
+Recall from section 19.1 that exact inference consists of maximizing
+
+L(v, , q) = Ehq [log p(h, v)] + H (q)
+
+(19.10)
+
+with respect to q over an unrestricted family of probability distributions, using an exact optimization algorithm. We can derive MAP inference as a form of approximate inference by restricting the family of distributions q may be drawn from. Specifically, we require q to take on a Dirac distribution:
+
+q(h | v) = (h - µ).
+
+(19.11)
+
+This means that we can now control q entirely via µ. Dropping terms of L that do not vary with µ, we are left with the optimization problem
+
+µ = arg max log p(h = µ, v),
+µ
+
+(19.12)
+
+which is equivalent to the MAP inference problem
+
+h = arg max p(h | v).
+h
+
+(19.13)
+
+We can thus justify a learning procedure similar to EM, in which we alternate between performing MAP inference to infer h and then update  to increase log p(h, v). As with EM, this is a form of coordinate ascent on L, where we alternate between using inference to optimize L with respect to q and using parameter updates to optimize L with respect to . The procedure as a whole can be justified by the fact that L is a lower bound on log p(v). In the case of MAP inference, this justification is rather vacuous, because the bound is infinitely loose,
+due to the Dirac distribution's differential entropy of negative infinity. However,
+adding noise to µ would make the bound meaningful again.
+
+636
+
+

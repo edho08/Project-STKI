@@ -1,0 +1,17 @@
+CHAPTER 18. CONFRONTING THE PARTITION FUNCTION
+
+initialized from a random starting point after the model is done training. The samples present in the persistent negative chains used for training have been influenced by several recent versions of the model, and thus can make the model appear to have greater capacity than it actually does.
+Berglund and Raiko (2013) performed experiments to examine the bias and variance in the estimate of the gradient provided by CD and SML. CD proves to have lower variance than the estimator based on exact sampling. SML has higher variance. The cause of CD's low variance is its use of the same training points in both the positive and negative phase. If the negative phase is initialized from different training points, the variance rises above that of the estimator based on exact sampling.
+All of these methods based on using MCMC to draw samples from the model can in principle be used with almost any variant of MCMC. This means that techniques such as SML can be improved by using any of the enhanced MCMC techniques described in chapter 17, such as parallel tempering (Desjardins et al., 2010; Cho et al., 2010).
+One approach to accelerating mixing during learning relies not on changing the Monte Carlo sampling technology but rather on changing the parametrization of the model and the cost function. Fast PCD or FPCD (Tieleman and Hinton, 2009) involves replacing the parameters  of a traditional model with an expression
+
+ = (slow) + (fast).
+
+(18.16)
+
+There are now twice as many parameters as before, and they are added together element-wise to provide the parameters used by the original model definition. The fast copy of the parameters is trained with a much larger learning rate, allowing it to adapt rapidly in response to the negative phase of learning and push the Markov chain to new territory. This forces the Markov chain to mix rapidly, though this effect only occurs during learning while the fast weights are free to change. Typically one also applies significant weight decay to the fast weights, encouraging them to converge to small values, after only transiently taking on large values long enough to encourage the Markov chain to change modes.
+One key benefit to the MCMC-based methods described in this section is that they provide an estimate of the gradient of log Z , and thus we can essentially decompose the problem into the log p~ contribution and the log Z contribution. We can then use any other method to tackle log p~(x), and just add our negative phase gradient onto the other method's gradient. In particular, this means that our positive phase can make use of methods that provide only a lower bound on p~. Most of the other methods of dealing with log Z presented in this chapter are
+
+614
+
+

@@ -1,0 +1,33 @@
+CHAPTER 10. SEQUENCE MODELING: RECURRENT AND RECURSIVE NETS
+
+y
+
+y
+
+y
+
+z
+
+h
+
+h
+
+h
+
+x
+
+x
+
+x
+
+(a)
+
+(b)
+
+(c)
+
+Figure 10.13: A recurrent neural network can be made deep in many ways (Pascanu et al., 2014a). (a)The hidden recurrent state can be broken down into groups organized hierarchically. (b)Deeper computation (e.g., an MLP) can be introduced in the input-tohidden, hidden-to-hidden and hidden-to-output parts. This may lengthen the shortest path linking different time steps. (c)The path-lengthening effect can be mitigated by introducing skip connections.
+
+399
+
+

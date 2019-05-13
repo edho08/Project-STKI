@@ -1,0 +1,13 @@
+y
+
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+x
+Figure 6.4: Samples drawn from a neural network with a mixture density output layer. The input x is sampled from a uniform distribution and the output y is sampled from pmodel(y | x). The neural network is able to learn nonlinear mappings from the input to the parameters of the output distribution. These parameters include the probabilities governing which of three mixture components will generate the output as well as the parameters for each mixture component. Each mixture component is Gaussian with predicted mean and variance. All of these aspects of the output distribution are able to vary with respect to the input x, and to do so in nonlinear ways.
+to describe y becomes complex enough to be beyond the scope of this chapter. Chapter 10 describes how to use recurrent neural networks to define such models over sequences, and part III describes advanced techniques for modeling arbitrary probability distributions.
+6.3 Hidden Units
+So far we have focused our discussion on design choices for neural networks that are common to most parametric machine learning models trained with gradientbased optimization. Now we turn to an issue that is unique to feedforward neural networks: how to choose the type of hidden unit to use in the hidden layers of the model.
+The design of hidden units is an extremely active area of research and does not yet have many definitive guiding theoretical principles.
+Rectified linear units are an excellent default choice of hidden unit. Many other types of hidden units are available. It can be difficult to determine when to use which kind (though rectified linear units are usually an acceptable choice). We
+191
+
+

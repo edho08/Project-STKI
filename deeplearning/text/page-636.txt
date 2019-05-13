@@ -1,0 +1,126 @@
+CHAPTER 18. CONFRONTING THE PARTITION FUNCTION
+
+learning problem defines an asymptotically consistent estimator of the original problem.
+Specifically, we introduce a second distribution, the noise distribution pnoise(x). The noise distribution should be tractable to evaluate and to sample from. We can now construct a model over both x and a new, binary class variable y . In the new joint model, we specify that
+
+pjoint(y
+
+= 1) =
+
+1 2
+
+,
+
+(18.29)
+
+pjoint(x | y = 1) = pmodel(x),
+
+(18.30)
+
+and
+
+pjoint(x | y = 0) = pnoise(x).
+
+(18.31)
+
+In other words, y is a switch variable that determines whether we will generate x from the model or from the noise distribution.
+
+We can construct a similar joint model of training data. In this case, the
+
+switch variable determines whether we draw x from the data or from the noise
+
+distribution.
+
+Formally,
+
+p train( y
+
+=
+
+1)
+
+=
+
+1 2
+
+,
+
+ptrain(x
+
+|
+
+y
+
+=
+
+1)
+
+=
+
+pdata( x),
+
+and
+
+ptrain(x | y = 0) = pnoise(x).
+
+We can now just use standard maximum likelihood learning on the supervised
+
+learning problem of fitting pjoint to ptrain:
+
+, c = arg max Ex,yptrain log pjoint (y | x).
+,c
+
+(18.32)
+
+The distribution pjoint is essentially a logistic regression model applied to the difference in log probabilities of the model and the noise distribution:
+
+pjoint (y
+
+=
+
+1
+
+|
+
+x)
+
+=
+
+pmodel (x) p model(x) + p noise(x)
+
+1
+
+=
+
+1+
+
+pnoise(x) pmodel (x)
+
+=
+
+1
+
+
+
+1 + exp
+
+log
+
+pnoise(x) pmodel (x)
+
+
+
+
+
+=  - log pnoise(x)
+
+pmodel(x)
+
+=  (log pmodel(x) - log pnoise(x)) .
+
+(18.33) (18.34) (18.35)
+(18.36) (18.37)
+
+621
+
+

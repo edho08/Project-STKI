@@ -1,0 +1,44 @@
+CHAPTER 7. REGULARIZATION FOR DEEP LEARNING
+
+Assuming that w(0) = 0 and that  is chosen to be small enough to guarantee |1 - i| < 1, the parameter trajectory during training after  parameter updates is as follows:
+
+Qw () = [I - (I - )]Qw.
+
+(7.40)
+
+Now, the expression for Q w~ in equation 7.13 for L2 regularization can be rearranged as:
+
+Q w~ = ( + I)-1Q w Q w~ = [I - ( + I)-1]Qw
+
+(7.41) (7.42)
+
+Comparing equation 7.40 and equation 7.42, we see that if the hyperparameters , , and  are chosen such that
+
+(I - ) = ( + I )-1 ,
+
+(7.43)
+
+then L2 regularization and early stopping can be seen to be equivalent (at least under the quadratic approximation of the objective function). Going even further, by taking logarithms and using the series expansion for log(1 + x), we can conclude that if all i are small (that is, i  1 and i/  1) then
+
+  1,
+
+
+
+
+
+1 
+
+.
+
+(7.44) (7.45)
+
+That is, under these assumptions, the number of training iterations  plays a role inversely proportional to the L2 regularization parameter, and the inverse of 
+plays the role of the weight decay coefficient.
+
+Parameter values corresponding to directions of significant curvature (of the objective function) are regularized less than directions of less curvature. Of course, in the context of early stopping, this really means that parameters that correspond to directions of significant curvature tend to learn early relative to parameters corresponding to directions of less curvature.
+
+The derivations in this section have shown that a trajectory of length  ends at a point that corresponds to a minimum of the L2-regularized objective. Early stopping is of course more than the mere restriction of the trajectory length; instead, early stopping typically involves monitoring the validation set error in order to stop the trajectory at a particularly good point in space. Early stopping therefore has the advantage over weight decay that early stopping automatically determines the correct amount of regularization while weight decay requires many training experiments with different values of its hyperparameter.
+
+252
+
+

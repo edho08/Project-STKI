@@ -1,0 +1,146 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+Algorithm 20.1 The variational stochastic maximum likelihood algorithm for training a DBM with two hidden layers.
+
+Set , the step size, to a small positive number
+
+Set k , the number of Gibbs steps, high enough to allow a Markov chain of
+
+p(v, h(1), h(2);  +  ) to burn in, starting from samples from p(v, h(1), h(2) ; ). Initialize three matrices, V~ , H~ (1) and H~ (2) each with m rows set to random
+
+values (e.g., from Bernoulli distributions, possibly with marginals matched to
+
+the model's marginals).
+
+while not converged (learning loop) do
+
+Sample a minibatch of m examples from the training data and arrange them
+
+as the rows of a design matrix V . Initialize matrices H^ (1) and H^ (2), possibly to the model's marginals.
+
+while not converged (mean field inference loop) do
+
+H^ (1)   V W (1) + H^(2)W (2) .
+
+
+
+
+
+H^ (2)   H^ (1)W (2) .
+
+end while
+
+W (1)
+
+
+
+1 m
+
+V
+
+H^ (1)
+
+W (2)
+
+
+
+1 m
+
+H^
+
+(1)
+
+ H^ (2)
+
+for l = 1 to k (Gibbs sampling) do
+
+Gibbs block 1: i, j, V~i,j sampled
+
+from
+
+P (V~i,j
+
+=
+
+1)
+
+=
+
+
+
+ Wj(,1: )
+
+ H~ i(,1: ) .
+
+
+
+
+
+i, j, H~i(,2j) sampled from P (H~ (i,2j) = 1) =  H~ (i,1:)W:(,j2) .
+
+Gibbs block 2: i, j, H~i(,1j) sampled
+
+from
+
+P (H~ (i,1j)
+
+=
+
+1)
+
+=
+
+ V~i,:W:(,j1)
+
++
+
+H~ i(,2: )W
+
+(2) j,:
+
+ .
+
+end for
+
+W (1)
+
+
+
+W (1)
+
+-
+
+1 m
+
+V
+
+ H~ (1)
+
+ (2)
+W
+
+
+
+ (2)
+W
+
+-
+
+1 m
+
+H~ (1)H~ (2)
+
+W (1)  W (1) +  (1) (this is a cartoon illustration, in practice use a more
+
+W
+
+effective algorithm, such as momentum with a decaying learning rate)
+
+W (2)  W (2) +  (2)
+W
+
+end while
+
+670
+
+

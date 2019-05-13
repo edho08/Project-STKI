@@ -1,0 +1,46 @@
+CHAPTER 10. SEQUENCE MODELING: RECURRENT AND RECURSIVE NETS
+
+y (t-1)
+
+y (t)
+
+L(t-1)
+
+L(t)
+
+W o(t-1)
+V
+
+o(t) V
+
+h(t-1)
+
+h(t)
+
+U x(t-1)
+
+U x(t)
+
+Train time
+
+o(t-1)
+W V
+
+o(t) V
+
+h(t-1)
+
+h(t)
+
+U x(t-1)
+
+U x(t)
+
+Test time
+
+Figure 10.6: Illustration of teacher forcing. Teacher forcing is a training technique that is
+applicable to RNNs that have connections from their output to their hidden states at the next time step. (Left)At train time, we feed the correct output y (t) drawn from the train set as input to h (t+1). (Right)When the model is deployed, the true output is generally not known. In this case, we approximate the correct output y(t) with the model's output o(t), and feed the output back into the model.
+
+383
+
+

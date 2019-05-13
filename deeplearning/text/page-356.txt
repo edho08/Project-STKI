@@ -1,0 +1,26 @@
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+Complex layer terminology Next layer
+
+Simple layer terminology Next layer
+
+Convolutional Layer Pooling stage
+
+Pooling layer
+
+Detector stage: Nonlinearity
+e.g., rectified linear
+Convolution stage: Affine transform
+
+Detector layer: Nonlinearity e.g., rectified linear
+Convolution layer: Affine transform
+
+Input to layer
+
+Input to layers
+
+Figure 9.7: The components of a typical convolutional neural network layer. There are two commonly used sets of terminology for describing these layers. (Left)In this terminology, the convolutional net is viewed as a small number of relatively complex layers, with each layer having many "stages." In this terminology, there is a one-to-one mapping between kernel tensors and network layers. In this book we generally use this terminology. (Right)In this terminology, the convolutional net is viewed as a larger number of simple layers; every step of processing is regarded as a layer in its own right. This means that not every "layer" has parameters.
+
+341
+
+

@@ -1,0 +1,18 @@
+BIBLIOGRAPHY
+Mohamed, A., Sainath, T. N., Dahl, G., Ramabhadran, B., Hinton, G. E., and Picheny, M. A. (2011). Deep belief networks using discriminative features for phone recognition. In Acoustics, Speech and Signal Processing (ICASSP), 2011 IEEE International Conference on, pages 5060­5063. IEEE. 459
+Mohamed, A., Dahl, G., and Hinton, G. (2012a). Acoustic modeling using deep belief networks. IEEE Trans. on Audio, Speech and Language Processing , 20(1), 14­22. 459
+Mohamed, A., Hinton, G., and Penn, G. (2012b). Understanding how deep belief networks perform acoustic modelling. In Acoustics, Speech and Signal Processing (ICASSP), 2012 IEEE International Conference on , pages 4273­4276. IEEE. 459
+Moller, M. F. (1993). A scaled conjugate gradient algorithm for fast supervised learning. Neural Networks , 6, 525­533. 316
+Montavon, G. and Muller, K.-R. (2012). Deep Boltzmann machines and the centering trick. In G. Montavon, G. Orr, and K.-R. Müller, editors, Neural Networks: Tricks of the Trade, volume 7700 of Lecture Notes in Computer Science , pages 621­637. Preprint: http://arxiv.org/abs/1203.3783. 673
+Montúfar, G. (2014). Universal approximation depth and errors of narrow belief networks with discrete units. Neural Computation, 26. 553
+Montúfar, G. and Ay, N. (2011). Refinements of universal approximation results for deep belief networks and restricted Boltzmann machines. Neural Computation, 23(5), 1306­1319. 553
+Montufar, G. F., Pascanu, R., Cho, K., and Bengio, Y. (2014). On the number of linear regions of deep neural networks. In NIPS'2014 . 19, 199, 200
+Mor-Yosef, S., Samueloff, A., Modan, B., Navot, D., and Schenker, J. G. (1990). Ranking the risk factors for cesarean: logistic regression analysis of a nationwide study. Obstet Gynecol , 75(6), 944­7. 3
+Morin, F. and Bengio, Y. (2005). Hierarchical probabilistic neural network language model. In AISTATS'2005 . 467, 469
+Mozer, M. C. (1992). The induction of multiscale temporal structure. In J. M. S. Hanson and R. Lippmann, editors, Advances in Neural Information Processing Systems 4 (NIPS'91), pages 275­282, San Mateo, CA. Morgan Kaufmann. 407, 408
+Murphy, K. P. (2012). Machine Learning: a Probabilistic Perspective . MIT Press, Cambridge, MA, USA. 62, 98, 146
+Murray, B. U. I. and Larochelle, H. (2014). A deep and tractable density estimator. In ICML'2014 . 190, 710
+Nair, V. and Hinton, G. (2010). Rectified linear units improve restricted Boltzmann machines. In ICML'2010 . 16, 174, 197
+758
+
+

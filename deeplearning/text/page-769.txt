@@ -1,0 +1,17 @@
+BIBLIOGRAPHY
+Luo, H., Shen, R., Niu, C., and Ullrich, C. (2011). Learning class-relevant features and class-irrelevant features via a hybrid third-order RBM. In International Conference on Artificial Intelligence and Statistics, pages 470­478. 686
+Luo, H., Carrier, P. L., Courville, A., and Bengio, Y. (2013). Texture modeling with convolutional spike-and-slab RBMs and deep extensions. In AISTATS'2013 . 102
+Lyu, S. (2009). Interpretation and generalization of score matching. In Proceedings of the Twenty-fifth Conference in Uncertainty in Artificial Intelligence (UAI'09). 618
+Ma, J., Sheridan, R. P., Liaw, A., Dahl, G. E., and Svetnik, V. (2015). Deep neural nets as a method for quantitative structure ­ activity relationships. J. Chemical information and modeling. 530
+Maas, A. L., Hannun, A. Y., and Ng, A. Y. (2013). Rectifier nonlinearities improve neural network acoustic models. In ICML Workshop on Deep Learning for Audio, Speech, and Language Processing. 193
+Maass, W. (1992). Bounds for the computational power and learning complexity of analog neural nets (extended abstract). In Proc. of the 25th ACM Symp. Theory of Computing , pages 335­344. 199
+Maass, W., Schnitger, G., and Sontag, E. D. (1994). A comparison of the computational power of sigmoid and Boolean threshold circuits. Theoretical Advances in Neural Computation and Learning , pages 127­151. 199
+Maass, W., Natschlaeger, T., and Markram, H. (2002). Real-time computing without stable states: A new framework for neural computation based on perturbations. Neural Computation, 14(11), 2531­2560. 404
+MacKay, D. (2003). Information Theory, Inference and Learning Algorithms. Cambridge University Press. 73
+Maclaurin, D., Duvenaud, D., and Adams, R. P. (2015). Gradient-based hyperparameter optimization through reversible learning. arXiv preprint arXiv:1502.03492 . 435
+Mao, J., Xu, W., Yang, Y., Wang, J., Huang, Z., and Yuille, A. L. (2015). Deep captioning with multimodal recurrent neural networks. In ICLR'2015 . arXiv:1410.1090. 102
+Marcotte, P. and Savard, G. (1992). Novel approaches to the discrimination problem. Zeitschrift für Operations Research (Theory), 36, 517­545. 276
+Marlin, B. and de Freitas, N. (2011). Asymptotic efficiency of deterministic estimators for discrete energy-based models: Ratio matching and pseudolikelihood. In UAI'2011 . 617, 619
+754
+
+

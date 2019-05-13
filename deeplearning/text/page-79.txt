@@ -1,0 +1,72 @@
+CHAPTER 3. PROBABILITY AND INFORMATION THEORY
+
+0.40
+
+0.35
+
+0.30
+
+Maximum at x = µ
+
+p(x)
+
+0.25
+
+Inflection points at
+
+0.20
+
+x= µ±
+
+0.15
+
+0.10
+
+0.05
+
+0.00 -2.0 -1.5 -1.0 -0.5 0.0 0.5 1.0 1.5 2.0
+x Figure 3.1: The normal distribution: The normal distribution N (x; µ, 2) exhibits a classic "bell curve" shape, with the x coordinate of its central peak given by µ, and the width of its peak controlled by . In this example, we depict the standard normal distribution, with µ = 0 and  = 1.
+
+First, many distributions we wish to model are truly close to being normal distributions. The central limit theorem shows that the sum of many independent random variables is approximately normally distributed. This means that in practice, many complicated systems can be modeled successfully as normally distributed noise, even if the system can be decomposed into parts with more structured behavior.
+
+Second, out of all possible probability distributions with the same variance, the normal distribution encodes the maximum amount of uncertainty over the real numbers. We can thus think of the normal distribution as being the one that inserts the least amount of prior knowledge into a model. Fully developing and justifying this idea requires more mathematical tools, and is postponed to section 19.4.2.
+
+The normal distribution generalizes to Rn, in which case it is known as the multivariate normal distribution. It may be parametrized with a positive definite symmetric matrix :
+
+N
+
+(x;
+
+µ,
+
+)
+
+=
+
+ (2)
+
+1 ndet()
+
+exp
+
+ -
+
+1 2
+
+(x
+
+-
+
+µ)-1(x
+
+-
+
+ µ)
+
+.
+
+(3.23)
+
+64
+
+

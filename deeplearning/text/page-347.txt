@@ -1,0 +1,52 @@
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+argument (in this example, the function w) as the kernel. The output is sometimes referred to as the feature map.
+
+In our example, the idea of a laser sensor that can provide measurements at every instant in time is not realistic. Usually, when we work with data on a computer, time will be discretized, and our sensor will provide data at regular intervals. In our example, it might be more realistic to assume that our laser provides a measurement once per second. The time index t can then take on only integer values. If we now assume that x and w are defined only on integer t, we can define the discrete convolution:
+
+ 
+
+s(t) = (x  w)(t) =
+
+x(a)w(t - a)
+
+a=-
+
+(9.3)
+
+In machine learning applications, the input is usually a multidimensional array of data and the kernel is usually a multidimensional array of parameters that are adapted by the learning algorithm. We will refer to these multidimensional arrays as tensors. Because each element of the input and kernel must be explicitly stored separately, we usually assume that these functions are zero everywhere but the finite set of points for which we store the values. This means that in practice we can implement the infinite summation as a summation over a finite number of array elements.
+
+Finally, we often use convolutions over more than one axis at a time. For
+
+example, if we use a two-dimensional image I as our input, we probably also want
+
+to use a two-dimensional kernel K:
+
+
+
+S(i, j) = (I  K)(i, j) =
+
+I(m, n)K(i - m, j - n).
+
+(9.4)
+
+mn
+
+Convolution is commutative, meaning we can equivalently write:
+
+
+
+S(i, j) = (K  I)(i, j) =
+
+I(i - m, j - n)K(m, n).
+
+mn
+
+(9.5)
+
+Usually the latter formula is more straightforward to implement in a machine learning library, because there is less variation in the range of valid values of m and n.
+The commutative property of convolution arises because we have flipped the kernel relative to the input, in the sense that as m increases, the index into the input increases, but the index into the kernel decreases. The only reason to flip the kernel is to obtain the commutative property. While the commutative property
+
+332
+
+

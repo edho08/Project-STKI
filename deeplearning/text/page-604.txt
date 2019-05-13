@@ -1,0 +1,5 @@
+CHAPTER 16. STRUCTURED PROBABILISTIC MODELS FOR DEEP LEARNING
+Figure 16.15: Samples from a trained RBM, and its weights. Image reproduced with permission from LISA (2008). (Left)Samples from a model trained on MNIST, drawn using Gibbs sampling. Each column is a separate Gibbs sampling process. Each row represents the output of another 1,000 steps of Gibbs sampling. Successive samples are highly correlated with one another. (Right)The corresponding weight vectors. Compare this to the samples and weights of a linear factor model, shown in figure 13.2. The samples here are much better because the RBM prior p(h) is not constrained to be factorial. The RBM can learn which features should appear together when sampling. On the other hand, the RBM posterior p(h | v) is factorial, while the sparse coding posterior p(h | v) is not, so the sparse coding model may be better for feature extraction. Other models are able to have both a non-factorial p(h) and a non-factorial p(h | v).
+589
+
+

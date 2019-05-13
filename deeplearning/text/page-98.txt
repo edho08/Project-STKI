@@ -1,0 +1,89 @@
+CHAPTER 4. NUMERICAL COMPUTATION
+
+2.0
+
+1.5
+
+Global minimum at x = 0.
+
+Since f (x) = 0, gradient
+
+1.0
+
+descent halts here.
+
+0.5
+
+0.0 -0.5
+
+For x < 0, we have f (x) < 0,
+so we can decrease f by moving rightward.
+
+For x > 0, we have f (x) > 0,
+so we can decrease f by moving leftward.
+
+-1.0 -1.5
+
+f (x)
+
+=
+
+1 2
+
+x2
+
+f(x) = x
+
+-2.0 -2.0 -1.5 -1.0 -0.5 0.0 0.5 1.0 1.5 2.0
+
+x
+
+Figure 4.1: An illustration of how the gradient descent algorithm uses the derivatives of a function can be used to follow the function downhill to a minimum.
+
+We assume the reader is already familiar with calculus, but provide a brief review of how calculus concepts relate to optimization here.
+
+Suppose we have a function y = f (x), where both x and y are real numbers.
+
+The
+
+derivative
+
+of
+
+this
+
+function
+
+is
+
+denoted
+
+as
+
+f (x)
+
+or
+
+as
+
+dy dx
+
+.
+
+The
+
+derivative
+
+f  (x)
+
+gives the slope of f (x) at the point x. In other words, it specifies how to scale
+
+a small change in the input in order to obtain the corresponding change in the output: f (x + )  f (x) + f (x).
+
+The derivative is therefore useful for minimizing a function because it tells us how to change x in order to make a small improvement in y. For example, we know that f (x -  sign(f (x))) is less than f (x) for small enough . We can thus reduce f (x) by moving x in small steps with opposite sign of the derivative. This technique is called gradient descent (Cauchy, 1847). See figure 4.1 for an
+example of this technique.
+When f (x) = 0, the derivative provides no information about which direction to move. Points where f (x) = 0 are known as critical points or stationary points. A local minimum is a point where f (x) is lower than at all neighboring points, so it is no longer possible to decrease f(x) by making infinitesimal steps. A local maximum is a point where f (x) is higher than at all neighboring points,
+
+83
+
+

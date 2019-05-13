@@ -1,0 +1,89 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+as the cross-entropy between the training data and the model distribution. This cost function is given by
+
+J() = -Ex,yp^data log pmodel(y | x).
+
+(6.12)
+
+The specific form of the cost function changes from model to model, depending
+on the specific form of log pmodel. The expansion of the above equation typically yields some terms that do not depend on the model parameters and may be discarded. For example, as we saw in section 5.5.1, if pmodel(y | x) = N (y ; f(x; ), I ), then we recover the mean squared error cost,
+
+J ()
+
+=
+
+1 E
+2
+
+x,yp^data
+
+||y
+
+-
+
+f
+
+(x;
+
+)||2
+
++ const,
+
+(6.13)
+
+up
+
+to
+
+a
+
+scaling
+
+factor
+
+of
+
+1 2
+
+and
+
+a
+
+term
+
+that
+
+does
+
+not
+
+depend
+
+on
+
+.
+
+The
+
+discarded
+
+constant is based on the variance of the Gaussian distribution, which in this case
+
+we chose not to parametrize. Previously, we saw that the equivalence between
+
+maximum likelihood estimation with an output distribution and minimization of
+
+mean squared error holds for a linear model, but in fact, the equivalence holds
+
+regardless of the f (x; ) used to predict the mean of the Gaussian.
+
+An advantage of this approach of deriving the cost function from maximum likelihood is that it removes the burden of designing cost functions for each model. Specifying a model p(y | x) automatically determines a cost function log p(y | x).
+
+One recurring theme throughout neural network design is that the gradient of the cost function must be large and predictable enough to serve as a good guide for the learning algorithm. Functions that saturate (become very flat) undermine this objective because they make the gradient become very small. In many cases this happens because the activation functions used to produce the output of the hidden units or the output units saturate. The negative log-likelihood helps to avoid this problem for many models. Many output units involve an exp function that can saturate when its argument is very negative. The log function in the negative log-likelihood cost function undoes the exp of some output units. We will discuss the interaction between the cost function and the choice of output unit in section 6.2.2.
+
+One unusual property of the cross-entropy cost used to perform maximum likelihood estimation is that it usually does not have a minimum value when applied to the models commonly used in practice. For discrete output variables, most models are parametrized in such a way that they cannot represent a probability of zero or one, but can come arbitrarily close to doing so. Logistic regression is an example of such a model. For real-valued output variables, if the model
+
+179
+
+

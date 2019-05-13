@@ -1,0 +1,43 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+z f
+y f
+x f
+w
+
+Figure 6.9: A computational graph that results in repeated subexpressions when computing
+
+the gradient. Let w  R be the input to the graph. We use the same function f : R  R
+
+as the operation that we apply at every step of a chain: x = f(w), y = f( x), z = f( y).
+
+To compute
+
+z w
+
+,
+
+we
+
+apply
+
+equation
+
+6.44
+
+and
+
+obtain:
+
+z
+w = z y x
+y x w =f (y)f(x)f  (w) =f (f(f (w)))f (f(w))f(w)
+
+(6.50)
+(6.51) (6.52) (6.53)
+
+Equation 6.52 suggests an implementation in which we compute the value of f (w) only once and store it in the variable x. This is the approach taken by the back-propagation algorithm. An alternative approach is suggested by equation 6.53, where the subexpression f(w) appears more than once. In the alternative approach, f (w) is recomputed each time it is needed. When the memory required to store the value of these expressions is low, the back-propagation approach of equation 6.52 is clearly preferable because of its reduced runtime. However, equation 6.53 is also a valid implementation of the chain rule, and is useful when memory is limited.
+
+211
+
+

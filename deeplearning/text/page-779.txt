@@ -1,0 +1,20 @@
+BIBLIOGRAPHY
+Rezende, D. J., Mohamed, S., and Wierstra, D. (2014). Stochastic backpropagation and approximate inference in deep generative models. In ICML'2014 . Preprint: arXiv:1401.4082. 652, 689, 696
+Rifai, S., Vincent, P., Muller, X., Glorot, X., and Bengio, Y. (2011a). Contractive auto-encoders: Explicit invariance during feature extraction. In ICML'2011 . 521, 522, 523
+Rifai, S., Mesnil, G., Vincent, P., Muller, X., Bengio, Y., Dauphin, Y., and Glorot, X. (2011b). Higher order contractive auto-encoder. In ECML PKDD . 521, 522
+Rifai, S., Dauphin, Y., Vincent, P., Bengio, Y., and Muller, X. (2011c). The manifold tangent classifier. In NIPS'2011 . 271, 272, 523
+Rifai, S., Bengio, Y., Dauphin, Y., and Vincent, P. (2012). A generative process for sampling contractive auto-encoders. In ICML'2012 . 711
+Ringach, D. and Shapley, R. (2004). Reverse correlation in neurophysiology. Cognitive Science , 28(2), 147­166. 368
+Roberts, S. and Everson, R. (2001). Independent component analysis: principles and practice. Cambridge University Press. 493
+Robinson, A. J. and Fallside, F. (1991). A recurrent error propagation network speech recognition system. Computer Speech and Language, 5(3), 259­274. 27, 459
+Rockafellar, R. T. (1997). Convex analysis. princeton landmarks in mathematics. 93
+Romero, A., Ballas, N., Ebrahimi Kahou, S., Chassang, A., Gatta, C., and Bengio, Y. (2015). Fitnets: Hints for thin deep nets. In ICLR'2015, arXiv:1412.6550 . 325
+Rosen, J. B. (1960). The gradient projection method for nonlinear programming. part i. linear constraints. Journal of the Society for Industrial and Applied Mathematics, 8(1), pp. 181­217. 93
+Rosenblatt, F. (1958). The perceptron: A probabilistic model for information storage and organization in the brain. Psychological Review , 65, 386­408. 14, 15, 27
+Rosenblatt, F. (1962). Principles of Neurodynamics. Spartan, New York. 15, 27
+Roweis, S. and Saul, L. K. (2000). Nonlinear dimensionality reduction by locally linear embedding. Science, 290(5500). 164, 518
+Roweis, S., Saul, L., and Hinton, G. (2002). Global coordination of local linear models. In T. Dietterich, S. Becker, and Z. Ghahramani, editors, Advances in Neural Information Processing Systems 14 (NIPS'01), Cambridge, MA. MIT Press. 489
+Rubin, D. B. et al. (1984). Bayesianly justifiable and relevant frequency calculations for the applied statistician. The Annals of Statistics , 12(4), 1151­1172. 717
+764
+
+

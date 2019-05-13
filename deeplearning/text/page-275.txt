@@ -1,0 +1,97 @@
+CHAPTER 7. REGULARIZATION FOR DEEP LEARNING
+
+y
+
+y
+
+y
+
+y
+
+h1
+
+h2 h1
+
+h2 h1
+
+h2
+
+h2
+
+x1
+
+x2
+
+x2 x1
+
+x1
+
+x2
+
+y
+
+y
+
+y
+
+y
+
+y
+
+h1
+
+h2
+
+x1
+
+x2
+
+Base network
+
+h1
+
+h1
+
+h2
+
+x1
+
+x2
+
+x1
+
+x2
+
+y
+
+y
+
+y
+
+h2 x2 y
+
+h1 x1
+y
+
+h1
+
+h2
+
+x2 x1
+
+x1
+
+y
+
+y
+
+y
+
+h2 h1 x2
+Ensemble of subnetworks
+
+Figure 7.6: Dropout trains an ensemble consisting of all sub-networks that can be constructed by removing non-output units from an underlying base network. Here, we begin with a base network with two visible units and two hidden units. There are sixteen possible subsets of these four units. We show all sixteen subnetworks that may be formed by dropping out different subsets of units from the original network. In this small example, a large proportion of the resulting networks have no input units or no path connecting the input to the output. This problem becomes insignificant for networks with wider layers, where the probability of dropping all possible paths from inputs to outputs becomes smaller.
+
+260
+
+

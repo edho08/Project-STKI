@@ -1,0 +1,109 @@
+CHAPTER 7. REGULARIZATION FOR DEEP LEARNING
+
+mean squared error, then the approximation is perfect. The approximation J^ is
+
+given by
+
+J^()
+
+=
+
+J (w)
+
++
+
+1 2
+
+(w
+
+-
+
+w )H (w
+
+-
+
+w),
+
+(7.6)
+
+where H is the Hessian matrix of J with respect to w evaluated at w. There is no first-order term in this quadratic approximation, because w is defined to be a minimum, where the gradient vanishes. Likewise, because w is the location of a
+
+minimum of J, we can conclude that H is positive semidefinite.
+
+The minimum of J^ occurs where its gradient
+
+wJ^(w) = H(w - w)
+
+(7.7)
+
+is equal to 0.
+To study the effect of weight decay, we modify equation 7.7 by adding the weight decay gradient. We can now solve for the minimum of the regularized version of J^. We use the variable w~ to represent the location of the minimum.
+
+w~ + H(w~ - w ) = 0 (H + I)w~ = Hw
+w~ = (H + I)-1Hw.
+
+(7.8) (7.9) (7.10)
+
+As  approaches 0, the regularized solution w~ approaches w. But what
+happens as  grows? Because H is real and symmetric, we can decompose it
+into a diagonal matrix  and an orthonormal basis of eigenvectors, Q, such that H = QQ. Applying the decomposition to equation 7.10, we obtain:
+
+w~ = (QQ + I )-1QQw 
+
+=
+
+ Q(
+
++
+
+I )Q-1
+
+QQ
+
+w
+
+= Q( + I )-1Q w.
+
+(7.11) (7.12) (7.13)
+
+We see that the effect of weight decay is to rescale w  along the axes defined by
+
+the eigenvectors of H. Specifically, the component of w that is aligned with the
+
+i-th
+
+eigenvector
+
+of
+
+H
+
+is rescaled
+
+by
+
+a
+
+factor
+
+of
+
+i i +
+
+.
+
+(You
+
+may wish
+
+to
+
+review
+
+how this kind of scaling works, first explained in figure 2.3).
+
+Along the directions where the eigenvalues of H are relatively large, for example, where i  , the effect of regularization is relatively small. However, components with i   will be shrunk to have nearly zero magnitude. This effect is illustrated in figure 7.1.
+
+232
+
+

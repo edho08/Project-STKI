@@ -1,0 +1,10 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+Figure 20.12: Illustration of clamping the right half of the image and running the Markov Chain by resampling only the left half at each step. These samples come from a GSN trained to reconstruct MNIST digits at each time step using the walkback procedure.
+20.11.3 Walk-Back Training Procedure
+The walk-back training procedure was proposed by Bengio et al. (2013c) as a way to accelerate the convergence of generative training of denoising autoencoders. Instead of performing a one-step encode-decode reconstruction, this procedure consists in alternative multiple stochastic encode-decode steps (as in the generative Markov chain) initialized at a training example (just like with the contrastive divergence algorithm, described in section 18.2) and penalizing the last probabilistic reconstructions (or all of the reconstructions along the way).
+Training with k steps is equivalent (in the sense of achieving the same stationary distribution) as training with one step, but practically has the advantage that spurious modes further from the data can be removed more efficiently.
+20.12 Generative Stochastic Networks
+Generative stochastic networks or GSNs (Bengio et al., 2014) are generalizations of denoising autoencoders that include latent variables h in the generative
+714
+
+

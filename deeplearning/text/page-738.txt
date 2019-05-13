@@ -1,0 +1,19 @@
+BIBLIOGRAPHY
+Behnke, S. (2001). Learning iterative image reconstruction in the neural abstraction pyramid. Int. J. Computational Intelligence and Applications, 1(4), 427­438. 515
+Beiu, V., Quintana, J. M., and Avedillo, M. J. (2003). VLSI implementations of threshold logic-a comprehensive survey. Neural Networks, IEEE Transactions on, 14(5), 1217­ 1243. 451
+Belkin, M. and Niyogi, P. (2002). Laplacian eigenmaps and spectral techniques for embedding and clustering. In T. Dietterich, S. Becker, and Z. Ghahramani, editors, Advances in Neural Information Processing Systems 14 (NIPS'01), Cambridge, MA. MIT Press. 244
+Belkin, M. and Niyogi, P. (2003). Laplacian eigenmaps for dimensionality reduction and data representation. Neural Computation, 15(6), 1373­1396. 164, 518
+Bengio, E., Bacon, P.-L., Pineau, J., and Precup, D. (2015a). Conditional computation in neural networks for faster models. arXiv:1511.06297. 450
+Bengio, S. and Bengio, Y. (2000a). Taking on the curse of dimensionality in joint distributions using neural networks. IEEE Transactions on Neural Networks, special issue on Data Mining and Knowledge Discovery, 11(3), 550­557. 707
+Bengio, S., Vinyals, O., Jaitly, N., and Shazeer, N. (2015b). Scheduled sampling for sequence prediction with recurrent neural networks. Technical report, arXiv:1506.03099. 384
+Bengio, Y. (1991). Artificial Neural Networks and their Application to Sequence Recognition. Ph.D. thesis, McGill University, (Computer Science), Montreal, Canada. 407
+Bengio, Y. (2000). Gradient-based optimization of hyperparameters. Neural Computation, 12(8), 1889­1900. 435
+Bengio, Y. (2002). New distributed probabilistic language models. Technical Report 1215, Dept. IRO, Université de Montréal. 467
+Bengio, Y. (2009). Learning deep architectures for AI . Now Publishers. 201, 622
+Bengio, Y. (2013). Deep learning of representations: looking forward. In Statistical Language and Speech Processing, volume 7978 of Lecture Notes in Computer Science, pages 1­37. Springer, also in arXiv at http://arxiv.org/abs/1305.0445. 448
+Bengio, Y. (2015). Early inference in energy-based models approximates back-propagation. Technical Report arXiv:1510.02777, Universite de Montreal. 656
+Bengio, Y. and Bengio, S. (2000b). Modeling high-dimensional discrete data with multilayer neural networks. In NIPS 12 , pages 400­406. MIT Press. 705, 707, 708, 710
+Bengio, Y. and Delalleau, O. (2009). Justifying and generalizing contrastive divergence. Neural Computation, 21(6), 1601­1621. 513, 611
+723
+
+

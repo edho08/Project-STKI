@@ -1,0 +1,134 @@
+CHAPTER 18. CONFRONTING THE PARTITION FUNCTION
+
+=
+
+p~1(x1)
+
+p~ n-1 (x n-1 p~n-1(x1 )
+
+)
+
+Tn-1
+
+(x
+
+1
+
+|
+
+xn-1
+
+)
+
+n-2
+i=1
+
+p~i (xi ) p~i (xi+1)
+
+T
+
+i
+
+(xi+1
+
+|
+
+xi )
+
+(18.58)
+
+=
+
+p~1(x1 ) p~n-1 (x1
+
+)
+
+T
+
+n-1
+
+(x1
+
+|
+
+xn-1 )
+
+p~1 (x1)
+
+n-2
+i=1
+
+p~i+1 (x i+1 p~i (xi+1)
+
+)
+
+T
+
+i(x
+
+
+
+i+1
+
+|
+
+xi ).
+
+(18.59)
+
+We now have means of generating samples from the joint proposal distribution q over the extended sample via a sampling scheme given above, with the joint distribution given by:
+
+q(x 1, . . . , xn-1, x1) = p0(x1)T1(x2 | x1) . . . Tn-1(x1 | x n-1 ). (18.60)
+
+We have a joint distribution on the extended space given by equation 18.59. Taking
+q(x1 , . . . , xn-1, x1) as the proposal distribution on the extended state space from which we will draw samples, it remains to determine the importance weights:
+
+w(k)
+
+=
+
+p~(x1 , . . . , xn-1, x 1) q(x1 , . . . , x , n-1 x1)
+
+=
+
+p~1(x(1k) )
+
+p~n-1
+
+(x
+
+(k) n-1
+
+)
+
+.
+
+.
+
+.
+
+p~2 (x(k2)) p~1(x (k1))
+
+p~1
+
+(x
+
+(k) 1
+
+)
+
+p~0(x(0k) )
+
+.
+
+(18.61)
+
+These weights are the same as proposed for AIS. Thus we can interpret AIS as simple importance sampling applied to an extended state and its validity follows immediately from the validity of importance sampling.
+Annealed importance sampling (AIS) was first discovered by Jarzynski (1997) and then again, independently, by Neal (2001). It is currently the most common way of estimating the partition function for undirected probabilistic models. The reasons for this may have more to do with the publication of an influential paper (Salakhutdinov and Murray, 2008) describing its application to estimating the partition function of restricted Boltzmann machines and deep belief networks than with any inherent advantage the method has over the other method described below.
+A discussion of the properties of the AIS estimator (e.g.. its variance and efficiency) can be found in Neal (2001).
+
+18.7.2 Bridge Sampling
+Bridge sampling Bennett (1976) is another method that, like AIS, addresses the shortcomings of importance sampling. Rather than chaining together a series of
+628
+
+

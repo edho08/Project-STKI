@@ -1,0 +1,18 @@
+BIBLIOGRAPHY
+Sjöberg, J. and Ljung, L. (1995). Overtraining, regularization and searching for a minimum, with application to neural networks. International Journal of Control , 62(6), 1391­1407. 250
+Skinner, B. F. (1958). Reinforcement today. American Psychologist , 13, 94­99. 328
+Smolensky, P. (1986). Information processing in dynamical systems: Foundations of harmony theory. In D. E. Rumelhart and J. L. McClelland, editors, Parallel Distributed Processing , volume 1, chapter 6, pages 194­281. MIT Press, Cambridge. 571, 587, 656
+Snoek, J., Larochelle, H., and Adams, R. P. (2012). Practical Bayesian optimization of machine learning algorithms. In NIPS'2012 . 436
+Socher, R., Huang, E. H., Pennington, J., Ng, A. Y., and Manning, C. D. (2011a). Dynamic pooling and unfolding recursive autoencoders for paraphrase detection. In NIPS'2011 . 401
+Socher, R., Manning, C., and Ng, A. Y. (2011b). Parsing natural scenes and natural language with recursive neural networks. In Proceedings of the Twenty-Eighth International Conference on Machine Learning (ICML'2011). 401
+Socher, R., Pennington, J., Huang, E. H., Ng, A. Y., and Manning, C. D. (2011c). Semi-supervised recursive autoencoders for predicting sentiment distributions. In EMNLP'2011 . 401
+Socher, R., Perelygin, A., Wu, J. Y., Chuang, J., Manning, C. D., Ng, A. Y., and Potts, C. (2013a). Recursive deep models for semantic compositionality over a sentiment treebank. In EMNLP'2013 . 401
+Socher, R., Ganjoo, M., Manning, C. D., and Ng, A. Y. (2013b). Zero-shot learning through cross-modal transfer. In 27th Annual Conference on Neural Information Processing Systems (NIPS 2013). 539
+Sohl-Dickstein, J., Weiss, E. A., Maheswaranathan, N., and Ganguli, S. (2015). Deep unsupervised learning using nonequilibrium thermodynamics. 716
+Sohn, K., Zhou, G., and Lee, H. (2013). Learning and selecting features jointly with point-wise gated Boltzmann machines. In ICML'2013 . 687
+Solomonoff, R. J. (1989). A system for incremental learning based on algorithmic probability. 328
+Sontag, E. D. (1998). VC dimension of neural networks. NATO ASI Series F Computer and Systems Sciences, 168, 69­96. 547, 551
+Sontag, E. D. and Sussman, H. J. (1989). Backpropagation can give rise to spurious local minima even for networks without hidden layers. Complex Systems, 3, 91­106. 284
+769
+
+

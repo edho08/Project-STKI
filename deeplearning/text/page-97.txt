@@ -1,0 +1,41 @@
+CHAPTER 4. NUMERICAL COMPUTATION
+
+stabilized. Theano (Bergstra et al., 2010; Bastien et al., 2012) is an example of a software package that automatically detects and stabilizes many common numerically unstable expressions that arise in the context of deep learning.
+
+4.2 Poor Conditioning
+
+Conditioning refers to how rapidly a function changes with respect to small changes
+
+in its inputs. Functions that change rapidly when their inputs are perturbed slightly
+
+can be problematic for scientific computation because rounding errors in the inputs
+
+can result in large changes in the output.
+
+Consider the function f(x) = A-1x. When A  Rn×n has an eigenvalue
+
+decomposition, its condition number is
+
+max
+i,j
+
+
+
+i j
+
+
+
+.
+
+(4.2)
+
+This is the ratio of the magnitude of the largest and smallest eigenvalue. When this number is large, matrix inversion is particularly sensitive to error in the input.
+This sensitivity is an intrinsic property of the matrix itself, not the result of rounding error during matrix inversion. Poorly conditioned matrices amplify pre-existing errors when we multiply by the true matrix inverse. In practice, the error will be compounded further by numerical errors in the inversion process itself.
+
+4.3 Gradient-Based Optimization
+Most deep learning algorithms involve optimization of some sort. Optimization refers to the task of either minimizing or maximizing some function f(x) by altering x. We usually phrase most optimization problems in terms of minimizing f (x). Maximization may be accomplished via a minimization algorithm by minimizing -f (x).
+The function we want to minimize or maximize is called the objective function or criterion. When we are minimizing it, we may also call it the cost function, loss function, or error function. In this book, we use these terms interchangeably, though some machine learning publications assign special meaning to some of these terms.
+We often denote the value that minimizes or maximizes a function with a superscript . For example, we might say x = arg min f(x).
+82
+
+

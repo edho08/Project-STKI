@@ -1,0 +1,91 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+2. Polak-Ribière:
+
+t
+
+=
+
+(J (t)
+
+-
+
+
+
+
+J
+
+(
+
+t-1))
+
+
+
+
+
+J (t
+
+)
+
+J (t-1 )J (t-1)
+
+(8.31)
+
+For a quadratic surface, the conjugate directions ensure that the gradient along the previous direction does not increase in magnitude. We therefore stay at the minimum along the previous directions. As a consequence, in a k-dimensional parameter space, the conjugate gradient method requires at most k line searches to achieve the minimum. The conjugate gradient algorithm is given in algorithm 8.9.
+
+Algorithm 8.9 The conjugate gradient method
+
+Require: Initial parameters 0
+
+Require: Training set of m examples
+
+Initialize 0 = 0
+
+Initialize g0 = 0
+
+Initialize t = 1
+
+while stopping criterion not met do
+
+Initialize the gradient Compute gradient: gt
+
+gt = 0
+
+
+
+1 m
+
+
+
+
+i
+
+L(f (x(i);
+
+),
+
+y(i) )
+
+Compute t
+
+= (g t-gt-1) gt
+g t-1gt-1
+
+(Polak-Ribière)
+
+(Nonlinear conjugate gradient: optionally reset t to zero, for example if t is
+
+a multiple of some constant k, such as k = 5)
+
+PCeormfoprumtelisneearscehardchiretcotifionnd: :t==-agrgt m+intm1t-1 mi=1 L(f (x(i) ; t + t), y(i)) (On a truly quadratic cost function, analytically solve for  rather than
+
+explicitly searching for it)
+
+Apply update: t+1 = t +  t t  t+1
+
+end while
+
+Nonlinear Conjugate Gradients: So far we have discussed the method of conjugate gradients as it is applied to quadratic objective functions. Of course, our primary interest in this chapter is to explore optimization methods for training neural networks and other related deep learning models where the corresponding objective function is far from quadratic. Perhaps surprisingly, the method of conjugate gradients is still applicable in this setting, though with some modification. Without any assurance that the objective is quadratic, the conjugate directions
+315
+
+

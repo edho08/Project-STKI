@@ -1,0 +1,96 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+that the gradient can continue to cause motion until a minimum is reached, but strong enough to prevent motion if the gradient does not justify moving.
+
+8.3.3 Nesterov Momentum
+
+Sutskever et al. (2013) introduced a variant of the momentum algorithm that was
+
+inspired by Nesterov's accelerated gradient method (Nesterov, 1983, 2004). The
+
+update rules in this case are given by:
+
+v
+
+
+
+v
+
+-
+
+
+
+ 1
+m
+
+ m
+
+ L f (x(i);
+
+
+
++
+
+v),
+
+ y(i)
+
+,
+
+i=1
+
+(8.21)
+
+   + v,
+
+(8.22)
+
+where the parameters  and  play a similar role as in the standard momentum method. The difference between Nesterov momentum and standard momentum is where the gradient is evaluated. With Nesterov momentum the gradient is evaluated after the current velocity is applied. Thus one can interpret Nesterov momentum as attempting to add a correction factor to the standard method of momentum. The complete Nesterov momentum algorithm is presented in algorithm 8.3.
+In the convex batch gradient case, Nesterov momentum brings the rate of convergence of the excess error from O(1/k) (after k steps) to O(1/k2) as shown by Nesterov (1983). Unfortunately, in the stochastic gradient case, Nesterov momentum does not improve the rate of convergence.
+
+Algorithm 8.3 Stochastic gradient descent (SGD) with Nesterov momentum
+
+Require: Learning rate , momentum parameter .
+
+Require: Initial parameter , initial velocity v.
+
+while stopping criterion not met do
+
+Sample a minibatch of m examples from the training set {x(1), . . . , x(m)} with
+
+corresponding labels y(i).
+
+Apply interim update: ~   Compute gradient (at interim
+
++ v point):
+
+g
+
+
+
+1 m
+
+~
+
+
+i
+
+L(f
+
+(x(i)
+
+;
+
+~),
+
+y (i))
+
+Compute velocity update: v  v - g
+
+Apply update:    + v
+
+end while
+
+300
+
+

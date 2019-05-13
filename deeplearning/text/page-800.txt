@@ -1,0 +1,18 @@
+INDEX
+
+Transpose, xii, 32 Triangle inequality, 38 Triangulated graph, see chordal graph Trigram, 458
+
+Zero-data learning, see zero-shot learning Zero-shot learning, 534
+
+Unbiased, 123 Undirected graphical model, 76, 503 Undirected model, 562 Uniform distribution, 56 Unigram, 458 Unit norm, 40 Unit vector, 40 Universal approximation theorem, 196 Universal approximator, 549 Unnormalized probability distribution, 563 Unsupervised learning, 104, 144 Unsupervised pretraining, 456, 524
+
+V-structure, see explaining away V1, 362 VAE, see variational autoencoder Vapnik-Chervonenkis dimension, 113 Variance, xiii, 60, 227 Variational autoencoder, 683, 690 Variational derivatives, see functional deriva-
+tives Variational free energy, see evidence lower
+bound VC dimension, see Vapnik-Chervonenkis di-
+mension Vector, xi, xii, 31 Virtual adversarial examples, 266 Visible layer, 6 Volumetric data, 357
+
+Wake-sleep, 646, 655 Weight decay, 117, 176, 229, 428 Weight space symmetry, 282 Weights, 15, 106 Whitening, 452 Wikibase, 479 Wikibase, 479 Word embedding, 460 Word-sense disambiguation, 480 WordNet, 479
+
+785
+
+

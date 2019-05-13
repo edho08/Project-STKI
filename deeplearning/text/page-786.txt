@@ -1,0 +1,19 @@
+BIBLIOGRAPHY
+Sutskever, I. and Hinton, G. E. (2008). Deep narrow sigmoid belief networks are universal approximators. Neural Computation , 20(11), 2629­2636. 693
+Sutskever, I. and Tieleman, T. (2010). On the Convergence Properties of Contrastive Divergence. In Y. W. Teh and M. Titterington, editors, Proc. of the International Conference on Artificial Intelligence and Statistics (AISTATS), volume 9, pages 789­795. 612
+Sutskever, I., Hinton, G., and Taylor, G. (2009). The recurrent temporal restricted Boltzmann machine. In NIPS'2008 . 685
+Sutskever, I., Martens, J., and Hinton, G. E. (2011). Generating text with recurrent neural networks. In ICML'2011 , pages 1017­1024. 477
+Sutskever, I., Martens, J., Dahl, G., and Hinton, G. (2013). On the importance of initialization and momentum in deep learning. In ICML. 300, 406, 413
+Sutskever, I., Vinyals, O., and Le, Q. V. (2014). Sequence to sequence learning with neural networks. In NIPS'2014, arXiv:1409.3215 . 25, 101, 397, 410, 411, 474, 475
+Sutton, R. and Barto, A. (1998). Reinforcement Learning: An Introduction. MIT Press. 106
+Sutton, R. S., Mcallester, D., Singh, S., and Mansour, Y. (2000). Policy gradient methods for reinforcement learning with function approximation. In NIPS'1999 , pages 1057­ ­1063. MIT Press. 691
+Swersky, K., Ranzato, M., Buchman, D., Marlin, B., and de Freitas, N. (2011). On autoencoders and score matching for energy based models. In ICML'2011 . ACM. 513
+Swersky, K., Snoek, J., and Adams, R. P. (2014). Freeze-thaw Bayesian optimization. arXiv preprint arXiv:1406.3896 . 436
+Szegedy, C., Liu, W., Jia, Y., Sermanet, P., Reed, S., Anguelov, D., Erhan, D., Vanhoucke, V., and Rabinovich, A. (2014a). Going deeper with convolutions. Technical report, arXiv:1409.4842. 24, 27, 201, 258, 269, 326, 347
+Szegedy, C., Zaremba, W., Sutskever, I., Bruna, J., Erhan, D., Goodfellow, I. J., and Fergus, R. (2014b). Intriguing properties of neural networks. ICLR, abs/1312.6199. 268, 271
+Szegedy, C., Vanhoucke, V., Ioffe, S., Shlens, J., and Wojna, Z. (2015). Rethinking the Inception Architecture for Computer Vision. ArXiv e-prints. 243, 322
+Taigman, Y., Yang, M., Ranzato, M., and Wolf, L. (2014). DeepFace: Closing the gap to human-level performance in face verification. In CVPR'2014 . 100
+Tandy, D. W. (1997). Works and Days: A Translation and Commentary for the Social Sciences . University of California Press. 1
+771
+
+

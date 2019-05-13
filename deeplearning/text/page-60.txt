@@ -1,0 +1,37 @@
+CHAPTER 2. LINEAR ALGEBRA
+
+the SVD is more generally applicable. Every real matrix has a singular value decomposition, but the same is not true of the eigenvalue decomposition. For example, if a matrix is not square, the eigendecomposition is not defined, and we must use a singular value decomposition instead.
+
+Recall that the eigendecomposition involves analyzing a matrix A to discover
+
+a matrix V of eigenvectors and a vector of eigenvalues  such that we can rewrite
+
+A as
+
+A = V diag()V -1.
+
+(2.42)
+
+The singular value decomposition is similar, except this time we will write A as a product of three matrices:
+
+A = U DV  .
+
+(2.43)
+
+Suppose that A is an m × n matrix. Then U is defined to be an m × m matrix, D to be an m × n matrix, and V to be an n × n matrix.
+Each of these matrices is defined to have a special structure. The matrices U and V are both defined to be orthogonal matrices. The matrix D is defined to be a diagonal matrix. Note that D is not necessarily square.
+The elements along the diagonal of D are known as the singular values of the matrix A. The columns of U are known as the left-singular vectors. The columns of V are known as as the right-singular vectors.
+We can actually interpret the singular value decomposition of A in terms of the eigendecomposition of functions of A . The left-singular vectors of A are the eigenvectors of AA. The right-singular vectors of A are the eigenvectors of A A. The non-zero singular values of A are the square roots of the eigenvalues of A A. The same is true for AA .
+Perhaps the most useful feature of the SVD is that we can use it to partially generalize matrix inversion to non-square matrices, as we will see in the next section.
+
+2.9 The Moore-Penrose Pseudoinverse
+
+Matrix inversion is not defined for matrices that are not square. Suppose we want to make a left-inverse B of a matrix A, so that we can solve a linear equation
+
+Ax = y
+
+(2.44)
+
+45
+
+

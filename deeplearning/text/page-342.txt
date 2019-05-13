@@ -1,0 +1,24 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+should do, via a shorter path. These hints provide an error signal to lower layers.
+
+8.7.6 Continuation Methods and Curriculum Learning
+
+As argued in section 8.2.7, many of the challenges in optimization arise from the global structure of the cost function and cannot be resolved merely by making better estimates of local update directions. The predominant strategy for overcoming this problem is to attempt to initialize the parameters in a region that is connected to the solution by a short path through parameter space that local descent can discover.
+
+Continuation methods are a family of strategies that can make optimization easier by choosing initial points to ensure that local optimization spends most of
+its time in well-behaved regions of space. The idea behind continuation methods is to construct a series of objective functions over the same parameters. In order to minimize a cost function J ( ), we will construct new cost functions {J (0), . . . , J (n)}. These cost functions are designed to be increasingly difficult, with J (0) being fairly easy to minimize, and J(n) , the most difficult, being J (), the true cost function motivating the entire process. When we say that J (i) is easier than J (i+1), we mean that it is well behaved over more of  space. A random initialization is more likely to land in the region where local descent can minimize the cost function successfully because this region is larger. The series of cost functions are designed so that a solution to one is a good initial point of the next. We thus begin by solving an easy problem then refine the solution to solve incrementally harder problems until we arrive at a solution to the true underlying problem.
+
+Traditional continuation methods (predating the use of continuation methods for neural network training) are usually based on smoothing the objective function. See Wu (1997) for an example of such a method and a review of some related methods. Continuation methods are also closely related to simulated annealing, which adds noise to the parameters (Kirkpatrick et al., 1983). Continuation methods have been extremely successful in recent years. See Mobahi and Fisher (2015) for an overview of recent literature, especially for AI applications.
+
+Continuation methods traditionally were mostly designed with the goal of overcoming the challenge of local minima. Specifically, they were designed to reach a global minimum despite the presence of many local minima. To do so, these continuation methods would construct easier cost functions by "blurring" the original cost function. This blurring operation can be done by approximating
+
+J(i) () = EN (;,(i)2)J ( )
+
+(8.40)
+
+via sampling. The intuition for this approach is that some non-convex functions
+
+327
+
+

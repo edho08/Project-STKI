@@ -1,0 +1,78 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+prior distribution. The prior has an influence by shifting probability mass density towards regions of the parameter space that are preferred a priori. In practice, the prior often expresses a preference for models that are simpler or more smooth. Critics of the Bayesian approach identify the prior as a source of subjective human judgment impacting the predictions.
+Bayesian methods typically generalize much better when limited training data is available, but typically suffer from high computational cost when the number of training examples is large.
+
+Example: Bayesian Linear Regression Here we consider the Bayesian esti-
+mation approach to learning the linear regression parameters. In linear regression, we learn a linear mapping from an input vector x  R n to predict the value of a scalar y  R. The prediction is parametrized by the vector w  Rn:
+
+y^ = wx.
+
+(5.69)
+
+Given a set of m training samples (X(train), y(train) ), we can express the prediction of y over the entire training set as:
+
+y^(train) = X (train)w.
+
+(5.70)
+
+Expressed as a Gaussian conditional distribution on y(train) , we have
+
+p(y(train) | X (train), w) = N (y(train); X(train)w, I)
+
+(5.71)
+
+
+
+
+
+ exp - 12(y(train) - X(train)w) (y(train) - X(train)w) ,
+
+(5.72)
+
+where we follow the standard MSE formulation in assuming that the Gaussian
+variance on y is one. In what follows, to reduce the notational burden, we refer to (X(train), y (train)) as simply (X, y).
+
+To determine the posterior distribution over the model parameter vector w, we
+
+first need to specify a prior distribution. The prior should reflect our naive belief
+
+about the value of these parameters. While it is sometimes difficult or unnatural
+
+to express our prior beliefs in terms of the parameters of the model, in practice we
+
+typically assume a fairly broad distribution expressing a high degree of uncertainty
+
+about . For real-valued parameters it is common to use a Gaussian as a prior
+
+distribution:
+
+
+
+
+
+p(w) = N (w; µ0 , 0)  exp
+
+-
+
+1 2
+
+(w
+
+-
+
+µ0)-0 1(w
+
+-
+
+µ
+
+0)
+
+,
+
+(5.73)
+
+137
+
+

@@ -1,0 +1,36 @@
+CHAPTER 10. SEQUENCE MODELING: RECURRENT AND RECURSIVE NETS
+
+is what gated RNNs do.
+
+10.10.1 LSTM
+
+The clever idea of introducing self-loops to produce paths where the gradient can flow for long durations is a core contribution of the initial long short-term memory (LSTM) model (Hochreiter and Schmidhuber, 1997). A crucial addition has been to make the weight on this self-loop conditioned on the context, rather than fixed (Gers et al., 2000). By making the weight of this self-loop gated (controlled by another hidden unit), the time scale of integration can be changed dynamically. In this case, we mean that even for an LSTM with fixed parameters, the time scale of integration can change based on the input sequence, because the time constants are output by the model itself. The LSTM has been found extremely successful in many applications, such as unconstrained handwriting recognition (Graves et al., 2009), speech recognition (Graves et al., 2013; Graves and Jaitly, 2014), handwriting generation (Graves, 2013), machine translation (Sutskever et al., 2014), image captioning (Kiros et al., 2014b; Vinyals et al., 2014b; Xu et al., 2015) and parsing (Vinyals et al., 2014a).
+
+The LSTM block diagram is illustrated in figure 10.16. The corresponding
+forward propagation equations are given below, in the case of a shallow recurrent
+network architecture. Deeper architectures have also been successfully used (Graves
+et al., 2013; Pascanu et al., 2014a). Instead of a unit that simply applies an element-
+wise nonlinearity to the affine transformation of inputs and recurrent units, LSTM
+recurrent networks have "LSTM cells" that have an internal recurrence (a self-loop),
+in addition to the outer recurrence of the RNN. Each cell has the same inputs
+and outputs as an ordinary recurrent network, but has more parameters and a
+system of gating units that controls the flow of information. The most important component is the state unit s(it) that has a linear self-loop similar to the leaky units described in the previous section. However, here, the self-loop weight (or the associated time constant) is controlled by a forget gate unit f(it) (for time step t and cell i), that sets this weight to a value between 0 and 1 via a sigmoid unit:
+
+
+
+
+
+fi(t) =  bfi +  Uif,j x(jt) +  Wif,j h(jt-1) ,
+
+j
+
+j
+
+(10.40)
+
+where x(t) is the current input vector and h(t) is the current hidden layer vector, containing the outputs of all the LSTM cells, and bf ,Uf , W f are respectively
+biases, input weights and recurrent weights for the forget gates. The LSTM cell
+
+410
+
+

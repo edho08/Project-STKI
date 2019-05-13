@@ -1,0 +1,47 @@
+CONTENTS
+
+A
+
+A set
+
+Sets and Graphs
+
+R
+
+The set of real numbers
+
+{0, 1} The set containing 0 and 1
+
+{0, 1, . . . , n} The set of all integers between 0 and n
+
+[a, b]
+
+The real interval including a and b
+
+(a, b]
+
+The real interval excluding a but including b
+
+A\B
+
+Set subtraction, i.e., the set containing the ele-
+
+ments of A that are not in B
+
+G
+
+A graph
+
+P aG(xi) The parents of xi in G
+
+ai a-i Ai,j Ai,: A:,i Ai,j,k
+A:,:,i ai
+
+Indexing Element i of vector a, with indexing starting at 1 All elements of vector a except for element i Element i, j of matrix A Row i of matrix A Column i of matrix A Element (i, j, k) of a 3-D tensor A 2-D slice of a 3-D tensor Element i of the random vector a
+
+Linear Algebra Operations A Transpose of matrix A A+ Moore-Penrose pseudoinverse of A
+A  B Element-wise (Hadamard) product of A and B det(A) Determinant of A
+
+xii
+
+

@@ -1,0 +1,35 @@
+CHAPTER 1. INTRODUCTION
+
+Element Set
++ × 
+
+
++ ××
+
+Element Set
+Logistic Regression
+
+w1
+
+x1
+
+w2
+
+x2
+
+Logistic Regression
+
+w
+
+x
+
+Figure 1.3: Illustration of computational graphs mapping an input to an output where each node performs an operation. Depth is the length of the longest path from input to
+output but depends on the definition of what constitutes a possible computational step. The computation depicted in these graphs is the output of a logistic regression model, (wT x), where  is the logistic sigmoid function. If we use addition, multiplication and logistic sigmoids as the elements of our computer language, then this model has depth
+three. If we view logistic regression as an element itself, then this model has depth one.
+
+instructions can refer back to the results of earlier instructions. According to this view of deep learning, not all of the information in a layer's activations necessarily encodes factors of variation that explain the input. The representation also stores state information that helps to execute a program that can make sense of the input. This state information could be analogous to a counter or pointer in a traditional computer program. It has nothing to do with the content of the input specifically, but it helps the model to organize its processing.
+There are two main ways of measuring the depth of a model. The first view is based on the number of sequential instructions that must be executed to evaluate the architecture. We can think of this as the length of the longest path through a flow chart that describes how to compute each of the model's outputs given its inputs. Just as two equivalent computer programs will have different lengths depending on which language the program is written in, the same function may be drawn as a flowchart with different depths depending on which functions we allow to be used as individual steps in the flowchart. Figure 1.3 illustrates how this choice of language can give two different measurements for the same architecture.
+Another approach, used by deep probabilistic models, regards the depth of a model as being not the depth of the computational graph but the depth of the graph describing how concepts are related to each other. In this case, the depth
+7
+
+

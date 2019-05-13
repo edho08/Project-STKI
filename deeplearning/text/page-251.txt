@@ -1,0 +1,181 @@
+CHAPTER 7. REGULARIZATION FOR DEEP LEARNING
+
+Consider the situation where wi > 0 for all i. There are two possible outcomes:
+
+1.
+
+The case where wi
+
+
+
+ Hi,i
+
+.
+
+Here the optimal value of
+
+wi under the regularized
+
+objective is simply wi = 0. This occurs because the contribution of J(w; X, y) to the regularized objective J~(w; X, y) is overwhelmed--in direction i--by
+
+the L1 regularization which pushes the value of wi to zero.
+
+2.
+
+The
+
+case
+
+where
+
+w
+
+ i
+
+>
+
+ Hi,i
+
+.
+
+In
+
+this case,
+
+the regularization
+
+does
+
+not
+
+move the
+
+optimal value of wi to zero but instead it just shifts it in that direction by a
+
+distance
+
+equal
+
+to
+
+ H i,i
+
+.
+
+A similar process happens when wi < 0, but with the L1 penalty making wi less
+
+negative
+
+by
+
+ Hi,i
+
+,
+
+or
+
+0.
+
+In comparison to L2 regularization, L1 regularization results in a solution that
+
+is more sparse. Sparsity in this context refers to the fact that some parameters have an optimal value of zero. The sparsity of L1 regularization is a qualitatively different behavior than arises with L2 regularization. Equation 7.13 gave the solution w~ for L2 regularization. If we revisit that equation using the assumption
+
+of a diagonal and positive definite Hessian H that we introduced for our analysis of
+
+L1
+
+regularization,
+
+we
+
+find that
+
+w~i
+
+=
+
+Hi,i H i,i+
+
+wi
+
+.
+
+If
+
+wi
+
+was
+
+nonzero,
+
+then
+
+w~i
+
+remains
+
+nonzero. This demonstrates that L2 regularization does not cause the parameters
+
+to become sparse, while L1 regularization may do so for large enough .
+
+The sparsity property induced by L1 regularization has been used extensively
+
+as a feature selection mechanism. Feature selection simplifies a machine learning
+
+problem by choosing which subset of the available features should be used. In
+
+particular, the well known LASSO (Tibshirani, 1995) (least absolute shrinkage and selection operator) model integrates an L1 penalty with a linear model and a least squares cost function. The L1 penalty causes a subset of the weights to become
+
+zero, suggesting that the corresponding features may safely be discarded.
+
+In section 5.6.1, we saw that many regularization strategies can be interpreted
+
+as MAP Bayesian inference, and that in particular, L2 regularization is equivalent
+
+to MAP Bayesian inference with larization, the penalty (w) =
+
+a 
+
+ Gaiu|swsii|anuspedriotro
+
+on the weights. For L1 reguregularize a cost function is
+
+equivalent to the log-prior term that is maximized by MAP Bayesian inference
+
+when the prior is an isotropic Laplace distribution (equation 3.26) over w  R n:
+
+log p(w)
+
+=
+
+ log Laplace(w i;
+
+0,
+
+1) 
+
+=
+
+-||w||1
+
++
+
+n
+
+log
+
+
+
+-
+
+n
+
+log 2.
+
+i
+
+(7.24)
+
+236
+
+

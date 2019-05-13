@@ -1,0 +1,63 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+b, one can continue to use the model with only weights but augment x with an extra entry that is always set to 1. The weight corresponding to the extra 1 entry plays the role of the bias parameter. We will frequently use the term "linear" when referring to affine functions throughout this book.
+The intercept term b is often called the bias parameter of the affine transformation. This terminology derives from the point of view that the output of the transformation is biased toward being b in the absence of any input. This term is different from the idea of a statistical bias, in which a statistical estimation algorithm's expected estimate of a quantity is not equal to the true quantity.
+Linear regression is of course an extremely simple and limited learning algorithm, but it provides an example of how a learning algorithm can work. In the subsequent sections we will describe some of the basic principles underlying learning algorithm design and demonstrate how these principles can be used to build more complicated learning algorithms.
+
+5.2 Capacity, Overfitting and Underfitting
+
+The central challenge in machine learning is that we must perform well on new, previously unseen inputs--not just those on which our model was trained. The ability to perform well on previously unobserved inputs is called generalization.
+
+Typically, when training a machine learning model, we have access to a training set, we can compute some error measure on the training set called the training error, and we reduce this training error. So far, what we have described is simply an optimization problem. What separates machine learning from optimization is that we want the generalization error, also called the test error, to be low as well. The generalization error is defined as the expected value of the error on a new input. Here the expectation is taken across different possible inputs, drawn from the distribution of inputs we expect the system to encounter in practice.
+
+We typically estimate the generalization error of a machine learning model by measuring its performance on a test set of examples that were collected separately from the training set.
+
+In our linear regression example, we trained the model by minimizing the
+
+training error,
+
+1 m(train)
+
+||X
+
+(train)w
+
+-
+
+y(train)||22
+
+,
+
+(5.14)
+
+but
+
+we
+
+actually
+
+care
+
+about
+
+the
+
+test
+
+error,
+
+1 m(test)
+
+||X(test)w
+
+-
+
+y
+
+(test) || 22.
+
+How can we affect performance on the test set when we get to observe only the
+
+110
+
+

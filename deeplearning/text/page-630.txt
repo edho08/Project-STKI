@@ -1,0 +1,67 @@
+CHAPTER 18. CONFRONTING THE PARTITION FUNCTION
+
+incompatible with bound-based positive phase methods.
+
+18.3 Pseudolikelihood
+
+Monte Carlo approximations to the partition function and its gradient directly confront the partition function. Other approaches sidestep the issue, by training the model without computing the partition function. Most of these approaches are based on the observation that it is easy to compute ratios of probabilities in an undirected probabilistic model. This is because the partition function appears in both the numerator and the denominator of the ratio and cancels out:
+
+p(x) p(y)
+
+=
+
+1 Z
+
+p~(x)
+
+1 Z
+
+p~(y)
+
+=
+
+p~(x) p~(y)
+
+.
+
+(18.17)
+
+The pseudolikelihood is based on the observation that conditional probabilities take this ratio-based form, and thus can be computed without knowledge of the partition function. Suppose that we partition x into a, b and c, where a contains the variables we want to find the conditional distribution over, b contains the variables we want to condition on, and c contains the variables that are not part of our query.
+
+p(a | b)
+
+=
+
+p(a, b) p(b)
+
+=
+
+a,pc(pa(,ab, )b, c)
+
+=
+
+
+
+p~(a, b) a,c p~(a, b,
+
+. c)
+
+(18.18)
+
+This quantity requires marginalizing out a, which can be a very efficient operation provided that a and c do not contain very many variables. In the extreme case, a can be a single variable and c can be empty, making this operation require only as many evaluations of p~ as there are values of a single random variable.
+Unfortunately, in order to compute the log-likelihood, we need to marginalize out large sets of variables. If there are n variables total, we must marginalize a set of size n - 1. By the chain rule of probability,
+
+log p(x) = log p(x1) + log p(x2 | x1) + · · · + p(xn | x1:n-1).
+
+(18.19)
+
+In this case, we have made a maximally small, but c can be as large as x2:n . What if we simply move c into b to reduce the computational cost? This yields the pseudolikelihood (Besag, 1975) objective function, based on predicting the value of feature xi given all of the other features x-i:
+
+n log p(xi | x -i).
+i=1
+
+(18.20)
+
+615
+
+

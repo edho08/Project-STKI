@@ -1,0 +1,20 @@
+BIBLIOGRAPHY
+Bengio, Y., Larochelle, H., and Vincent, P. (2006c). Non-local manifold Parzen windows. In NIPS'2005 . MIT Press. 160, 520
+Bengio, Y., Lamblin, P., Popovici, D., and Larochelle, H. (2007). Greedy layer-wise training of deep networks. In NIPS'2006 . 14, 19, 201, 323, 324, 528, 530
+Bengio, Y., Louradour, J., Collobert, R., and Weston, J. (2009). Curriculum learning. In ICML'09 . 328
+Bengio, Y., Mesnil, G., Dauphin, Y., and Rifai, S. (2013a). Better mixing via deep representations. In ICML'2013 . 604
+Bengio, Y., Léonard, N., and Courville, A. (2013b). Estimating or propagating gradients through stochastic neurons for conditional computation. arXiv:1308.3432. 448, 450, 689, 691
+Bengio, Y., Yao, L., Alain, G., and Vincent, P. (2013c). Generalized denoising autoencoders as generative models. In NIPS'2013 . 507, 711, 714
+Bengio, Y., Courville, A., and Vincent, P. (2013d). Representation learning: A review and new perspectives. IEEE Trans. Pattern Analysis and Machine Intelligence (PAMI), 35(8), 1798­1828. 555
+Bengio, Y., Thibodeau-Laufer, E., Alain, G., and Yosinski, J. (2014). Deep generative stochastic networks trainable by backprop. In ICML'2014 . 711, 712, 713, 714, 715
+Bennett, C. (1976). Efficient estimation of free energy differences from Monte Carlo data. Journal of Computational Physics, 22(2), 245­268. 628
+Bennett, J. and Lanning, S. (2007). The Netflix prize. 479
+Berger, A. L., Della Pietra, V. J., and Della Pietra, S. A. (1996). A maximum entropy approach to natural language processing. Computational Linguistics , 22, 39­71. 473
+Berglund, M. and Raiko, T. (2013). Stochastic gradient estimate variance in contrastive divergence and persistent contrastive divergence. CoRR, abs/1312.6002. 614
+Bergstra, J. (2011). Incorporating Complex Cells into Neural Networks for Pattern Classification . Ph.D. thesis, Université de Montréal. 255
+Bergstra, J. and Bengio, Y. (2009). Slow, decorrelated features for pretraining complex cell-like networks. In NIPS'2009 . 494
+Bergstra, J. and Bengio, Y. (2012). Random search for hyper-parameter optimization. J. Machine Learning Res., 13, 281­305. 433, 434, 435
+Bergstra, J., Breuleux, O., Bastien, F., Lamblin, P., Pascanu, R., Desjardins, G., Turian, J., Warde-Farley, D., and Bengio, Y. (2010). Theano: a CPU and GPU math expression compiler. In Proc. SciPy . 25, 82, 214, 222, 446
+725
+
+

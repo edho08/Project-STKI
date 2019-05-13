@@ -1,0 +1,32 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+value of  before observing any data. For example, one might assume a priori that  lies in some finite range or volume, with a uniform distribution. Many priors instead reflect a preference for "simpler" solutions (such as smaller magnitude coefficients, or a function that is closer to being constant).
+Now consider that we have a set of data samples {x(1), . . . , x(m) }. We can recover the effect of data on our belief about  by combining the data likelihood p(x(1), . . . , x(m) | ) with the prior via Bayes' rule:
+
+p(
+
+|
+
+x(1), . . . , x(m))
+
+=
+
+p(x(1), . . . , x(m) | )p() p(x(1), . . . , x(m) )
+
+(5.67)
+
+In the scenarios where Bayesian estimation is typically used, the prior begins as a relatively uniform or Gaussian distribution with high entropy, and the observation of the data usually causes the posterior to lose entropy and concentrate around a few highly likely values of the parameters.
+
+Relative to maximum likelihood estimation, Bayesian estimation offers two
+important differences. First, unlike the maximum likelihood approach that makes
+predictions using a point estimate of , the Bayesian approach is to make predictions
+using a full distribution over . For example, after observing m examples, the predicted distribution over the next data sample, x(m+1) , is given by
+ p(x(m+1) | x(1), . . . , x(m) ) = p(x(m+1) | )p( | x(1) , . . . , x(m) ) d. (5.68)
+
+Here each value of  with positive probability density contributes to the prediction of the next example, with the contribution weighted by the posterior density itself. After having observed {x(1), . . . , x(m)}, if we are still quite uncertain about the value of , then this uncertainty is incorporated directly into any predictions we might make.
+In section 5.4, we discussed how the frequentist approach addresses the uncertainty in a given point estimate of  by evaluating its variance. The variance of the estimator is an assessment of how the estimate might change with alternative samplings of the observed data. The Bayesian answer to the question of how to deal with the uncertainty in the estimator is to simply integrate over it, which tends to protect well against overfitting. This integral is of course just an application of the laws of probability, making the Bayesian approach simple to justify, while the frequentist machinery for constructing an estimator is based on the rather ad hoc decision to summarize all knowledge contained in the dataset with a single point estimate.
+The second important difference between the Bayesian approach to estimation and the maximum likelihood approach is due to the contribution of the Bayesian
+
+136
+
+

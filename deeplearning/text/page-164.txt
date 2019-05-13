@@ -1,0 +1,165 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+PCA finds a representation (through linear transformation) z = xW where Var[z] is diagonal.
+In section 2.12, we saw that the principal components of a design matrix X are given by the eigenvectors of XX. From this view,
+
+XX = W W .
+
+(5.86)
+
+In this section, we exploit an alternative derivation of the principal components. The
+
+principal components may also be obtained via the singular value decomposition.
+
+Specifically, they are the right singular vectors of X . To see this, let W be the right singular vectors in the decomposition X = UW . We then recover the
+
+original eigenvector equation with W as the eigenvector basis:
+
+X X
+
+=
+
+ U
+
+W
+
+
+
+U W 
+
+=
+
+W 2W.
+
+(5.87)
+
+The SVD is helpful to show that PCA results in a diagonal Var [z]. Using the SVD of X, we can express the variance of X as:
+
+Var[x]
+
+=
+
+m
+
+1 -
+
+1
+
+X
+
+X
+
+=
+
+m
+
+1 -
+
+1
+
+(U
+
+W
+
+
+
+)U
+
+W
+
+
+
+=
+
+m
+
+1 -
+
+1
+
+W
+
+
+
+U
+
+U
+
+W
+
+
+
+=
+
+m
+
+1 -
+
+1
+
+W
+
+2
+
+W
+
+
+
+,
+
+(5.88) (5.89) (5.90) (5.91)
+
+where we use the fact that U U = I because the U matrix of the singular value decomposition is defined to be orthogonal. This shows that if we take z = xW ,
+we can ensure that the covariance of z is diagonal as required:
+
+Var[z]
+
+=
+
+m
+
+1 -
+
+1
+
+Z
+
+Z
+
+= 1 W X XW m-1
+
+=
+
+m
+
+1 -
+
+1
+
+W
+
+W
+
+
+
+2W
+
+W
+
+=
+
+m
+
+1 -
+
+1
+
+2,
+
+(5.92) (5.93) (5.94) (5.95)
+
+where this time we use the fact that W W = I, again from the definition of the SVD.
+
+149
+
+

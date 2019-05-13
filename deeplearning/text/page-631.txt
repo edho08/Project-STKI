@@ -1,0 +1,24 @@
+CHAPTER 18. CONFRONTING THE PARTITION FUNCTION
+
+If each random variable has k different values, this requires only k×n evaluations of p~ to compute, as opposed to the kn evaluations needed to compute the partition
+function.
+
+This may look like an unprincipled hack, but it can be proven that estimation by maximizing the pseudolikelihood is asymptotically consistent (Mase, 1995). Of course, in the case of datasets that do not approach the large sample limit, pseudolikelihood may display different behavior from the maximum likelihood estimator.
+
+It is possible to trade computational complexity for deviation from maximum
+likelihood behavior by using the generalized pseudolikelihood estimator (Huang
+and Ogata, 2002). The generalized pseudolikelihood estimator uses m different sets S(i) , i = 1, . . . , m of indices of variables that appear together on the left side of the conditioning bar. In the extreme case of m = 1 and S (1) = 1, . . . , n the generalized
+pseudolikelihood recovers the log-likelihood. In the extreme case of m = n and S(i) = {i}, the generalized pseudolikelihood recovers the pseudolikelihood. The
+generalized pseudolikelihood objective function is given by
+
+m log p(xS(i) | x-S(i)).
+i=1
+
+(18.21)
+
+The performance of pseudolikelihood-based approaches depends largely on how the model will be used. Pseudolikelihood tends to perform poorly on tasks that require a good model of the full joint p(x), such as density estimation and sampling. However, it can perform better than maximum likelihood for tasks that require only the conditional distributions used during training, such as filling in small amounts of missing values. Generalized pseudolikelihood techniques are especially powerful if the data has regular structure that allows the S index sets to be designed to capture the most important correlations while leaving out groups of variables that only have negligible correlation. For example, in natural images, pixels that are widely separated in space also have weak correlation, so the generalized pseudolikelihood can be applied with each S set being a small, spatially localized window.
+One weakness of the pseudolikelihood estimator is that it cannot be used with other approximations that provide only a lower bound on p~(x), such as variational inference, which will be covered in chapter 19. This is because p~ appears in the denominator. A lower bound on the denominator provides only an upper bound on the expression as a whole, and there is no benefit to maximizing an upper bound. This makes it difficult to apply pseudolikelihood approaches to deep models such as deep Boltzmann machines, since variational methods are one of the dominant approaches to approximately marginalizing out the many layers of hidden variables
+
+616
+
+

@@ -1,0 +1,63 @@
+CHAPTER 12. APPLICATIONS
+
+variation in the data can both reduce generalization error and reduce the size of the model needed to fit the training set. Simpler tasks may be solved by smaller models, and simpler solutions are more likely to generalize well. Preprocessing of this kind is usually designed to remove some kind of variability in the input data that is easy for a human designer to describe and that the human designer is confident has no relevance to the task. When training with large datasets and large models, this kind of preprocessing is often unnecessary, and it is best to just let the model learn which kinds of variability it should become invariant to. For example, the AlexNet system for classifying ImageNet only has one preprocessing step: subtracting the mean across training examples of each pixel (Krizhevsky et al., 2012).
+
+12.2.1.1 Contrast Normalization
+
+One of the most obvious sources of variation that can be safely removed for
+
+many tasks is the amount of contrast in the image. Contrast simply refers to the
+
+magnitude of the difference between the bright and the dark pixels in an image.
+
+There are many ways of quantifying the contrast of an image. In the context of
+
+deep learning, contrast usually refers to the standard deviation of the pixels in an
+
+image or region of an image. Suppose we have an image represented by a tensor X  Rr×c×3, with Xi,j,1 being the red intensity at row i and column j , Xi,j,2 giving
+
+the green intensity and Xi,j,3 giving the blue intensity. Then the contrast of the
+
+entire image is given by
+
+   
+
+1 3rc
+
+r
+
+c
+
+3
+
+ X i,j,k
+
+-
+
+X¯2
+
+i=1 j=1 k=1
+
+(12.1)
+
+where X¯ is the mean intensity of the entire image:
+
+X¯
+
+=
+
+1 3rc
+
+r c
+
+3 Xi,j,k.
+
+i=1 j=1 k=1
+
+(12.2)
+
+Global contrast normalization (GCN) aims to prevent images from having varying amounts of contrast by subtracting the mean from each image, then rescaling it so that the standard deviation across its pixels is equal to some constant s. This approach is complicated by the fact that no scaling factor can change the contrast of a zero-contrast image (one whose pixels all have equal intensity). Images with very low but non-zero contrast often have little information content. Dividing by the true standard deviation usually accomplishes nothing
+
+454
+
+

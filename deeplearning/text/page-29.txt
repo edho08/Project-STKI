@@ -1,0 +1,24 @@
+CHAPTER 1. INTRODUCTION
+
+Frequency of Word or Phrase
+
+0.000250 0.000200 0.000150 0.000100 0.000050 0.000000
+1940
+
+cybernetics (connectionism + neural networks)
+
+1950
+
+1960
+
+1970 1980 Year
+
+1990
+
+2000
+
+Figure 1.7: The figure shows two of the three historical waves of artificial neural nets research, as measured by the frequency of the phrases "cybernetics" and "connectionism" or "neural networks" according to Google Books (the third wave is too recent to appear). The first wave started with cybernetics in the 1940s­1960s, with the development of theories of biological learning (McCulloch and Pitts, 1943; Hebb, 1949) and implementations of the first models such as the perceptron (Rosenblatt, 1958) allowing the training of a single neuron. The second wave started with the connectionist approach of the 1980­1995 period, with back-propagation (Rumelhart et al., 1986a) to train a neural network with one or two hidden layers. The current and third wave, deep learning, started around 2006 (Hinton et al., 2006; Bengio et al., 2007; Ranzato et al., 2007a), and is just now appearing in book form as of 2016. The other two waves similarly appeared in book form much later than the corresponding scientific activity occurred.
+
+14
+
+

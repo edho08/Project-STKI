@@ -1,0 +1,5 @@
+CHAPTER 19. APPROXIMATE INFERENCE
+Using approximate inference, it is possible to train and use a wide variety of models. Many of these models are described in the next chapter.
+653
+
+

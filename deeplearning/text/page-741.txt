@@ -1,0 +1,20 @@
+BIBLIOGRAPHY
+Bergstra, J., Bardenet, R., Bengio, Y., and Kégl, B. (2011). Algorithms for hyper-parameter optimization. In NIPS'2011 . 436
+Berkes, P. and Wiskott, L. (2005). Slow feature analysis yields a rich repertoire of complex cell properties. Journal of Vision, 5(6), 579­602. 495
+Bertsekas, D. P. and Tsitsiklis, J. (1996). Neuro-Dynamic Programming. Athena Scientific. 106
+Besag, J. (1975). Statistical analysis of non-lattice data. The Statistician, 24(3), 179­195. 615
+Bishop, C. M. (1994). Mixture density networks. 189
+Bishop, C. M. (1995a). Regularization and complexity control in feed-forward networks. In Proceedings International Conference on Artificial Neural Networks ICANN'95 , volume 1, page 141­148. 242, 250
+Bishop, C. M. (1995b). Training with noise is equivalent to Tikhonov regularization. Neural Computation, 7(1), 108­116. 242
+Bishop, C. M. (2006). Pattern Recognition and Machine Learning. Springer. 98, 146
+Blum, A. L. and Rivest, R. L. (1992). Training a 3-node neural network is NP-complete. 293
+Blumer, A., Ehrenfeucht, A., Haussler, D., and Warmuth, M. K. (1989). Learnability and the Vapnik­Chervonenkis dimension. Journal of the ACM , 36(4), 929­­865. 114
+Bonnet, G. (1964). Transformations des signaux aléatoires à travers les systèmes non linéaires sans mémoire. Annales des Télécommunications , 19(9­10), 203­220. 689
+Bordes, A., Weston, J., Collobert, R., and Bengio, Y. (2011). Learning structured embeddings of knowledge bases. In AAAI 2011 . 484
+Bordes, A., Glorot, X., Weston, J., and Bengio, Y. (2012). Joint learning of words and meaning representations for open-text semantic parsing. AISTATS'2012 . 401, 484, 485
+Bordes, A., Glorot, X., Weston, J., and Bengio, Y. (2013a). A semantic matching energy function for learning with multi-relational data. Machine Learning: Special Issue on Learning Semantics . 483
+Bordes, A., Usunier, N., Garcia-Duran, A., Weston, J., and Yakhnenko, O. (2013b). Translating embeddings for modeling multi-relational data. In C. Burges, L. Bottou, M. Welling, Z. Ghahramani, and K. Weinberger, editors, Advances in Neural Information Processing Systems 26 , pages 2787­2795. Curran Associates, Inc. 484
+Bornschein, J. and Bengio, Y. (2015). Reweighted wake-sleep. In ICLR'2015, arXiv:1406.2751 . 693
+726
+
+

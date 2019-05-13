@@ -1,0 +1,105 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+Example: Bernoulli Distribution We once again consider a set of samples
+
+{x(1), . . . , x(m)} drawn independently and identically from a Bernoulli distribution
+
+(recall P(x(i);  the variance of
+
+)= the
+
+exs(tii)m(1a-tor)^(m1-=x(i)m)1) . Tmi=h1isxt(iim). e
+
+we
+
+are
+
+interested
+
+in
+
+computing
+
+Var
+
+
+
+^m
+
+
+
+=
+
+Var
+
+ 1 m
+
+ m
+
+x(i)
+
+
+
+(5.48)
+
+i=1
+
+=
+
+1 m2
+
+m
+
+Var
+
+ x(i)
+
+
+
+i=1
+
+(5.49)
+
+=
+
+1 m2
+
+m (1
+
+- )
+
+i=1
+
+(5.50)
+
+=
+
+1 m2
+
+m(1
+
+-
+
+)
+
+(5.51)
+
+= m1 (1 - )
+
+(5.52)
+
+The variance of the estimator decreases as a function of m, the number of examples in the dataset. This is a common property of popular estimators that we will return to when we discuss consistency (see section 5.4.5).
+
+5.4.4 Trading off Bias and Variance to Minimize Mean Squared Error
+
+Bias and variance measure two different sources of error in an estimator. Bias measures the expected deviation from the true value of the function or parameter. Variance on the other hand, provides a measure of the deviation from the expected estimator value that any particular sampling of the data is likely to cause.
+What happens when we are given a choice between two estimators, one with more bias and one with more variance? How do we choose between them? For example, imagine that we are interested in approximating the function shown in figure 5.2 and we are only offered the choice between a model with large bias and one that suffers from large variance. How do we choose between them?
+The most common way to negotiate this trade-off is to use cross-validation. Empirically, cross-validation is highly successful on many real-world tasks. Alternatively, we can also compare the mean squared error (MSE) of the estimates:
+
+MSE = E[(^m - )2 ] = Bias(^m)2 + Var(^m )
+
+(5.53) (5.54)
+
+129
+
+

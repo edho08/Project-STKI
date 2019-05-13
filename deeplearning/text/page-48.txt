@@ -1,0 +1,48 @@
+CHAPTER 2. LINEAR ALGEBRA
+
+ A1,1
+A =  A2,1 A3,1
+
+A1,2 A2,2 A3,2
+
+
+
+
+
+  A =
+
+A1,1 A1,2
+
+A2,1 A2,2
+
+ A3,1 A3,2
+
+Figure 2.1: The transpose of the matrix can be thought of as a mirror image across the main diagonal.
+
+the i-th column of A. When we need to explicitly identify the elements of
+
+a matrix, we write them as an array enclosed in square brackets:
+
+ A1,1
+
+A 1,2
+
+ .
+
+A2,1 A2,2
+
+(2.2)
+
+Sometimes we may need to index matrix-valued expressions that are not just a single letter. In this case, we use subscripts after the expression, but do not convert anything to lower case. For example, f (A)i,j gives element (i, j) of the matrix computed by applying the function f to A.
+· Tensors: In some cases we will need an array with more than two axes. In the general case, an array of numbers arranged on a regular grid with a variable number of axes is known as a tensor. We denote a tensor named "A" with this typeface: A. We identify the element of A at coordinates (i, j, k) by writing Ai,j,k.
+
+One important operation on matrices is the transpose. The transpose of a matrix is the mirror image of the matrix across a diagonal line, called the main diagonal, running down and to the right, starting from its upper left corner. See figure 2.1 for a graphical depiction of this operation. We denote the transpose of a matrix A as A, and it is defined such that
+
+(A)i,j = Aj,i.
+
+(2.3)
+
+Vectors can be thought of as matrices that contain only one column. The transpose of a vector is therefore a matrix with only one row. Sometimes we
+33
+
+

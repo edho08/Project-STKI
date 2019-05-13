@@ -1,0 +1,43 @@
+CHAPTER 7. REGULARIZATION FOR DEEP LEARNING
+
+y
+
+h1
+
+h2
+
+x1
+
+x2
+
+y
+
+h^1
+
+h^2
+
+µh1
+
+h1
+
+h2
+
+µh2
+
+x^1
+
+x^2
+
+µx1
+
+x1
+
+x2
+
+µx2
+
+Figure 7.7: An example of forward propagation through a feedforward network using dropout. (Top)In this example, we use a feedforward network with two input units, one hidden layer with two hidden units, and one output unit. (Bottom)To perform forward propagation with dropout, we randomly sample a vector µ with one entry for each input or hidden unit in the network. The entries of µ are binary and are sampled independently from each other. The probability of each entry being 1 is a hyperparameter, usually 0.5 for the hidden layers and 0.8 for the input. Each unit in the network is multiplied by the corresponding mask, and then forward propagation continues through the rest of the network as usual. This is equivalent to randomly selecting one of the sub-networks from figure 7.6 and running forward propagation through it.
+
+261
+
+

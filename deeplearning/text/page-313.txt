@@ -1,0 +1,78 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+Previously, the size of the step was simply the norm of the gradient multiplied by the learning rate. Now, the size of the step depends on how large and how aligned a sequence of gradients are. The step size is largest when many successive gradients point in exactly the same direction. If the momentum algorithm always observes gradient g, then it will accelerate in the direction of -g, until reaching a terminal velocity where the size of each step is
+
+||g|| 1-
+
+.
+
+(8.17)
+
+It is thus helpful to think of the momentum hyperparameter in terms of 1-1. For example,  = .9 corresponds to multiplying the maximum speed by 10 relative to the gradient descent algorithm.
+
+Common values of  used in practice include .5, .9, and .99. Like the learning rate,  may also be adapted over time. Typically it begins with a small value and is later raised. It is less important to adapt  over time than to shrink  over time.
+
+Algorithm 8.2 Stochastic gradient descent (SGD) with momentum
+
+Require: Learning rate , momentum parameter .
+
+Require: Initial parameter , initial velocity v.
+
+while stopping criterion not met do
+
+Sample a minibatch of m examples from the training set {x(1), . . . , x(m)} with
+
+corresponding targets y(i). Compute gradient estimate:
+
+g
+
+
+
+1 m
+
+
+
+
+i
+
+L(f
+
+(x(i)
+
+;
+
+),
+
+y(i)
+
+)
+
+Compute velocity update: v  v - g
+
+Apply update:    + v
+
+end while
+
+We can view the momentum algorithm as simulating a particle subject to continuous-time Newtonian dynamics. The physical analogy can help to build intuition for how the momentum and gradient descent algorithms behave.
+
+The position of the particle at any point in time is given by (t). The particle experiences net force f (t). This force causes the particle to accelerate:
+
+2 f(t) = t2 (t).
+
+(8.18)
+
+Rather than viewing this as a second-order differential equation of the position, we can introduce the variable v(t) representing the velocity of the particle at time t and rewrite the Newtonian dynamics as a first-order differential equation:
+
+v(t)
+
+=
+
+ t
+
+(t),
+
+(8.19)
+
+298
+
+

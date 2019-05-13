@@ -1,0 +1,20 @@
+CHAPTER 7. REGULARIZATION FOR DEEP LEARNING
+
+the Moore-Penrose pseudoinverse. Recall that one definition of the pseudoinverse X+ of a matrix X is
+
+X+ = lim(X X + I)-1X.
+0
+
+(7.29)
+
+We can now recognize equation 7.29 as performing linear regression with weight decay. Specifically, equation 7.29 is the limit of equation 7.17 as the regularization coefficient shrinks to zero. We can thus interpret the pseudoinverse as stabilizing underdetermined problems using regularization.
+
+7.4 Dataset Augmentation
+The best way to make a machine learning model generalize better is to train it on more data. Of course, in practice, the amount of data we have is limited. One way to get around this problem is to create fake data and add it to the training set. For some machine learning tasks, it is reasonably straightforward to create new fake data.
+This approach is easiest for classification. A classifier needs to take a complicated, high dimensional input x and summarize it with a single category identity y. This means that the main task facing a classifier is to be invariant to a wide variety of transformations. We can generate new ( x, y) pairs easily just by transforming the x inputs in our training set.
+This approach is not as readily applicable to many other tasks. For example, it is difficult to generate new fake data for a density estimation task unless we have already solved the density estimation problem.
+Dataset augmentation has been a particularly effective technique for a specific classification problem: object recognition. Images are high dimensional and include an enormous variety of factors of variation, many of which can be easily simulated. Operations like translating the training images a few pixels in each direction can often greatly improve generalization, even if the model has already been designed to be partially translation invariant by using the convolution and pooling techniques described in chapter 9. Many other operations such as rotating the image or scaling the image have also proven quite effective.
+One must be careful not to apply transformations that would change the correct class. For example, optical character recognition tasks require recognizing the difference between `b' and `d' and the difference between `6' and `9', so horizontal flips and 180 rotations are not appropriate ways of augmenting datasets for these tasks.
+240
+
+

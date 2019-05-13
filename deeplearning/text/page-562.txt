@@ -1,0 +1,108 @@
+CHAPTER 15. REPRESENTATION LEARNING
+
+h2
+
+h3
+
+h = [1, 0, 0]
+
+h = [1, 1, 0]
+
+h = [1, 0, 1]
+
+h = [0, 1, 0]
+
+h = [1, 1, 1] h = [0, 1, 1]
+
+h1
+h = [0, 0, 1]
+
+Figure 15.7: Illustration of how a learning algorithm based on a distributed representation
+
+breaks up the input space into regions. In this example, there are three binary features
+
+h1, h2 , and h3 . Each feature is defined by thresholding the output of a learned, linear
+
+transformation. Each feature divides R2 into two half-planes. Let h+i be the set of input
+
+points
+
+for
+
+which
+
+hi
+
+=
+
+1
+
+and
+
+h
+
+- i
+
+be
+
+the
+
+set
+
+of
+
+input
+
+points
+
+for
+
+which
+
+hi
+
+=
+
+0.
+
+In this
+
+illustration, each line represents the decision boundary for one hi, with the corresponding
+
+arrow pointing to the h+i side of the boundary. The representation as a whole takes
+
+on a unique value at each possible intersection of these half-planes. For example, the
+
+representation value [1, 1, 1] corresponds to the region h+1  h+2  h+3 . Compare this to the
+
+non-distributed representations in figure 15.8. In the general case of d input dimensions,
+
+a distributed representation divides Rd by intersecting half-spaces rather than half-planes. The distributed representation with n features assigns unique codes to O(nd) different
+
+regions, while the nearest neighbor algorithm with n examples assigns unique codes to only
+
+n regions. The distributed representation is thus able to distinguish exponentially many
+
+more regions than the non-distributed one. Keep in mind that not all h values are feasible
+
+(there is no h = 0 in this example) and that a linear classifier on top of the distributed
+
+representation is not able to assign different class identities to every neighboring region;
+
+even a deep linear-threshold network has a VC dimension of only O(w log w) where w
+
+is the number of weights (Sontag, 1998). The combination of a powerful representation
+
+layer and a weak classifier layer can be a strong regularizer; a classifier trying to learn
+
+the concept of "person" versus "not a person" does not need to assign a different class to
+
+an input represented as "woman with glasses" than it assigns to an input represented as
+
+"man without glasses." This capacity constraint encourages each classifier to focus on few
+
+hi and encourages h to learn to represent the classes in a linearly separable way.
+
+547
+
+

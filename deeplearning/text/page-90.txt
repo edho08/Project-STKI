@@ -1,0 +1,71 @@
+CHAPTER 3. PROBABILITY AND INFORMATION THEORY
+
+0.7
+
+Shannon entropy in nats
+
+0.6
+
+0.5
+
+0.4
+
+0.3
+
+0.2
+
+0.1
+
+0.0
+
+0.0
+
+0.2
+
+0.4
+
+0.6
+
+0.8
+
+1.0
+
+p
+
+Figure 3.5: This plot shows how distributions that are closer to deterministic have low
+
+Shannon entropy while distributions that are close to uniform have high Shannon entropy.
+
+On the horizontal axis, we plot p, the probability of a binary random variable being equal
+
+to 1. The entropy is given by (p - 1)log(1 - p) - p log p. When p is near 0, the distribution
+
+is nearly deterministic, because the random variable is nearly always 0. When p is near 1,
+
+the distribution is nearly deterministic, because the random variable is nearly always 1.
+
+When p = 0.5, the entropy is maximal, because the distribution is uniform over the two
+
+outcomes.
+
+asymmetry means that there are important consequences to the choice of whether to use DKL(P Q) or DKL(QP ). See figure 3.6 for more detail.
+
+A quantity that is closely related to the KL divergence is the cross-entropy
+
+H(P, Q) = H (P ) + DKL (P Q), which is similar to the KL divergence but lacking
+
+the term on the left:
+
+H (P, Q) = -ExP log Q(x).
+
+(3.51)
+
+Minimizing the cross-entropy with respect to Q is equivalent to minimizing the KL divergence, because Q does not participate in the omitted term.
+
+When computing many of these quantities, it is common to encounter expressions of the form 0 log 0. By convention, in the context of information theory, we treat these expressions as limx0 x log x = 0.
+
+3.14 Structured Probabilistic Models
+Machine learning algorithms often involve probability distributions over a very large number of random variables. Often, these probability distributions involve direct interactions between relatively few variables. Using a single function to
+75
+
+

@@ -1,0 +1,173 @@
+INDEX
+
+Chess, 2
+
+Critical temperature, 599
+
+Chord, 575
+
+Cross-correlation, 329
+
+Chordal graph, 575
+
+Cross-entropy, 74, 131
+
+Class-based language models, 460
+
+Cross-validation, 121
+
+Classical dynamical system, 372
+
+CTC, see connectionist temporal classifica-
+
+Classification, 99
+
+tion
+
+Clique potential, see factor (graphical model) Curriculum learning, 326
+
+CNN, see convolutional neural network
+
+Curse of dimensionality, 153
+
+Collaborative Filtering, 474
+
+Cyc, 2
+
+Collider, see explaining away
+
+Color images, 357
+
+D-separation, 568
+
+Complex cell, 362
+
+DAE, see denoising autoencoder
+
+Computational graph, 202
+
+Data generating distribution, 110, 130
+
+Computer vision, 449
+
+Data generating process, 110
+
+Concept drift, 533
+
+Data parallelism, 444
+
+Condition number, 277
+
+Dataset, 103
+
+Conditional computation, see dynamic struc- Dataset augmentation, 268, 454
+
+ture
+
+DBM, see deep Boltzmann machine
+
+Conditional independence, xiii, 59
+
+DCGAN, 547, 548, 695
+
+Conditional probability, 58
+
+Decision tree, 144, 544
+
+Conditional RBM, 679
+
+Decoder, 4
+
+Connectionism, 17, 440
+
+Deep belief network, 26, 525, 626, 651, 654,
+
+Connectionist temporal classification, 457
+
+678, 686
+
+Consistency, 128, 509
+
+Deep Blue, 2
+
+Constrained optimization, 92, 235
+
+Deep Boltzmann machine, 23, 26, 525, 626,
+
+Content-based addressing, 416
+
+647, 651, 657, 666, 678
+
+Content-based recommender systems, 475 Deep feedforward network, 166, 422
+
+Context-specific independence, 569
+
+Deep learning, 2, 5
+
+Contextual bandits, 476
+
+Denoising autoencoder, 506, 683
+
+Continuation methods, 324
+
+Denoising score matching, 615
+
+Contractive autoencoder, 516
+
+Density estimation, 102
+
+Contrast, 451
+
+Derivative, xiii, 82
+
+Contrastive divergence, 289, 606, 666
+
+Design matrix, 105
+
+Convex optimization, 140
+
+Detector layer, 336
+
+Convolution, 327, 677
+
+Determinant, xii
+
+Convolutional network, 16
+
+Diagonal matrix, 40
+
+Convolutional neural network, 250, 327, 422, Differential entropy, 73, 641
+
+456
+
+Dirac delta function, 64
+
+Coordinate descent, 319, 665
+
+Directed graphical model, 76, 503, 559, 685
+
+Correlation, 60
+
+Directional derivative, 84
+
+Cost function, see objective function
+
+Discriminative fine-tuning, see supervised
+
+Covariance, xiii, 60
+
+fine-tuning
+
+Covariance matrix, 61
+
+Discriminative RBM, 680
+
+Coverage, 421
+
+Distributed representation, 17, 149, 542
+
+Domain adaptation, 532
+
+779
+
+

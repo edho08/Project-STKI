@@ -1,0 +1,38 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+(2014) showed that functions representable with a deep rectifier net can require an exponential number of hidden units with a shallow (one hidden layer) network. More precisely, they showed that piecewise linear networks (which can be obtained from rectifier nonlinearities or maxout units) can represent functions with a number of regions that is exponential in the depth of the network. Figure 6.5 illustrates how a network with absolute value rectification creates mirror images of the function computed on top of some hidden unit, with respect to the input of that hidden unit. Each hidden unit specifies where to fold the input space in order to create mirror responses (on both sides of the absolute value nonlinearity). By composing these folding operations, we obtain an exponentially large number of piecewise linear regions which can capture all kinds of regular (e.g., repeating) patterns.
+
+Figure 6.5: An intuitive, geometric explanation of the exponential advantage of deeper rectifier networks formally by Montufar et al. (2014). (Left)An absolute value rectification unit has the same output for every pair of mirror points in its input. The mirror axis of symmetry is given by the hyperplane defined by the weights and bias of the unit. A function computed on top of that unit (the green decision surface) will be a mirror image of a simpler pattern across that axis of symmetry. (Center)The function can be obtained by folding the space around the axis of symmetry. (Right)Another repeating pattern can be folded on top of the first (by another downstream unit) to obtain another symmetry (which is now repeated four times, with two hidden layers). Figure reproduced with permission from Montufar et al. (2014).
+
+More precisely, the main theorem in Montufar et al. (2014) states that the
+
+number of linear regions carved out by a deep rectifier network with d inputs,
+
+depth l, and n units per hidden layer, is
+
+O
+
+nd(l-1) d
+
+nd
+
+
+
+,
+
+(6.42)
+
+i.e., exponential in the depth l. In the case of maxout networks with k filters per
+
+unit, the number of linear regions is
+
+
+
+
+
+O k(l-1)+d .
+
+(6.43)
+
+200
+
+

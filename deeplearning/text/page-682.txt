@@ -1,0 +1,159 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+mating a particular target distribution--in our case, the posterior distribution over the hidden units given the visible units--by some reasonably simple family of distributions. In the case of the mean field approximation, the approximating family is the set of distributions where the hidden units are conditionally independent.
+
+We now develop the mean field approach for the example with two hidden
+
+layers. Let Q(h(1), h(2) | v ) be the approximation of P (h(1) , h(2) | v). The mean
+
+field assumption implies that
+
+Q(h(1) , h(2) | v) =  Q(h(j1) | v)  Q(h(k2) | v).
+
+j
+
+k
+
+(20.29)
+
+The mean field approximation attempts to find a member of this family of distributions that best fits the true posterior P (h(1), h(2) | v). Importantly, the
+inference process must be run again to find a different distribution Q every time
+we use a new value of v.
+
+One can conceive of many ways of measuring how well Q(h | v) fits P (h | v).
+
+The mean field approach is to minimize
+
+
+
+
+
+KL(QP ) =  Q(h(1), h(2) | v) log
+
+Q(h(1), h(2) | v) P (h(1), h(2) | v)
+
+.
+
+h
+
+(20.30)
+
+In general, we do not have to provide a parametric form of the approximating distribution beyond enforcing the independence assumptions. The variational approximation procedure is generally able to recover a functional form of the approximate distribution. However, in the case of a mean field assumption on binary hidden units (the case we are developing here) there is no loss of generality resulting from fixing a parametrization of the model in advance.
+
+We parametrize Q as a product of Bernoulli distributions, that is we associate
+
+the probability of each element of h(1) with a parameter. Specifically, for each j,
+
+^h(j1)
+
+=
+
+Q (h(j1)
+
+=
+
+1
+
+|
+
+v ),
+
+where
+
+^h(j1)
+
+
+
+[0,
+
+1]
+
+and
+
+for
+
+each
+
+k,
+
+^h
+
+(2) k
+
+=
+
+Q(h(k2)
+
+=
+
+1
+
+|
+
+v),
+
+where h^(k2)  [0, 1]. Thus we have the following approximation to the posterior:
+
+Q(h(1), h(2)
+
+|
+
+v)
+
+=
+
+
+
+Q(h
+
+(1) j
+
+|
+
+v)
+
+ Q(h
+
+(2) k
+
+|
+
+v)
+
+(20.31)
+
+j
+
+k
+
+=
+
+(h^(j1))h(j1) (1
+
+-
+
+^h(j1) )(1-h(j1))
+
+×
+
+(^h(k2))h
+
+(2) k
+
+(1
+
+-
+
+^h(k2))(1-h . (k2))
+
+j
+
+k
+
+(20.32)
+
+Of course, for DBMs with more layers the approximate posterior parametrization can be extended in the obvious way, exploiting the bipartite structure of the graph
+
+667
+
+

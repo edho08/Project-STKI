@@ -1,0 +1,140 @@
+CHAPTER 18. CONFRONTING THE PARTITION FUNCTION
+
+We can thus determine whether MA is a better model than MB without knowing the partition function of either model but only their ratio. As we will see shortly, we can estimate this ratio using importance sampling, provided that the two models are similar.
+
+If, however, we wanted to compute the actual probability of the test data under
+
+either MA or MB, we would need to compute the actual value of the partition
+
+functions.
+
+That
+
+said,
+
+if
+
+we
+
+knew
+
+the
+
+ratio
+
+of
+
+two
+
+partition
+
+functions,
+
+r
+
+=
+
+Z Z
+
+( (
+
+B) A)
+
+,
+
+and we knew the actual value of just one of the two, say Z (A ), we could compute
+
+the value of the other:
+
+Z(B )
+
+=
+
+rZ (A)
+
+=
+
+Z Z
+
+(B (A
+
+)Z )
+
+(A).
+
+(18.40)
+
+A simple way to estimate the partition function is to use a Monte Carlo
+
+method such as simple importance sampling. We present the approach in terms
+
+of continuous variables using integrals, but it can be readily applied to discrete
+
+variables by replacing the integrals with summation. We use a proposal distribution
+
+p0(x)
+
+=
+
+1 Z0
+
+p~0(x)
+
+which
+
+supports
+
+tractable
+
+sampling
+
+and
+
+tractable
+
+evaluation
+
+of
+
+both the partition function Z0 and the unnormalized distribution p~0(x).
+
+
+
+Z1 = p~1 (x) dx
+
+(18.41)
+
+= =
+
+ Z0
+
+pp00((pxx0))(p~x1)(pp~~x10)((xxd))x
+
+dx
+
+(18.42) (18.43)
+
+Z^1 =
+
+Z0 K
+
+ K p~1 (x(k)) k=1 p~0 (x(k))
+
+s.t. : x(k)  p0
+
+(18.44)
+
+In the last line, we make a Monte Carlo estimator, Z^1 , of the integral using samples drawn from p0(x) and then weight each sample with the ratio of the unnormalized p~1 and the proposal p0 .
+We see also that this approach allows us to estimate the ratio between the partition functions as
+
+1  K p~1(x(k)) K k=1 p~0(x(k))
+
+s.t. : x(k)  p 0.
+
+(18.45)
+
+This value can then be used directly to compare two models as described in equation 18.39.
+
+624
+
+

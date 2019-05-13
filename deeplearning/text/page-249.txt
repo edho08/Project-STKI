@@ -1,0 +1,129 @@
+CHAPTER 7. REGULARIZATION FOR DEEP LEARNING
+
+the sum of squared errors:
+
+(Xw - y)(Xw - y).
+
+When we add L2 regularization, the objective function changes to
+
+(Xw
+
+-
+
+y)(Xw
+
+-
+
+y)
+
++
+
+1 2
+
+w
+
+w.
+
+This changes the normal equations for the solution from
+
+w = (X X)-1X y
+
+(7.14) (7.15) (7.16)
+
+to
+
+w = (XX + I)-1Xy.
+
+(7.17)
+
+The matrix XX in equation 7.16 is Using L2 regularization replaces this
+
+proportional matrix with
+
+to the covariance X X + I -1
+
+matrix
+
+1 m
+
+XX.
+
+in equation 7.17.
+
+The new matrix is the same as the original one, but with the addition of  to the
+
+diagonal. The diagonal entries of this matrix correspond to the variance of each
+
+input feature. We can see that L2 regularization causes the learning algorithm
+
+to "perceive" the input X as having higher variance, which makes it shrink the
+
+weights on features whose covariance with the output target is low compared to
+
+this added variance.
+
+7.1.2 L1 Regularization
+
+While L2 weight decay is the most common form of weight decay, there are other ways to penalize the size of the model parameters. Another option is to use L1
+
+regularization.
+
+Formally, L1 regularization on the model parameter w is defined as:
+
+ () = ||w||1 = |wi|,
+
+(7.18)
+
+i
+
+that is, as the sum of absolute values of the individual parameters.2 We will
+now discuss the effect of L1 regularization on the simple linear regression model, with no bias parameter, that we studied in our analysis of L2 regularization. In particular, we are interested in delineating the differences between L1 and L2 forms
+
+2
+As
+
+with
+
+L2
+
+regularization,
+
+we
+
+could
+
+regularize
+
+the
+
+parameters
+
+towards
+
+a
+
+value
+
+that
+
+is
+
+not
+
+zero, but introduce
+
+instead towards some parameter the term () = ||w - w(o)||1 =
+
+valiu|ewwi -(o)w. (iIon)
+
+that |.
+
+case the
+
+L1
+
+regularization would
+
+234
+
+

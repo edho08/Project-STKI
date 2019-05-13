@@ -1,0 +1,17 @@
+BIBLIOGRAPHY
+Mnih, A. and Gregor, K. (2014). Neural variational inference and learning in belief networks. In ICML'2014 . 691, 692, 693
+Mnih, A. and Hinton, G. E. (2007). Three new graphical models for statistical language modelling. In Z. Ghahramani, editor, Proceedings of the Twenty-fourth International Conference on Machine Learning (ICML'07), pages 641­648. ACM. 465
+Mnih, A. and Hinton, G. E. (2009). A scalable hierarchical distributed language model. In D. Koller, D. Schuurmans, Y. Bengio, and L. Bottou, editors, Advances in Neural Information Processing Systems 21 (NIPS'08), pages 1081­1088. 467
+Mnih, A. and Kavukcuoglu, K. (2013). Learning word embeddings efficiently with noisecontrastive estimation. In C. Burges, L. Bottou, M. Welling, Z. Ghahramani, and K. Weinberger, editors, Advances in Neural Information Processing Systems 26 , pages 2265­2273. Curran Associates, Inc. 472, 622
+Mnih, A. and Teh, Y. W. (2012). A fast and simple algorithm for training neural probabilistic language models. In ICML'2012 , pages 1751­1758. 472
+Mnih, V. and Hinton, G. (2010). Learning to detect roads in high-resolution aerial images. In Proceedings of the 11th European Conference on Computer Vision (ECCV). 102
+Mnih, V., Larochelle, H., and Hinton, G. (2011). Conditional restricted Boltzmann machines for structure output prediction. In Proc. Conf. on Uncertainty in Artificial Intelligence (UAI). 685
+Mnih, V., Kavukcuoglo, K., Silver, D., Graves, A., Antonoglou, I., and Wierstra, D. (2013). Playing Atari with deep reinforcement learning. Technical report, arXiv:1312.5602. 106
+Mnih, V., Heess, N., Graves, A., and Kavukcuoglu, K. (2014). Recurrent models of visual attention. In Z. Ghahramani, M. Welling, C. Cortes, N. Lawrence, and K. Weinberger, editors, NIPS'2014 , pages 2204­2212. 691
+Mnih, V., Kavukcuoglo, K., Silver, D., Rusu, A. A., Veness, J., Bellemare, M. G., Graves, A., Riedmiller, M., Fidgeland, A. K., Ostrovski, G., Petersen, S., Beattie, C., Sadik, A., Antonoglou, I., King, H., Kumaran, D., Wierstra, D., Legg, S., and Hassabis, D. (2015). Human-level control through deep reinforcement learning. Nature , 518, 529­533. 25
+Mobahi, H. and Fisher, III, J. W. (2015). A theoretical analysis of optimization by Gaussian continuation. In AAAI'2015 . 327
+Mobahi, H., Collobert, R., and Weston, J. (2009). Deep learning from temporal coherence in video. In L. Bottou and M. Littman, editors, Proceedings of the 26th International Conference on Machine Learning, pages 737­744, Montreal. Omnipress. 494
+Mohamed, A., Dahl, G., and Hinton, G. (2009). Deep belief networks for phone recognition. 459
+757
+
+

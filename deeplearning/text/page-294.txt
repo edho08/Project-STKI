@@ -1,0 +1,13 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+than one but less than all of the training examples. These were traditionally called minibatch or minibatch stochastic methods and it is now common to simply call them stochastic methods.
+The canonical example of a stochastic method is stochastic gradient descent, presented in detail in section 8.3.1.
+Minibatch sizes are generally driven by the following factors:
+· Larger batches provide a more accurate estimate of the gradient, but with less than linear returns.
+· Multicore architectures are usually underutilized by extremely small batches. This motivates using some absolute minimum batch size, below which there is no reduction in the time to process a minibatch.
+· If all examples in the batch are to be processed in parallel (as is typically the case), then the amount of memory scales with the batch size. For many hardware setups this is the limiting factor in batch size.
+· Some kinds of hardware achieve better runtime with specific sizes of arrays. Especially when using GPUs, it is common for power of 2 batch sizes to offer better runtime. Typical power of 2 batch sizes range from 32 to 256, with 16 sometimes being attempted for large models.
+· Small batches can offer a regularizing effect (Wilson and Martinez, 2003), perhaps due to the noise they add to the learning process. Generalization error is often best for a batch size of 1. Training with such a small batch size might require a small learning rate to maintain stability due to the high variance in the estimate of the gradient. The total runtime can be very high due to the need to make more steps, both because of the reduced learning rate and because it takes more steps to observe the entire training set.
+Different kinds of algorithms use different kinds of information from the minibatch in different ways. Some algorithms are more sensitive to sampling error than others, either because they use information that is difficult to estimate accurately with few samples, or because they use information in ways that amplify sampling errors more. Methods that compute updates based only on the gradient g are usually relatively robust and can handle smaller batch sizes like 100. Second-order methods, which use also the Hessian matrix H and compute updates such as H-1g, typically require much larger batch sizes like 10,000. These large batch sizes are required to minimize fluctuations in the estimates of H-1g. Suppose that H is estimated perfectly but has a poor condition number. Multiplication by
+279
+
+

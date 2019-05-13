@@ -1,0 +1,59 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+where
+
+Cxss|h
+
+=
+
+ 
+
++
+
+
+i
+
+ihi
+
+-
+
+
+i
+
+-i 1hi W:,iW:,i -1.
+
+The
+
+last
+
+equality
+
+holds
+
+only
+
+if
+
+the covariance matrix Cxss|h is positive definite.
+
+Gating by the spike variables means that the true marginal distribution over
+
+h  s is sparse. This is different from sparse coding, where samples from the model
+
+"almost never" (in the measure theoretic sense) contain zeros in the code, and MAP
+
+inference is required to impose sparsity.
+
+Comparing the ssRBM to the mcRBM and the mPoT models, the ssRBM parametrizes the conditional covariance of the observation in a significantly different
+wasay. Thj ehm(jc)crR(jB) rM(j)and+mIPo-T1,buostihngmothdeelatchteivcaotviaorniaonfcethsteruhcitdudreenofutnhietsobhsjer>vat0iotno enforce constraints on the conditional covariance in the direction r (j). In contrast, the ssRBM specifies the conditional covariance of the observations using the hidden spike activations hi = 1 to pinch the precision matrix along the direction specified by the corresponding weight vector. The ssRBM conditional covariance is very similar to that given by a different model: the product of probabilistic principal components analysis (PoPPCA) (Williams and Agakov, 2002). In the overcomplete
+setting, sparse activations with the ssRBM parametrization permit significant variance (above the nominal variance given by -1) only in the selected directions of the sparsely activated hi. In the mcRBM or mPoT models, an overcomplete representation would mean that to capture variation in a particular direction in the observation space requires removing potentially all constraints with positive projection in that direction. This would suggest that these models are less well suited to the overcomplete setting.
+
+The primary disadvantage of the spike and slab restricted Boltzmann machine is that some settings of the parameters can correspond to a covariance matrix that is not positive definite. Such a covariance matrix places more unnormalized probability on values that are farther from the mean, causing the integral over all possible outcomes to diverge. Generally this issue can be avoided with simple heuristic tricks. There is not yet any theoretically satisfying solution. Using constrained optimization to explicitly avoid the regions where the probability is undefined is difficult to do without being overly conservative and also preventing the model from accessing high-performing regions of parameter space.
+
+Qualitatively, convolutional variants of the ssRBM produce excellent samples of natural images. Some examples are shown in figure 16.1.
+
+The ssRBM allows for several extensions. Including higher-order interactions and average-pooling of the slab variables (Courville et al., 2014) enables the model to learn excellent features for a classifier when labeled data is scarce. Adding a
+
+682
+
+

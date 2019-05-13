@@ -1,0 +1,45 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+we include bias parameters for the hidden units) but it does affect the learning dynamics of the model. Including the term may help the hidden unit activations remain reasonable even when the weights rapidly increase in magnitude.
+One way to define the energy function on a Gaussian-Bernoulli RBM is thus
+
+E(v, h) =
+
+1 2
+
+v(
+
+
+
+v)
+
+-
+
+(v
+
+
+
+
+
+)
+
+W
+
+h
+
+-
+
+bh
+
+(20.42)
+
+but we may also add extra terms or parametrize the energy in terms of the variance rather than precision if we choose.
+In this derivation, we have not included a bias term on the visible units, but one could easily be added. One final source of variability in the parametrization of a Gaussian-Bernoulli RBM is the choice of how to treat the precision matrix. It may either be fixed to a constant (perhaps estimated based on the marginal precision of the data) or learned. It may also be a scalar times the identity matrix, or it may be a diagonal matrix. Typically we do not allow the precision matrix to be non-diagonal in this context, because some operations on the Gaussian distribution require inverting the matrix, and a diagonal matrix can be inverted trivially. In the sections ahead, we will see that other forms of Boltzmann machines permit modeling the covariance structure, using various techniques to avoid inverting the precision matrix.
+
+20.5.2 Undirected Models of Conditional Covariance
+While the Gaussian RBM has been the canonical energy model for real-valued data, Ranzato et al. (2010a) argue that the Gaussian RBM inductive bias is not well suited to the statistical variations present in some types of real-valued data, especially natural images. The problem is that much of the information content present in natural images is embedded in the covariance between pixels rather than in the raw pixel values. In other words, it is the relationships between pixels and not their absolute values where most of the useful information in images resides. Since the Gaussian RBM only models the conditional mean of the input given the hidden units, it cannot capture conditional covariance information. In response to these criticisms, alternative models have been proposed that attempt to better account for the covariance of real-valued data. These models include the mean and covariance RBM (mcRBM1), the mean-product of t-distribution (mPoT) model and the spike and slab RBM (ssRBM).
+1
+The term "mcRBM" is pronounced by saying the name of the letters M-C-R-B-M; the "mc" is not pronounced like the "Mc" in "McDonald's."
+678
+
+

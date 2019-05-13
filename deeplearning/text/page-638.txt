@@ -1,0 +1,153 @@
+CHAPTER 18. CONFRONTING THE PARTITION FUNCTION
+
+Noise contrastive estimation is based on the idea that a good generative model should be able to distinguish data from noise. A closely related idea is that a good generative model should be able to generate samples that no classifier can distinguish from data. This idea yields generative adversarial networks (section 20.10.4).
+
+18.7 Estimating the Partition Function
+
+While much of this chapter is dedicated to describing methods that avoid needing to compute the intractable partition function Z( ) associated with an undirected graphical model, in this section we discuss several methods for directly estimating the partition function.
+
+Estimating the partition function can be important because we require it if we wish to compute the normalized likelihood of data. This is often important in evaluating the model, monitoring training performance, and comparing models to each other.
+
+For example, imagine we have two models: model MA defining a probabil-
+
+ity
+
+distribution pA(x;A) =
+
+1 ZA
+
+p~A
+
+(x;
+
+A
+
+)
+
+and
+
+model MB
+
+defining
+
+a
+
+probability
+
+distribution pB(x;B) =
+
+1 ZB
+
+p~B (x ;
+
+B
+
+).
+
+A
+
+common
+
+way to
+
+compare
+
+the
+
+models
+
+is to evaluate and compare the likelihood that both models assign to an i.i.d.
+
+tesi tpAd(axt(ais);et.A)S>uppoi speB(txh(ei)
+
+test ; B
+
+set ) or
+
+consists of m equivalently if
+
+examples
+
+{x(1) , . . . , x(m) }.
+
+If
+
+ log pA (x(i); A) -  log pB (x(i); B) > 0,
+
+(18.38)
+
+i
+
+i
+
+then we say that MA is a better model than MB (or, at least, it is a better model
+
+of the test set), in the sense that it has a better test log-likelihood. Unfortunately,
+
+testing whether this condition holds requires knowledge of the partition function.
+
+Unfortunately, equation 18.38 seems to require evaluating the log probability that
+
+the model assigns to each point, which in turn requires evaluating the partition
+
+function. We can simplify the situation slightly by re-arranging equation 18.38
+
+into a form where we need to know only the ratio of the two model's partition
+
+functions:
+
+
+
+
+
+
+
+log
+
+pA(x(i);
+
+ A)-
+
+log
+
+pB
+
+(x(i);
+
+
+
+B
+
+)
+
+=
+
+
+
+i
+
+i
+
+i
+
+log
+
+p~A (x(i) ; p~B (x(i) ;
+
+A) B)
+
+-m
+
+log
+
+Z Z
+
+(A) (B)
+
+.
+
+(18.39)
+
+623
+
+

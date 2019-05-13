@@ -1,0 +1,85 @@
+CHAPTER 18. CONFRONTING THE PARTITION FUNCTION
+
+Marlin et al. (2010) compared SML to many of the other criteria presented in this chapter. They found that SML results in the best test set log-likelihood for an RBM, and that if the RBM's hidden units are used as features for an SVM classifier, SML results in the best classification accuracy.
+SML is vulnerable to becoming inaccurate if the stochastic gradient algorithm can move the model faster than the Markov chain can mix between steps. This can happen if k is too small or  is too large. The permissible range of values is unfortunately highly problem-dependent. There is no known way to test formally whether the chain is successfully mixing between steps. Subjectively, if the learning rate is too high for the number of Gibbs steps, the human operator will be able to observe that there is much more variance in the negative phase samples across gradient steps rather than across different Markov chains. For example, a model trained on MNIST might sample exclusively 7s on one step. The learning process will then push down strongly on the mode corresponding to 7s, and the model might sample exclusively 9s on the next step.
+
+Algorithm 18.3 The stochastic maximum likelihood / persistent contrastive
+
+divergence algorithm using gradient ascent as the optimization procedure.
+
+Set , the step size, to a small positive number.
+
+Set k, the number of Gibbs steps, high enough to allow a Markov chain sampling
+
+from p(x; + g) to burn in, starting from samples from p(x; ). Perhaps 1 for
+
+RBM on a small image patch, or 5-50 for a more complicated model like a DBM. Initialize a set of m samples {x~(1), . . . , ~x(m) } to random values (e.g., from a
+
+uniform or normal distribution, or possibly a distribution with marginals matched
+
+to the model's marginals).
+
+while not converged do
+
+Sample
+
+g
+
+
+
+1 m
+
+a mmi=i1nibatlochg
+
+of m examples p~(x(i); ).
+
+{x(1),
+
+.
+
+.
+
+.
+
+,
+
+x(m)}
+
+from
+
+the
+
+training
+
+set.
+
+for i = 1 to k do
+
+for j = 1 to m do ~x(j)  gibbs_update(~x(j) ).
+
+end for
+
+end g
+
+for g-
+
+1 m
+
+m
+i=1
+
+
+
+log
+
+p~(~x(i); ).
+
+   + g.
+
+end while
+
+Care must be taken when evaluating the samples from a model trained with SML. It is necessary to draw the samples starting from a fresh Markov chain
+
+613
+
+

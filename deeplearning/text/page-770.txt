@@ -1,0 +1,17 @@
+BIBLIOGRAPHY
+Marlin, B., Swersky, K., Chen, B., and de Freitas, N. (2010). Inductive principles for restricted Boltzmann machine learning. In Proceedings of The Thirteenth International Conference on Artificial Intelligence and Statistics (AISTATS'10), volume 9, pages 509­516. 613, 618, 619
+Marquardt, D. W. (1963). An algorithm for least-squares estimation of non-linear parameters. Journal of the Society of Industrial and Applied Mathematics, 11(2), 431­441. 312
+Marr, D. and Poggio, T. (1976). Cooperative computation of stereo disparity. Science, 194. 367
+Martens, J. (2010). Deep learning via Hessian-free optimization. In L. Bottou and M. Littman, editors, Proceedings of the Twenty-seventh International Conference on Machine Learning (ICML-10), pages 735­742. ACM. 304
+Martens, J. and Medabalimi, V. (2014). On the expressive efficiency of sum product networks. arXiv:1411.7717 . 554
+Martens, J. and Sutskever, I. (2011). Learning recurrent neural networks with Hessian-free optimization. In Proc. ICML'2011 . ACM. 413
+Mase, S. (1995). Consistency of the maximum pseudo-likelihood estimator of continuous state space Gibbsian processes. The Annals of Applied Probability , 5(3), pp. 603­612. 616
+McClelland, J., Rumelhart, D., and Hinton, G. (1995). The appeal of parallel distributed processing. In Computation & intelligence, pages 305­341. American Association for Artificial Intelligence. 17
+McCulloch, W. S. and Pitts, W. (1943). A logical calculus of ideas immanent in nervous activity. Bulletin of Mathematical Biophysics, 5, 115­133. 14, 15
+Mead, C. and Ismail, M. (2012). Analog VLSI implementation of neural systems , volume 80. Springer Science & Business Media. 451
+Melchior, J., Fischer, A., and Wiskott, L. (2013). How to center binary deep Boltzmann machines. arXiv preprint arXiv:1311.1354 . 674
+Memisevic, R. and Hinton, G. E. (2007). Unsupervised learning of image transformations. In Proceedings of the Computer Vision and Pattern Recognition Conference (CVPR'07). 686
+Memisevic, R. and Hinton, G. E. (2010). Learning to represent spatial transformations with factored higher-order Boltzmann machines. Neural Computation , 22(6), 1473­1492. 686
+755
+
+

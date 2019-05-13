@@ -1,0 +1,53 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+This product over many probabilities can be inconvenient for a variety of reasons.
+
+For example, it is prone to numerical underflow. To obtain a more convenient
+
+but equivalent optimization problem, we observe that taking the logarithm of the
+
+likelihood does not change its arg max but does conveniently transform a product
+
+into a sum:
+
+ML = arg max  m log pmodel(x(i) ; ).
+
+(5.58)
+
+ i=1
+
+Because the arg max does not change when we rescale the cost function, we can divide by m to obtain a version of the criterion that is expressed as an expectation with respect to the empirical distribution p^data defined by the training data:
+
+ML = arg max Exp^data log pmodel (x; ).
+
+
+(5.59)
+
+One way to interpret maximum likelihood estimation is to view it as minimizing the dissimilarity between the empirical distribution p^data defined by the training set and the model distribution, with the degree of dissimilarity between the two measured by the KL divergence. The KL divergence is given by
+
+DKL (p^data pmodel) = E xp^data [log p^data (x) - log pmodel(x)] .
+
+(5.60)
+
+The term on the left is a function only of the data generating process, not the
+
+model. This means when we train the model to minimize the KL divergence, we
+
+need only minimize
+
+- Exp^data [log pmodel (x)]
+
+(5.61)
+
+which is of course the same as the maximization in equation 5.59.
+
+Minimizing this KL divergence corresponds exactly to minimizing the crossentropy between the distributions. Many authors use the term "cross-entropy" to identify specifically the negative log-likelihood of a Bernoulli or softmax distribution, but that is a misnomer. Any loss consisting of a negative log-likelihood is a crossentropy between the empirical distribution defined by the training set and the probability distribution defined by model. For example, mean squared error is the cross-entropy between the empirical distribution and a Gaussian model.
+
+We can thus see maximum likelihood as an attempt to make the model dis-
+tribution match the empirical distribution p^data. Ideally, we would like to match the true data generating distribution pdata, but we have no direct access to this distribution.
+
+While the optimal  is the same regardless of whether we are maximizing the likelihood or minimizing the KL divergence, the values of the objective functions
+
+132
+
+

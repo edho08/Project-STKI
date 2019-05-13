@@ -1,0 +1,51 @@
+CONTENTS
+
+Functions f : A  B The function f with domain A and range B
+
+f  g Composition of the functions f and g
+
+f (x; )
+
+A function of x parametrized by . (Sometimes we write f(x) and omit the argument  to lighten notation)
+
+log x (x) (x)
+
+Natural logarithm of x
+
+Logistic
+
+sigmoid,
+
+1 1 + exp(-x)
+
+Softplus, log(1 + exp(x))
+
+||x||p ||x|| x+
+
+Lp norm of x L2 norm of x Positive part of x, i.e., max(0, x)
+
+1condition is 1 if the condition is true, 0 otherwise
+Sometimes we use a function f whose argument is a scalar but apply it to a vector, matrix, or tensor: f (x), f(X), or f (X). This denotes the application of f to the array element-wise. For example, if C = (X), then Ci,j,k = (Xi,j,k) for all valid values of i, j and k.
+
+p data
+
+Datasets and Distributions The data generating distribution
+
+p^data
+
+The empirical distribution defined by the training set
+
+X x(i) y(i) or y(i)
+
+A set of training examples
+The i-th example (input) from a dataset The target associated with x(i) for supervised learning
+
+X
+
+The m × n matrix with input example x(i) in row
+
+Xi,:
+
+xiv
+
+

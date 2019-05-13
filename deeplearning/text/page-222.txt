@@ -1,0 +1,177 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+g maps from Rm to Rn, and f maps from Rn to R . If y = g(x) and z = f(y), then
+
+z
+
+ =
+
+z
+
+yj .
+
+xi j yj xi
+
+(6.45)
+
+In vector notation, this may be equivalently written as
+
+ xz
+
+=
+
+
+
+ y  x
+
+y
+
+z,
+
+(6.46)
+
+where
+
+y x
+
+is
+
+the
+
+n×m
+
+Jacobian
+
+matrix
+
+of
+
+g.
+
+From this we see that the gradient of a variable x can be obtained by multiplying
+
+a
+
+Jacobian
+
+matrix
+
+y x
+
+by
+
+a
+
+gradient
+
+yz.
+
+The
+
+back-propagation
+
+algorithm
+
+consists
+
+of performing such a Jacobian-gradient product for each operation in the graph.
+
+Usually we do not apply the back-propagation algorithm merely to vectors, but rather to tensors of arbitrary dimensionality. Conceptually, this is exactly the same as back-propagation with vectors. The only difference is how the numbers are arranged in a grid to form a tensor. We could imagine flattening each tensor into a vector before we run back-propagation, computing a vector-valued gradient, and then reshaping the gradient back into a tensor. In this rearranged view, back-propagation is still just multiplying Jacobians by gradients.
+
+To denote the gradient of a value z with respect to a tensor X , we write Xz, just as if X were a vector. The indices into X now have multiple coordinates--for
+
+example, a 3-D tensor is indexed by three coordinates. We can abstract this away
+
+by using a single variable i to represent the complete tuple of indices. For all
+
+possible
+
+index
+
+tuples
+
+i,
+
+(X z)i
+
+gives
+
+z Xi
+
+.
+
+This
+
+is
+
+exactly
+
+the
+
+same
+
+as
+
+how
+
+for
+
+all
+
+possible
+
+integer
+
+indices
+
+i
+
+into
+
+a
+
+vector,
+
+(x z)i
+
+gives
+
+z x i
+
+.
+
+Using
+
+this
+
+notation,
+
+we
+
+can write the chain rule as it applies to tensors. If Y = g(X) and z = f (Y), then
+
+X
+
+z
+
+=
+
+
+j
+
+(XYj
+
+)
+
+z Yj
+
+.
+
+(6.47)
+
+6.5.3 Recursively Applying the Chain Rule to Obtain Backprop
+Using the chain rule, it is straightforward to write down an algebraic expression for the gradient of a scalar with respect to any node in the computational graph that produced that scalar. However, actually evaluating that expression in a computer introduces some extra considerations.
+Specifically, many subexpressions may be repeated several times within the overall expression for the gradient. Any procedure that computes the gradient
+207
+
+

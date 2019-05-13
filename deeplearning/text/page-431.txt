@@ -1,0 +1,108 @@
+CHAPTER 10. SEQUENCE MODELING: RECURRENT AND RECURSIVE NETS
+
+maintain its magnitude, even if the loss function only penalizes the output at the end of the sequence. Formally, we want
+
+(h(t) L)
+
+ h (t)  h(t-1)
+
+(10.50)
+
+to be as large as
+
+h(t) L.
+
+(10.51)
+
+With this objective, Pascanu et al. (2013) propose the following regularizer:
+
+
+
+=
+
+
+
+ 
+
+|
+
+(
+
+h
+
+(t)L)
+
+h(t) h(t-1)
+
+
+
+|
+
+t
+
+|| (t) L| |
+h
+
+-
+
+2 1 .
+
+(10.52)
+
+Computing the gradient of this regularizer may appear difficult, but Pascanu
+
+et al. (2013) propose an approximation in which we consider the back-propagated
+
+vectors
+
+
+h
+
+(t)
+
+L
+
+as
+
+if
+
+they
+
+were
+
+constants
+
+(for
+
+the
+
+purpose
+
+of
+
+this
+
+regularizer,
+
+so
+
+that there is no need to back-propagate through them). The experiments with
+
+this regularizer suggest that, if combined with the norm clipping heuristic (which
+
+handles gradient explosion), the regularizer can considerably increase the span of
+
+the dependencies that an RNN can learn. Because it keeps the RNN dynamics
+
+on the edge of explosive gradients, the gradient clipping is particularly important.
+
+Without gradient clipping, gradient explosion prevents learning from succeeding.
+
+A key weakness of this approach is that it is not as effective as the LSTM for tasks where data is abundant, such as language modeling.
+
+10.12 Explicit Memory
+Intelligence requires knowledge and acquiring knowledge can be done via learning, which has motivated the development of large-scale deep architectures. However, there are different kinds of knowledge. Some knowledge can be implicit, subconscious, and difficult to verbalize--such as how to walk, or how a dog looks different from a cat. Other knowledge can be explicit, declarative, and relatively straightforward to put into words--every day commonsense knowledge, like "a cat is a kind of animal," or very specific facts that you need to know to accomplish your current goals, like "the meeting with the sales team is at 3:00 PM in room 141."
+Neural networks excel at storing implicit knowledge. However, they struggle to memorize facts. Stochastic gradient descent requires many presentations of the
+416
+
+

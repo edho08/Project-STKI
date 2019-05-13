@@ -1,0 +1,23 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+can view h as a gate that determines whether uh  u or uh  0. In these situations, we want to set the bias for h so that h  1 most of the time at initialization. Otherwise u does not have a chance to learn. For example, Jozefowicz et al. (2015) advocate setting the bias to 1 for the forget gate of the LSTM model, described in section 10.10.
+
+Another common type of parameter is a variance or precision parameter. For
+
+example, we can perform linear regression with a conditional variance estimate
+
+using the model
+
+p(y | x) = N (y | wT x + b, 1/)
+
+(8.24)
+
+where  is a precision parameter. We can usually initialize variance or precision parameters to 1 safely. Another approach is to assume the initial weights are close enough to zero that the biases may be set while ignoring the effect of the weights, then set the biases to produce the correct marginal mean of the output, and set the variance parameters to the marginal variance of the output in the training set.
+Besides these simple constant or random methods of initializing model parameters, it is possible to initialize model parameters using machine learning. A common strategy discussed in part III of this book is to initialize a supervised model with the parameters learned by an unsupervised model trained on the same inputs. One can also perform supervised training on a related task. Even performing supervised training on an unrelated task can sometimes yield an initialization that offers faster convergence than a random initialization. Some of these initialization strategies may yield faster convergence and better generalization because they encode information about the distribution in the initial parameters of the model. Others apparently perform well primarily because they set the parameters to have the right scale or set different units to compute different functions from each other.
+
+8.5 Algorithms with Adaptive Learning Rates
+Neural network researchers have long realized that the learning rate was reliably one of the hyperparameters that is the most difficult to set because it has a significant impact on model performance. As we have discussed in sections 4.3 and 8.2, the cost is often highly sensitive to some directions in parameter space and insensitive to others. The momentum algorithm can mitigate these issues somewhat, but does so at the expense of introducing another hyperparameter. In the face of this, it is natural to ask if there is another way. If we believe that the directions of sensitivity are somewhat axis-aligned, it can make sense to use a separate learning
+
+306
+
+

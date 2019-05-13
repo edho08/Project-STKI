@@ -1,0 +1,26 @@
+CHAPTER 15. REPRESENTATION LEARNING
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+ 
+   
+
+Figure 15.1: Visualization via nonlinear projection of the learning trajectories of different neural networks in function space (not parameter space, to avoid the issue of many-to-one mappings from parameter vectors to functions), with different random initializations and with or without unsupervised pretraining. Each point corresponds to a different neural network, at a particular time during its training process. This figure is adapted with permission from Erhan et al. (2010). A coordinate in function space is an infinitedimensional vector associating every input x with an output y. Erhan et al. (2010) made a linear projection to high-dimensional space by concatenating the y for many specific x points. They then made a further nonlinear projection to 2-D by Isomap (Tenenbaum et al., 2000). Color indicates time. All networks are initialized near the center of the plot (corresponding to the region of functions that produce approximately uniform distributions over the class y for most inputs). Over time, learning moves the function outward, to points that make strong predictions. Training consistently terminates in one region when using pretraining and in another, non-overlapping region when not using pretraining. Isomap tries to preserve global relative distances (and hence volumes) so the small region corresponding to pretrained models may indicate that the pretraining-based estimator has reduced variance.
+
+533
+
+

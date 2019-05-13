@@ -1,0 +1,7 @@
+CHAPTER 14. AUTOENCODERS
+x~ x gf
+x~ C(x~ | x) x
+Figure 14.4: A denoising autoencoder is trained to map a corrupted data point ~x back to the original data point x. We illustrate training examples x as red crosses lying near a low-dimensional manifold illustrated with the bold black line. We illustrate the corruption process C (~x | x) with a gray circle of equiprobable corruptions. A gray arrow demonstrates how one training example is transformed into one sample from this corruption process. When the denoising autoencoder is trained to minimize the average of squared errors ||g(f(x~)) -x||2, the reconstruction g (f (x~)) estimates Ex,x~pdata (x)C( ~x|x)[x | x~ ]. The vector g(f(~x)) -x~ points approximately towards the nearest point on the manifold, since g(f(~x)) estimates the center of mass of the clean points x which could have given rise to x~. The autoencoder thus learns a vector field g(f (x)) - x indicated by the green arrows. This vector field estimates the score xlog pdata (x) up to a multiplicative factor that is the average root mean square reconstruction error.
+512
+
+

@@ -1,0 +1,18 @@
+BIBLIOGRAPHY
+Guo, H. and Gelfand, S. B. (1992). Classification trees with neural network feature extraction. Neural Networks, IEEE Transactions on, 3(6), 923­933. 450
+Gupta, S., Agrawal, A., Gopalakrishnan, K., and Narayanan, P. (2015). Deep learning with limited numerical precision. CoRR, abs/1502.02551. 452
+Gutmann, M. and Hyvarinen, A. (2010). Noise-contrastive estimation: A new estimation principle for unnormalized statistical models. In Proceedings of The Thirteenth International Conference on Artificial Intelligence and Statistics (AISTATS'10). 620
+Hadsell, R., Sermanet, P., Ben, J., Erkan, A., Han, J., Muller, U., and LeCun, Y. (2007). Online learning for offroad robots: Spatial label propagation to learn long-range traversability. In Proceedings of Robotics: Science and Systems, Atlanta, GA, USA. 453
+Hajnal, A., Maass, W., Pudlak, P., Szegedy, M., and Turan, G. (1993). Threshold circuits of bounded depth. J. Comput. System. Sci., 46, 129­154. 199
+Håstad, J. (1986). Almost optimal lower bounds for small depth circuits. In Proceedings of the 18th annual ACM Symposium on Theory of Computing , pages 6­20, Berkeley, California. ACM Press. 199
+Håstad, J. and Goldmann, M. (1991). On the power of small-depth threshold circuits. Computational Complexity , 1, 113­129. 199
+Hastie, T., Tibshirani, R., and Friedman, J. (2001). The elements of statistical learning: data mining, inference and prediction. Springer Series in Statistics. Springer Verlag. 146
+He, K., Zhang, X., Ren, S., and Sun, J. (2015). Delving deep into rectifiers: Surpassing human-level performance on ImageNet classification. arXiv preprint arXiv:1502.01852 . 28, 193
+Hebb, D. O. (1949). The Organization of Behavior . Wiley, New York. 14, 17, 656
+Henaff, M., Jarrett, K., Kavukcuoglu, K., and LeCun, Y. (2011). Unsupervised learning of sparse features for scalable audio classification. In ISMIR'11 . 523
+Henderson, J. (2003). Inducing history representations for broad coverage statistical parsing. In HLT-NAACL, pages 103­110. 477
+Henderson, J. (2004). Discriminative training of a neural network statistical parser. In Proceedings of the 42nd Annual Meeting on Association for Computational Linguistics , page 95. 477
+Henniges, M., Puertas, G., Bornschein, J., Eggert, J., and Lücke, J. (2010). Binary sparse coding. In Latent Variable Analysis and Signal Separation, pages 450­457. Springer. 640
+741
+
+

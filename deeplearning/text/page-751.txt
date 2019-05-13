@@ -1,0 +1,17 @@
+BIBLIOGRAPHY
+Farabet, C., Couprie, C., Najman, L., and LeCun, Y. (2013). Learning hierarchical features for scene labeling. IEEE Transactions on Pattern Analysis and Machine Intelligence, 35(8), 1915­1929. 23, 201, 360
+Fei-Fei, L., Fergus, R., and Perona, P. (2006). One-shot learning of object categories. IEEE Transactions on Pattern Analysis and Machine Intelligence, 28(4), 594­611. 538
+Finn, C., Tan, X. Y., Duan, Y., Darrell, T., Levine, S., and Abbeel, P. (2015). Learning visual feature spaces for robotic manipulation with deep spatial autoencoders. arXiv preprint arXiv:1509.06113 . 25
+Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of Eugenics , 7, 179­188. 21, 105
+Földiák, P. (1989). Adaptive network for optimal linear feature extraction. In International Joint Conference on Neural Networks (IJCNN), volume 1, pages 401­405, Washington 1989. IEEE, New York. 494
+Franzius, M., Sprekeler, H., and Wiskott, L. (2007). Slowness and sparseness lead to place, head-direction, and spatial-view cells. 495
+Franzius, M., Wilbert, N., and Wiskott, L. (2008). Invariant object recognition with slow feature analysis. In Artificial Neural Networks-ICANN 2008 , pages 961­970. Springer. 496
+Frasconi, P., Gori, M., and Sperduti, A. (1997). On the efficient classification of data structures by neural networks. In Proc. Int. Joint Conf. on Artificial Intelligence . 401
+Frasconi, P., Gori, M., and Sperduti, A. (1998). A general framework for adaptive processing of data structures. IEEE Transactions on Neural Networks , 9(5), 768­786. 401
+Freund, Y. and Schapire, R. E. (1996a). Experiments with a new boosting algorithm. In Machine Learning: Proceedings of Thirteenth International Conference, pages 148­156, USA. ACM. 258
+Freund, Y. and Schapire, R. E. (1996b). Game theory, on-line prediction and boosting. In Proceedings of the Ninth Annual Conference on Computational Learning Theory, pages 325­332. 258
+Frey, B. J. (1998). Graphical models for machine learning and digital communication. MIT Press. 705, 706
+Frey, B. J., Hinton, G. E., and Dayan, P. (1996). Does the wake-sleep algorithm learn good density estimators? In D. Touretzky, M. Mozer, and M. Hasselmo, editors, Advances in Neural Information Processing Systems 8 (NIPS'95), pages 661­670. MIT Press, Cambridge, MA. 651
+736
+
+

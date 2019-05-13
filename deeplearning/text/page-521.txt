@@ -1,0 +1,61 @@
+CHAPTER 14. AUTOENCODERS
+
+maximum likelihood training of a generative model that has latent variables. Suppose we have a model with visible variables x and latent variables h, with an explicit joint distribution pmodel(x, h) = pmodel(h)pmodel(x | h). We refer to pmodel(h) as the model's prior distribution over the latent variables, representing the model's beliefs prior to seeing x. This is different from the way we have previously used the word "prior," to refer to the distribution p() encoding our beliefs about the model's parameters before we have seen the training data. The log-likelihood can be decomposed as
+
+ log pmodel(x) = log pmodel (h, x).
+
+(14.3)
+
+h
+
+We can think of the autoencoder as approximating this sum with a point estimate for just one highly likely value for h. This is similar to the sparse coding generative model (section 13.4), but with h being the output of the parametric encoder rather than the result of an optimization that infers the most likely h. From this point of view, with this chosen h, we are maximizing
+
+log pmodel(h, x) = log pmodel(h) + log pmodel (x | h).
+
+(14.4)
+
+The log pmodel(h) term can be sparsity-inducing. For example, the Laplace prior,
+
+pmodel (hi)
+
+=
+
+ e-|hi|, 2
+
+(14.5)
+
+corresponds to an absolute value sparsity penalty. Expressing the log-prior as an
+
+absolute value penalty, we obtain
+
+ (h) =  |hi|
+
+- log pmodel(h)
+
+=
+
+i |h i|
+
+-
+
+log
+
+ 2
+
+=
+
+(h)
+
++
+
+const
+
+i
+
+(14.6) (14.7)
+
+where the constant term depends only on  and not h. We typically treat  as a hyperparameter and discard the constant term since it does not affect the parameter learning. Other priors such as the Student-t prior can also induce sparsity. From this point of view of sparsity as resulting from the effect of pmodel(h) on approximate maximum likelihood learning, the sparsity penalty is not a regularization term at all. It is just a consequence of the model's distribution over its latent variables. This view provides a different motivation for training an autoencoder: it is a way of approximately training a generative model. It also provides a different reason for
+
+506
+
+

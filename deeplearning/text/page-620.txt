@@ -1,0 +1,36 @@
+Chapter 18
+Confronting the Partition Function
+
+In section 16.2.2 we saw that many probabilistic models (commonly known as undirected graphical models) are defined by an unnormalized probability distribution p~(x; ). We must normalize p~ by dividing by a partition function Z() in order to obtain a valid probability distribution:
+
+p(x; ) = 1 p~(x; ). Z ()
+
+(18.1)
+
+The partition function is an integral (for continuous variables) or sum (for discrete
+
+variables) over the unnormalized probability of all states:
+
+
+
+p~(x)dx
+
+(18.2)
+
+or
+
+
+
+p~(x).
+
+(18.3)
+
+x
+
+This operation is intractable for many interesting models.
+
+As we will see in chapter 20, several deep learning models are designed to have a tractable normalizing constant, or are designed to be used in ways that do not involve computing p(x) at all. However, other models directly confront the challenge of intractable partition functions. In this chapter, we describe techniques used for training and evaluating models that have intractable partition functions.
+
+605
+
+

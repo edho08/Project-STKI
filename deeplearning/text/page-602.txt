@@ -1,0 +1,23 @@
+CHAPTER 16. STRUCTURED PROBABILISTIC MODELS FOR DEEP LEARNING
+
+the model until it is just barely possible to train or use. We often use models whose marginal distributions cannot be computed, and are satisfied simply to draw approximate samples from these models. We often train models with an intractable objective function that we cannot even approximate in a reasonable amount of time, but we are still able to approximately train the model if we can efficiently obtain an estimate of the gradient of such a function. The deep learning approach is often to figure out what the minimum amount of information we absolutely need is, and then to figure out how to get a reasonable approximation of that information as quickly as possible.
+
+16.7.1 Example: The Restricted Boltzmann Machine
+
+The restricted Boltzmann machine (RBM) (Smolensky, 1986) or harmonium is the quintessential example of how graphical models are used for deep learning. The RBM is not itself a deep model. Instead, it has a single layer of latent variables that may be used to learn a representation for the input. In chapter 20, we will see how RBMs can be used to build many deeper models. Here, we show how the RBM exemplifies many of the practices used in a wide variety of deep graphical models: its units are organized into large groups called layers, the connectivity between layers is described by a matrix, the connectivity is relatively dense, the model is designed to allow efficient Gibbs sampling, and the emphasis of the model design is on freeing the training algorithm to learn latent variables whose semantics were not specified by the designer. Later, in section 20.2, we will revisit the RBM in more detail.
+The canonical RBM is an energy-based model with binary visible and hidden units. Its energy function is
+
+E(v, h) = -bv - c h - vW h,
+
+(16.10)
+
+where b, c , and W are unconstrained, real-valued, learnable parameters. We can see that the model is divided into two groups of units: v and h, and the interaction between them is described by a matrix W . The model is depicted graphically in figure 16.14. As this figure makes clear, an important aspect of this model is that there are no direct interactions between any two visible units or between any two hidden units (hence the "restricted," a general Boltzmann machine may have arbitrary connections).
+The restrictions on the RBM structure yield the nice properties
+
+p(h | v) = ip(hi | v)
+
+(16.11)
+
+587
+
+

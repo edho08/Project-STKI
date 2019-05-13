@@ -1,0 +1,78 @@
+CHAPTER 3. PROBABILITY AND INFORMATION THEORY
+
+mass function and the reader must infer which probability mass function to use based on the identity of the random variable, rather than the name of the function; P (x) is usually not the same as P (y).
+The probability mass function maps from a state of a random variable to the probability of that random variable taking on that state. The probability that x = x is denoted as P (x), with a probability of 1 indicating that x = x is certain and a probability of 0 indicating that x = x is impossible. Sometimes to disambiguate which PMF to use, we write the name of the random variable explicitly: P (x = x). Sometimes we define a variable first, then use  notation to specify which distribution it follows later: x  P (x).
+Probability mass functions can act on many variables at the same time. Such a probability distribution over many variables is known as a joint probability distribution. P (x = x, y = y ) denotes the probability that x = x and y = y simultaneously. We may also write P (x, y) for brevity.
+To be a probability mass function on a random variable x, a function P must satisfy the following properties:
+
+· The domain of P must be the set of all possible states of x.
+
+· x  x, 0  P (x)  1. An impossible event has probability 0 and no state can
+
+be less probable than that. Likewise, an event that is guaranteed to happen
+
+has probability 1, and no state can have a greater chance of occurring.
+
+·
+
+ xx P (x)
+
+= 1.
+
+We
+
+refer
+
+to
+
+this
+
+property
+
+as
+
+being
+
+normalized.
+
+Without
+
+this property, we could obtain probabilities greater than one by computing
+
+the probability of one of many events occurring.
+
+For example, consider a single discrete random variable x with k different states. We can place a uniform distribution on x--that is, make each of its states equally likely--by setting its probability mass function to
+
+1 P (x = xi) = k
+
+(3.1)
+
+for all i. We can see that this fits the requirements for a probability mass function.
+
+The
+
+value
+
+1 k
+
+is positive because k is a positive integer.
+
+We also see that
+
+
+
+1 k
+
+P (x = xi) = k = k = 1,
+
+i
+
+i
+
+(3.2)
+
+so the distribution is properly normalized.
+
+57
+
+

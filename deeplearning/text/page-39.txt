@@ -1,0 +1,50 @@
+CHAPTER 1. INTRODUCTION
+
+Connections per neuron
+
+10 4
+
+10 3
+
+2
+
+10 2 1
+
+6 97
+4
+10 5
+8 3
+
+Human Cat
+Mouse
+Fruit fly
+
+10 1 1950
+
+1985
+
+2000
+
+2015
+
+Year
+
+Figure 1.10: Initially, the number of connections between neurons in artificial neural
+
+networks was limited by hardware capabilities. Today, the number of connections between
+
+neurons is mostly a design consideration. Some artificial neural networks have nearly as
+
+many connections per neuron as a cat, and it is quite common for other neural networks
+
+to have as many connections per neuron as smaller mammals like mice. Even the human
+
+brain does not have an exorbitant amount of connections per neuron. Biological neural
+
+network sizes from Wikipedia (2015).
+
+1. Adaptive linear element (Widrow and Hoff, 1960) 2. Neocognitron (Fukushima, 1980) 3. GPU-accelerated convolutional network (Chellapilla et al., 2006) 4. Deep Boltzmann machine (Salakhutdinov and Hinton, 2009a) 5. Unsupervised convolutional network (Jarrett et al., 2009) 6. GPU-accelerated multilayer perceptron (Ciresan et al., 2010) 7. Distributed autoencoder (Le et al., 2012) 8. Multi-GPU convolutional network (Krizhevsky et al., 2012) 9. COTS HPC unsupervised convolutional network (Coates et al., 2013) 10. GoogLeNet (Szegedy et al., 2014a)
+
+24
+
+

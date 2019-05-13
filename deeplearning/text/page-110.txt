@@ -1,0 +1,53 @@
+CHAPTER 4. NUMERICAL COMPUTATION
+
+These properties guarantee that no infeasible point can be optimal, and that the optimum within the feasible points is unchanged.
+
+To perform constrained maximization, we can construct the generalized La-
+
+grange function of -f (x), which leads to this optimization problem:
+
+min max max -f (x) +  ig(i)(x) +  jh(j)(x).
+
+x  ,0
+
+i
+
+j
+
+(4.19)
+
+We may also convert this to a problem with maximization in the outer loop:
+
+max min
+x
+
+min f (x)
+,0
+
++
+
+
+i
+
+i g (i) (x)
+
+-
+
+
+j
+
+jh(j)
+
+(x).
+
+(4.20)
+
+The sign of the term for the equality constraints does not matter; we may define it with addition or subtraction as we wish, because the optimization is free to choose any sign for each i.
+The inequality constraints are particularly interesting. We say that a constraint h(i) (x ) is active if h(i) (x) = 0. If a constraint is not active, then the solution to the problem found using that constraint would remain at least a local solution if that constraint were removed. It is possible that an inactive constraint excludes other solutions. For example, a convex problem with an entire region of globally optimal points (a wide, flat, region of equal cost) could have a subset of this region eliminated by constraints, or a non-convex problem could have better local stationary points excluded by a constraint that is inactive at convergence. However, the point found at convergence remains a stationary point whether or not the inactive constraints are included. Because an inactive h(i) has negative value, then the solution to minx max max ,0 L(x, , ) will have i = 0. We can thus observe that at the solution,   h(x) = 0. In other words, for all i, we know that at least one of the constraints i  0 and h(i)(x)  0 must be active at the solution. To gain some intuition for this idea, we can say that either the solution is on the boundary imposed by the inequality and we must use its KKT multiplier to influence the solution to x, or the inequality has no influence on the solution and we represent this by zeroing out its KKT multiplier.
+A simple set of properties describe the optimal points of constrained optimization problems. These properties are called the Karush-Kuhn-Tucker (KKT) conditions (Karush, 1939; Kuhn and Tucker, 1951). They are necessary conditions, but not always sufficient conditions, for a point to be optimal. The conditions are:
+
+· The gradient of the generalized Lagrangian is zero. · All constraints on both x and the KKT multipliers are satisfied.
+
+95
+
+

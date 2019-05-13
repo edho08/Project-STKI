@@ -1,0 +1,47 @@
+CHAPTER 1. INTRODUCTION
+
+Output
+
+Output
+
+Output
+
+Mapping from features
+
+Output
+
+Mapping from features
+
+Mapping from features
+
+Additional layers of more
+abstract features
+
+Handdesigned program
+
+Handdesigned features
+
+Features
+
+Simple features
+
+Input
+
+Input
+
+Input
+
+Input
+
+Rule-based systems
+
+Classic machine learning
+
+Deep learning
+Representation learning
+
+Figure 1.5: Flowcharts showing how the different parts of an AI system relate to each other within different AI disciplines. Shaded boxes indicate components that are able to learn from data.
+
+10
+
+

@@ -1,0 +1,114 @@
+CHAPTER 18. CONFRONTING THE PARTITION FUNCTION
+
+We
+
+can
+
+now
+
+write
+
+the
+
+ratio
+
+Z1 Z0
+
+as
+
+Z1 = Z1 Z 1 · · · Zn-1 Z0 Z0 Z 1 Zn-1
+
+= Z1 Z2 · · · Zn-1 Z1
+
+Z 0 Z1
+
+Zn-2 Zn-1
+
+= n-1 Zj+1 j=0 Zj
+
+(18.47) (18.48) (18.49)
+
+Provided the distributions pj and pj +1, for all 0  j  n - 1, are sufficiently
+
+close, we can reliably estimate each of the factors
+
+Z j+1 Zj
+
+using simple importance
+
+sampling
+
+and
+
+then
+
+use
+
+these
+
+to
+
+obtain
+
+an
+
+estimate
+
+of
+
+Z1 Z0
+
+.
+
+Where do these intermediate distributions come from? Just as the original
+
+proposal distribution p0 is a design choice, so is the sequence of distributions
+
+p1 . . . pn-1. That is, it can be specifically constructed to suit the problem domain. One general-purpose and popular choice for the intermediate distributions is to
+
+use the weighted geometric average of the target distribution p1 and the starting
+
+proposal distribution (for which the partition function is known) p0:
+
+p j
+
+
+
+p
+
+j 1
+
+p10-j
+
+(18.50)
+
+In order to sample from these intermediate distributions, we define a series of
+
+Markov chain transition functions Tj(x | x) that define the conditional probability distribution of transitioning to x given we are currently at x. The transition
+
+operator Tj(x | x) is defined to leave pj (x) invariant:
+
+
+
+pj (x) = pj(x )Tj (x | x) dx
+
+(18.51)
+
+These transitions may be constructed as any Markov chain Monte Carlo method (e.g., Metropolis-Hastings, Gibbs), including methods involving multiple passes through all of the random variables or other kinds of iterations.
+The AIS sampling strategy is then to generate samples from p0 and then use the transition operators to sequentially generate samples from the intermediate distributions until we arrive at samples from the target distribution p1:
+
+· for k = 1 . . . K
+
+­
+
+Sample
+
+x
+
+(k) 1
+
+ p0 (x)
+
+626
+
+

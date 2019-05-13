@@ -1,0 +1,34 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+Different cost functions give different statistics. A second result derived using calculus of variations is that
+
+f  = arg min Ex,ypdata ||y - f (x)||1
+f
+
+(6.16)
+
+yields a function that predicts the median value of y for each x, so long as such a function may be described by the family of functions we optimize over. This cost function is commonly called mean absolute error.
+Unfortunately, mean squared error and mean absolute error often lead to poor results when used with gradient-based optimization. Some output units that saturate produce very small gradients when combined with these cost functions. This is one reason that the cross-entropy cost function is more popular than mean squared error or mean absolute error, even when it is not necessary to estimate an entire distribution p(y | x).
+
+6.2.2 Output Units
+The choice of cost function is tightly coupled with the choice of output unit. Most of the time, we simply use the cross-entropy between the data distribution and the model distribution. The choice of how to represent the output then determines the form of the cross-entropy function.
+Any kind of neural network unit that may be used as an output can also be used as a hidden unit. Here, we focus on the use of these units as outputs of the model, but in principle they can be used internally as well. We revisit these units with additional detail about their use as hidden units in section 6.3.
+Throughout this section, we suppose that the feedforward network provides a set of hidden features defined by h = f (x ; ). The role of the output layer is then to provide some additional transformation from the features to complete the task that the network must perform.
+
+6.2.2.1 Linear Units for Gaussian Output Distributions
+
+One simple kind of output unit is an output unit based on an affine transformation with no nonlinearity. These are often just called linear units.
+
+Given features h, a layer of linear output units produces a vector y^ = W h+b.
+
+Linear output layers are often used to produce the mean of a conditional
+
+Gaussian distribution:
+
+p(y | x) = N (y; y^, I).
+
+(6.17)
+
+181
+
+

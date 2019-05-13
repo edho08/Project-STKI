@@ -1,0 +1,45 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+20.10.2 Differentiable Generator Nets
+
+Many generative models are based on the idea of using a differentiable generator network. The model transforms samples of latent variables z to samples x or to distributions over samples x using a differentiable function g(z; (g)) which is typically represented by a neural network. This model class includes variational autoencoders, which pair the generator net with an inference net, generative adversarial networks, which pair the generator network with a discriminator network, and techniques that train generator networks in isolation.
+Generator networks are essentially just parametrized computational procedures for generating samples, where the architecture provides the family of possible distributions to sample from and the parameters select a distribution from within that family.
+As an example, the standard procedure for drawing samples from a normal distribution with mean µ and covariance  is to feed samples z from a normal distribution with zero mean and identity covariance into a very simple generator network. This generator network contains just one affine layer:
+
+x = g(z) = µ + Lz
+
+(20.71)
+
+where L is given by the Cholesky decomposition of .
+
+Pseudorandom number generators can also use nonlinear transformations of
+
+simple distributions. For example, inverse transform sampling (Devroye, 2013)
+
+draws a scalar z from U (0, 1) and applies a nonlinear transformation to a scalar
+
+x. In F (x)
+
+=this-xcaspe(vg)(dzv)
+
+is given by the . If we are able
+
+inverse of to specify
+
+the cumulative distribution function p(x), integrate over x, and invert the
+
+resulting function, we can sample from p(x) without using machine learning.
+
+To generate samples from more complicated distributions that are difficult to specify directly, difficult to integrate over, or whose resulting integrals are difficult to invert, we use a feedforward network to represent a parametric family of nonlinear functions g, and use training data to infer the parameters selecting the desired function.
+
+We can think of g as providing a nonlinear change of variables that transforms the distribution over z into the desired distribution over x.
+
+Recall from equation 3.47 that, for invertible, differentiable, continuous g,
+
+pz (z) = px(g(z)) det(zg) .
+
+(20.72)
+
+694
+
+

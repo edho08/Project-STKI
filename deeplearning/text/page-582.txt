@@ -1,0 +1,33 @@
+CHAPTER 16. STRUCTURED PROBABILISTIC MODELS FOR DEEP LEARNING
+
+hr
+
+hy
+
+hc
+
+Figure 16.3: An undirected graph representing how your roommate's health hr, your health hy , and your work colleague's health hc affect each other. You and your roommate might infect each other with a cold, and you and your work colleague might do the same, but assuming that your roommate and your colleague do not know each other, they can
+only infect each other indirectly via you.
+
+We denote the random variable representing your health as hy, the random variable representing your roommate's health as hr , and the random variable representing your colleague's health as hc. See figure 16.3 for a drawing of the graph representing this scenario.
+Formally, an undirected graphical model is a structured probabilistic model defined on an undirected graph G . For each clique C in the graph,3 a factor (C) (also called a clique potential) measures the affinity of the variables in that clique for being in each of their possible joint states. The factors are constrained to be non-negative. Together they define an unnormalized probability distribution
+
+p~(x) = CG (C).
+
+(16.3)
+
+The unnormalized probability distribution is efficient to work with so long as all the cliques are small. It encodes the idea that states with higher affinity are more likely. However, unlike in a Bayesian network, there is little structure to the definition of the cliques, so there is nothing to guarantee that multiplying them together will yield a valid probability distribution. See figure 16.4 for an example of reading factorization information from an undirected graph.
+Our example of the cold spreading between you, your roommate, and your colleague contains two cliques. One clique contains h y and hc. The factor for this clique can be defined by a table, and might have values resembling these:
+
+hc = 0 hc = 1
+
+hy = 0 2 1
+
+hy = 1 1 10
+
+3
+A clique of the graph is a subset of nodes that are all connected to each other by an edge of the graph.
+
+567
+
+

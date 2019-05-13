@@ -1,0 +1,61 @@
+CHAPTER 7. REGULARIZATION FOR DEEP LEARNING
+
+Convolutional Neural Networks By far the most popular and extensive use of parameter sharing occurs in convolutional neural networks (CNNs) applied to computer vision.
+Natural images have many statistical properties that are invariant to translation. For example, a photo of a cat remains a photo of a cat if it is translated one pixel to the right. CNNs take this property into account by sharing parameters across multiple image locations. The same feature (a hidden unit with the same weights) is computed over different locations in the input. This means that we can find a cat with the same cat detector whether the cat appears at column i or column i + 1 in the image.
+Parameter sharing has allowed CNNs to dramatically lower the number of unique model parameters and to significantly increase network sizes without requiring a corresponding increase in training data. It remains one of the best examples of how to effectively incorporate domain knowledge into the network architecture.
+CNNs will be discussed in more detail in chapter 9.
+
+7.10 Sparse Representations
+
+Weight decay acts by placing a penalty directly on the model parameters. Another strategy is to place a penalty on the activations of the units in a neural network, encouraging their activations to be sparse. This indirectly imposes a complicated penalty on the model parameters.
+
+We have already discussed (in section 7.1.2) how L1 penalization induces a sparse parametrization--meaning that many of the parameters become zero (or close to zero). Representational sparsity, on the other hand, describes a representation where many of the elements of the representation are zero (or close to zero). A simplified view of this distinction can be illustrated in the context of linear regression:
+
+ 18 
+
+
+
+5 15 -9
+
+
+
+-3
+
+y  Rm
+
+4
+
+=
+
+
+
+0 0 1
+
+1
+
+0 0 -2 0 0 -1 0 3 50 0 0 0 0 -1 0 0 0 0 -5
+A  Rm×n
+
+0
+
+0 0 -4
+
+
+
+0
+
+2
+
+
+
+3 -2 -5 1
+
+
+
+4 x  Rn
+
+(7.46)
+
+254
+
+

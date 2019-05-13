@@ -1,0 +1,190 @@
+CHAPTER 19. APPROXIMATE INFERENCE
+
+Second, we would like to be able to extract the features ^h very quickly, in order to
+recognize the content of v . In a realistic deployed setting, we would need to be able to compute ^h in real time.
+
+For both these reasons, we typically do not use gradient descent to compute the mean field parameters h^. Instead, we rapidly estimate them with fixed point
+equations.
+
+The idea behind fixed point equations is that we are seeking a local maximum with respect to h^, where hL(v, , ^h) = 0 . We cannot efficiently solve this equation with respect to all of ^h simultaneously. However, we can solve for a single
+
+variable:
+
+  ^hi
+
+L(v,
+
+,
+
+^h)
+
+=
+
+0.
+
+(19.37)
+
+We can then iteratively apply the solution to the equation for i = 1, . . . , m,
+and repeat the cycle until we satisfy a converge criterion. Common convergence
+criteria include stopping when a full cycle of updates does not improve L by more than some tolerance amount, or when the cycle does not change ^h by more than
+some amount.
+
+Iterating mean field fixed point equations is a general technique that can provide fast variational inference in a broad variety of models. To make this more concrete, we show how to derive the updates for the binary sparse coding model in particular.
+First, we must write an expression for the derivatives with respect to ^hi. To do so, we substitute equation 19.36 into the left side of equation 19.37:
+
+  ^hi
+
+L(v, 
+
+,
+
+h^)
+
+(19.38)
+
+=
+
+  ^hi
+
+  m h^j (log
+j=1
+
+(bj
+
+)
+
+-
+
+log h^j)
+
++
+
+(1
+
+- h^j
+
+)(log
+
+(-bj)
+
+-
+
+log(1
+
+-
+
+ h^j ))
+
+(19.39)
+
+
+
+
+
+
+
+ 
+
++12
+
+ n log
+
+j 2
+
+-
+
+
+
+j
+
+v
+
+2 j
+
+-
+
+2v
+
+j
+
+Wj,:
+
+^h
+
++
+
+
+
+
+
+Wj2,k^hk
+
++
+
+Wj,kWj,l ^hk^hl 
+
+j=1
+
+k
+
+l=k
+
+(19.40)
+
+=
+
+log
+
+(bi)
+
+- log 
+
+^hi
+
+-
+
+1
+
++
+
+log(1
+
+-
+
+^h
+
+i)
+
++
+
+1
+
+-
+
+log
+
+(-bi)
+
++
+
+ n j vj Wj,i
+
+-
+
+1 2
+
+Wj2,i
+
+-
+
+ Wj,kWj,i ^hk
+
+j=1
+
+k=i
+
+(19.41) (19.42)
+
+643
+
+

@@ -1,0 +1,86 @@
+CHAPTER 3. PROBABILITY AND INFORMATION THEORY
+
+(x) =
+
+exp(x)
+
+exp(x) + exp(0)
+
+d dx
+
+(x)
+
+=
+
+(x)(1
+
+-
+
+(x))
+
+1 - (x) = (-x)
+
+(3.33)
+(3.34) (3.35)
+
+log (x) = -(-x)
+
+(3.36)
+
+ddx(x) = (x)
+
+x  (0, 1),
+
+-1
+
+(x)
+
+=
+
+log
+
+
+
+1
+
+x -
+
+ x
+
+(3.37) (3.38)
+
+x > 0, -1(x) = log (exp(x) - 1) x
+(x) = (y)dy
+-
+(x) - (-x) = x
+
+(3.39) (3.40) (3.41)
+
+The function  -1(x) is called the logit in statistics, but this term is more rarely used in machine learning.
+Equation 3.41 provides extra justification for the name "softplus." The softplus function is intended as a smoothed version of the positive part function, x+ = max{0, x}. The positive part function is the counterpart of the negative part function, x- = max{0, -x}. To obtain a smooth function that is analogous to the negative part, one can use  (-x). Just as x can be recovered from its positive part and negative part via the identity x+ - x- = x, it is also possible to recover x using the same relationship between (x) and (-x), as shown in equation 3.41.
+
+3.11 Bayes' Rule
+
+We often find ourselves in a situation where we know P( y | x) and need to know
+
+P (x | y). Fortunately, if we also know P (x), we can compute the desired quantity
+
+using Bayes' rule:
+
+P (x | y) = P (x)P (y | x) . P (y)
+
+(3.42)
+
+Note P (y)
+
+=th at xwPh(iyle
+
+P (y) appears in the formula, | x)P (x), so we do not need to
+
+it is usually feasible to begin with knowledge of
+
+compute P (y).
+
+70
+
+

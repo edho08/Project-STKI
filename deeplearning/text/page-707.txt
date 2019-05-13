@@ -1,0 +1,49 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+magnitude of this quantity. Mnih and Gregor (2014) called this heuristic variance normalization.
+REINFORCE-based estimators can be understood as estimating the gradient by correlating choices of y with corresponding values of J (y). If a good value of y is unlikely under the current parametrization, it might take a long time to obtain it by chance, and get the required signal that this configuration should be reinforced.
+
+20.10 Directed Generative Nets
+As discussed in chapter 16, directed graphical models make up a prominent class of graphical models. While directed graphical models have been very popular within the greater machine learning community, within the smaller deep learning community they have until roughly 2013 been overshadowed by undirected models such as the RBM.
+In this section we review some of the standard directed graphical models that have traditionally been associated with the deep learning community.
+We have already described deep belief networks, which are a partially directed model. We have also already described sparse coding models, which can be thought of as shallow directed generative models. They are often used as feature learners in the context of deep learning, though they tend to perform poorly at sample generation and density estimation. We now describe a variety of deep, fully directed models.
+
+20.10.1 Sigmoid Belief Nets
+
+Sigmoid belief networks (Neal, 1990) are a simple form of directed graphical model
+
+with a specific kind of conditional probability distribution. In general, we can
+
+think of a sigmoid belief network as having a vector of binary states s, with each
+
+element of the state influenced by its ancestors:
+
+
+
+
+
+p(si)
+
+=
+
+
+
+
+
+ Wj,i s j
+
++
+
+bi 
+
+.
+
+(20.70)
+
+j<i
+
+The most common structure of sigmoid belief network is one that is divided into many layers, with ancestral sampling proceeding through a series of many hidden layers and then ultimately generating the visible layer. This structure is very similar to the deep belief network, except that the units at the beginning of
+
+692
+
+

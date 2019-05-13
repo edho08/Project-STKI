@@ -1,0 +1,23 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+(1 - 2y)z, may be simplified to |z|. As |z| becomes large while z has the wrong sign, the softplus function asymptotes toward simply returning its argument |z|. The derivative with respect to z asymptotes to sign(z), so, in the limit of extremely incorrect z, the softplus function does not shrink the gradient at all. This property is very useful because it means that gradient-based learning can act to quickly correct a mistaken z.
+When we use other loss functions, such as mean squared error, the loss can saturate anytime (z) saturates. The sigmoid activation function saturates to 0 when z becomes very negative and saturates to 1 when z becomes very positive. The gradient can shrink too small to be useful for learning whenever this happens, whether the model has the correct answer or the incorrect answer. For this reason, maximum likelihood is almost always the preferred approach to training sigmoid output units.
+Analytically, the logarithm of the sigmoid is always defined and finite, because the sigmoid returns values restricted to the open interval (0, 1), rather than using the entire closed interval of valid probabilities [0, 1]. In software implementations, to avoid numerical problems, it is best to write the negative log-likelihood as a function of z, rather than as a function of y^ = (z ). If the sigmoid function underflows to zero, then taking the logarithm of y^ yields negative infinity.
+
+6.2.2.3 Softmax Units for Multinoulli Output Distributions
+
+Any time we wish to represent a probability distribution over a discrete variable with n possible values, we may use the softmax function. This can be seen as a generalization of the sigmoid function which was used to represent a probability distribution over a binary variable.
+Softmax functions are most often used as the output of a classifier, to represent the probability distribution over n different classes. More rarely, softmax functions can be used inside the model itself, if we wish the model to choose between one of n different options for some internal variable.
+In the case of binary variables, we wished to produce a single number
+
+y^ = P (y = 1 | x).
+
+(6.27)
+
+Because this number needed to lie between 0 and 1, and because we wanted the
+logarithm of the number to be well-behaved for gradient-based optimization of the log-likelihood, we chose to instead predict a number z = log P~(y = 1 | x). Exponentiating and normalizing gave us a Bernoulli distribution controlled by the
+sigmoid function.
+
+184
+
+

@@ -1,0 +1,55 @@
+CHAPTER 14. AUTOENCODERS
+
+is said to be contractive if the norm of J x remains less than or equal to 1 for all unit-norm x. In other words, J is contractive if it shrinks the unit sphere. We can think of the CAE as penalizing the Frobenius norm of the local linear approximation of f (x) at every training point x in order to encourage each of these local linear operator to become a contraction.
+
+As described in section 14.6, regularized autoencoders learn manifolds by
+
+balancing two opposing forces. In the case of the CAE, these two forces are
+
+reconstruction error and the contractive penalty (h). Reconstruction error alone
+
+would encourage the CAE to learn an identity function. The contractive penalty
+
+alone would encourage the CAE to learn features that are constant with respect to x.
+
+The compromise between these two forces yields an autoencoder whose derivatives
+
+f (x) x
+
+are
+
+mostly
+
+tiny.
+
+Only
+
+a
+
+small
+
+number
+
+of
+
+hidden
+
+units,
+
+corresponding
+
+to
+
+a
+
+small number of directions in the input, may have significant derivatives.
+
+The goal of the CAE is to learn the manifold structure of the data. Directions x with large J x rapidly change h, so these are likely to be directions which approximate the tangent planes of the manifold. Experiments by Rifai et al. (2011a) and Rifai et al. (2011b) show that training the CAE results in most singular values of J dropping below 1 in magnitude and therefore becoming contractive. However, some singular values remain above 1, because the reconstruction error penalty encourages the CAE to encode the directions with the most local variance. The directions corresponding to the largest singular values are interpreted as the tangent directions that the contractive autoencoder has learned. Ideally, these tangent directions should correspond to real variations in the data. For example, a CAE applied to images should learn tangent vectors that show how the image changes as objects in the image gradually change pose, as shown in figure 14.6. Visualizations of the experimentally obtained singular vectors do seem to correspond to meaningful transformations of the input image, as shown in figure 14.10.
+
+One practical issue with the CAE regularization criterion is that although it is cheap to compute in the case of a single hidden layer autoencoder, it becomes much more expensive in the case of deeper autoencoders. The strategy followed by Rifai et al. (2011a) is to separately train a series of single-layer autoencoders, each trained to reconstruct the previous autoencoder's hidden layer. The composition of these autoencoders then forms a deep autoencoder. Because each layer was separately trained to be locally contractive, the deep autoencoder is contractive as well. The result is not the same as what would be obtained by jointly training the entire architecture with a penalty on the Jacobian of the deep model, but it captures many of the desirable qualitative characteristics.
+
+Another practical issue is that the contraction penalty can obtain useless results
+
+522
+
+

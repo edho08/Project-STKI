@@ -1,0 +1,87 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+conditional means. It is difficult to train the mcRBM via contrastive divergence or
+persistent contrastive divergence because of its non-diagonal conditional covariance structure. CD and PCD require sampling from the joint distribution of x, h(m), h(c)
+which, in a standard RBM, is accomplished by Gibbs sampling over the conditionals. However, in the mcRBM, sampling from pmc(x | h(m), h(c)) requires computing (Cmc)-1 at every iteration of learning. This can be an impractical computational
+burden for larger observations. Ranzato and Hinton (2010) avoid direct sampling from the conditional pmc (x | h(m), h(c)) by sampling directly from the marginal p(x) using Hamiltonian (hybrid) Monte Carlo (Neal, 1993) on the mcRBM free
+energy.
+
+Mean-Product of Student's t-distributions The mean-product of Student's t-distribution (mPoT) model (Ranzato et al., 2010b) extends the PoT model (Welling et al., 2003a) in a manner similar to how the mcRBM extends the cRBM. This is achieved by including nonzero Gaussian means by the addition of Gaussian RBM-like hidden units. Like the mcRBM, the PoT conditional distribution over the observation is a multivariate Gaussian (with non-diagonal covariance) distribution; however, unlike the mcRBM, the complementary conditional distribution over the hidden variables is given by conditionally independent Gamma distributions. The Gamma distribution G(k, ) is a probability distribution over positive real numbers, with mean k. It is not necessary to have a more detailed understanding of the Gamma distribution to understand the basic ideas underlying the mPoT model.
+The mPoT energy function is:
+
+EmPoT(x, h(m) , h(c) ) = Em(x, h(m))
+
+(20.48)
+
++
+
+
+j
+
+ h(jc)
+
+
+
+1
+
++
+
+1 2
+
+ r
+
+(j)x2
+
++
+
+(1
+
+-
+
+j )
+
+log
+
+
+
+h
+
+(c) j
+
+(20.49)
+
+where
+
+r(j)
+
+is
+
+the
+
+covariance
+
+weight
+
+vector
+
+associated
+
+with
+
+unit
+
+h
+
+(c) j
+
+and
+
+Em(x, h(m))
+
+is as defined in equation 20.44.
+
+Just as with the mcRBM, the mPoT model energy function specifies a multivariate Gaussian, with a conditional distribution over x that has non-diagonal covariance. Learning in the mPoT model--again, like the mcRBM--is complicated by the inability to sample from the non-diagonal Gaussian conditional pmPoT(x | h(m), h(c) ), so Ranzato et al. (2010b) also advocate direct sampling of p(x) via Hamiltonian (hybrid) Monte Carlo.
+
+680
+
+

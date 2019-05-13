@@ -1,0 +1,34 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+are no longer assured to remain at the minimum of the objective for previous directions. As a result, the nonlinear conjugate gradients algorithm includes occasional resets where the method of conjugate gradients is restarted with line search along the unaltered gradient.
+Practitioners report reasonable results in applications of the nonlinear conjugate gradients algorithm to training neural networks, though it is often beneficial to initialize the optimization with a few iterations of stochastic gradient descent before commencing nonlinear conjugate gradients. Also, while the (nonlinear) conjugate gradients algorithm has traditionally been cast as a batch method, minibatch versions have been used successfully for the training of neural networks (Le et al., 2011). Adaptations of conjugate gradients specifically for neural networks have been proposed earlier, such as the scaled conjugate gradients algorithm (Moller, 1993).
+
+8.6.3 BFGS
+
+The Broyden­Fletcher­Goldfarb­Shanno (BFGS) algorithm attempts to bring some of the advantages of Newton's method without the computational burden. In that respect, BFGS is similar to the conjugate gradient method. However, BFGS takes a more direct approach to the approximation of Newton's update. Recall that Newton's update is given by
+
+ = 0 - H-1 J (0),
+
+(8.32)
+
+where H is the Hessian of J with respect to  evaluated at 0. The primary computational difficulty in applying Newton's update is the calculation of the inverse Hessian H -1. The approach adopted by quasi-Newton methods (of which
+the BFGS algorithm is the most prominent) is to approximate the inverse with
+a matrix Mt that is iteratively refined by low rank updates to become a better approximation of H-1.
+
+The specification and derivation of the BFGS approximation is given in many textbooks on optimization, including Luenberger (1984).
+
+Once the inverse Hessian approximation Mt is updated, the direction of descent
+
+t is determined by t = Mtgt. A line search is performed in this direction to determine the size of the step, , taken in this direction. The final update to the
+
+parameters is given by:
+
+ t+1 = t + t .
+
+(8.33)
+
+Like the method of conjugate gradients, the BFGS algorithm iterates a series of line searches with the direction incorporating second-order information. However
+
+316
+
+

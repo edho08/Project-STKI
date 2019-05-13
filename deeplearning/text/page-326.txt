@@ -1,0 +1,110 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+Algorithm 8.7 The Adam algorithm
+
+Require: Step size  (Suggested default: 0.001)
+
+Require: Exponential decay rates for moment estimates, 1 and 2 in [0, 1).
+
+(Suggested defaults: 0.9 and 0.999 respectively)
+
+Require: Small constant  used for numerical stabilization. (Suggested default: 10 -8)
+
+Require: Initial parameters 
+
+Initialize 1st and 2nd moment variables s = 0, r = 0
+
+Initialize time step t = 0
+
+while stopping criterion not met do
+
+Sample a minibatch of m examples from the training set {x(1), . . . , x(m)} with
+
+corresponding targets y(i).
+
+Compute
+
+gradient:
+
+g
+
+
+
+1 m
+
+
+
+
+i
+
+L(f (x(i);
+
+),
+
+y(i) )
+
+t  t+1
+
+Update biased first moment estimate: s  1s + (1 - 1)g
+
+Update biased second moment estimate: r  2r + (1 - 2 )g  g
+
+Correct
+
+bias
+
+in
+
+first
+
+moment:
+
+s^ 
+
+s
+
+1-
+
+t 1
+
+Correct
+
+bias
+
+in
+
+second
+
+moment:
+
+r^ 
+
+r 1-t2
+
+Compute update:  = -  ^s
+r^+
+
+(operations applied element-wise)
+
+Apply update:    + 
+
+end while
+
+Newton's method is an optimization scheme based on using a second-order Taylor series expansion to approximate J () near some point  0, ignoring derivatives of higher order:
+
+J ()  J (0) + ( -  0)J (0) + 12( - 0)H( - 0),
+
+(8.26)
+
+where H is the Hessian of J with respect to  evaluated at 0. If we then solve for the critical point of this function, we obtain the Newton parameter update rule:
+
+ = 0 - H-1J ( 0)
+
+(8.27)
+
+Thus for a locally quadratic function (with positive definite H ), by rescaling the gradient by H -1, Newton's method jumps directly to the minimum. If the objective function is convex but not quadratic (there are higher-order terms), this
+update can be iterated, yielding the training algorithm associated with Newton's method, given in algorithm 8.8.
+
+311
+
+

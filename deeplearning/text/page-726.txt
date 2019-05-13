@@ -1,0 +1,16 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+20.11 Drawing Samples from Autoencoders
+In chapter 14, we saw that many kinds of autoencoders learn the data distribution. There are close connections between score matching, denoising autoencoders, and contractive autoencoders. These connections demonstrate that some kinds of autoencoders learn the data distribution in some way. We have not yet seen how to draw samples from such models.
+Some kinds of autoencoders, such as the variational autoencoder, explicitly represent a probability distribution and admit straightforward ancestral sampling. Most other kinds of autoencoders require MCMC sampling.
+Contractive autoencoders are designed to recover an estimate of the tangent plane of the data manifold. This means that repeated encoding and decoding with injected noise will induce a random walk along the surface of the manifold (Rifai et al., 2012; Mesnil et al., 2012). This manifold diffusion technique is a kind of Markov chain.
+There is also a more general Markov chain that can sample from any denoising autoencoder.
+20.11.1 Markov Chain Associated with any Denoising Autoencoder
+The above discussion left open the question of what noise to inject and where, in order to obtain a Markov chain that would generate from the distribution estimated by the autoencoder. Bengio et al. (2013c) showed how to construct such a Markov chain for generalized denoising autoencoders. Generalized denoising autoencoders are specified by a denoising distribution for sampling an estimate of the clean input given the corrupted input.
+Each step of the Markov chain that generates from the estimated distribution consists of the following sub-steps, illustrated in figure 20.11:
+1. Starting from the previous state x, inject corruption noise, sampling x~ from C(x~ | x).
+2. Encode x~ into h = f (x~).
+3. Decode h to obtain the parameters  = g(h) of p(x |  = g(h)) = p(x | x~).
+4. Sample the next state x from p(x |  = g(h)) = p(x | x~).
+711
+
+

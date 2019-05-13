@@ -1,0 +1,86 @@
+CHAPTER 7. REGULARIZATION FOR DEEP LEARNING
+
+Ep(x,y) Wy^(x)2. This form of regularization encourages the parameters to go to regions of parameter space where small perturbations of the weights have
+
+a relatively small influence on the output. In other words, it pushes the model
+
+into regions where the model is relatively insensitive to small variations in the
+
+weights, finding points that are not merely minima, but minima surrounded by
+
+flat regions (Hochreiter and Schmidhuber, 1995). In the simplified case of linear
+
+rinegtoressEiop(nx)(whxere2,,fowr hinicshtainscen,oyt^(axf)u=ncwtionx
+
++ of
+
+b), this regularization term parameters and therefore
+
+collapses does not
+
+contribute to the gradient of J~W with respect to the model parameters.
+
+7.5.1 Injecting Noise at the Output Targets
+
+Most datasets have some amount of mistakes in the y labels. It can be harmful to
+
+maximize log p(y | x) when y is a mistake. One way to prevent this is to explicitly
+
+model the noise on the labels. For example, we can assume that for some small
+
+constant , the training set label y is correct with probability 1 - , and otherwise
+
+any of the other possible labels might be correct. This assumption is easy to
+
+incorporate into the cost function analytically, rather than by explicitly drawing
+
+noise samples. For example, label smoothing regularizes a model based on a
+
+softmax with k output values by replacing the hard 0 and 1 classification targets
+
+with
+
+targets
+
+of
+
+ k-1
+
+and
+
+1 - ,
+
+respectively.
+
+The
+
+standard cross-entropy
+
+loss
+
+may
+
+then be used with these soft targets. Maximum likelihood learning with a softmax
+
+classifier and hard targets may actually never converge--the softmax can never
+
+predict a probability of exactly 0 or exactly 1, so it will continue to learn larger
+
+and larger weights, making more extreme predictions forever. It is possible to
+
+prevent this scenario using other regularization strategies like weight decay. Label
+
+smoothing has the advantage of preventing the pursuit of hard probabilities without
+
+discouraging correct classification. This strategy has been used since the 1980s
+
+and continues to be featured prominently in modern neural networks (Szegedy
+
+et al., 2015).
+
+7.6 Semi-Supervised Learning
+In the paradigm of semi-supervised learning, both unlabeled examples from P (x) and labeled examples from P (x, y) are used to estimate P (y | x) or predict y from x.
+In the context of deep learning, semi-supervised learning usually refers to learning a representation h = f (x). The goal is to learn a representation so
+243
+
+

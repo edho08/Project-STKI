@@ -1,0 +1,38 @@
+CHAPTER 3. PROBABILITY AND INFORMATION THEORY
+
+For example, applying the definition twice, we get
+P (a, b, c) = P (a | b, c)P (b, c) P (b, c) = P (b | c)P (c)
+P (a, b, c) = P (a | b, c)P (b | c)P (c).
+
+3.7 Independence and Conditional Independence
+
+Two random variables x and y are independent if their probability distribution can be expressed as a product of two factors, one involving only x and one involving only y:
+
+x  x, y  y, p(x = x, y = y) = p(x = x)p(y = y).
+
+(3.7)
+
+Two random variables x and y are conditionally independent given a random variable z if the conditional probability distribution over x and y factorizes in this way for every value of z:
+
+x  x, y  y, z  z, p(x = x, y = y | z = z) = p(x = x | z = z)p(y = y | z = z). (3.8)
+We can denote independence and conditional independence with compact notation: xy means that x and y are independent, while xy | z means that x and y are conditionally independent given z.
+
+3.8 Expectation, Variance and Covariance
+
+The expectation or expected value of some function f(x) with respect to a probability distribution P (x) is the average or mean value that f takes on when x
+
+is drawn from P . For discrete variables this can be computed with a summation:
+
+ ExP [f (x)] = P (x)f (x),
+x
+
+(3.9)
+
+while for continuous variables, it is computed with an integral: 
+Exp[f (x)] = p(x)f (x)dx.
+
+(3.10)
+
+60
+
+

@@ -1,0 +1,20 @@
+CHAPTER 16. STRUCTURED PROBABILISTIC MODELS FOR DEEP LEARNING
+
+a
+
+b
+
+c
+
+d
+
+Figure 16.7: An example of reading separation properties from an undirected graph. Here b is shaded to indicate that it is observed. Because observing b blocks the only path from a to c, we say that a and c are separated from each other given b . The observation of b also blocks one path between a and d, but there is a second, active path between them. Therefore, a and d are not separated given b.
+
+for undirected graphs: We say that a set of variables A is d-separated from another set of variables B given a third set of variables S if the graph structure implies that A is independent from B given S.
+As with undirected models, we can examine the independences implied by the graph by looking at what active paths exist in the graph. As before, two variables are dependent if there is an active path between them, and d-separated if no such path exists. In directed nets, determining whether a path is active is somewhat more complicated. See figure 16.8 for a guide to identifying active paths in a directed model. See figure 16.9 for an example of reading some properties from a graph.
+It is important to remember that separation and d-separation tell us only about those conditional independences that are implied by the graph. There is no requirement that the graph imply all independences that are present. In particular, it is always legitimate to use the complete graph (the graph with all possible edges) to represent any distribution. In fact, some distributions contain independences that are not possible to represent with existing graphical notation. Contextspecific independences are independences that are present dependent on the value of some variables in the network. For example, consider a model of three binary variables: a, b and c . Suppose that when a is 0, b and c are independent, but when a is 1, b is deterministically equal to c. Encoding the behavior when a = 1 requires an edge connecting b and c. The graph then fails to indicate that b and c are independent when a = 0.
+In general, a graph will never imply that an independence exists when it does not. However, a graph may fail to encode an independence.
+
+573
+
+

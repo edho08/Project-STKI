@@ -1,0 +1,18 @@
+BIBLIOGRAPHY
+Paccanaro, A. and Hinton, G. E. (2000). Extracting distributed representations of concepts and relations from positive and negative propositions. In International Joint Conference on Neural Networks (IJCNN), Como, Italy. IEEE, New York. 484
+Paine, T. L., Khorrami, P., Han, W., and Huang, T. S. (2014). An analysis of unsupervised pre-training in light of recent advances. arXiv preprint arXiv:1412.6597 . 532
+Palatucci, M., Pomerleau, D., Hinton, G. E., and Mitchell, T. M. (2009). Zero-shot learning with semantic output codes. In Y. Bengio, D. Schuurmans, J. D. Lafferty, C. K. I. Williams, and A. Culotta, editors, Advances in Neural Information Processing Systems 22 , pages 1410­1418. Curran Associates, Inc. 539
+Parker, D. B. (1985). Learning-logic. Technical Report TR-47, Center for Comp. Research in Economics and Management Sci., MIT. 225
+Pascanu, R., Mikolov, T., and Bengio, Y. (2013). On the difficulty of training recurrent neural networks. In ICML'2013 . 289, 402, 403, 408, 414, 416
+Pascanu, R., Gülçehre, Ç., Cho, K., and Bengio, Y. (2014a). How to construct deep recurrent neural networks. In ICLR'2014 . 19, 265, 398, 399, 410, 460
+Pascanu, R., Montufar, G., and Bengio, Y. (2014b). On the number of inference regions of deep feed forward networks with piece-wise linear activations. In ICLR'2014 . 550
+Pati, Y., Rezaiifar, R., and Krishnaprasad, P. (1993). Orthogonal matching pursuit: Recursive function approximation with applications to wavelet decomposition. In Proceedings of the 27 th Annual Asilomar Conference on Signals, Systems, and Computers, pages 40­44. 255
+Pearl, J. (1985). Bayesian networks: A model of self-activated memory for evidential reasoning. In Proceedings of the 7th Conference of the Cognitive Science Society, University of California, Irvine, pages 329­334. 563
+Pearl, J. (1988). Probabilistic Reasoning in Intelligent Systems: Networks of Plausible Inference. Morgan Kaufmann. 54
+Perron, O. (1907). Zur theorie der matrices. Mathematische Annalen, 64(2), 248­263. 597
+Petersen, K. B. and Pedersen, M. S. (2006). The matrix cookbook. Version 20051003. 31
+Peterson, G. B. (2004). A day of great illumination: B. F. Skinner's discovery of shaping. Journal of the Experimental Analysis of Behavior , 82(3), 317­328. 328
+Pham, D.-T., Garat, P., and Jutten, C. (1992). Separation of a mixture of independent sources through a maximum likelihood approach. In EUSIPCO , pages 771­774. 491
+761
+
+

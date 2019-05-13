@@ -1,0 +1,51 @@
+CHAPTER 12. APPLICATIONS
+
+in the next position. Every incorrect word should have low probability under the model. It can be computationally costly to enumerate all of these words. Instead, it is possible to sample only a subset of the words. Using the notation introduced in equation 12.8, the gradient can be written as follows:
+
+ log P (y | C ) =  log softmaxy (a)
+
+
+
+
+
+=
+
+ 
+
+log
+
+eai yeai
+
+= (a y - log  ea i)
+i
+
+=
+
+ay 
+
+ - P (y
+
+=
+
+i
+
+|
+
+C) ai 
+
+i
+
+(12.13) (12.14) (12.15) (12.16)
+
+where a is the vector of pre-softmax activations (or scores), with one element per word. The first term is the positive phase term (pushing ay up) while the second term is the negative phase term (pushing ai down for all i, with weight P (i | C ). Since the negative phase term is an expectation, we can estimate it with a Monte Carlo sample. However, that would require sampling from the model itself. Sampling from the model requires computing P (i | C) for all i in the vocabulary, which is precisely what we are trying to avoid.
+Instead of sampling from the model, one can sample from another distribution, called the proposal distribution (denoted q ), and use appropriate weights to correct for the bias introduced by sampling from the wrong distribution (Bengio and Sénécal, 2003; Bengio and Sénécal, 2008). This is an application of a more general technique called importance sampling, which will be described in more detail in section 17.2. Unfortunately, even exact importance sampling is not efficient because it requires computing weights pi/qi, where pi = P (i | C), which can only be computed if all the scores ai are computed. The solution adopted for this application is called biased importance sampling, where the importance weights are normalized to sum to 1. When negative word ni is sampled, the associated gradient is weighted by
+
+wi = Nj=pn1ip/nqnj/iqnj .
+
+(12.17)
+
+These weights are used to give the appropriate importance to the m negative samples from q used to form the estimated negative phase contribution to the
+
+470
+
+

@@ -1,0 +1,124 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+Algorithm 6.6 The inner loop subroutine build_grad(V, G, G, grad_table) of the back-propagation algorithm, called by the back-propagation algorithm defined in algorithm 6.5.
+
+Require: V, the variable whose gradient should be added to G and grad_table.
+
+Require: G, the graph to modify. Require: G , the restriction of G to nodes that participate in the gradient.
+
+Require: grad_table, a data structure mapping nodes to their gradients
+
+if V is in grad_table then
+
+Return grad_table[V]
+
+end if
+
+i1
+
+for C in get_consumers(V, G) do
+
+op  get_operation(C)
+
+D  build_grad(C, G, G, grad_table)
+
+(i)
+G
+
+
+
+op.bprop(get_inputs(C,
+
+G
+
+),
+
+V,
+
+D)
+
+ii+1
+
+end G
+
+for
+i
+
+G
+
+(i)
+
+grad_table[V] = G
+
+Insert G and the operations creating it into G
+
+Return G
+
+roughly chain-structured, causing back-propagation to have O(n) cost. This is far better than the naive approach, which might need to execute exponentially many nodes. This potentially exponential cost can be seen by expanding and rewriting the recursive chain rule (equation 6.49) non-recursively:
+
+ u(n)
+
+
+
+t u(k)
+
+u(j) =
+
+ u(k-1 ) .
+
+path (u(1 ),u(2 ),...,u(t) ), k=2
+
+from 1=j to t=n
+
+(6.55)
+
+Since the number of paths from node j to node n can grow exponentially in the
+
+length of these paths, the number of terms in the above sum, which is the number
+
+of such paths, can grow exponentially with the depth of the forward propagation
+
+graph. This large cost would be incurred because the same computation for
+
+u(i) u(j)
+
+would be redone many times.
+
+To avoid such recomputation, we can think
+
+of back-propagation as a table-filling algorithm that takes advantage of storing
+
+intermediate
+
+results
+
+. u(n)
+u(i)
+
+Each
+
+node
+
+in
+
+the
+
+graph
+
+has
+
+a
+
+corresponding
+
+slot
+
+in
+
+a
+
+table to store the gradient for that node. By filling in these table entries in order,
+
+218
+
+

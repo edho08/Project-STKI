@@ -1,0 +1,18 @@
+BIBLIOGRAPHY
+Desjardins, G., Courville, A. C., Bengio, Y., Vincent, P., and Delalleau, O. (2010). Tempered Markov chain Monte Carlo for training of restricted Boltzmann machines. In International Conference on Artificial Intelligence and Statistics, pages 145­152. 603, 614
+Desjardins, G., Courville, A., and Bengio, Y. (2011). On tracking the partition function. In NIPS'2011 . 629
+Desjardins, G., Simonyan, K., Pascanu, R., et al. (2015). Natural neural networks. In Advances in Neural Information Processing Systems , pages 2062­2070. 320
+Devlin, J., Zbib, R., Huang, Z., Lamar, T., Schwartz, R., and Makhoul, J. (2014). Fast and robust neural network joint models for statistical machine translation. In Proc. ACL'2014 . 473
+Devroye, L. (2013). Non-Uniform Random Variate Generation. SpringerLink : Bücher. Springer New York. 694
+DiCarlo, J. J. (2013). Mechanisms underlying visual object recognition: Humans vs. neurons vs. machines. NIPS Tutorial. 26, 366
+Dinh, L., Krueger, D., and Bengio, Y. (2014). NICE: Non-linear independent components estimation. arXiv:1410.8516. 493
+Donahue, J., Hendricks, L. A., Guadarrama, S., Rohrbach, M., Venugopalan, S., Saenko, K., and Darrell, T. (2014). Long-term recurrent convolutional networks for visual recognition and description. arXiv:1411.4389. 102
+Donoho, D. L. and Grimes, C. (2003). Hessian eigenmaps: new locally linear embedding techniques for high-dimensional data. Technical Report 2003-08, Dept. Statistics, Stanford University. 164, 519
+Dosovitskiy, A., Springenberg, J. T., and Brox, T. (2015). Learning to generate chairs with convolutional neural networks. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 1538­1546. 696, 704, 705
+Doya, K. (1993). Bifurcations of recurrent neural networks in gradient descent learning. IEEE Transactions on Neural Networks, 1, 75­80. 401, 403
+Dreyfus, S. E. (1962). The numerical solution of variational problems. Journal of Mathematical Analysis and Applications , 5(1), 30­45. 225
+Dreyfus, S. E. (1973). The computational solution of optimal control problems with time lag. IEEE Transactions on Automatic Control , 18(4), 383­385. 225
+Drucker, H. and LeCun, Y. (1992). Improving generalisation performance using double back-propagation. IEEE Transactions on Neural Networks, 3(6), 991­997. 271
+734
+
+

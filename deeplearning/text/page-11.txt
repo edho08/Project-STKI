@@ -1,0 +1,7 @@
+CONTENTS
+· Chapter 15, Representation Learning: Kunal Ghosh. · Chapter 16, Structured Probabilistic Models for Deep Learning: Minh Lê
+and Anton Varfolom. · Chapter 18, Confronting the Partition Function: Sam Bowman. · Chapter 19, Approximate Inference: Yujia Bao. · Chapter 20, Deep Generative Models: Nicolas Chapados, Daniel Galvez,
+Wenming Ma, Fady Medhat, Shakir Mohamed and Grégoire Montavon. · Bibliography: Lukas Michelbacher and Leslie N. Smith. We also want to thank those who allowed us to reproduce images, figures or data from their publications. We indicate their contributions in the figure captions throughout the text. We would like to thank Lu Wang for writing pdf2htmlEX, which we used to make the web version of the book, and for offering support to improve the quality of the resulting HTML. We would like to thank Ian's wife Daniela Flori Goodfellow for patiently supporting Ian during the writing of the book as well as for help with proofreading. We would like to thank the Google Brain team for providing an intellectual environment where Ian could devote a tremendous amount of time to writing this book and receive feedback and guidance from colleagues. We would especially like to thank Ian's former manager, Greg Corrado, and his current manager, Samy Bengio, for their support of this project. Finally, we would like to thank Geoffrey Hinton for encouragement when writing was difficult.
+x
+
+

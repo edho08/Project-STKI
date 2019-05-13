@@ -1,0 +1,43 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+Am1 lgomir=i1thLm(f
+
+8.8 (x(i); ),
+
+y
+
+Newton's (i)).
+
+method
+
+with
+
+objective
+
+J ( )
+
+=
+
+Require: Initial parameter 0
+
+Require: Training set of m examples
+
+whCCCiooolemmmsppptuuuotttpeeepigHHnreegassdssciiireaainnntet::riniHogvnernseom:t1m1Hme2-t1dioiLL((ff((xx((ii));;)),,yy((ii)))) Compute update:  = -H-1 g
+
+Apply update:  =  + 
+
+end while
+
+For surfaces that are not quadratic, as long as the Hessian remains positive definite, Newton's method can be applied iteratively. This implies a two-step iterative procedure. First, update or compute the inverse Hessian (i.e. by updating the quadratic approximation). Second, update the parameters according to equation 8.27.
+In section 8.2.3, we discussed how Newton's method is appropriate only when the Hessian is positive definite. In deep learning, the surface of the objective function is typically non-convex with many features, such as saddle points, that are problematic for Newton's method. If the eigenvalues of the Hessian are not all positive, for example, near a saddle point, then Newton's method can actually cause updates to move in the wrong direction. This situation can be avoided by regularizing the Hessian. Common regularization strategies include adding a constant, , along the diagonal of the Hessian. The regularized update becomes
+
+ = 0 - [H (f (0)) + I]-1  f (0).
+
+(8.28)
+
+This regularization strategy is used in approximations to Newton's method, such as the Levenberg­Marquardt algorithm (Levenberg, 1944; Marquardt, 1963), and works fairly well as long as the negative eigenvalues of the Hessian are still relatively close to zero. In cases where there are more extreme directions of curvature, the value of  would have to be sufficiently large to offset the negative eigenvalues. However, as  increases in size, the Hessian becomes dominated by the I diagonal and the direction chosen by Newton's method converges to the standard gradient divided by . When strong negative curvature is present,  may need to be so large that Newton's method would make smaller steps than gradient descent with a properly chosen learning rate.
+Beyond the challenges created by certain features of the objective function,
+
+312
+
+

@@ -1,0 +1,81 @@
+CHAPTER 19. APPROXIMATE INFERENCE
+
+h1
+
+h2
+
+h3
+
+h4
+
+h1
+
+h3
+
+v1
+
+v2
+
+v3
+
+h2
+
+h4
+
+Figure 19.2: The graph structure of a binary sparse coding model with four hidden units. (Left)The graph structure of p(h, v). Note that the edges are directed, and that every two hidden units are co-parents of every visible unit. (Right)The graph structure of p(h | v). In order to account for the active paths between co-parents, the posterior distribution needs an edge between all of the hidden units.
+
+=
+
+
+h
+
+p(v
+
+|
+
+h)
+
+ b
+
+p(v)
+
+i
+
+p(h)
+
+=
+
+ p(h
+
+|
+
+v)
+
+ bi
+
+p(h)
+
+p(h)
+
+h
+
+ =Ehp(h|v) b i log p(h).
+
+(19.25) (19.26) (19.27)
+
+This requires computing expectations with respect to p(h | v). Unfortunately, p(h | v) is a complicated distribution. See figure 19.2 for the graph structure of p(h, v) and p(h | v ). The posterior distribution corresponds to the complete graph over the hidden units, so variable elimination algorithms do not help us to compute the required expectations any faster than brute force.
+We can resolve this difficulty by using variational inference and variational learning instead.
+We can make a mean field approximation:
+
+ q(h | v) = q(hi | v).
+i
+
+(19.28)
+
+The latent variables of the binary sparse coding model are binary, so to represent
+a factorial q we simply need to model m Bernoulli distributions q(hi | v). A natural way to represent the means of the Bernoulli distributions is with a vector ^h of probabilities, with q(hi = 1 | v) = ^hi . We impose a restriction that ^hi is never equal to 0 or to 1, in order to avoid errors when computing, for example, log ^hi.
+We will see that the variational inference equations never assign 0 or 1 to ^hi
+
+641
+
+

@@ -1,0 +1,79 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+a good cost function for nearly any kind of output layer.
+
+In general, if we define a conditional distribution p(y | x; ), the principle of maximum likelihood suggests we use - log p(y | x; ) as our cost function.
+
+In general, we can think of the neural network as representing a function f(x; ). The outputs of this function are not direct predictions of the value y. Instead, f (x;) =  provides the parameters for a distribution over y. Our loss function can then be interpreted as - log p(y; (x)).
+
+For example, we may wish to learn the variance of a conditional Gaussian for y, given x. In the simple case, where the variance 2 is a constant, there is a closed
+
+form expression because the maximum likelihood estimator of variance is simply the
+
+empirical mean of the squared difference between observations y and their expected
+
+value. A computationally more expensive approach that does not require writing
+
+special-case code is to simply include the variance as one of the properties of the
+
+distribution p(y | x) that is controlled by  = f(x; ). The negative log-likelihood
+
+- log p(y;  (x)) will then provide a cost function with the appropriate terms
+
+necessary to make our optimization procedure incrementally learn the variance. In
+
+the simple case where the standard deviation does not depend on the input, we
+
+can make a new parameter in the network that is copied directly into  . This new
+
+parameter might be  itself or could be a parameter v representing 2 or it could
+
+be
+
+a
+
+parameter
+
+
+
+representing
+
+1 2
+
+,
+
+depending
+
+on
+
+how
+
+we
+
+choose
+
+to
+
+parametrize
+
+the distribution. We may wish our model to predict a different amount of variance
+
+in y for different values of x. This is called a heteroscedastic model. In the
+
+heteroscedastic case, we simply make the specification of the variance be one of
+
+the values output by f(x; ). A typical way to do this is to formulate the Gaussian
+
+distribution using precision, rather than variance, as described in equation 3.22.
+
+In the multivariate case it is most common to use a diagonal precision matrix
+
+diag().
+
+(6.34)
+
+This formulation works well with gradient descent because the formula for the log-likelihood of the Gaussian distribution parametrized by  involves only multiplication by i and addition of log i . The gradient of multiplication, addition, and logarithm operations is well-behaved. By comparison, if we parametrized the output in terms of variance, we would need to use division. The division function becomes arbitrarily steep near zero. While large gradients can help learning, arbitrarily large gradients usually result in instability. If we parametrized the output in terms of standard deviation, the log-likelihood would still involve division, and would also involve squaring. The gradient through the squaring operation can vanish near zero, making it difficult to learn parameters that are squared.
+
+188
+
+

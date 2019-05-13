@@ -1,0 +1,22 @@
+CHAPTER 19. APPROXIMATE INFERENCE
+
+respect to L. Using the same approach on a different model could yield a different functional form of q.
+This was of course, just a small case constructed for demonstration purposes. For examples of real applications of variational learning with continuous variables in the context of deep learning, see Goodfellow et al. (2013d).
+
+19.4.4 Interactions between Learning and Inference
+
+Using approximate inference as part of a learning algorithm affects the learning process, and this in turn affects the accuracy of the inference algorithm.
+Specifically, the training algorithm tends to adapt the model in a way that makes the approximating assumptions underlying the approximate inference algorithm become more true. When training the parameters, variational learning increases
+
+Ehq log p(v, h).
+
+(19.68)
+
+For a specific v, this increases p(h | v) for values of h that have high probability under q(h | v) and decreases p(h | v) for values of h that have low probability under q(h | v).
+This behavior causes our approximating assumptions to become self-fulfilling prophecies. If we train the model with a unimodal approximate posterior, we will obtain a model with a true posterior that is far closer to unimodal than we would have obtained by training the model with exact inference.
+Computing the true amount of harm imposed on a model by a variational approximation is thus very difficult. There exist several methods for estimating log p(v). We often estimate log p(v; ) after training the model, and find that the gap with L(v, , q) is small. From this, we can conclude that our variational approximation is accurate for the specific value of  that we obtained from the learning process. We should not conclude that our variational approximation is accurate in general or that the variational approximation did little harm to the
+learning process. To measure the true amount of harm induced by the variational approximation, we would need to know   = max log p( v; ). It is possible for L(v, , q )  log p(v; ) and log p (v; )  log p(v; ) to hold simultaneously. If maxq L(v,  , q)  log p(v ;), because  induces too complicated of a posterior distribution for our q family to capture, then the learning process will never approach . Such a problem is very difficult to detect, because we can only know for sure that it happened if we have a superior learning algorithm that can find  for comparison.
+
+650
+
+

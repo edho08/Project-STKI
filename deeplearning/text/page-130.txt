@@ -1,0 +1,23 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+Underfitting zone Overfitting zone
+
+Training error Generalization error
+
+Error
+
+Generalization gap
+
+0
+
+Optimal Capacity
+
+Capacity
+
+Figure 5.3: Typical relationship between capacity and error. Training and test error behave differently. At the left end of the graph, training error and generalization error are both high. This is the underfitting regime. As we increase capacity, training error decreases, but the gap between training and generalization error increases. Eventually, the size of this gap outweighs the decrease in training error, and we enter the overfitting regime, where capacity is too large, above the optimal capacity.
+
+the concept of non-parametric models. So far, we have seen only parametric models, such as linear regression. Parametric models learn a function described by a parameter vector whose size is finite and fixed before any data is observed. Non-parametric models have no such limitation.
+Sometimes, non-parametric models are just theoretical abstractions (such as an algorithm that searches over all possible probability distributions) that cannot be implemented in practice. However, we can also design practical non-parametric models by making their complexity a function of the training set size. One example of such an algorithm is nearest neighbor regression. Unlike linear regression, which has a fixed-length vector of weights, the nearest neighbor regression model simply stores the X and y from the training set. When asked to classify a test point x , the model looks up the nearest entry in the training set and returns the associated regression target. In other words, y^ = yi where i = arg min ||Xi,: - x||22. The algorithm can also be generalized to distance metrics other than the L2 norm, such as learned distance metrics (Goldberger et al., 2005). If the algorithm is allowed to break ties by averaging the yi values for all Xi,: that are tied for nearest, then this algorithm is able to achieve the minimum possible training error (which might be greater than zero, if two identical inputs are associated with different outputs) on any regression dataset.
+Finally, we can also create a non-parametric learning algorithm by wrapping a
+115
+
+

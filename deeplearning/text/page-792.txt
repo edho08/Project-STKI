@@ -1,0 +1,10 @@
+BIBLIOGRAPHY
+Yosinski, J., Clune, J., Bengio, Y., and Lipson, H. (2014). How transferable are features in deep neural networks? In NIPS'2014 . 325, 536
+Younes, L. (1998). On the convergence of Markovian stochastic algorithms with rapidly decreasing ergodicity rates. In Stochastics and Stochastics Models, pages 177­228. 612
+Yu, D., Wang, S., and Deng, L. (2010). Sequential labeling using deep-structured conditional random fields. IEEE Journal of Selected Topics in Signal Processing. 323
+Zaremba, W. and Sutskever, I. (2014). Learning to execute. arXiv 1410.4615. 329 Zaremba, W. and Sutskever, I. (2015). Reinforcement learning neural Turing machines.
+arXiv:1505.00521 . 419 Zaslavsky, T. (1975). Facing Up to Arrangements: Face-Count Formulas for Partitions
+of Space by Hyperplanes. Number no. 154 in Memoirs of the American Mathematical Society. American Mathematical Society. 550 Zeiler, M. D. and Fergus, R. (2014). Visualizing and understanding convolutional networks. In ECCV'14 . 6 Zeiler, M. D., Ranzato, M., Monga, R., Mao, M., Yang, K., Le, Q., Nguyen, P., Senior, A., Vanhoucke, V., Dean, J., and Hinton, G. E. (2013). On rectified linear units for speech processing. In ICASSP 2013 . 460 Zhou, B., Khosla, A., Lapedriza, A., Oliva, A., and Torralba, A. (2015). Object detectors emerge in deep scene CNNs. ICLR'2015, arXiv:1412.6856. 551 Zhou, J. and Troyanskaya, O. G. (2014). Deep supervised and convolutional generative stochastic network for protein secondary structure prediction. In ICML'2014 . 715 Zhou, Y. and Chellappa, R. (1988). Computation of optical flow using a neural network. In Neural Networks, 1988., IEEE International Conference on, pages 71­78. IEEE. 339 Zöhrer, M. and Pernkopf, F. (2014). General stochastic networks for classification. In NIPS'2014 . 716
+777
+
+

@@ -1,0 +1,42 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+0
+
+00
+
+01
+
+1 10
+11
+
+010
+
+011
+
+110
+
+111
+
+1110
+
+1111
+
+010
+
+00
+
+01
+
+0 011
+
+1
+
+110
+
+11 10
+1110 111 1111
+
+Figure 5.7: Diagrams describing how a decision tree works. (Top)Each node of the tree chooses to send the input example to the child node on the left (0) or or the child node on the right (1). Internal nodes are drawn as circles and leaf nodes as squares. Each node is displayed with a binary string identifier corresponding to its position in the tree, obtained by appending a bit to its parent identifier (0=choose left or top, 1=choose right or bottom). (Bottom)The tree divides space into regions. The 2D plane shows how a decision tree might divide R2. The nodes of the tree are plotted in this plane, with each internal node drawn along the dividing line it uses to categorize examples, and leaf nodes drawn in the center of the region of examples they receive. The result is a piecewise-constant function, with one piece per leaf. Each leaf requires at least one training example to define, so it is not possible for the decision tree to learn a function that has more local maxima than the number of training examples.
+145
+
+

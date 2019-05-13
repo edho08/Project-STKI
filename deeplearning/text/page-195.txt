@@ -1,0 +1,32 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+can control the density of the output distribution (for example, by learning the variance parameter of a Gaussian output distribution) then it becomes possible to assign extremely high density to the correct training set outputs, resulting in cross-entropy approaching negative infinity. Regularization techniques described in chapter 7 provide several different ways of modifying the learning problem so that the model cannot reap unlimited reward in this way.
+
+6.2.1.2 Learning Conditional Statistics
+
+Instead of learning a full probability distribution p(y | x; ) we often want to learn just one conditional statistic of y given x.
+
+For example, we may have a predictor f(x; ) that we wish to predict the mean of y.
+
+If we use a sufficiently powerful neural network, we can think of the neural network as being able to represent any function f from a wide class of functions, with this class being limited only by features such as continuity and boundedness rather than by having a specific parametric form. From this point of view, we can view the cost function as being a functional rather than just a function. A functional is a mapping from functions to real numbers. We can thus think of learning as choosing a function rather than merely choosing a set of parameters. We can design our cost functional to have its minimum occur at some specific function we desire. For example, we can design the cost functional to have its minimum lie on the function that maps x to the expected value of y given x. Solving an optimization problem with respect to a function requires a mathematical tool called calculus of variations, described in section 19.4.2. It is not necessary to understand calculus of variations to understand the content of this chapter. At the moment, it is only necessary to understand that calculus of variations may be used to derive the following two results.
+
+Our first result derived using calculus of variations is that solving the optimiza-
+
+tion problem
+
+f  = arg min Ex,ypdata ||y - f (x)||2
+f
+
+(6.14)
+
+yields
+
+f (x) = Eypdata(y|x) [y],
+
+(6.15)
+
+so long as this function lies within the class we optimize over. In other words, if we could train on infinitely many samples from the true data generating distribution, minimizing the mean squared error cost function gives a function that predicts the mean of y for each value of x.
+
+180
+
+

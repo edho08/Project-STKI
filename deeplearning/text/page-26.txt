@@ -1,0 +1,14 @@
+CHAPTER 1. INTRODUCTION
+many software disciplines including computer vision, speech and audio processing, natural language processing, robotics, bioinformatics and chemistry, video games, search engines, online advertising and finance.
+This book has been organized into three parts in order to best accommodate a variety of readers. Part I introduces basic mathematical tools and machine learning concepts. Part II describes the most established deep learning algorithms that are essentially solved technologies. Part III describes more speculative ideas that are widely believed to be important for future research in deep learning.
+Readers should feel free to skip parts that are not relevant given their interests or background. Readers familiar with linear algebra, probability, and fundamental machine learning concepts can skip part I, for example, while readers who just want to implement a working system need not read beyond part II. To help choose which chapters to read, figure 1.6 provides a flowchart showing the high-level organization of the book.
+We do assume that all readers come from a computer science background. We assume familiarity with programming, a basic understanding of computational performance issues, complexity theory, introductory level calculus and some of the terminology of graph theory.
+1.2 Historical Trends in Deep Learning
+It is easiest to understand deep learning with some historical context. Rather than providing a detailed history of deep learning, we identify a few key trends:
+· Deep learning has had a long and rich history, but has gone by many names reflecting different philosophical viewpoints, and has waxed and waned in popularity.
+· Deep learning has become more useful as the amount of available training data has increased.
+· Deep learning models have grown in size over time as computer infrastructure (both hardware and software) for deep learning has improved.
+· Deep learning has solved increasingly complicated applications with increasing accuracy over time.
+11
+
+

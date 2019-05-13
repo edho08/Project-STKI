@@ -1,0 +1,23 @@
+CHAPTER 3. PROBABILITY AND INFORMATION THEORY
+
+The mixture model is one simple strategy for combining probability distributions to create a richer distribution. In chapter 16, we explore the art of building complex probability distributions from simple ones in more detail.
+The mixture model allows us to briefly glimpse a concept that will be of paramount importance later--the latent variable. A latent variable is a random variable that we cannot observe directly. The component identity variable c of the mixture model provides an example. Latent variables may be related to x through the joint distribution, in this case, P (x, c) = P (x | c)P (c). The distribution P (c) over the latent variable and the distribution P(x | c) relating the latent variables to the visible variables determines the shape of the distribution P (x) even though it is possible to describe P (x) without reference to the latent variable. Latent variables are discussed further in section 16.5.
+A very powerful and common type of mixture model is the Gaussian mixture model, in which the components p(x | c = i) are Gaussians. Each component has a separately parametrized mean µ(i) and covariance (i). Some mixtures can have more constraints. For example, the covariances could be shared across components via the constraint (i) = , i. As with a single Gaussian distribution, the mixture of Gaussians might constrain the covariance matrix for each component to be diagonal or isotropic.
+In addition to the means and covariances, the parameters of a Gaussian mixture specify the prior probability i = P(c = i) given to each component i. The word "prior" indicates that it expresses the model's beliefs about c before it has observed x. By comparison, P(c | x) is a posterior probability, because it is computed after observation of x. A Gaussian mixture model is a universal approximator of densities, in the sense that any smooth density can be approximated with any specific, non-zero amount of error by a Gaussian mixture model with enough components.
+Figure 3.2 shows samples from a Gaussian mixture model.
+
+3.10 Useful Properties of Common Functions
+
+Certain functions arise often while working with probability distributions, especially the probability distributions used in deep learning models.
+
+One of these functions is the logistic sigmoid:
+
+(x) = 1 + ex1p(-x).
+
+(3.30)
+
+The logistic sigmoid is commonly used to produce the  parameter of a Bernoulli
+
+67
+
+

@@ -1,0 +1,5 @@
+CHAPTER 16. STRUCTURED PROBABILISTIC MODELS FOR DEEP LEARNING
+Figure 16.1: Probabilistic modeling of natural images. (Top)Example 32 × 32 pixel color images from the CIFAR-10 dataset (Krizhevsky and Hinton, 2009). (Bottom)Samples drawn from a structured probabilistic model trained on this dataset. Each sample appears at the same position in the grid as the training example that is closest to it in Euclidean space. This comparison allows us to see that the model is truly synthesizing new images, rather than memorizing the training data. Contrast of both sets of images has been adjusted for display. Figure reproduced with permission from Courville et al. (2011).
+561
+
+

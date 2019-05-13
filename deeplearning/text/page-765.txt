@@ -1,0 +1,18 @@
+BIBLIOGRAPHY
+Krizhevsky, A. (2010). Convolutional deep belief networks on CIFAR-10. Technical report, University of Toronto. Unpublished Manuscript: http://www.cs.utoronto.ca/ kriz/convcifar10-aug2010.pdf. 446
+Krizhevsky, A. and Hinton, G. (2009). Learning multiple layers of features from tiny images. Technical report, University of Toronto. 21, 561
+Krizhevsky, A. and Hinton, G. E. (2011). Using very deep autoencoders for content-based image retrieval. In ESANN . 525
+Krizhevsky, A., Sutskever, I., and Hinton, G. (2012). ImageNet classification with deep convolutional neural networks. In NIPS'2012 . 23, 24, 27, 100, 201, 371, 454, 458
+Krueger, K. A. and Dayan, P. (2009). Flexible shaping: how learning in small steps helps. Cognition , 110, 380н394. 328
+Kuhn, H. W. and Tucker, A. W. (1951). Nonlinear programming. In Proceedings of the Second Berkeley Symposium on Mathematical Statistics and Probability , pages 481н492, Berkeley, Calif. University of California Press. 95
+Kumar, A., Irsoy, O., Su, J., Bradbury, J., English, R., Pierce, B., Ondruska, P., Iyyer, M., Gulrajani, I., and Socher, R. (2015). Ask me anything: Dynamic memory networks for natural language processing. arXiv:1506.07285 . 418, 485
+Kumar, M. P., Packer, B., and Koller, D. (2010). Self-paced learning for latent variable models. In NIPS'2010 . 328
+Lang, K. J. and Hinton, G. E. (1988). The development of the time-delay neural network architecture for speech recognition. Technical Report CMU-CS-88-152, Carnegie-Mellon University. 367, 374, 407
+Lang, K. J., Waibel, A. H., and Hinton, G. E. (1990). A time-delay neural network architecture for isolated word recognition. Neural networks, 3(1), 23н43. 374
+Langford, J. and Zhang, T. (2008). The epoch-greedy algorithm for contextual multi-armed bandits. In NIPS'2008 , pages 1096нн1103. 480
+Lappalainen, H., Giannakopoulos, X., Honkela, A., and Karhunen, J. (2000). Nonlinear independent component analysis using ensemble learning: Experiments and discussion. In Proc. ICA. Citeseer. 493
+Larochelle, H. and Bengio, Y. (2008). Classification using discriminative restricted Boltzmann machines. In ICML'2008 . 244, 255, 530, 686, 716
+Larochelle, H. and Hinton, G. E. (2010). Learning to combine foveal glimpses with a third-order Boltzmann machine. In Advances in Neural Information Processing Systems 23 , pages 1243н1251. 367
+750
+
+

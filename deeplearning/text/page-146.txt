@@ -1,0 +1,32 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+value of the corresponding parameters. More formally, we would like that
+
+plimm ^m = .
+
+(5.55)
+
+The symbol plim indicates convergence in probability, meaning that for any  > 0, P (|^m - | > )  0 as m  . The condition described by equation 5.55 is
+known as consistency. It is sometimes referred to as weak consistency, with strong consistency referring to the almost sure convergence of ^ to . Almost sure convergence of a sequence of random variables x (1), x(2), . . . to a value x occurs when p(limm x(m) = x) = 1.
+Consistency ensures that the bias induced by the estimator diminishes as the
+number of data examples grows. However, the reverse is not true--asymptotic
+unbiasedness does not imply consistency. For example, consider estimating the mean parameter µ of a normal distribution N (x; µ, 2), with a dataset consisting of m samples: {x(1), . . . , x(m)}. We could use the first sample x(1) of the dataset as an unbiased estimator: ^ = x(1). In that case, E(^m) =  so the estimator
+is unbiased no matter how many data points are seen. This, of course, implies
+that the estimate is asymptotically unbiased. However, this is not a consistent estimator as it is not the case that ^m   as m  .
+
+5.5 Maximum Likelihood Estimation
+
+Previously, we have seen some definitions of common estimators and analyzed their properties. But where did these estimators come from? Rather than guessing that some function might make a good estimator and then analyzing its bias and variance, we would like to have some principle from which we can derive specific functions that are good estimators for different models.
+The most common such principle is the maximum likelihood principle. Consider a set of m examples X = {x(1), . . . , x (m)} drawn independently from the true but unknown data generating distribution pdata(x).
+Let pmodel(x; ) be a parametric family of probability distributions over the same space indexed by . In other words, pmodel(x; ) maps any configuration x to a real number estimating the true probability pdata(x).
+The maximum likelihood estimator for  is then defined as
+
+ML = arg max pmodel(X; )
+
+= arg max  m pmodel(x(i); )
+ i=1
+131
+
+(5.56) (5.57)
+
+

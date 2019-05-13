@@ -1,0 +1,63 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+Algorithm 6.2 Simplified version of the back-propagation algorithm for computing the derivatives of u(n) with respect to the variables in the graph. This example is
+
+intended to further understanding by showing a simplified case where all variables are scalars, and we wish to compute the derivatives with respect to u(1), . . . , u(ni).
+
+This simplified version computes the derivatives of all nodes in the graph. The
+
+computational cost of this algorithm is proportional to the number of edges in
+
+the graph, assuming that the partial derivative associated with each edge requires
+
+a constant time. This is of the same order as the number of computations for
+
+the
+
+forward
+
+propagation.
+
+Each
+
+u(i) u(j)
+
+is
+
+a
+
+function
+
+of
+
+the
+
+parents
+
+u(j)
+
+of
+
+u (i),
+
+thus
+
+linking the nodes of the forward graph to those added for the back-propagation
+
+graph.
+
+Run forward propagation (algorithm 6.1 for this example) to obtain the activa-
+tions of the network
+Initialize grad_table, a data structure that will store the derivatives that have been computed. The entry grad_table[u(i) ] will store the computed value of . u(n)
+u(i)
+grad_table[u(n)]  1
+forTgrhjae=dn_entxa-tbl1linede[uocw(oj)nm] tpout1esdi:ojuuP((nja))(u=(i)) gir:jadP_a(tua(ib) )leuu[u((ni())i)]uu((uuji())(ji))using stored values: end for return {grad_table[u(i)] | i = 1, . . . , ni}
+
+Back-propagation thus avoids the exponential explosion in repeated subexpressions. However, other algorithms may be able to avoid more subexpressions by performing simplifications on the computational graph, or may be able to conserve memory by recomputing rather than storing some subexpressions. We will revisit these ideas after describing the back-propagation algorithm itself.
+6.5.4 Back-Propagation Computation in Fully-Connected MLP
+To clarify the above definition of the back-propagation computation, let us consider the specific graph associated with a fully-connected multi-layer MLP.
+Algorithm 6.3 first shows the forward propagation, which maps parameters to the supervised loss L(y^, y) associated with a single (input,target) training example (x, y), with ^y the output of the neural network when x is provided in input.
+Algorithm 6.4 then shows the corresponding computation to be done for
+210
+
+

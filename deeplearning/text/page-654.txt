@@ -1,0 +1,39 @@
+CHAPTER 19. APPROXIMATE INFERENCE
+
+In this sense, we are fitting q to p . However, we are doing so with the opposite direction of the KL divergence than we are used to using for fitting an approximation. When we use maximum likelihood learning to fit a model to data, we minimize DKL(pdatapmodel). As illustrated in figure 3.6, this means that maximum likelihood encourages the model to have high probability everywhere that the data has high probability, while our optimization-based inference procedure encourages q to have low probability everywhere the true posterior has low probability. Both directions of the KL divergence can have desirable and undesirable properties. The
+choice of which to use depends on which properties are the highest priority for each application. In the case of the inference optimization problem, we choose to use DKL(q(h | v)p(h | v)) for computational reasons. Specifically, computing DKL(q(h | v) p(h | v )) involves evaluating expectations with respect to q, so by designing q to be simple, we can simplify the required expectations. The opposite direction of the KL divergence would require computing expectations with respect to the true posterior. Because the form of the true posterior is determined by the choice of model, we cannot design a reduced-cost approach to computing DKL(p(h | v)q(h | v)) exactly.
+
+19.4.1 Discrete Latent Variables
+
+Variational inference with discrete latent variables is relatively straightforward.
+We define a distribution q, typically one where each factor of q is just defined
+by a lookup table over discrete states. In the simplest case, h is binary and we
+make the mean field assumption that q factorizes over each individual hi. In this case we can parametrize q with a vector h^ whose entries are probabilities. Then q(hi = 1 | v) = ^hi.
+
+After determining how to represent q , we simply optimize its parameters. In the case of discrete latent variables, this is just a standard optimization problem. In principle the selection of q could be done with any optimization algorithm, such as gradient descent.
+
+Because this optimization must occur in the inner loop of a learning algorithm,
+
+it must be very fast. To achieve this speed, we typically use special optimization
+
+algorithms that are designed to solve comparatively small and simple problems in
+
+very few iterations. A popular choice is to iterate fixed point equations, in other
+
+words, to solve
+
+ ^hi
+
+L
+
+=
+
+0
+
+(19.18)
+
+for ^hi . We repeatedly update different elements of h^ until we satisfy a convergence
+
+639
+
+

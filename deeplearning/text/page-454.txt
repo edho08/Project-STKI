@@ -1,0 +1,97 @@
+CHAPTER 11. PRACTICAL METHODOLOGY
+
+is to compare the derivatives computed by your implementation of automatic differentiation to the derivatives computed by a finite differences. Because
+
+f (x)
+
+=
+
+lim
+0
+
+f (x
+
++
+
+) 
+
+-
+
+f (x) ,
+
+(11.5)
+
+we can approximate the derivative by using a small, finite :
+
+f  (x)
+
+
+
+f (x
+
++
+
+) - 
+
+f (x) .
+
+(11.6)
+
+We can improve the accuracy of the approximation by using the centered differ-
+
+ence:
+
+f (x)
+
+
+
+f (x +
+
+12) - 
+
+f (x -
+
+1 2
+
+)
+
+.
+
+(11.7)
+
+The perturbation size  must chosen to be large enough to ensure that the pertur-
+
+bation is not rounded down too much by finite-precision numerical computations.
+
+Usually, we will want to test the gradient or Jacobian of a vector-valued function g : Rm  Rn. Unfortunately, finite differencing only allows us to take a single derivative at a time. We can either run finite differencing mn times to evaluate all
+of the partial derivatives of g, or we can apply the test to a new function that uses
+random projections at both the input and output of g. For example, we can apply our test of the implementation of the derivatives to f(x) where f (x) = uT g(vx), where u and v are randomly chosen vectors. Computing f(x) correctly requires
+being able to back-propagate through g correctly, yet is efficient to do with finite
+differences because f has only a single input and a single output. It is usually
+a good idea to repeat this test for more than one value of u and v to reduce
+the chance that the test overlooks mistakes that are orthogonal to the random
+projection.
+
+If one has access to numerical computation on complex numbers, then there is a very efficient way to numerically estimate the gradient by using complex numbers as input to the function (Squire and Trapp, 1998). The method is based on the observation that
+
+f (x + i) = f (x) + if(x) + O(2)
+
+(11.8)
+
+real(f (x + i)) = f (x) + O(2), imag(f (x + i) ) = f (x) + O(2), 
+
+(11.9)
+
+
+
+where i = -1. Unlike in the real-valued case above, there is no cancellation effect
+
+due to taking the difference between the value of f at different points. This allows
+
+the use of tiny values of  like  = 10-150, which make the O(2) error insignificant
+
+for all practical purposes.
+
+439
+
+

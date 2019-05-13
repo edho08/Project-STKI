@@ -1,0 +1,63 @@
+CHAPTER 2. LINEAR ALGEBRA
+
+applications, it is important to discriminate between elements that are exactly
+
+zero and elements that are small but nonzero. In these cases, we turn to a function
+
+that grows at the same rate in all locations, but retains mathematical simplicity: the L1 norm. The L1 norm may be simplified to
+
+ ||x||1 = |xi |.
+
+(2.31)
+
+i
+
+The L1 norm is commonly used in machine learning when the difference between
+zero and nonzero elements is very important. Every time an element of x moves away from 0 by , the L1 norm increases by .
+
+We sometimes measure the size of the vector by counting its number of nonzero elements. Some authors refer to this function as the "L0 norm," but this is incorrect terminology. The number of non-zero entries in a vector is not a norm, because scaling the vector by  does not change the number of nonzero entries. The L1 norm is often used as a substitute for the number of nonzero entries.
+One other norm that commonly arises in machine learning is the L norm, also known as the max norm. This norm simplifies to the absolute value of the element with the largest magnitude in the vector,
+
+||x||
+
+=
+
+max
+i
+
+|xi|.
+
+(2.32)
+
+Sometimes we may also wish to measure the size of a matrix. In the context
+
+of deep learning, the most common way to do this is with the otherwise obscure
+
+Frobenius norm:
+
+
+
+||A|| F =
+
+A 2i,j,
+
+(2.33)
+
+i,j
+
+which is analogous to the L2 norm of a vector.
+
+The dot product of two vectors can be rewritten in terms of norms. Specifically,
+
+xy = ||x||2||y|| 2 cos 
+
+(2.34)
+
+where  is the angle between x and y.
+
+2.6 Special Kinds of Matrices and Vectors
+Some special kinds of matrices and vectors are particularly useful. Diagonal matrices consist mostly of zeros and have non-zero entries only along
+the main diagonal. Formally, a matrix D is diagonal if and only if Di,j = 0 for
+40
+
+

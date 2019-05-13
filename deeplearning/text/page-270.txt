@@ -1,0 +1,117 @@
+CHAPTER 7. REGULARIZATION FOR DEEP LEARNING
+
+ -14 
+
+
+
+1 19 2
+
+
+
+23
+
+3
+
+=
+
+
+
+4 -1 3
+
+-5
+
+-1 2 5 1 4
+
+2 -3 4 2 -2
+
+-5 -1 2 -3 2
+
+4 1 -3 0 -5
+
+1
+
+3 -2 -3
+
+
+
+-1
+
+0
+
+
+
+2 0 0 -3
+
+
+
+0
+
+y  Rm
+
+B  Rm×n
+
+h  Rn
+
+(7.47)
+
+In the first expression, we have an example of a sparsely parametrized linear regression model. In the second, we have linear regression with a sparse representation h of the data x. That is, h is a function of x that, in some sense, represents the information present in x, but does so with a sparse vector.
+
+Representational regularization is accomplished by the same sorts of mechanisms that we have used in parameter regularization.
+
+Norm penalty regularization of representations is performed by adding to the
+loss function J a norm penalty on the representation. This penalty is denoted (h). As before, we denote the regularized loss function by J~:
+
+J~(; X, y) = J(; X, y) + (h)
+
+(7.48)
+
+where   [0, ) weights the relative contribution of the norm penalty term, with larger values of  corresponding to more regularization.
+
+Just as an L1 penalty on the parameters induces parameter sparsity, an L1
+
+penalty (h) =
+
+|o|nh|t|1he=elemi |ehnit|.s
+
+of Of
+
+the representation induces representational sparsity: course, the L1 penalty is only one choice of penalty
+
+that can result in a sparse representation. Others include the penalty derived from
+
+a Student-t prior on the representation (Olshausen and Field, 1996; Bergstra, 2011)
+
+and KL divergence penalties (Larochelle and Bengio, 2008) that are especially
+
+useful for representations with elements constrained to lie on the unit interval.
+
+Lee et based
+
+al. on
+
+(2008) and regularizing
+
+Goodfellow the average
+
+eatctailv.a(t2io0n09a)crboostshsepvreorvaidl eexeaxmamplpesle,sm1ofstirha(tie)g, iteos
+
+be near some target value, such as a vector with .01 for each entry.
+
+Other approaches obtain representational sparsity with a hard constraint on
+
+the activation values. For example, orthogonal matching pursuit (Pati et al.,
+
+1993) encodes an input x with the representation h that solves the constrained
+
+optimization problem
+
+arg min x - W h2 ,
+h,h0 <k
+
+(7.49)
+
+where h0 is the number of non-zero entries of h . This problem can be solved efficiently when W is constrained to be orthogonal. This method is often called
+
+255
+
+

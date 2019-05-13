@@ -1,0 +1,60 @@
+CHAPTER 2. LINEAR ALGEBRA
+
+matrix products and the trace operator. For example, the trace operator provides
+
+an alternative way of writing the Frobenius norm of a matrix:
+
+ ||A||F = Tr(AA).
+
+(2.49)
+
+Writing an expression in terms of the trace operator opens up opportunities to manipulate the expression using many useful identities. For example, the trace operator is invariant to the transpose operator:
+
+Tr(A) = Tr(A).
+
+(2.50)
+
+The trace of a square matrix composed of many factors is also invariant to moving the last factor into the first position, if the shapes of the corresponding matrices allow the resulting product to be defined:
+
+Tr(ABC) = Tr(CAB) = Tr(BCA)
+
+(2.51)
+
+or more generally,
+
+n Tr(
+
+F
+
+(i))
+
+=
+
+Tr(F
+
+(n)
+
+n-1
+
+F(i) ).
+
+(2.52)
+
+i=1
+
+i=1
+
+This invariance to cyclic permutation holds even if the resulting product has a different shape. For example, for A  Rm×n and B  Rn×m, we have
+
+Tr(AB) = Tr(BA)
+
+(2.53)
+
+even though AB  Rm×m and BA  Rn×n. Another useful fact to keep in mind is that a scalar is its own trace: a = Tr(a).
+
+2.11 The Determinant
+The determinant of a square matrix, denoted det(A ), is a function mapping matrices to real scalars. The determinant is equal to the product of all the eigenvalues of the matrix. The absolute value of the determinant can be thought of as a measure of how much multiplication by the matrix expands or contracts space. If the determinant is 0, then space is contracted completely along at least one dimension, causing it to lose all of its volume. If the determinant is 1, then the transformation preserves volume.
+
+47
+
+

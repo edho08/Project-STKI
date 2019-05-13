@@ -1,0 +1,76 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+example, suppose we have a deep neural network that has only one unit per layer
+
+and does not use an activation function at each hidden layer: y^ = xw1 w2w3 . . . wl.
+
+Here, wi provides the weight used by layer i. The output of layer i is hi = hi-1wi . The output y^ is a linear function of the input x, but a nonlinear function of the
+
+weights wi. Suppose our cost function has put a gradient of 1 on y^, so we wish to
+
+decrease y^ slightly. The back-propagation algorithm can then compute a gradient
+
+g = wy^. Consider what happens when we make an update w  w - g. The
+
+first-order Taylor series approximation of y^ predicts that the value of y^ will decrease
+
+by gg. If we wanted to decrease y^ by .1, this first-order information available in
+
+the gradient suggests we could set the learning rate  to
+
+.1
+
+
+.
+
+However, the actual
+
+gg
+
+update will include second-order and third-order effects, on up to effects of order l.
+
+The new value of y^ is given by
+
+x(w1 - g1 )(w2 - g 2) . . . (wl - gl).
+
+(8.34)
+
+An example of one This term might be
+
+sneecgolnigdi-bolrediefrtelir=m3wairiissinsgmfarlol,morthmisiguhptdbaeteexispon2gen1 tgi2allyli=la3rwgie.
+
+if the weights on layers 3 through l are greater than 1. This makes it very hard
+
+to choose an appropriate learning rate, because the effects of an update to the
+
+parameters for one layer depends so strongly on all of the other layers. Second-order
+
+optimization algorithms address this issue by computing an update that takes these
+
+second-order interactions into account, but we can see that in very deep networks,
+
+even higher-order interactions can be significant. Even second-order optimization
+
+algorithms are expensive and usually require numerous approximations that prevent
+
+them from truly accounting for all significant second-order interactions. Building
+
+an n-th order optimization algorithm for n > 2 thus seems hopeless. What can we
+
+do instead?
+
+Batch normalization provides an elegant way of reparametrizing almost any deep network. The reparametrization significantly reduces the problem of coordinating updates across many layers. Batch normalization can be applied to any input or hidden layer in a network. Let H be a minibatch of activations of the layer to normalize, arranged as a design matrix, with the activations for each example appearing in a row of the matrix. To normalize H, we replace it with
+
+H
+
+=
+
+H-µ ,
+
+(8.35)
+
+where µ is a vector containing the mean of each unit and  is a vector containing the standard deviation of each unit. The arithmetic here is based on broadcasting the vector µ and the vector  to be applied to every row of the matrix H . Within each row, the arithmetic is element-wise, so Hi,j is normalized by subtracting µj
+
+318
+
+

@@ -1,0 +1,156 @@
+CHAPTER 18. CONFRONTING THE PARTITION FUNCTION
+
+­
+
+Sample
+
+x
+
+(k) 2
+
+ T1 (x(k2)
+
+| x(k1) )
+
+­ ...
+
+­
+
+Sample
+
+x
+
+(k) n-1
+
+
+
+T
+
+n-2(x
+
+(k) n-1
+
+| x (kn)-2)
+
+­
+
+Sample
+
+x
+
+(k) n
+
+
+
+Tn-1 (x(kn)
+
+|
+
+x
+
+(k) n-1
+
+)
+
+· end
+
+For sample k, we can derive the importance weight by chaining together the
+
+importance weights for the jumps between the intermediate distributions given in
+
+equation 18.49:
+
+w (k) =
+
+p~1 (x(k1)) p~0(x (k1))
+
+p~2(x
+
+(k) 2
+
+)
+
+p~1(x
+
+(k) 2
+
+)
+
+.
+
+.
+
+.
+
+p~
+
+p~1 (x(1k) ) n-1(x(kn))
+
+.
+
+(18.52)
+
+To avoid numerical issues such as overflow, it is probably best to compute log w(k) by adding and subtracting log probabilities, rather than computing w(k) by multiplying
+
+and dividing probabilities.
+
+With the sampling procedure thus defined and the importance weights given in equation 18.52, the estimate of the ratio of partition functions is given by:
+
+Z1  1  K w(k)
+
+Z0
+
+K
+k=1
+
+(18.53)
+
+In order to verify that this procedure defines a valid importance sampling scheme, we can show (Neal, 2001) that the AIS procedure corresponds to simple importance sampling on an extended state space with points sampled over the product space [x1, . . . , xn-1, x1]. To do this, we define the distribution over the extended space as:
+
+p~(x1 , . . . , xn-1, x1) =p~1(x1)T~n-1(x n-1 | x 1)T~n-2(xn-2 | xn-1 ) . . . T~1 (x1 | x2 ),
+
+(18.54) (18.55)
+
+where T~a is the reverse of the transition operator defined by Ta (via an application of Bayes' rule):
+
+T~a (x
+
+|
+
+x)
+
+=
+
+pa(x) pa(x)
+
+T
+
+a(x
+
+|
+
+x)
+
+=
+
+p~a (x) p~a (x)
+
+Ta
+
+(x
+
+|
+
+x ).
+
+(18.56)
+
+Plugging the above into the expression for the joint distribution on the extended state space given in equation 18.55, we get:
+
+p~(x1 , . . . , xn-1, x1)
+
+(18.57)
+
+627
+
+

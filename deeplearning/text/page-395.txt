@@ -1,0 +1,64 @@
+CHAPTER 10. SEQUENCE MODELING: RECURRENT AND RECURSIVE NETS
+
+y
+
+y (t-1)
+
+y (t)
+
+y (t+1)
+
+L
+
+L(t-1)
+
+L(t)
+
+L(t+1)
+
+o V W
+h
+U x
+
+o(... )
+
+o(t-1)
+
+o(t)
+
+o(t+1)
+
+W
+
+W
+
+V
+
+W V
+
+W V
+
+Unfold
+
+h(t-1)
+
+h(t)
+
+h(t+1)
+
+h(... )
+
+U x(t-1)
+
+U x(t)
+
+U x(t+1)
+
+Figure 10.4: An RNN whose only recurrence is the feedback connection from the output to the hidden layer. At each time step t, the input is xt, the hidden layer activations are h(t), the outputs are o(t), the targets are y(t) and the loss is L(t). (Left)Circuit diagram. (Right)Unfolded computational graph. Such an RNN is less powerful (can express a smaller set of functions) than those in the family represented by figure 10.3. The RNN
+in figure 10.3 can choose to put any information it wants about the past into its hidden representation h and transmit h to the future. The RNN in this figure is trained to put a specific output value into o, and o is the only information it is allowed to send to the future. There are no direct connections from h going forward. The previous h
+is connected to the present only indirectly, via the predictions it was used to produce. Unless o is very high-dimensional and rich, it will usually lack important information from the past. This makes the RNN in this figure less powerful, but it may be easier to train because each time step can be trained in isolation from the others, allowing greater
+parallelization during training, as described in section 10.2.1.
+
+380
+
+

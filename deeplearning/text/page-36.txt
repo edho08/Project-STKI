@@ -1,0 +1,62 @@
+CHAPTER 1. INTRODUCTION
+
+10 9
+
+Dataset size (number examples)
+
+10 8
+
+Canadian Hansard
+
+WMT Sports-1M
+
+10 7
+
+ImageNet10k
+
+10 6
+
+Public SVHN
+
+10 5
+
+Criminals
+
+ImageNet
+
+ILSVRC 2014
+
+10 4 MNIST CIFAR-10
+10 3
+
+10 2
+
+T vs. G vs. F
+
+Rotated T vs. C
+
+10 1
+
+Iris
+
+10 0 1900
+
+1950
+
+1985 2000 2015
+
+Year
+
+Figure 1.8: Dataset sizes have increased greatly over time. In the early 1900s, statisticians studied datasets using hundreds or thousands of manually compiled measurements (Garson, 1900; Gosset, 1908; Anderson, 1935; Fisher, 1936). In the 1950s through 1980s, the pioneers of biologically inspired machine learning often worked with small, synthetic datasets, such
+
+as low-resolution bitmaps of letters, that were designed to incur low computational cost and demonstrate that neural networks were able to learn specific kinds of functions (Widrow and Hoff, 1960; Rumelhart et al., 1986b). In the 1980s and 1990s, machine learning became more statistical in nature and began to leverage larger datasets containing tens
+
+of thousands of examples such as the MNIST dataset (shown in figure 1.9) of scans of handwritten numbers (LeCun et al., 1998b). In the first decade of the 2000s, more sophisticated datasets of this same size, such as the CIFAR-10 dataset (Krizhevsky and Hinton, 2009) continued to be produced. Toward the end of that decade and throughout
+
+the first half of the 2010s, significantly larger datasets, containing hundreds of thousands to tens of millions of examples, completely changed what was possible with deep learning. These datasets included the public Street View House Numbers dataset (Netzer et al., 2011), various versions of the ImageNet dataset (Deng et al., 2009, 2010a; Russakovsky
+
+et al., 2014a), and the Sports-1M dataset (Karpathy et al., 2014). At the top of the graph, we see that datasets of translated sentences, such as IBM's dataset constructed from the Canadian Hansard (Brown et al., 1990) and the WMT 2014 English to French dataset (Schwenk, 2014) are typically far ahead of other dataset sizes.
+
+21
+
+

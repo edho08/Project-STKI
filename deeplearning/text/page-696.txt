@@ -1,0 +1,82 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+Spike and Slab Restricted Boltzmann Machines Spike and slab restricted Boltzmann machines (Courville et al., 2011) or ssRBMs provide another means of modeling the covariance structure of real-valued data. Compared to mcRBMs, ssRBMs have the advantage of requiring neither matrix inversion nor Hamiltonian Monte Carlo methods. Like the mcRBM and the mPoT model, the ssRBM's binary hidden units encode the conditional covariance across pixels through the use of auxiliary real-valued variables.
+
+The spike and slab RBM has two sets of hidden units: binary spike units h,
+and real-valued slab units s . The mean of the visible units conditioned on the hidden units is given by (h  s)W . In other words, each column W:,i defines a component that can appear in the input when hi = 1. The corresponding spike variable hi determines whether that component is present at all. The corresponding slab variable si determines the intensity of that component, if it is present. When a spike variable is active, the corresponding slab variable adds variance to the
+input along the axis defined by W:,i. This allows us to model the covariance of the inputs. Fortunately, contrastive divergence and persistent contrastive divergence
+with Gibbs sampling are still applicable. There is no need to invert any matrix.
+
+Formally, the ssRBM model is defined via its energy function:
+
+
+
+
+
+Ess(x, s, h) = -  x W:,isihi
+
++ 1x 2
+
+  + i hi
+
+x
+
+i
+
+i
+
++
+
+1 2
+
+
+
+i s2i
+
+ - i µisih i
+
+-  bih i +  i µ2i hi,
+
+i
+
+i
+
+i
+
+i
+
+(20.50) (20.51)
+
+where bi is the offset of the spike hi and  is a diagonal precision matrix on the observations x. The parameter i > 0 is a scalar precision parameter for the real-valued slab variable si. The parameter i is a non-negative diagonal matrix that defines an h-modulated quadratic penalty on x. Each µi is a mean parameter for the slab variable si.
+
+With the joint distribution defined via the energy function, it is relatively straightforward to derive the ssRBM conditional distributions. For example,
+
+by marginalizing out the slab variables s, the conditional distribution over the
+
+observations given the binary spike variables h is given by:
+
+pss(x | h)
+
+=
+
+1 1 P (h) Z
+
+exp {-E(x, s, h)} ds 
+
+=N
+
+x; Cxss|h
+
+ W:,iµih i
+
+,
+
+Cxss|h
+
+i
+
+(20.52) (20.53)
+
+681
+
+

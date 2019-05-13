@@ -1,0 +1,94 @@
+Index
+
+0-1 loss, 102, 274
+
+Bag of words, 467
+
+Bagging, 252
+
+Absolute value rectification, 191 Accuracy, 420 Activation function, 169
+
+Batch normalization, 264, 422 Bayes error, 116 Bayes' rule, 69
+
+Active constraint, 94
+
+Bayesian hyperparameter optimization, 433
+
+AdaGrad, 305 ADALINE, see adaptive linear element Adam, 307, 422
+
+Bayesian network, see directed graphical model
+Bayesian probability, 54
+
+Adaptive linear element, 15, 23, 26
+
+Bayesian statistics, 134
+
+Adversarial example, 265 Adversarial training, 266, 268, 526 Affine, 109
+
+Belief network, see directed graphical model Bernoulli distribution, 61 BFGS, 314
+
+AIS, see annealed importance sampling
+
+Bias, 123, 227
+
+Almost everywhere, 70 Almost sure convergence, 128 Ancestral sampling, 576, 591
+
+Bias parameter, 109 Biased importance sampling, 589 Bigram, 458
+
+ANN, see Artificial neural network
+
+Binary relation, 478
+
+Annealed importance sampling, 621, 662, Block Gibbs sampling, 595
+
+711
+
+Boltzmann distribution, 566
+
+Approximate Bayesian computation, 710 Boltzmann machine, 566, 648
+
+Approximate inference, 579
+
+BPTT, see back-propagation through time
+
+Artificial intelligence, 1
+
+Broadcasting, 33
+
+Artificial neural network, see Neural net- Burn-in, 593
+
+work
+
+ASR, see automatic speech recognition
+
+CAE, see contractive autoencoder
+
+Asymptotically unbiased, 123
+
+Calculus of variations, 178
+
+Audio, 101, 357, 455
+
+Categorical distribution, see multinoulli dis-
+
+Autoencoder, 4, 353, 498
+
+tribution
+
+Automatic speech recognition, 455
+
+CD, see contrastive divergence
+
+Centering trick (DBM), 667
+
+Back-propagation, 201
+
+Central limit theorem, 63
+
+Back-propagation through time, 381 Backprop, see back-propagation
+
+Chain rule (calculus), 203 Chain rule of probability, 58
+
+778
+
+

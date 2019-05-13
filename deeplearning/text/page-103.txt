@@ -1,0 +1,66 @@
+CHAPTER 4. NUMERICAL COMPUTATION
+
+eigenvectors. The second derivative in a specific direction represented by a unit vector d is given by dHd. When d is an eigenvector of H , the second derivative in that direction is given by the corresponding eigenvalue. For other directions of d, the directional second derivative is a weighted average of all of the eigenvalues, with weights between 0 and 1, and eigenvectors that have smaller angle with d receiving more weight. The maximum eigenvalue determines the maximum second derivative and the minimum eigenvalue determines the minimum second derivative.
+The (directional) second derivative tells us how well we can expect a gradient descent step to perform. We can make a second-order Taylor series approximation to the function f (x) around the current point x(0):
+
+f (x)  f (x(0)) + (x - x(0) ) g + 1(x - x(0))H(x - x(0)). 2
+
+(4.8)
+
+where g is the gradient and H is the Hessian at x(0). If we use a learning rate of , then the new point x will be given by x(0) - g. Substituting this into our
+approximation, we obtain
+
+f (x(0) - g)  f (x(0)) - gg + 1 2 gHg. 2
+
+(4.9)
+
+There are three terms here: the original value of the function, the expected
+
+improvement due to the slope of the function, and the correction we must apply
+
+to account for the curvature of the function. When this last term is too large, the gradient descent step can actually move uphill. When gHg is zero or negative,
+
+the Taylor series approximation predicts that increasing  forever will decrease f
+
+forever. In practice, the Taylor series is unlikely to remain accurate for large , so
+
+one must resort to more heuristic choices of  in this case. When gHg is positive,
+
+solving for the optimal step size that decreases the Taylor series approximation of
+
+the function the most yields
+
+
+
+=
+
+gg g Hg.
+
+(4.10)
+
+In the worst case, when g aligns with the eigenvector of H corresponding to the
+
+maximal eigenvalue max, then this optimal step size is given by
+
+
+
+1
+max
+
+.
+
+To the
+
+extent that the function we minimize can be approximated well by a quadratic
+
+function, the eigenvalues of the Hessian thus determine the scale of the learning
+
+rate.
+
+The second derivative can be used to determine whether a critical point is
+a local maximum, a local minimum, or saddle point. Recall that on a critical point, f (x) = 0. When the second derivative f(x) > 0, the first derivative f  (x)
+increases as we move to the right and decreases as we move to the left. This means
+
+88
+
+

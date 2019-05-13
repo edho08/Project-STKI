@@ -1,0 +1,49 @@
+CHAPTER 12. APPLICATIONS
+
+user 2 have similar tastes. If user 1 likes item D, then this should be a strong
+
+cue that user 2 will also like D. Algorithms based on this principle come under
+
+the name of collaborative filtering. Both non-parametric approaches (such as
+
+nearest-neighbor methods based on the estimated similarity between patterns of
+
+preferences) and parametric methods are possible. Parametric methods often rely on learning a distributed representation (also called an embedding) for each user
+
+and for each item. Bilinear prediction of the target variable (such as a rating) is a
+
+simple parametric method that is highly successful and often found as a component
+
+of state-of-the-art systems. The prediction is obtained by the dot product between
+
+the user embedding and the item embedding (possibly corrected by constants that depend only on either the user ID or the item ID). Let R^ be the matrix containing
+
+our predictions, A a matrix with user embeddings in its rows and B a matrix with
+
+item embeddings in its columns. Let b and c be vectors that contain respectively
+
+a kind of bias for each user (representing how grumpy or positive that user is
+
+in general) and for each item (representing its general popularity). The bilinear
+
+prediction is thus obtained as follows:
+
+R^u,i
+
+=
+
+bu + ci
+
+ + Au,jBj,i.
+
+j
+
+(12.20)
+
+Typically one wants to minimize the squared error between predicted ratings R^u,i and actual ratings Ru,i . User embeddings and item embeddings can then be conveniently visualized when they are first reduced to a low dimension (two or three), or they can be used to compare users or items against each other, just like word embeddings. One way to obtain these embeddings is by performing a
+singular value decomposition of the matrix R of actual targets (such as ratings). This corresponds to factorizing R = U DV  (or a normalized variant) into the product of two factors, the lower rank matrices A = U D and B = V . One problem with the SVD is that it treats the missing entries in an arbitrary way, as if they corresponded to a target value of 0. Instead we would like to avoid paying any cost for the predictions made on missing entries. Fortunately, the sum of squared errors on the observed ratings can also be easily minimized by gradientbased optimization. The SVD and the bilinear prediction of equation 12.20 both performed very well in the competition for the Netflix prize (Bennett and Lanning, 2007), aiming at predicting ratings for films, based only on previous ratings by a large set of anonymous users. Many machine learning experts participated in this competition, which took place between 2006 and 2009. It raised the level of
+research in recommender systems using advanced machine learning and yielded improvements in recommender systems. Even though it did not win by itself, the simple bilinear prediction or SVD was a component of the ensemble models
+
+479
+
+

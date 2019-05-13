@@ -1,0 +1,56 @@
+CHAPTER 4. NUMERICAL COMPUTATION
+
+Minimum
+
+Maximum
+
+Saddle point
+
+Figure 4.2: Examples of each of the three types of critical points in 1-D. A critical point is a point with zero slope. Such a point can either be a local minimum, which is lower than the neighboring points, a local maximum, which is higher than the neighboring points, or a saddle point, which has neighbors that are both higher and lower than the point itself.
+
+so it is not possible to increase f (x) by making infinitesimal steps. Some critical points are neither maxima nor minima. These are known as saddle points. See figure 4.2 for examples of each type of critical point.
+
+A point that obtains the absolute lowest value of f (x) is a global minimum. It is possible for there to be only one global minimum or multiple global minima of the function. It is also possible for there to be local minima that are not globally optimal. In the context of deep learning, we optimize functions that may have many local minima that are not optimal, and many saddle points surrounded by very flat regions. All of this makes optimization very difficult, especially when the input to the function is multidimensional. We therefore usually settle for finding a value of f that is very low, but not necessarily minimal in any formal sense. See figure 4.3 for an example.
+We often minimize functions that have multiple inputs: f : Rn  R. For the concept of "minimization" to make sense, there must still be only one (scalar) output.
+
+For functions with multiple inputs, we must make use of the concept of partial
+
+derivatives.
+
+The
+
+partial
+
+derivative
+
+ xi
+
+f
+
+(x)
+
+measures
+
+how
+
+f
+
+changes
+
+as
+
+only
+
+the
+
+variable xi increases at point x. The gradient generalizes the notion of derivative
+
+to the case where the derivative is with respect to a vector: the gradient of f is the
+
+vector containing all of the partial derivatives, denoted xf (x). Element i of the
+
+gradient is the partial derivative of f with respect to xi. In multiple dimensions,
+
+84
+
+

@@ -1,0 +1,154 @@
+CHAPTER 19. APPROXIMATE INFERENCE
+
+interesting; we have constructed it only to provide a simple demonstration of how calculus of variations may be applied to probabilistic modeling.
+The true posterior is given, up to a normalizing constant, by
+
+p(h | v)
+
+(19.57)
+
+p(h, v)
+
+(19.58)
+
+=p(h1  exp
+
+)p-(h122)ph(21v+|
+
+h) h22
+
++
+
+(v
+
+-
+
+h
+
+1w1
+
+-
+
+h2w2
+
+)2
+
+
+
+(19.59) (19.60)
+
+= exp
+
+ -
+
+1
+
+2
+
+h21
+
++
+
+h22
+
++
+
+v2
+
++
+
+h21w21
+
++
+
+h22
+
+w22
+
+-
+
+2vh1w1
+
+-
+
+2vh 2w2
+
++
+
+ 2h1w1h2w 2 .
+
+(19.61)
+
+Due to the presence of the terms multiplying h1 and h2 together, we can see that the true posterior does not factorize over h1 and h2.
+Applying equation 19.56, we find that
+
+q~(h1| v)
+
+
+
+= exp = exp
+
+E-h212Eq(hh22|vq()hl2o|gv)p~(hv21,
+
+h) + h22
+
++
+
+v2 + h21w21 
+
++
+
+h22 w22
+
+-2vh1w1 - 2vh 2w2 + 2h1w1h2w2] .
+
+(19.62) (19.63) (19.64)
+(19.65)
+
+From this, we can see that there are effectively only two values we need to obtain from q(h2 | v): Eh2q(h|v)[ h2] and Eh2q(h|v)[h22]. Writing these as h2 and h22, we obtain
+
+q~(h1
+
+|
+
+v)
+
+=
+
+exp
+
+ -
+
+1 2
+
+ h
+
+2 1
+
++
+
+h 22
+
++
+
+v2
+
++
+
+h 21w12
+
++
+
+h22w22 
+
+(19.66)
+
+-2vh1w1 - 2vh2w2 + 2h 1w1h2w2] .
+
+(19.67)
+
+From this, we can see that q~ has the functional form of a Gaussian. We can thus conclude q (h | v ) = N (h; µ, -1) where µ and diagonal  are variational parameters that we can optimize using any technique we choose. It is important to recall that we did not ever assume that q would be Gaussian; its Gaussian form was derived automatically by using calculus of variations to maximize q with
+
+649
+
+

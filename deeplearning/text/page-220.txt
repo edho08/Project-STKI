@@ -1,0 +1,36 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+6.5.1 Computational Graphs
+So far we have discussed neural networks with a relatively informal graph language. To describe the back-propagation algorithm more precisely, it is helpful to have a more precise computational graph language.
+Many ways of formalizing computation as graphs are possible.
+Here, we use each node in the graph to indicate a variable. The variable may be a scalar, vector, matrix, tensor, or even a variable of another type.
+To formalize our graphs, we also need to introduce the idea of an operation. An operation is a simple function of one or more variables. Our graph language is accompanied by a set of allowable operations. Functions more complicated than the operations in this set may be described by composing many operations together.
+Without loss of generality, we define an operation to return only a single output variable. This does not lose generality because the output variable can have multiple entries, such as a vector. Software implementations of back-propagation usually support operations with multiple outputs, but we avoid this case in our description because it introduces many extra details that are not important to conceptual understanding.
+If a variable y is computed by applying an operation to a variable x, then we draw a directed edge from x to y . We sometimes annotate the output node with the name of the operation applied, and other times omit this label when the operation is clear from context.
+Examples of computational graphs are shown in figure 6.8.
+
+6.5.2 Chain Rule of Calculus
+
+The chain rule of calculus (not to be confused with the chain rule of probability) is used to compute the derivatives of functions formed by composing other functions whose derivatives are known. Back-propagation is an algorithm that computes the chain rule, with a specific order of operations that is highly efficient.
+
+Let x be a real number, and let f and g both be functions mapping from a real
+
+number to a real number. Suppose that y = g(x) and z = f(g(x)) = f (y). Then
+
+the chain rule states that
+
+dz dx
+
+=
+
+dz dy
+
+ddxy .
+
+(6.44)
+
+We can generalize this beyond the scalar case. Suppose that x  Rm, y  Rn,
+
+205
+
+

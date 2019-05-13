@@ -1,0 +1,21 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+6.3.1 Rectified Linear Units and Their Generalizations
+
+Rectified linear units use the activation function g(z) = max{0, z}.
+Rectified linear units are easy to optimize because they are so similar to linear units. The only difference between a linear unit and a rectified linear unit is that a rectified linear unit outputs zero across half its domain. This makes the derivatives through a rectified linear unit remain large whenever the unit is active. The gradients are not only large but also consistent. The second derivative of the rectifying operation is 0 almost everywhere, and the derivative of the rectifying operation is 1 everywhere that the unit is active. This means that the gradient direction is far more useful for learning than it would be with activation functions that introduce second-order effects.
+Rectified linear units are typically used on top of an affine transformation:
+
+h = g(W x + b).
+
+(6.36)
+
+When initializing the parameters of the affine transformation, it can be a good practice to set all elements of b to a small, positive value, such as 0.1. This makes it very likely that the rectified linear units will be initially active for most inputs in the training set and allow the derivatives to pass through.
+Several generalizations of rectified linear units exist. Most of these generalizations perform comparably to rectified linear units and occasionally perform better.
+One drawback to rectified linear units is that they cannot learn via gradientbased methods on examples for which their activation is zero. A variety of generalizations of rectified linear units guarantee that they receive gradient everywhere.
+Three generalizations of rectified linear units are based on using a non-zero slope i when zi < 0: hi = g(z,  )i = max(0, zi) + i min(0, zi ). Absolute value rectification fixes i = -1 to obtain g( z) = |z|. It is used for object recognition from images (Jarrett et al., 2009), where it makes sense to seek features that are invariant under a polarity reversal of the input illumination. Other generalizations of rectified linear units are more broadly applicable. A leaky ReLU (Maas et al., 2013) fixes i to a small value like 0.01 while a parametric ReLU or PReLU treats i as a learnable parameter (He et al., 2015).
+Maxout units (Goodfellow et al., 2013a) generalize rectified linear units further. Instead of applying an element-wise function g(z ), maxout units divide z into groups of k values. Each maxout unit then outputs the maximum element of
+
+193
+
+

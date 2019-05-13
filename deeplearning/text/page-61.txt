@@ -1,0 +1,41 @@
+CHAPTER 2. LINEAR ALGEBRA
+
+by left-multiplying each side to obtain
+
+x = By.
+
+(2.45)
+
+Depending on the structure of the problem, it may not be possible to design a unique mapping from A to B.
+If A is taller than it is wide, then it is possible for this equation to have no solution. If A is wider than it is tall, then there could be multiple possible solutions.
+The Moore-Penrose pseudoinverse allows us to make some headway in these cases. The pseudoinverse of A is defined as a matrix
+
+A+ = lim(AA + I) -1A.
+0
+
+(2.46)
+
+Practical algorithms for computing the pseudoinverse are not based on this definition, but rather the formula
+
+A + = V D+U ,
+
+(2.47)
+
+where U, D and V are the singular value decomposition of A, and the pseudoinverse D+ of a diagonal matrix D is obtained by taking the reciprocal of its non-zero elements then taking the transpose of the resulting matrix.
+When A has more columns than rows, then solving a linear equation using the pseudoinverse provides one of the many possible solutions. Specifically, it provides the solution x = A+ y with minimal Euclidean norm ||x||2 among all possible solutions.
+When A has more rows than columns, it is possible for there to be no solution. In this case, using the pseudoinverse gives us the x for which Ax is as close as possible to y in terms of Euclidean norm ||Ax - y||2.
+
+2.10 The Trace Operator
+
+The trace operator gives the sum of all of the diagonal entries of a matrix:
+
+ Tr(A) = Ai,i.
+i
+
+(2.48)
+
+The trace operator is useful for a variety of reasons. Some operations that are difficult to specify without resorting to summation notation can be specified using
+
+46
+
+

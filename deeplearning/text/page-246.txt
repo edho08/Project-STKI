@@ -1,0 +1,87 @@
+CHAPTER 7. REGULARIZATION FOR DEEP LEARNING
+
+7.1.1 L2 Parameter Regularization
+
+We have already seen, in section 5.2.2, one of the simplest and most common kinds
+
+of parameter norm penalty: the L2 parameter norm penalty commonly known as
+
+weight decay. This regularization strategy drives the weights closer to the origin1
+
+by
+
+adding
+
+a
+
+regularization
+
+term
+
+()
+
+=
+
+1 2
+
+w22
+
+to
+
+the
+
+objective
+
+function.
+
+In
+
+other
+
+academic communities, L2 regularization is also known as ridge regression or
+
+Tikhonov regularization.
+
+We can gain some insight into the behavior of weight decay regularization by studying the gradient of the regularized objective function. To simplify the presentation, we assume no bias parameter, so  is just w. Such a model has the following total objective function:
+
+J~(w; X, y)
+
+=
+
+ 2
+
+ww
+
++
+
+J(w; X, y),
+
+(7.2)
+
+with the corresponding parameter gradient
+
+wJ~(w; X, y) = w + wJ(w; X, y).
+
+(7.3)
+
+To take a single gradient step to update the weights, we perform this update:
+
+w  w -  (w + wJ(w; X, y)) . Written another way, the update is:
+
+(7.4)
+
+w  (1 - )w - wJ(w; X, y).
+
+(7.5)
+
+We can see that the addition of the weight decay term has modified the learning rule to multiplicatively shrink the weight vector by a constant factor on each step, just before performing the usual gradient update. This describes what happens in a single step. But what happens over the entire course of training?
+We will further simplify the analysis by making a quadratic approximation to the objective function in the neighborhood of the value of the weights that obtains minimal unregularized training cost, w = arg min J(w). If the objective
+w
+function is truly quadratic, as in the case of fitting a linear regression model with
+1
+More generally, we could regularize the parameters to be near any specific point in space and, surprisingly, still get a regularization effect, but better results will be obtained for a value
+closer to the true one, with zero being a default value that makes sense when we do not know if the correct value should be positive or negative. Since it is far more common to regularize the model parameters towards zero, we will focus on this special case in our exposition.
+
+231
+
+

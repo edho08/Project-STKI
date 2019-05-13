@@ -1,0 +1,20 @@
+CHAPTER 15. REPRESENTATION LEARNING
+hx = fx (x)
+
+hy = fy (y)
+
+fx x-space
+xtest
+
+fy y-space
+y test
+
+(x, y) pairs in the training set
+fx : encoder function for x
+fy : encoder function for y Relationship between embedded points within one of the domains
+Maps between representation spaces
+Figure 15.3: Transfer learning between two domains x and y enables zero-shot learning. Labeled or unlabeled examples of x allow one to learn a representation function fx and similarly with examples of y to learn fy. Each application of the fx and fy functions appears as an upward arrow, with the style of the arrows indicating which function is applied. Distance in hx space provides a similarity metric between any pair of points in x space that may be more meaningful than distance in x space. Likewise, distance in hy space provides a similarity metric between any pair of points in y space. Both of these similarity functions are indicated with dotted bidirectional arrows. Labeled examples (dashed horizontal lines) are pairs (x, y) which allow one to learn a one-way or two-way map (solid bidirectional arrow) between the representations fx(x) and the representations fy (y ) and anchor these representations to each other. Zero-data learning is then enabled as follows. One can associate an image xtest to a word ytest, even if no image of that word was ever presented, simply because word-representations fy(ytest) and image-representations fx (xtest) can be related to each other via the maps between representation spaces. It works because, although that image and that word were never paired, their respective feature vectors fx(xtest ) and fy( ytest ) have been related to each other. Figure inspired from suggestion by Hrant Khachatrian.
+
+540
+
+

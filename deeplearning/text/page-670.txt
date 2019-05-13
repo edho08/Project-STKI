@@ -1,0 +1,35 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+meaning we define the joint probability distribution using an energy function:
+
+exp (-E(x))
+
+P (x) =
+
+Z
+
+,
+
+(20.1)
+
+whereE(x) is the energy function and Z is the partition function that ensures that P (x) = 1. The energy function of the Boltzmann machine is given by
+x
+
+E(x) = -xU x - bx,
+
+(20.2)
+
+where U is the "weight" matrix of model parameters and b is the vector of bias parameters.
+In the general setting of the Boltzmann machine, we are given a set of training examples, each of which are n-dimensional. Equation 20.1 describes the joint probability distribution over the observed variables. While this scenario is certainly viable, it does limit the kinds of interactions between the observed variables to those described by the weight matrix. Specifically, it means that the probability of one unit being on is given by a linear model (logistic regression) from the values of the other units.
+The Boltzmann machine becomes more powerful when not all the variables are observed. In this case, the latent variables, can act similarly to hidden units in a multi-layer perceptron and model higher-order interactions among the visible units. Just as the addition of hidden units to convert logistic regression into an MLP results in the MLP being a universal approximator of functions, a Boltzmann machine with hidden units is no longer limited to modeling linear relationships between variables. Instead, the Boltzmann machine becomes a universal approximator of probability mass functions over discrete variables (Le Roux and Bengio, 2008).
+Formally, we decompose the units x into two subsets: the visible units v and the latent (or hidden) units h. The energy function becomes
+
+E(v, h) = -vRv - v W h - h Sh - bv - ch.
+
+(20.3)
+
+Boltzmann Machine Learning Learning algorithms for Boltzmann machines are usually based on maximum likelihood. All Boltzmann machines have an intractable partition function, so the maximum likelihood gradient must be approximated using the techniques described in chapter 18.
+One interesting property of Boltzmann machines when trained with learning rules based on maximum likelihood is that the update for a particular weight connecting two units depends only the statistics of those two units, collected under different distributions: Pmodel(v) and P^data(v)Pmodel(h | v ). The rest of the
+655
+
+

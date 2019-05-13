@@ -1,0 +1,38 @@
+CHAPTER 2. LINEAR ALGEBRA
+
+define a vector by writing out its elements in the text inline as a row matrix, then using the transpose operator to turn it into a standard column vector, e.g., x = [x1, x2, x3 ].
+A scalar can be thought of as a matrix with only a single entry. From this, we can see that a scalar is its own transpose: a = a.
+We can add matrices to each other, as long as they have the same shape, just by adding their corresponding elements: C = A + B where Ci,j = Ai,j + B i,j.
+We can also add a scalar to a matrix or multiply a matrix by a scalar, just by performing that operation on each element of a matrix: D = a · B + c where Di,j = a · Bi,j + c.
+In the context of deep learning, we also use some less conventional notation. We allow the addition of matrix and a vector, yielding another matrix: C = A + b, where Ci,j = Ai,j + bj. In other words, the vector b is added to each row of the matrix. This shorthand eliminates the need to define a matrix with b copied into each row before doing the addition. This implicit copying of b to many locations is called broadcasting.
+
+2.2 Multiplying Matrices and Vectors
+
+One of the most important operations involving matrices is multiplication of two
+
+matrices. The matrix product of matrices A and B is a third matrix C . In
+
+order for this product to be defined, A must have the same number of columns as
+
+B has rows. If A is of shape m × n and B is of shape n × p, then C is of shape
+
+m × p. We can write the matrix product just by placing two or more matrices
+
+together, e.g.
+
+C = AB.
+
+(2.4)
+
+The product operation is defined by 
+Ci,j = Ai,k Bk,j.
+k
+
+(2.5)
+
+Note that the standard product of two matrices is not just a matrix containing the product of the individual elements. Such an operation exists and is called the element-wise product or Hadamard product, and is denoted as A  B.
+The dot product between two vectors x and y of the same dimensionality is the matrix product xy. We can think of the matrix product C = AB as computing Ci,j as the dot product between row i of A and column j of B.
+
+34
+
+

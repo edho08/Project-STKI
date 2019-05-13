@@ -1,0 +1,101 @@
+CHAPTER 7. REGULARIZATION FOR DEEP LEARNING
+
+of regularization. As with L2 weight decay, L1 weight decay controls the strength
+of the regularization by scaling the penalty  using a positive hyperparameter . Thus, the regularized objective function J~(w; X, y) is given by
+
+J~(w; X, y) = ||w||1 + J(w; X, y),
+
+(7.19)
+
+with the corresponding gradient (actually, sub-gradient):
+
+wJ~(w; X, y) = sign(w) + wJ(X, y; w)
+
+(7.20)
+
+where sign(w) is simply the sign of w applied element-wise.
+By inspecting equation 7.20, we can see immediately that the effect of L1 regularization is quite different from that of L2 regularization. Specifically, we can see that the regularization contribution to the gradient no longer scales linearly with each wi; instead it is a constant factor with a sign equal to sign(wi). One consequence of this form of the gradient is that we will not necessarily see clean algebraic solutions to quadratic approximations of J (X, y; w) as we did for L2 regularization.
+
+Our simple linear model has a quadratic cost function that we can represent via its Taylor series. Alternately, we could imagine that this is a truncated Taylor series approximating the cost function of a more sophisticated model. The gradient in this setting is given by
+
+wJ^(w) = H(w - w),
+
+(7.21)
+
+where, again, H is the Hessian matrix of J with respect to w evaluated at w .
+
+Because the L1 penalty does not admit clean algebraic expressions in the case of a fully general Hessian, we will also make the further simplifying assumption that the Hessian is diagonal, H = diag([H1,1, . . . , Hn,n]), where each Hi,i > 0. This assumption holds if the data for the linear regression problem has been preprocessed to remove all correlation between the input features, which may be accomplished using PCA.
+
+Our quadratic approximation of the L1 regularized objective function decom-
+
+poses into a sum over the parameters:
+
+J^(w;
+
+X,
+
+y)
+
+=
+
+J
+
+(w ;
+
+X,
+
+y)
+
++
+
+
+
+
+
+1 2
+
+H
+
+i,i(wi
+
+-
+
+wi
+
+)2
+
++
+
+|wi|
+
+
+
+.
+
+i
+
+(7.22)
+
+The problem of minimizing this approximate cost function has an analytical solution
+
+(for each dimension i), with the following form:
+
+wi
+
+=
+
+ sign(wi) max |wi | -
+
+
+
+ ,0
+
+Hi,i
+
+.
+
+(7.23)
+
+235
+
+

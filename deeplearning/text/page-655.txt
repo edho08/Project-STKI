@@ -1,0 +1,63 @@
+CHAPTER 19. APPROXIMATE INFERENCE
+
+criterion.
+To make this more concrete, we show how to apply variational inference to the binary sparse coding model (we present here the model developed by Henniges et al. (2010) but demonstrate traditional, generic mean field applied to the model, while they introduce a specialized algorithm). This derivation goes into considerable mathematical detail and is intended for the reader who wishes to fully resolve any ambiguity in the high-level conceptual description of variational inference and learning we have presented so far. Readers who do not plan to derive or implement variational learning algorithms may safely skip to the next section without missing any new high-level concepts. Readers who proceed with the binary sparse coding example are encouraged to review the list of useful properties of functions that commonly arise in probabilistic models in section 3.10. We use these properties liberally throughout the following derivations without highlighting exactly where we use each one.
+In the binary sparse coding model, the input v  Rn is generated from the model by adding Gaussian noise to the sum of m different components which can each be present or absent. Each component is switched on or off by the corresponding hidden unit in h  {0, 1}m:
+
+p(hi = 1) = (bi )
+
+(19.19)
+
+p(v | h) = N (v; W h, -1)
+
+(19.20)
+
+where b is a learnable set of biases, W is a learnable weight matrix, and  is a learnable, diagonal precision matrix.
+Training this model with maximum likelihood requires taking the derivative with respect to the parameters. Consider the derivative with respect to one of the biases:
+
+ log p(v) bi
+
+=
+
+ b
+
+i
+
+p(v)
+
+p(v)
+
+=
+
+ b
+
+i
+
+
+
+h
+
+p(h,
+
+v
+
+)
+
+p(v)
+
+
+= b i
+
+ p(h)p(v
+h
+p(v)
+
+|
+
+h)
+
+640
+
+(19.21) (19.22) (19.23) (19.24)
+
+

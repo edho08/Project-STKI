@@ -1,0 +1,138 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+  2k < .
+k=1
+
+(8.13)
+
+In practice, it is common to decay the learning rate linearly until iteration :
+
+k = (1 - )0 + 
+
+(8.14)
+
+with
+
+
+
+=
+
+k 
+
+.
+
+After
+
+iteration
+
+,
+
+it
+
+is
+
+common
+
+to
+
+leave
+
+
+
+constant.
+
+The learning rate may be chosen by trial and error, but it is usually best
+
+to choose it by monitoring learning curves that plot the objective function as a
+
+function of time. This is more of an art than a science, and most guidance on this
+
+subject should be regarded with some skepticism. When using the linear schedule,
+
+the parameters to choose are 0,  , and  . Usually  may be set to the number of
+
+iterations required to make a few hundred passes through the training set. Usually
+
+ should be set to roughly 1% the value of 0. The main question is how to set 0.
+
+If it is too large, the learning curve will show violent oscillations, with the cost
+
+function often increasing significantly. Gentle oscillations are fine, especially if
+
+training with a stochastic cost function such as the cost function arising from the
+
+use of dropout. If the learning rate is too low, learning proceeds slowly, and if the
+
+initial learning rate is too low, learning may become stuck with a high cost value.
+
+Typically, the optimal initial learning rate, in terms of total training time and the
+
+final cost value, is higher than the learning rate that yields the best performance
+
+after the first 100 iterations or so. Therefore, it is usually best to monitor the first
+
+several iterations and use a learning rate that is higher than the best-performing
+
+learning rate at this time, but not so high that it causes severe instability.
+
+The most important property of SGD and related minibatch or online gradientbased optimization is that computation time per update does not grow with the number of training examples. This allows convergence even when the number of training examples becomes very large. For a large enough dataset, SGD may converge to within some fixed tolerance of its final test set error before it has processed the entire training set.
+
+To study the convergence rate of an optimization algorithm it is common to
+
+measure the excess error J () - min J(), which is the amount that the current cost function exceeds the minimum possible cost. When SGD is applied to a convex
+
+problem, the excess error is O (1k ) after k iterations, while in the strongly convex
+
+case it is
+
+O
+
+(
+
+1 k
+
+).
+
+These bounds
+
+cannot
+
+be improved unless
+
+extra
+
+conditions are
+
+assumed. Batch gradient descent enjoys better convergence rates than stochastic
+
+gradient descent in theory. However, the Cramér-Rao bound (Cramér, 1946; Rao,
+
+1945)
+
+states
+
+that
+
+generalization
+
+error
+
+cannot
+
+decrease
+
+faster
+
+than
+
+O(
+
+1 k
+
+).
+
+Bottou
+
+295
+
+

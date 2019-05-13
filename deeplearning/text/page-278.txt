@@ -1,0 +1,127 @@
+CHAPTER 7. REGULARIZATION FOR DEEP LEARNING
+
+also possible. To make predictions we must re-normalize the ensemble: pensemble(y | x) = yp~enp~seenmsebmleb(lye(y| x|)x).
+
+(7.55)
+
+A key insight (Hinton et al., 2012c) involved in dropout is that we can approxi-
+
+mate pensemble by evaluating p(y | x) in one model: the model with all units, but with the weights going out of unit i multiplied by the probability of including unit
+
+i. The motivation for this modification is to capture the right expected value of the
+
+output from that unit. We call this approach the weight scaling inference rule.
+
+There is not yet any theoretical argument for the accuracy of this approximate
+
+inference rule in deep nonlinear networks, but empirically it performs very well.
+
+Because
+
+we
+
+usually
+
+use
+
+an
+
+inclusion
+
+probability
+
+of
+
+1 2
+
+,
+
+the
+
+weight
+
+scaling
+
+rule
+
+usually amounts to dividing the weights by 2 at the end of training, and then using
+
+the model as usual. Another way to achieve the same result is to multiply the
+
+states of the units by 2 during training. Either way, the goal is to make sure that
+
+the expected total input to a unit at test time is roughly the same as the expected
+
+total input to that unit at train time, even though half the units at train time are
+
+missing on average.
+
+For many classes of models that do not have nonlinear hidden units, the weight
+
+scaling inference rule is exact. For a simple example, consider a softmax regression
+
+classifier with n input variables represented by the vector v:
+
+
+
+
+
+P (y = y | v) = softmax W v + b .
+
+y
+
+(7.56)
+
+We can index into the family of sub-models by element-wise multiplication of the
+
+input with a binary vector d:
+
+
+
+
+
+P (y = y | v; d) = softmax W (d  v) + b .
+
+y
+
+(7.57)
+
+The ensemble predictor is defined by re-normalizing the geometric mean over all ensemble members' predictions:
+
+Pensemble(y
+
+=
+
+y
+
+|
+
+v)
+
+=
+
+Py~ ePn~seenmsebmleb(lye(=y
+
+y =
+
+| v) y |
+
+v)
+
+(7.58)
+
+where
+
+ P~ensemble(y = y | v) = 2n
+
+
+
+P (y = y | v; d).
+
+d{0,1}n
+
+(7.59)
+
+263
+
+

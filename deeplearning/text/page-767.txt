@@ -1,0 +1,17 @@
+BIBLIOGRAPHY
+LeCun, Y., Jackel, L. D., Boser, B., Denker, J. S., Graf, H. P., Guyon, I., Henderson, D., Howard, R. E., and Hubbard, W. (1989). Handwritten digit recognition: Applications of neural network chips and automatic learning. IEEE Communications Magazine, 27(11), 41­46. 368
+LeCun, Y., Bottou, L., Orr, G. B., and Müller, K.-R. (1998a). Efficient backprop. In Neural Networks, Tricks of the Trade, Lecture Notes in Computer Science LNCS 1524. Springer Verlag. 310, 429
+LeCun, Y., Bottou, L., Bengio, Y., and Haffner, P. (1998b). Gradient based learning applied to document recognition. Proc. IEEE . 16, 18, 21, 27, 371, 458, 460
+LeCun, Y., Kavukcuoglu, K., and Farabet, C. (2010). Convolutional networks and applications in vision. In Circuits and Systems (ISCAS), Proceedings of 2010 IEEE International Symposium on , pages 253­256. IEEE. 371
+L'Ecuyer, P. (1994). Efficiency improvement and variance reduction. In Proceedings of the 1994 Winter Simulation Conference, pages 122­­132. 690
+Lee, C.-Y., Xie, S., Gallagher, P., Zhang, Z., and Tu, Z. (2014). Deeply-supervised nets. arXiv preprint arXiv:1409.5185 . 326
+Lee, H., Battle, A., Raina, R., and Ng, A. (2007). Efficient sparse coding algorithms. In B. Schölkopf, J. Platt, and T. Hoffman, editors, Advances in Neural Information Processing Systems 19 (NIPS'06), pages 801­808. MIT Press. 637
+Lee, H., Ekanadham, C., and Ng, A. (2008). Sparse deep belief net model for visual area V2. In NIPS'07 . 255
+Lee, H., Grosse, R., Ranganath, R., and Ng, A. Y. (2009). Convolutional deep belief networks for scalable unsupervised learning of hierarchical representations. In L. Bottou and M. Littman, editors, Proceedings of the Twenty-sixth International Conference on Machine Learning (ICML'09). ACM, Montreal, Canada. 363, 683, 684
+Lee, Y. J. and Grauman, K. (2011). Learning the easy things first: self-paced visual category discovery. In CVPR'2011 . 328
+Leibniz, G. W. (1676). Memoir using the chain rule. (Cited in TMME 7:2&3 p 321-332, 2010). 225
+Lenat, D. B. and Guha, R. V. (1989). Building large knowledge-based systems; representation and inference in the Cyc project . Addison-Wesley Longman Publishing Co., Inc. 2
+Leshno, M., Lin, V. Y., Pinkus, A., and Schocken, S. (1993). Multilayer feedforward networks with a nonpolynomial activation function can approximate any function. Neural Networks , 6, 861­­867. 198, 199
+752
+
+

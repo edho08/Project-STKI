@@ -1,0 +1,47 @@
+CHAPTER 10. SEQUENCE MODELING: RECURRENT AND RECURSIVE NETS
+
+with orthogonal Q, the recurrence may be simplified further to h(t) = QtQh(0) .
+
+(10.39)
+
+The eigenvalues are raised to the power of t causing eigenvalues with magnitude
+less than one to decay to zero and eigenvalues with magnitude greater than one to explode. Any component of h(0) that is not aligned with the largest eigenvector
+will eventually be discarded.
+
+This problem is particular to recurrent networks. In the scalar case, imagine
+
+multiplying a weight w by itself many times. The product wt will either vanish or
+
+explode depending on the magnitude of w. However, if we make a non-recurrent
+
+network that has If the initial state
+
+a different is given by
+
+weight w(t) 1, then the
+
+at each state at
+
+time time
+
+step, the t is given
+
+sbiytuattiown(ti)s.
+
+different. Suppose
+
+that the w(t) values are generated randomly, independently from one another, with
+
+zero mean and variance v. The variance of the product is O(v n). To obtain some desired variance v we may choose the individual weights with variance v = n v.
+
+Very deep feedforward networks with carefully chosen scaling can thus avoid the
+
+vanishing and exploding gradient problem, as argued by Sussillo (2014).
+
+The vanishing and exploding gradient problem for RNNs was independently discovered by separate researchers (Hochreiter, 1991; Bengio et al., 1993, 1994). One may hope that the problem can be avoided simply by staying in a region of parameter space where the gradients do not vanish or explode. Unfortunately, in order to store memories in a way that is robust to small perturbations, the RNN must enter a region of parameter space where gradients vanish (Bengio et al., 1993, 1994). Specifically, whenever the model is able to represent long term dependencies, the gradient of a long term interaction has exponentially smaller magnitude than the gradient of a short term interaction. It does not mean that it is impossible to learn, but that it might take a very long time to learn long-term dependencies, because the signal about these dependencies will tend to be hidden by the smallest fluctuations arising from short-term dependencies. In practice, the experiments in Bengio et al. (1994) show that as we increase the span of the dependencies that need to be captured, gradient-based optimization becomes increasingly difficult, with the probability of successful training of a traditional RNN via SGD rapidly reaching 0 for sequences of only length 10 or 20.
+
+For a deeper treatment of recurrent networks as dynamical systems, see Doya (1993), Bengio et al. (1994) and Siegelmann and Sontag (1995), with a review in Pascanu et al. (2013). The remaining sections of this chapter discuss various approaches that have been proposed to reduce the difficulty of learning longterm dependencies (in some cases allowing an RNN to learn dependencies across
+
+403
+
+

@@ -1,0 +1,111 @@
+CHAPTER 7. REGULARIZATION FOR DEEP LEARNING
+
+OMP-k with the value of k specified to indicate the number of non-zero features allowed. Coates and Ng (2011) demonstrated that OMP-1 can be a very effective feature extractor for deep architectures.
+Essentially any model that has hidden units can be made sparse. Throughout this book, we will see many examples of sparsity regularization used in a variety of contexts.
+
+7.11 Bagging and Other Ensemble Methods
+
+Bagging (short for bootstrap aggregating ) is a technique for reducing generalization error by combining several models (Breiman, 1994). The idea is to train several different models separately, then have all of the models vote on the output for test examples. This is an example of a general strategy in machine learning called model averaging. Techniques employing this strategy are known as ensemble methods.
+
+The reason that model averaging works is that different models will usually not make all the same errors on the test set.
+
+Consider for example a set of k regression models. Suppose that each model
+
+makes an error i on each example, with the errors drawn from a zero-mean
+
+multivariate normal distribution with variances E[2i] = v and covariances E[ij] =
+
+c1k. Tihein.
+
+the The
+
+error made by the average prediction of all the ensemble expected squared error of the ensemble predictor is
+
+models
+
+is
+
+ E 1
+k
+
+
+
+2 i 
+
+=
+
+1 k2
+
+ E
+
+ 2i
+
++
+
+
+
+ ij
+
+i
+
+i
+
+j=i
+
+(7.50)
+
+= 1 v + k - 1 c.
+
+k
+
+k
+
+(7.51)
+
+In the case where the errors are perfectly correlated and c = v, the mean squared
+
+error reduces to v, so the model averaging does not help at all. In the case where
+
+the errors are perfectly uncorrelated and c = 0, the expected squared error of the
+
+ensemble
+
+is
+
+only
+
+1 k
+
+v.
+
+This
+
+means
+
+that
+
+the
+
+expected
+
+squared
+
+error
+
+of
+
+the
+
+ensemble
+
+decreases linearly with the ensemble size. In other words, on average, the ensemble
+
+will perform at least as well as any of its members, and if the members make
+
+independent errors, the ensemble will perform significantly better than its members.
+
+Different ensemble methods construct the ensemble of models in different ways. For example, each member of the ensemble could be formed by training a completely
+
+256
+
+

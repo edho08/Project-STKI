@@ -1,0 +1,88 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+exactly in closed form. Some other deep models, such as the deep Boltzmann machine, combine both the difficulty of an intractable partition function and the difficulty of intractable inference.
+
+20.3 Deep Belief Networks
+
+Deep belief networks (DBNs) were one of the first non-convolutional models to successfully admit training of deep architectures (Hinton et al., 2006; Hinton, 2007b). The introduction of deep belief networks in 2006 began the current deep learning renaissance. Prior to the introduction of deep belief networks, deep models were considered too difficult to optimize. Kernel machines with convex objective functions dominated the research landscape. Deep belief networks demonstrated that deep architectures can be successful, by outperforming kernelized support vector machines on the MNIST dataset (Hinton et al., 2006). Today, deep belief networks have mostly fallen out of favor and are rarely used, even compared to other unsupervised or generative learning algorithms, but they are still deservedly recognized for their important role in deep learning history.
+
+Deep belief networks are generative models with several layers of latent variables. The latent variables are typically binary, while the visible units may be binary or real. There are no intralayer connections. Usually, every unit in each layer is connected to every unit in each neighboring layer, though it is possible to construct more sparsely connected DBNs. The connections between the top two layers are undirected. The connections between all other layers are directed, with the arrows pointed toward the layer that is closest to the data. See figure 20.1b for an example.
+
+A DBN with l hidden layers contains l weight matrices: W (1), . . . , W (l). It also contains l + 1 bias vectors: b(0), . . . , b(l), with b(0) providing the biases for the
+visible layer. The probability distribution represented by the DBN is given by
+
+P (h(l)
+
+, h(l-1))
+
+
+
+exp
+
+ b
+
+(l)
+
+h(l)
+
++
+
+b(l-1)h(l-1)
+
++
+
+h(l-1)W
+
+ (l)h(l)
+
+,
+
+(20.17)
+
+P (h(ik)
+
+=
+
+1
+
+|
+
+h(k+1) )
+
+=
+
+
+
+ b(ik)
+
++
+
+W:(,ik+1) h(k+1) i, k
+
+
+
+1, . . . , l
+
+- 2,
+
+
+
+
+
+P (v i = 1 | h(1)) =  b(i0) + W:(,i1)h(1) i.
+
+(20.18) (20.19)
+
+In the case of real-valued visible units, substitute
+
+
+
+
+
+v  N v; b(0) + W (1) h(1),  -1
+
+(20.20)
+
+660
+
+

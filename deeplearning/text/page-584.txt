@@ -1,0 +1,33 @@
+CHAPTER 16. STRUCTURED PROBABILISTIC MODELS FOR DEEP LEARNING
+
+of p~ over their domain diverges. For example, suppose we want to model a single scalar variable x  R with a single clique potential (x) = x2 . In this case,
+
+ Z = x2dx.
+
+(16.6)
+
+Since this integral diverges, there is no probability distribution corresponding to
+
+this choice of (x). Sometimes the choice of some parameter of the  functions
+
+de(xte;rm)i=neesxwp h-ethxer2t, htehepropbaarbailmiteytedrisdtertiberumtiionnesiswhdeetfihneerd.Z
+
+For example, for exists. Positive 
+
+results in a Gaussian distribution over x but all other values of  make  impossible
+
+to normalize.
+
+One key difference between directed modeling and undirected modeling is that directed models are defined directly in terms of probability distributions from the start, while undirected models are defined more loosely by  functions that are then converted into probability distributions. This changes the intuitions one must develop in order to work with these models. One key idea to keep in mind while working with undirected models is that the domain of each of the variables has dramatic effect on the kind of probability distribution that a given set of  functions corresponds to. For example, consider an n-dimensional vector-valued random variable x and an undirected model parametrized by a vector of biases b. Suppose we have one clique for each element of x, (i)(xi) = exp(bixi). What kind of probability distribution does this result in? The answer is that we do not have enough information, because we have not yet specified the domain of x. If x  Rn, then the integral defining Z diverges and no probability distribution exists. If x  { 0, 1}n, then p(x) factorizes into n independent distributions, with p(xi = 1) = sigmoid (bi). If the domain of x is the set of elementary basis vectors ({[1, 0, . . . , 0], [0, 1, . . . ,0], . . . , [0, 0, . . . , 1]} ) then p(x) = softmax(b), so a large value of bi actually reduces p(xj = 1) for j = i. Often, it is possible to leverage the effect of a carefully chosen domain of a variable in order to obtain complicated behavior from a relatively simple set of  functions. We will explore a practical application of this idea later, in section 20.6.
+
+16.2.4 Energy-Based Models
+
+Many interesting theoretical results about undirected models depend on the assumption that x, p~(x) > 0. A convenient way to enforce this condition is to use an energy-based model (EBM) where
+
+p~(x) = exp(-E(x))
+
+(16.7)
+
+569
+
+

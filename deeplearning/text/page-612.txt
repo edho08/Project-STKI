@@ -1,0 +1,63 @@
+CHAPTER 17. MONTE CARLO METHODS
+
+Applying the Markov chain update repeatedly corresponds to multiplying by the
+
+matrix A repeatedly. In other words, we can think of the process as exponentiating
+
+the matrix A:
+
+v(t) = Atv (0).
+
+(17.21)
+
+The matrix A has special structure because each of its columns represents a
+
+probability distribution. Such matrices are called stochastic matrices. If there is a non-zero probability of transitioning from any state x to any other state x for
+
+some power t, then the Perron-Frobenius theorem (Perron, 1907; Frobenius, 1908)
+
+guarantees that the largest eigenvalue is real and equal to 1. Over time, we can
+
+see that all of the eigenvalues are exponentiated:
+
+v(t)
+
+=
+
+ V
+
+diag()V
+
+-1 t
+
+v(0)
+
+=
+
+V
+
+diag()tV
+
+-1 v(0).
+
+(17.22)
+
+This process causes all of the eigenvalues that are not equal to 1 to decay to zero. Under some additional mild conditions, A is guaranteed to have only one eigenvector with eigenvalue 1. The process thus converges to a stationary distribution , sometimes also called the equilibrium distribution. At convergence,
+
+v = Av = v,
+
+(17.23)
+
+and this same condition holds for every additional step. This is an eigenvector equation. To be a stationary point, v must be an eigenvector with corresponding eigenvalue 1. This condition guarantees that once we have reached the stationary distribution, repeated applications of the transition sampling procedure do not change the distribution over the states of all the various Markov chains (although transition operator does change each individual state, of course).
+If we have chosen T correctly, then the stationary distribution q will be equal to the distribution p we wish to sample from. We will describe how to choose T shortly, in section 17.4.
+Most properties of Markov Chains with countable states can be generalized to continuous variables. In this situation, some authors call the Markov Chain a Harris chain but we use the term Markov Chain to describe both conditions. In general, a Markov chain with transition operator T will converge, under mild conditions, to a fixed point described by the equation
+
+q (x ) = ExqT (x | x),
+
+(17.24)
+
+which in the discrete case is just rewriting equation 17.23. When x is discrete, the expectation corresponds to a sum, and when x is continuous, the expectation corresponds to an integral.
+
+597
+
+

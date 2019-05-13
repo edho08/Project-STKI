@@ -1,0 +1,32 @@
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+Large response in pooling unit Large response in detector unit 1
+
+Large response in pooling unit
+Large response in detector unit 3
+
+Figure 9.9: Example of learned invariances: A pooling unit that pools over multiple features that are learned with separate parameters can learn to be invariant to transformations of the input. Here we show how a set of three learned filters and a max pooling unit can learn to become invariant to rotation. All three filters are intended to detect a hand-written 5. Each filter attempts to match a slightly different orientation of the 5. When a 5 appears in the input, the corresponding filter will match it and cause a large activation in a detector unit. The max pooling unit then has a large activation regardless of which detector unit was activated. We show here how the network processes two different inputs, resulting in two different detector units being activated. The effect on the pooling unit is roughly the same either way. This principle is leveraged by maxout networks (Goodfellow et al., 2013a) and other convolutional networks. Max pooling over spatial positions is naturally invariant to translation; this multi-channel approach is only necessary for learning other transformations.
+
+1.
+
+0.2
+
+0.1
+
+0.1
+
+1.
+
+0.2
+
+0.1
+
+0.0
+
+0.1
+
+Figure 9.10: Pooling with downsampling. Here we use max-pooling with a pool width of three and a stride between pools of two. This reduces the representation size by a factor of two, which reduces the computational and statistical burden on the next layer. Note that the rightmost pooling region has a smaller size, but must be included if we do not want to ignore some of the detector units.
+
+344
+
+

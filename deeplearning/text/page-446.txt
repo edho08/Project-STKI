@@ -1,0 +1,25 @@
+CHAPTER 11. PRACTICAL METHODOLOGY
+
+Hyperparameter Number of hidden units
+Learning rate
+Convolution kernel width
+Implicit zero padding Weight decay coefficient Dropout rate
+
+Increases capacity when. . . increased
+tuned optimally increased
+increased decreased decreased
+
+Reason
+Increasing the number of hidden units increases the representational capacity of the model.
+An improper learning rate, whether too high or too low, results in a model with low effective capacity due to optimization failure Increasing the kernel width increases the number of parameters in the model
+Adding implicit zeros before convolution keeps the representation size large Decreasing the weight decay coefficient frees the model parameters to become larger Dropping units less often gives the units more opportunities to "conspire" with each other to fit the training set
+
+Caveats
+Increasing the number of hidden units increases both the time and memory cost of essentially every operation on the model.
+A wider kernel results in a narrower output dimension, reducing model capacity unless you use implicit zero padding to reduce this effect. Wider kernels require more memory for parameter storage and increase runtime, but a narrower output reduces memory cost. Increased time and memory cost of most operations.
+
+Table 11.1: The effect of various hyperparameters on model capacity.
+
+431
+
+

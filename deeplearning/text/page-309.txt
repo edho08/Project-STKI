@@ -1,0 +1,60 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+8.3 Basic Algorithms
+We have previously introduced the gradient descent (section 4.3) algorithm that follows the gradient of an entire training set downhill. This may be accelerated considerably by using stochastic gradient descent to follow the gradient of randomly selected minibatches downhill, as discussed in section 5.9 and section 8.1.3.
+
+8.3.1 Stochastic Gradient Descent
+
+Stochastic gradient descent (SGD) and its variants are probably the most used optimization algorithms for machine learning in general and for deep learning in particular. As discussed in section 8.1.3, it is possible to obtain an unbiased estimate of the gradient by taking the average gradient on a minibatch of m examples drawn i.i.d from the data generating distribution.
+Algorithm 8.1 shows how to follow this estimate of the gradient downhill.
+
+Algorithm 8.1 Stochastic gradient descent (SGD) update at training iteration k
+
+Require: Learning rate k.
+
+Require: Initial parameter 
+
+while stopping criterion not met do
+
+Sample a minibatch of m examples from the training set {x(1), . . . , x(m)} with
+
+corresponding targets y(i). Compute gradient estimate:
+
+g^
+
+
+
++m1
+
+
+
+
+i
+
+L(f
+
+(x(i)
+
+;
+
+),
+
+y
+
+(i))
+
+Apply update:    - ^g
+
+end while
+
+A crucial parameter for the SGD algorithm is the learning rate. Previously, we have described SGD as using a fixed learning rate . In practice, it is necessary to gradually decrease the learning rate over time, so we now denote the learning rate at iteration k as k.
+This is because the SGD gradient estimator introduces a source of noise (the random sampling of m training examples) that does not vanish even when we arrive at a minimum. By comparison, the true gradient of the total cost function becomes small and then 0 when we approach and reach a minimum using batch gradient descent, so batch gradient descent can use a fixed learning rate. A sufficient condition to guarantee convergence of SGD is that
+
+  k = , and
+k=1
+
+(8.12)
+
+294
+
+

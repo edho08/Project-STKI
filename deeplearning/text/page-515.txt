@@ -1,0 +1,32 @@
+CHAPTER 13. LINEAR FACTOR MODELS
+
+The encoder computes a low-dimensional representation of h. With the autoencoder view, we have a decoder computing the reconstruction
+
+x^ = g(h) = b + V h.
+
+(13.20)
+
+Figure 13.3: Flat Gaussian capturing probability concentration near a low-dimensional manifold. The figure shows the upper half of the "pancake" above the "manifold plane" which goes through its middle. The variance in the direction orthogonal to the manifold is very small (arrow pointing out of plane) and can be considered like "noise," while the other variances are large (arrows in the plane) and correspond to "signal," and a coordinate system for the reduced-dimension data.
+
+The choices of linear encoder and decoder that minimize reconstruction error
+
+E[||x - x^||2]
+
+(13.21)
+
+correspond to V = W, µ = b = E[x] and the columns of W form an orthonormal
+
+basis which spans the same subspace as the principal eigenvectors of the covariance
+
+matrix
+
+C = E[(x - µ)(x - µ)].
+
+(13.22)
+
+In the case of PCA, the columns of W are these eigenvectors, ordered by the magnitude of the corresponding eigenvalues (which are all real and non-negative).
+One can also show that eigenvalue i of C corresponds to the variance of x in the direction of eigenvector v(i) . If x  RD and h  Rd with d < D, then the
+
+500
+
+

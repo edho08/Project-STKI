@@ -1,0 +1,37 @@
+CHAPTER 16. STRUCTURED PROBABILISTIC MODELS FOR DEEP LEARNING
+
+Factor graphs resolve this ambiguity by explicitly representing the scope of each  function. Specifically, a factor graph is a graphical representation of an undirected model that consists of a bipartite undirected graph. Some of the nodes are drawn as circles. These nodes correspond to random variables as in a standard undirected model. The rest of the nodes are drawn as squares. These nodes correspond to the factors  of the unnormalized probability distribution. Variables and factors may be connected with undirected edges. A variable and a factor are connected in the graph if and only if the variable is one of the arguments to the factor in the unnormalized probability distribution. No factor may be connected to another factor in the graph, nor can a variable be connected to a variable. See figure 16.13 for an example of how factor graphs can resolve ambiguity in the interpretation of undirected networks.
+
+a
+
+b
+
+a
+
+f1
+
+a
+
+b
+
+f1
+
+c
+
+c
+
+f2
+
+b
+
+f3 c
+
+Figure 16.13: An example of how a factor graph can resolve ambiguity in the interpretation of undirected networks. (Left)An undirected network with a clique involving three variables: a, b and c. (Center)A factor graph corresponding to the same undirected model. This factor graph has one factor over all three variables. (Right)Another valid factor graph for the same undirected model. This factor graph has three factors, each over only two variables. Representation, inference, and learning are all asymptotically cheaper in this factor graph than in the factor graph depicted in the center, even though both require the same undirected graph to represent.
+
+16.3 Sampling from Graphical Models
+Graphical models also facilitate the task of drawing samples from a model. One advantage of directed graphical models is that a simple and efficient proce-
+dure called ancestral sampling can produce a sample from the joint distribution represented by the model.
+The basic idea is to sort the variables xi in the graph into a topological ordering, so that for all i and j, j is greater than i if xi is a parent of xj . The variables
+580
+
+

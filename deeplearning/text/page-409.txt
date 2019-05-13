@@ -1,0 +1,50 @@
+CHAPTER 10. SEQUENCE MODELING: RECURRENT AND RECURSIVE NETS
+
+sequence still has one restriction, which is that the length of both sequences must be the same. We describe how to remove this restriction in section 10.4.
+
+y (t-1)
+
+y (t)
+
+y (t+1)
+
+L(t-1)
+
+L(t)
+
+L(t+1)
+
+o(t-1)
+
+o(t)
+
+o(t+1)
+
+g (t-1)
+
+g (t)
+
+g (t+1)
+
+h(t-1)
+
+h(t)
+
+h(t+1)
+
+x(t-1)
+
+x(t)
+
+x(t+1)
+
+Figure 10.11: Computation of a typical bidirectional recurrent neural network, meant to learn to map input sequences x to target sequences y, with loss L(t) at each step t.
+The h recurrence propagates information forward in time (towards the right) while the
+g recurrence propagates information backward in time (towards the left). Thus at each point t, the output units o(t) can benefit from a relevant summary of the past in its h(t) input and from a relevant summary of the future in its g(t) input.
+
+10.3 Bidirectional RNNs
+All of the recurrent networks we have considered up to now have a "causal" structure, meaning that the state at time t only captures information from the past, x(1), . . . , x(t-1), and the present input x (t). Some of the models we have discussed also allow information from past y values to affect the current state when the y values are available.
+However, in many applications we want to output a prediction of y(t) which may
+394
+
+

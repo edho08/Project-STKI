@@ -1,0 +1,18 @@
+BIBLIOGRAPHY
+Torralba, A., Fergus, R., and Weiss, Y. (2008). Small codes and large databases for recognition. In Proceedings of the Computer Vision and Pattern Recognition Conference (CVPR'08), pages 1­8. 525
+Touretzky, D. S. and Minton, G. E. (1985). Symbols among the neurons: Details of a connectionist inference architecture. In Proceedings of the 9th International Joint Conference on Artificial Intelligence - Volume 1 , IJCAI'85, pages 238­243, San Francisco, CA, USA. Morgan Kaufmann Publishers Inc. 17
+Tu, K. and Honavar, V. (2011). On the utility of curricula in unsupervised learning of probabilistic grammars. In IJCAI'2011 . 328
+Turaga, S. C., Murray, J. F., Jain, V., Roth, F., Helmstaedter, M., Briggman, K., Denk, W., and Seung, H. S. (2010). Convolutional networks can learn to generate affinity graphs for image segmentation. Neural Computation, 22(2), 511­538. 360
+Turian, J., Ratinov, L., and Bengio, Y. (2010). Word representations: A simple and general method for semi-supervised learning. In Proc. ACL'2010 , pages 384­394. 535
+Töscher, A., Jahrer, M., and Bell, R. M. (2009). The BigChaos solution to the Netflix grand prize. 480
+Uria, B., Murray, I., and Larochelle, H. (2013). Rnade: The real-valued neural autoregressive density-estimator. In NIPS'2013 . 709, 710
+van den Oörd, A., Dieleman, S., and Schrauwen, B. (2013). Deep content-based music recommendation. In NIPS'2013 . 480
+van der Maaten, L. and Hinton, G. E. (2008). Visualizing data using t-SNE. J. Machine Learning Res., 9. 477, 519
+Vanhoucke, V., Senior, A., and Mao, M. Z. (2011). Improving the speed of neural networks on CPUs. In Proc. Deep Learning and Unsupervised Feature Learning NIPS Workshop. 444, 452
+Vapnik, V. N. (1982). Estimation of Dependences Based on Empirical Data . SpringerVerlag, Berlin. 114
+Vapnik, V. N. (1995). The Nature of Statistical Learning Theory . Springer, New York. 114
+Vapnik, V. N. and Chervonenkis, A. Y. (1971). On the uniform convergence of relative frequencies of events to their probabilities. Theory of Probability and Its Applications, 16, 264­280. 114
+Vincent, P. (2011). A connection between score matching and denoising autoencoders. Neural Computation, 23(7). 513, 515, 712
+773
+
+

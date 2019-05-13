@@ -1,0 +1,101 @@
+CHAPTER 4. NUMERICAL COMPUTATION
+
+f (x)
+
+This local minimum performs nearly as well as
+the global one, so it is an acceptable
+halting point.
+
+Ideally, we would like to arrive at the global
+minimum, but this might not be possible.
+
+This local minimum performs poorly and should be avoided.
+
+x
+Figure 4.3: Optimization algorithms may fail to find a global minimum when there are multiple local minima or plateaus present. In the context of deep learning, we generally accept such solutions even though they are not truly minimal, so long as they correspond to significantly low values of the cost function.
+
+critical points are points where every element of the gradient is equal to zero.
+
+The directional derivative in direction u (a unit vector) is the slope of the
+
+function f in direction u. In other words, the directional derivative is the derivative
+
+of the function f (x + u) with respect to , evaluated at  = 0. Using the chain
+
+rule,
+
+we
+
+can
+
+see
+
+that
+
+ 
+
+f
+
+(x
+
++
+
+u)
+
+evaluates
+
+to
+
+ux f (x)
+
+when
+
+ = 0.
+
+To minimize f , we would like to find the direction in which f decreases the
+
+fastest. We can do this using the directional derivative:
+
+min
+u,uu=1
+
+u
+
+x
+
+f
+
+(x)
+
+(4.3)
+
+=
+
+min
+u,u u=1
+
+||u||2
+
+||x
+
+f
+
+(x)||2
+
+cos
+
+
+
+(4.4)
+
+where  is the angle between u and the gradient. Substituting in ||u||2 = 1 and ignoring factors that do not depend on u, this simplifies to minu cos . This is minimized when u points in the opposite direction as the gradient. In other words, the gradient points directly uphill, and the negative gradient points directly downhill. We can decrease f by moving in the direction of the negative gradient. This is known as the method of steepest descent or gradient descent.
+
+Steepest descent proposes a new point
+
+x = x - x f (x)
+
+(4.5)
+
+85
+
+

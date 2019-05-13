@@ -1,0 +1,32 @@
+CHAPTER 15. REPRESENTATION LEARNING
+
+y=1
+
+y=2
+
+y=3
+
+p(x)
+
+x
+Figure 15.4: Example of a density over x that is a mixture over three components. The component identity is an underlying explanatory factor, y. Because the mixture components (e.g., natural object classes in image data) are statistically salient, just modeling p( x) in an unsupervised way with no labeled example already reveals the factor y.
+
+Next, let us see a simple example of how semi-supervised learning can succeed. Consider the situation where x arises from a mixture, with one mixture component per value of y, as illustrated in figure 15.4. If the mixture components are wellseparated, then modeling p(x) reveals precisely where each component is, and a single labeled example of each class will then be enough to perfectly learn p(y | x). But more generally, what could make p(y | x) and p(x) be tied together?
+If y is closely associated with one of the causal factors of x, then p(x) and p(y | x) will be strongly tied, and unsupervised representation learning that tries to disentangle the underlying factors of variation is likely to be useful as a semi-supervised learning strategy.
+Consider the assumption that y is one of the causal factors of x, and let h represent all those factors. The true generative process can be conceived as structured according to this directed graphical model, with h as the parent of x:
+
+p(h, x) = p(x | h)p(h).
+
+(15.1)
+
+As a consequence, the data has marginal probability
+
+p(x) = Ehp(x | h).
+
+(15.2)
+
+From this straightforward observation, we conclude that the best possible model of x (from a generalization point of view) is the one that uncovers the above "true"
+
+542
+
+

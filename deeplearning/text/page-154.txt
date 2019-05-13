@@ -1,0 +1,21 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+single point estimate. One common reason for desiring a point estimate is that most operations involving the Bayesian posterior for most interesting models are intractable, and a point estimate offers a tractable approximation. Rather than simply returning to the maximum likelihood estimate, we can still gain some of the benefit of the Bayesian approach by allowing the prior to influence the choice of the point estimate. One rational way to do this is to choose the maximum a posteriori (MAP) point estimate. The MAP estimate chooses the point of maximal posterior probability (or maximal probability density in the more common case of continuous ):
+
+MAP = arg max p( | x) = arg max log p(x | ) + log p().
+
+
+
+
+
+(5.79)
+
+We recognize, above on the right hand side, log p(x | ), i.e. the standard loglikelihood term, and log p(), corresponding to the prior distribution.
+As an example, consider a linear regression model with a Gaussian prior on the weights w. If this prior is given by N (w ; 0, 1I 2), then the log-prior term in equation 5.79 is proportional to the familiar ww weight decay penalty, plus a term that does not depend on w and does not affect the learning process. MAP Bayesian inference with a Gaussian prior on the weights thus corresponds to weight decay.
+As with full Bayesian inference, MAP Bayesian inference has the advantage of leveraging information that is brought by the prior and cannot be found in the training data. This additional information helps to reduce the variance in the MAP point estimate (in comparison to the ML estimate). However, it does so at the price of increased bias.
+Many regularized estimation strategies, such as maximum likelihood learning regularized with weight decay, can be interpreted as making the MAP approximation to Bayesian inference. This view applies when the regularization consists of adding an extra term to the objective function that corresponds to log p( ). Not all regularization penalties correspond to MAP Bayesian inference. For example, some regularizer terms may not be the logarithm of a probability distribution. Other regularization terms depend on the data, which of course a prior probability distribution is not allowed to do.
+MAP Bayesian inference provides a straightforward way to design complicated yet interpretable regularization terms. For example, a more complicated penalty term can be derived by using a mixture of Gaussians, rather than a single Gaussian distribution, as the prior (Nowlan and Hinton, 1992).
+
+139
+
+

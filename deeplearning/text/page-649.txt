@@ -1,0 +1,25 @@
+CHAPTER 19. APPROXIMATE INFERENCE
+
+approximations of p(h | v), the lower bound L will be tighter, in other words, closer to log p(v). When q (h | v) = p (h | v), the approximation is perfect, and L(v, , q) = log p(v; ).
+We can thus think of inference as the procedure for finding the q that maximizes L. Exact inference maximizes L perfectly by searching over a family of functions q that includes p(h | v). Throughout this chapter, we will show how to derive different forms of approximate inference by using approximate optimization to find q. We can make the optimization procedure less expensive but approximate by restricting the family of distributions q the optimization is allowed to search over or by using an imperfect optimization procedure that may not completely maximize L but merely increase it by a significant amount.
+No matter what choice of q we use, L is a lower bound. We can get tighter or looser bounds that are cheaper or more expensive to compute depending on how we choose to approach this optimization problem. We can obtain a poorly matched q but reduce the computational cost by using an imperfect optimization procedure, or by using a perfect optimization procedure over a restricted family of q distributions.
+
+19.2 Expectation Maximization
+
+The first algorithm we introduce based on maximizing a lower bound L is the expectation maximization (EM) algorithm, a popular training algorithm for models with latent variables. We describe here a view on the EM algorithm developed by Neal and Hinton (1999). Unlike most of the other algorithms we describe in this chapter, EM is not an approach to approximate inference, but rather an approach to learning with an approximate posterior.
+The EM algorithm consists of alternating between two steps until convergence:
+
+· The E-step (Expectation step): Let (0) denote the value of the parameters at the beginning of the step. Set q(h(i) | v) = p(h(i) | v (i); (0)) for all indices i of the training examples v (i) we want to train on (both batch and
+minibatch variants are valid). By this we mean q is defined in terms of the current parameter value of (0); if we vary  then p(h | v; ) will change but q(h | v) will remain equal to p(h | v; (0)).
+
+· The M-step (Maximization step): Completely or partially maximize
+
+ L(v (i), , q)
+
+(19.8)
+
+i
+
+634
+
+

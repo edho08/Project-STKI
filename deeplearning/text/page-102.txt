@@ -1,0 +1,35 @@
+CHAPTER 4. NUMERICAL COMPUTATION Negative curvature No curvature Positive curvature
+
+f (x) f (x) f (x)
+
+x
+
+x
+
+x
+
+Figure 4.4: The second derivative determines the curvature of a function. Here we show quadratic functions with various curvature. The dashed line indicates the value of the cost function we would expect based on the gradient information alone as we make a gradient step downhill. In the case of negative curvature, the cost function actually decreases faster than the gradient predicts. In the case of no curvature, the gradient predicts the decrease correctly. In the case of positive curvature, the function decreases slower than expected and eventually begins to increase, so steps that are too large can actually increase the function inadvertently.
+
+figure 4.4 to see how different forms of curvature affect the relationship between the value of the cost function predicted by the gradient and the true value.
+When our function has multiple input dimensions, there are many second derivatives. These derivatives can be collected together into a matrix called the Hessian matrix. The Hessian matrix H(f )(x) is defined such that
+
+2 H(f )(x)i,j = xixj f (x).
+
+(4.6)
+
+Equivalently, the Hessian is the Jacobian of the gradient.
+Anywhere that the second partial derivatives are continuous, the differential operators are commutative, i.e. their order can be swapped:
+
+2
+
+2
+
+xixj f (x) = x jxi f (x).
+
+(4.7)
+
+This implies that Hi,j = H j,i, so the Hessian matrix is symmetric at such points. Most of the functions we encounter in the context of deep learning have a symmetric Hessian almost everywhere. Because the Hessian matrix is real and symmetric, we can decompose it into a set of real eigenvalues and an orthogonal basis of
+
+87
+
+

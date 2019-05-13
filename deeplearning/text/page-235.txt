@@ -1,0 +1,60 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+J MLE
+
+J
+
+cross_entropy
+
++
+
+U (2)
+
+y
+
+matmul
+
+u(8) ×
+
+H
+
+W (2)
+
+U (5)
+
+u(6)
+
+u(7)
+
+
+
+relu
+
+sqr
+
+sum
+
++
+
+U (1) matmul
+
+X
+
+W (1)
+
+U (3)
+
+u(4)
+
+sqr
+
+sum
+
+Figure 6.11: The computational graph used to compute the cost used to train our example of a single-layer MLP using the cross-entropy loss and weight decay.
+
+The other path through the cross-entropy cost is slightly more complicated. Let G be the gradient on the unnormalized log probabilities U(2) provided by the cross_entropy operation. The back-propagation algorithm now needs to explore two different branches. On the shorter branch, it adds H G to the gradient on W (2) , using the back-propagation rule for the second argument to the matrix multiplication operation. The other branch corresponds to the longer chain descending further along the network. First, the back-propagation algorithm computes HJ = GW (2) using the back-propagation rule for the first argument to the matrix multiplication operation. Next, the relu operation uses its backpropagation rule to zero out components of the gradient corresponding to entries of U (1) that were less than 0. Let the result be called G . The last step of the back-propagation algorithm is to use the back-propagation rule for the second argument of the matmul operation to add X G to the gradient on W (1).
+After these gradients have been computed, it is the responsibility of the gradient descent algorithm, or another optimization algorithm, to use these gradients to update the parameters.
+For the MLP, the computational cost is dominated by the cost of matrix multiplication. During the forward propagation stage, we multiply by each weight
+220
+
+

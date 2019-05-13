@@ -1,0 +1,27 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+5.7 Supervised Learning Algorithms
+Recall from section 5.1.3 that supervised learning algorithms are, roughly speaking, learning algorithms that learn to associate some input with some output, given a training set of examples of inputs x and outputs y. In many cases the outputs y may be difficult to collect automatically and must be provided by a human "supervisor," but the term still applies even when the training set targets were collected automatically.
+
+5.7.1 Probabilistic Supervised Learning
+
+Most supervised learning algorithms in this book are based on estimating a probability distribution p( y | x). We can do this simply by using maximum likelihood estimation to find the best parameter vector  for a parametric family of distributions p(y | x; ).
+We have already seen that linear regression corresponds to the family
+
+p(y | x; ) = N (y; x, I).
+
+(5.80)
+
+We can generalize linear regression to the classification scenario by defining a different family of probability distributions. If we have two classes, class 0 and class 1, then we need only specify the probability of one of these classes. The probability of class 1 determines the probability of class 0, because these two values must add up to 1.
+The normal distribution over real-valued numbers that we used for linear regression is parametrized in terms of a mean. Any value we supply for this mean is valid. A distribution over a binary variable is slightly more complicated, because its mean must always be between 0 and 1. One way to solve this problem is to use the logistic sigmoid function to squash the output of the linear function into the interval (0, 1) and interpret that value as a probability:
+
+p(y = 1 | x; ) = (x).
+
+(5.81)
+
+This approach is known as logistic regression (a somewhat strange name since we use the model for classification rather than regression).
+In the case of linear regression, we were able to find the optimal weights by solving the normal equations. Logistic regression is somewhat more difficult. There is no closed-form solution for its optimal weights. Instead, we must search for them by maximizing the log-likelihood. We can do this by minimizing the negative log-likelihood (NLL) using gradient descent.
+
+140
+
+

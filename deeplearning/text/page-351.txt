@@ -1,0 +1,48 @@
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+s1
+
+s2
+
+s3
+
+s4
+
+s5
+
+x1
+
+x2
+
+x3
+
+x4
+
+x5
+
+s1
+
+s2
+
+s3
+
+s4
+
+s5
+
+x1
+
+x2
+
+x3
+
+x4
+
+x5
+
+Figure 9.2: Sparse connectivity, viewed from below: We highlight one input unit, x3, and also highlight the output units in s that are affected by this unit. (Top)When s is formed by convolution with a kernel of width 3, only three outputs are affected by x.
+(Bottom)When s is formed by matrix multiplication, connectivity is no longer sparse, so all of the outputs are affected by x3.
+
+336
+
+

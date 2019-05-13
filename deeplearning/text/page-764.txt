@@ -1,0 +1,20 @@
+BIBLIOGRAPHY
+Kingma, D., Rezende, D., Mohamed, S., and Welling, M. (2014). Semi-supervised learning with deep generative models. In NIPS'2014 . 426
+Kingma, D. P. (2013). Fast gradient-based inference with continuous latent variable models in auxiliary form. Technical report, arxiv:1306.0733. 652, 689, 696
+Kingma, D. P. and Welling, M. (2014a). Auto-encoding variational bayes. In Proceedings of the International Conference on Learning Representations (ICLR). 689, 700
+Kingma, D. P. and Welling, M. (2014b). Efficient gradient-based inference through transformations between bayes nets and neural nets. Technical report, arxiv:1402.0480. 689
+Kirkpatrick, S., Jr., C. D. G., , and Vecchi, M. P. (1983). Optimization by simulated annealing. Science, 220, 671­680. 327
+Kiros, R., Salakhutdinov, R., and Zemel, R. (2014a). Multimodal neural language models. In ICML'2014 . 102
+Kiros, R., Salakhutdinov, R., and Zemel, R. (2014b). Unifying visual-semantic embeddings with multimodal neural language models. arXiv:1411.2539 [cs.LG]. 102, 410
+Klementiev, A., Titov, I., and Bhattarai, B. (2012). Inducing crosslingual distributed representations of words. In Proceedings of COLING 2012 . 476, 539
+Knowles-Barley, S., Jones, T. R., Morgan, J., Lee, D., Kasthuri, N., Lichtman, J. W., and Pfister, H. (2014). Deep learning for the connectome. GPU Technology Conference. 26
+Koller, D. and Friedman, N. (2009). Probabilistic Graphical Models: Principles and Techniques. MIT Press. 583, 595, 645
+Konig, Y., Bourlard, H., and Morgan, N. (1996). REMAP: Recursive estimation and maximization of a posteriori probabilities ­ application to transition-based connectionist speech recognition. In D. Touretzky, M. Mozer, and M. Hasselmo, editors, Advances in Neural Information Processing Systems 8 (NIPS'95). MIT Press, Cambridge, MA. 459
+Koren, Y. (2009). The BellKor solution to the Netflix grand prize. 258, 480
+Kotzias, D., Denil, M., de Freitas, N., and Smyth, P. (2015). From group to individual labels using deep features. In ACM SIGKDD . 106
+Koutnik, J., Greff, K., Gomez, F., and Schmidhuber, J. (2014). A clockwork RNN. In ICML'2014 . 408
+Kociský, T., Hermann, K. M., and Blunsom, P. (2014). Learning Bilingual Word Representations by Marginalizing Alignments. In Proceedings of ACL. 476
+Krause, O., Fischer, A., Glasmachers, T., and Igel, C. (2013). Approximation properties of DBNs with binary hidden units and real-valued visible units. In ICML'2013 . 553
+749
+
+

@@ -1,0 +1,71 @@
+CHAPTER 20. DEEP GENERATIVE MODELS
+
+to update all of the even layers simultaneously and then to update all of the odd layers simultaneously, following the same schedule as Gibbs sampling.
+
+Now that we have specified our family of approximating distributions Q, it remains to specify a procedure for choosing the member of this family that best fits P. The most straightforward way to do this is to use the mean field equations specified by equation 19.56. These equations were derived by solving for where the derivatives of the variational lower bound are zero. They describe in an abstract manner how to optimize the variational lower bound for any model, simply by taking expectations with respect to Q.
+
+Applying these general equations, we obtain the update rules (again, ignoring bias terms):
+
+
+
+
+
+^h(j1) =   viWi(,1j) +  Wj(,2k)h^(k2) , j
+
+i
+
+k 
+
+^h(k2) =   Wj(2,k) ^h(j1 ) , k.
+
+j
+
+(20.33) (20.34)
+
+At a fixed point of this system of equations, we have a local maximum of the
+
+variational lower bound L(Q). Thus these fixed point update equations define an
+
+iterative
+
+algorithm
+
+where
+
+we
+
+alternate
+
+updates
+
+of
+
+^h
+
+(1) j
+
+(using
+
+equation
+
+20.33)
+
+and
+
+updates of ^h(k2) (using equation 20.34). On small problems such as MNIST, as few
+
+as ten iterations can be sufficient to find an approximate positive phase gradient
+
+for learning, and fifty usually suffice to obtain a high quality representation of
+
+a single specific example to be used for high-accuracy classification. Extending
+
+approximate variational inference to deeper DBMs is straightforward.
+
+20.4.3 DBM Parameter Learning
+Learning in the DBM must confront both the challenge of an intractable partition function, using the techniques from chapter 18, and the challenge of an intractable posterior distribution, using the techniques from chapter 19.
+As described in section 20.4.2, variational inference allows the construction of a distribution Q(h | v) that approximates the intractable P( h | v). Learning then proceeds by maximizing L(v, Q, ), the variational lower bound on the intractable log-likelihood, log P (v; ).
+
+668
+
+

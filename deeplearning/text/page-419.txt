@@ -1,0 +1,52 @@
+CHAPTER 10. SEQUENCE MODELING: RECURRENT AND RECURSIVE NETS
+
+hundreds of steps), but the problem of learning long-term dependencies remains one of the main challenges in deep learning.
+
+10.8 Echo State Networks
+
+The recurrent weights mapping from h(t-1) to h(t) and the input weights mapping from x(t) to h(t) are some of the most difficult parameters to learn in a recurrent network. One proposed (Jaeger, 2003; Maass et al., 2002; Jaeger and Haas, 2004; Jaeger, 2007b) approach to avoiding this difficulty is to set the recurrent weights such that the recurrent hidden units do a good job of capturing the history of past inputs, and learn only the output weights. This is the idea that was independently proposed for echo state networks or ESNs (Jaeger and Haas, 2004; Jaeger, 2007b) and liquid state machines (Maass et al., 2002). The latter is similar, except that it uses spiking neurons (with binary outputs) instead of the continuous-valued hidden units used for ESNs. Both ESNs and liquid state machines are termed reservoir computing (Lukosevicius and Jaeger, 2009) to denote the fact that the hidden units form of reservoir of temporal features which may capture different aspects of the history of inputs.
+
+One way to think about these reservoir computing recurrent networks is that they are similar to kernel machines: they map an arbitrary length sequence (the history of inputs up to time t) into a fixed-length vector (the recurrent state h(t)), on which a linear predictor (typically a linear regression) can be applied to solve the problem of interest. The training criterion may then be easily designed to be convex as a function of the output weights. For example, if the output consists of linear regression from the hidden units to the output targets, and the training criterion is mean squared error, then it is convex and may be solved reliably with simple learning algorithms (Jaeger, 2003).
+
+The important question is therefore: how do we set the input and recurrent weights so that a rich set of histories can be represented in the recurrent neural network state? The answer proposed in the reservoir computing literature is to view the recurrent net as a dynamical system, and set the input and recurrent weights such that the dynamical system is near the edge of stability.
+
+The original idea was to make the eigenvalues of the Jacobian of the state-to-
+
+state transition function be close to 1. As explained in section 8.2.5, an important
+
+characteristic of a recurrent network is the eigenvalue spectrum of the Jacobians
+
+J (t)
+
+=
+
+. s(t)
+s(t-1)
+
+Of
+
+particular
+
+importance
+
+is
+
+the
+
+spectral
+
+radius
+
+of
+
+J (t),
+
+defined
+
+to
+
+be the maximum of the absolute values of its eigenvalues.
+
+404
+
+

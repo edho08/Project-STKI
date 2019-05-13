@@ -1,0 +1,12 @@
+CHAPTER 12. APPLICATIONS
+Many factors determine the extent to which we prefer exploration or exploitation. One of the most prominent factors is the time scale we are interested in. If the agent has only a short amount of time to accrue reward, then we prefer more exploitation. If the agent has a long time to accrue reward, then we begin with more exploration so that future actions can be planned more effectively with more knowledge. As time progresses and our learned policy improves, we move toward more exploitation.
+Supervised learning has no tradeoff between exploration and exploitation because the supervision signal always specifies which output is correct for each input. There is no need to try out different outputs to determine if one is better than the model's current output--we always know that the label is the best output.
+Another difficulty arising in the context of reinforcement learning, besides the exploration-exploitation trade-off, is the difficulty of evaluating and comparing different policies. Reinforcement learning involves interaction between the learner and the environment. This feedback loop means that it is not straightforward to evaluate the learner's performance using a fixed set of test set input values. The policy itself determines which inputs will be seen. Dudik et al. (2011) present techniques for evaluating contextual bandits.
+12.5.2 Knowledge Representation, Reasoning and Question Answering
+Deep learning approaches have been very successful in language modeling, machine translation and natural language processing due to the use of embeddings for symbols (Rumelhart et al., 1986a) and words (Deerwester et al., 1990; Bengio et al., 2001). These embeddings represent semantic knowledge about individual words and concepts. A research frontier is to develop embeddings for phrases and for relations between words and facts. Search engines already use machine learning for this purpose but much more remains to be done to improve these more advanced representations.
+12.5.2.1 Knowledge, Relations and Question Answering
+One interesting research direction is determining how distributed representations can be trained to capture the relations between two entities. These relations allow us to formalize facts about objects and how objects interact with each other.
+In mathematics, a binary relation is a set of ordered pairs of objects. Pairs that are in the set are said to have the relation while those who are not in the set
+482
+
+

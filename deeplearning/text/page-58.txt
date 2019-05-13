@@ -1,0 +1,86 @@
+CHAPTER 2. LINEAR ALGEBRA
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+ 
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 2.3: An example of the effect of eigenvectors and eigenvalues. Here, we have a matrix A with two orthonormal eigenvectors, v(1) with eigenvalue 1 and v (2) with eigenvalue 2. (Left)We plot the set of all unit vectors u  R2 as a unit circle. (Right)We
+plot the set of all points Au. By observing the way that A distorts the unit circle, we can see that it scales space in direction v(i) by i.
+
+eigenvectors to form a matrix V with one eigenvector per column: V = [v(1) , . . . ,
+v(n)]. Likewise, we can concatenate the eigenvalues to form a vector  = [1 , . . . , n]. The eigendecomposition of A is then given by
+
+A = V diag()V -1.
+
+(2.40)
+
+We have seen that constructing matrices with specific eigenvalues and eigenvectors allows us to stretch space in desired directions. However, we often want to decompose matrices into their eigenvalues and eigenvectors. Doing so can help us to analyze certain properties of the matrix, much as decomposing an integer into its prime factors can help us understand the behavior of that integer.
+Not every matrix can be decomposed into eigenvalues and eigenvectors. In some
+43
+
+

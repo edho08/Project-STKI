@@ -1,0 +1,20 @@
+CHAPTER 12. APPLICATIONS
+learning point of view, it can be useful to learn a representation in which sentences that have the same meaning have similar representations regardless of whether they were written in the source language or the target language. This strategy was explored first using a combination of convolutions and RNNs (Kalchbrenner and Blunsom, 2013). Later work introduced the use of an RNN for scoring proposed translations (Cho et al., 2014a) and for generating translated sentences (Sutskever et al., 2014). Jean et al. (2014) scaled these models to larger vocabularies.
+12.4.5.1 Using an Attention Mechanism and Aligning Pieces of Data
+c
++
+
+ (t-1) ×
+h(t-1)
+
+ (t) ×
+h(t)
+
+ (t+1) ×
+h(t+1)
+
+Figure 12.6: A modern attention mechanism, as introduced by Bahdanau et al. (2015), is essentially a weighted average. A context vector c is formed by taking a weighted average of feature vectors h(t) with weights (t) . In some applications, the feature vectors h are hidden units of a neural network, but they may also be raw input to the model. The weights (t) are produced by the model itself. They are usually values in the interval [0, 1] and are intended to concentrate around just one h(t) so that the weighted average approximates reading that one specific time step precisely. The weights (t) are usually produced by applying a softmax function to relevance scores emitted by another portion of the model. The attention mechanism is more expensive computationally than directly indexing the desired h(t), but direct indexing cannot be trained with gradient descent. The attention mechanism based on weighted averages is a smooth, differentiable approximation that can be trained with existing optimization algorithms.
+Using a fixed-size representation to capture all the semantic details of a very long sentence of say 60 words is very difficult. It can be achieved by training a sufficiently large RNN well enough and for long enough, as demonstrated by Cho et al. (2014a) and Sutskever et al. (2014). However, a more efficient approach is to read the whole sentence or paragraph (to get the context and the gist of what
+475
+
+

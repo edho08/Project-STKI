@@ -1,0 +1,19 @@
+BIBLIOGRAPHY
+Herault, J. and Ans, B. (1984). Circuits neuronaux à synapses modifiables: Décodage de messages composites par apprentissage non supervisé. Comptes Rendus de l'Académie des Sciences, 299(III-13), 525­­528. 491
+Hinton, G. (2012). Neural networks for machine learning. Coursera, video lectures. 307
+Hinton, G., Deng, L., Dahl, G. E., Mohamed, A., Jaitly, N., Senior, A., Vanhoucke, V., Nguyen, P., Sainath, T., and Kingsbury, B. (2012a). Deep neural networks for acoustic modeling in speech recognition. IEEE Signal Processing Magazine, 29(6), 82­97. 23, 460
+Hinton, G., Vinyals, O., and Dean, J. (2015). Distilling the knowledge in a neural network. arXiv preprint arXiv:1503.02531 . 448
+Hinton, G. E. (1989). Connectionist learning procedures. Artificial Intelligence , 40, 185­234. 494
+Hinton, G. E. (1990). Mapping part-whole hierarchies into connectionist networks. Artificial Intelligence, 46(1), 47­75. 418
+Hinton, G. E. (1999). Products of experts. In ICANN'1999 . 571
+Hinton, G. E. (2000). Training products of experts by minimizing contrastive divergence. Technical Report GCNU TR 2000-004, Gatsby Unit, University College London. 610, 676
+Hinton, G. E. (2006). To recognize shapes, first learn to generate images. Technical Report UTML TR 2006-003, University of Toronto. 528, 595
+Hinton, G. E. (2007a). How to do backpropagation in a brain. Invited talk at the NIPS'2007 Deep Learning Workshop. 656
+Hinton, G. E. (2007b). Learning multiple layers of representation. Trends in cognitive sciences , 11(10), 428­434. 660
+Hinton, G. E. (2010). A practical guide to training restricted Boltzmann machines. Technical Report UTML TR 2010-003, Department of Computer Science, University of Toronto. 610
+Hinton, G. E. and Ghahramani, Z. (1997). Generative models for discovering sparse distributed representations. Philosophical Transactions of the Royal Society of London . 147
+Hinton, G. E. and McClelland, J. L. (1988). Learning representations by recirculation. In NIPS'1987 , pages 358­366. 502
+Hinton, G. E. and Roweis, S. (2003). Stochastic neighbor embedding. In NIPS'2002 . 519
+742
+
+

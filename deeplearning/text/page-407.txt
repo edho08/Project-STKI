@@ -1,0 +1,61 @@
+CHAPTER 10. SEQUENCE MODELING: RECURRENT AND RECURSIVE NETS
+
+of x R that is effectively a new bias parameter used for each of the hidden units. The weights remain independent of the input. We can think of this model as taking the parameters  of the non-conditional model and turning them into , where the bias parameters within  are now a function of the input.
+
+y (t-1)
+
+y (t)
+
+y (t+1)
+
+y (...)
+
+U L(t-1) U
+
+L(t) U L(t+1)
+
+o(t-1)
+
+o(t)
+
+o(t+1)
+
+W s(... )
+
+V W
+h(t-1)
+
+V W
+h(t)
+
+V W
+h(t+1)
+
+h(... )
+
+R
+
+R
+
+RR R
+
+x
+
+Figure 10.9: An RNN that maps a fixed-length vector x into a distribution over sequences Y. This RNN is appropriate for tasks such as image captioning, where a single image is
+used as input to a model that then produces a sequence of words describing the image. Each element y(t) of the observed output sequence serves both as input (for the current time step) and, during training, as target (for the previous time step).
+
+Rather than receiving only a single vector x as input, the RNN may receive a sequence of vectors x(t) as input. The RNN described in equation 10.8 corresponds to a conditional distribution P (y(1), . . . , y() | x(1), . . . , x() ) that makes a
+
+conditional independence assumption that this distribution factorizes as
+
+ P (y(t) | x(1) , . . . , x(t)).
+
+(10.35)
+
+t
+
+To remove the conditional independence assumption, we can add connections from the output at time t to the hidden unit at time t + 1, as shown in figure 10.10. The model can then represent arbitrary probability distributions over the y sequence. This kind of model representing a distribution over a sequence given another
+
+392
+
+

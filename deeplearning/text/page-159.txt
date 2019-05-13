@@ -1,0 +1,5 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+distribution, but only a single variable x1 is relevant to the output. Suppose further that this feature simply encodes the output directly, i.e. that y = x1 in all cases. Nearest neighbor regression will not be able to detect this simple pattern. The nearest neighbor of most points x will be determined by the large number of features x2 through x100, not by the lone feature x1 . Thus the output on small training sets will essentially be random.
+144
+
+

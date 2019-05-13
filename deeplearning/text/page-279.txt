@@ -1,0 +1,109 @@
+CHAPTER 7. REGULARIZATION FOR DEEP LEARNING
+
+To see that the weight scaling rule is exact, we can simplify P~ensemble:
+
+ P~ensemble (y = y | v) = 2n
+
+
+
+P (y = y | v; d)
+
+d{0,1}n
+
+
+
+= 2n
+
+softmax (W (d  v) + b)y
+
+d{0,1}n
+
+=
+
+2   n 
+d{0,1}n
+
+
+
+
+
+ye xepxpWWy,:y(d,:(d
+
+v) +  v)
+
+by +
+
+by
+
+
+
+
+
+=
+
+2n 2nd{0d,1}{0n,1}nye xexppWWy,:y(d,: (d
+
+v) +  v)
+
+ by + by
+
+
+
+(7.60) (7.61) (7.62) (7.63)
+
+Because P~ will be normalized, we can safely ignore multiplication by factors that
+
+are constant with respect to y:
+
+ P~ensemble(y = y | v)  2n
+
+
+
+expWy,:(d  v) + by 
+
+d{0,1}n
+
+(7.64)
+
+
+
+
+
+=
+
+exp
+
+1 2n
+
+
+
+Wy,:(d  v) + by 
+
+d{0,1}n
+
+
+
+
+
+= exp
+
+1 2
+
+Wy,:
+
+v
+
++
+
+by
+
+.
+
+(7.65) (7.66)
+
+Substituting this back into equation 7.58 we obtain a softmax classifier with weights 12W .
+The weight scaling rule is also exact in other settings, including regression networks with conditionally normal outputs, and deep networks that have hidden layers without nonlinearities. However, the weight scaling rule is only an approximation for deep models that have nonlinearities. Though the approximation has not been theoretically characterized, it often works well, empirically. Goodfellow et al. (2013a) found experimentally that the weight scaling approximation can work better (in terms of classification accuracy) than Monte Carlo approximations to the ensemble predictor. This held true even when the Monte Carlo approximation was allowed to sample up to 1,000 sub-networks. Gal and Ghahramani (2015) found that some models obtain better classification accuracy using twenty samples and
+
+264
+
+

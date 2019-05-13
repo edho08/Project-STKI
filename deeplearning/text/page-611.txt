@@ -1,0 +1,37 @@
+CHAPTER 17. MONTE CARLO METHODS
+
+of obtaining a sample.
+In an EBM, we can avoid this chicken and egg problem by sampling using a Markov chain. The core idea of a Markov chain is to have a state x that begins as an arbitrary value. Over time, we randomly update x repeatedly. Eventually x becomes (very nearly) a fair sample from p(x). Formally, a Markov chain is defined by a random state x and a transition distribution T(x | x) specifying the probability that a random update will go to state x if it starts in state x. Running the Markov chain means repeatedly updating the state x to a value x sampled from T (x | x).
+To gain some theoretical understanding of how MCMC methods work, it is useful to reparametrize the problem. First, we restrict our attention to the case where the random variable x has countably many states. We can then represent the state as just a positive integer x. Different integer values of x map back to different states x in the original problem.
+Consider what happens when we run infinitely many Markov chains in parallel. All of the states of the different Markov chains are drawn from some distribution q(t)(x), where t indicates the number of time steps that have elapsed. At the beginning, q(0) is some distribution that we used to arbitrarily initialize x for each Markov chain. Later, q(t) is influenced by all of the Markov chain steps that have run so far. Our goal is for q(t)(x) to converge to p(x).
+Because we have reparametrized the problem in terms of positive integer x, we can describe the probability distribution q using a vector v, with
+
+q(x = i) = vi.
+
+(17.17)
+
+Consider what happens when we update a single Markov chain's state x to a
+
+new state x . The probability of a single state landing in state x is given by
+
+q(t+1)(x) =  q(t) (x)T (x | x).
+
+(17.18)
+
+x
+
+Using our integer parametrization, we can represent the effect of the transition operator T using a matrix A. We define A so that
+
+Ai,j = T (x = i | x = j).
+
+(17.19)
+
+Using this definition, we can now rewrite equation 17.18. Rather than writing it in terms of q and T to understand how a single state is updated, we may now use v and A to describe how the entire distribution over all the different Markov chains (running in parallel) shifts as we apply an update:
+
+v(t) = Av(t-1).
+
+(17.20)
+
+596
+
+

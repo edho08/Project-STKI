@@ -1,0 +1,75 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+A few other reasonably common hidden unit types include:
+
+
+
+
+
+· Radial basis function or RBF unit:
+
+hi = exp
+
+-
+
+1
+
+
+
+2 i
+
+||W:,i
+
+-
+
+x||2
+
+.
+
+This
+
+function becomes more active as x approaches a template W:,i. Because it
+
+saturates to 0 for most x, it can be difficult to optimize.
+
+· Softplus: g(a) = (a) = log(1 + ea). This is a smooth version of the rectifier, introduced by Dugas et al. (2001) for function approximation and by Nair and Hinton (2010) for the conditional distributions of undirected probabilistic models. Glorot et al. (2011a) compared the softplus and rectifier and found better results with the latter. The use of the softplus is generally discouraged. The softplus demonstrates that the performance of hidden unit types can be very counterintuitive--one might expect it to have an advantage over the rectifier due to being differentiable everywhere or due to saturating less completely, but empirically it does not.
+
+· Hard tanh: this is shaped similarly to the tanh and the rectifier but unlike the latter, it is bounded, g(a) = max(-1, min(1 , a)). It was introduced by Collobert (2004).
+
+Hidden unit design remains an active area of research and many useful hidden unit types remain to be discovered.
+
+6.4 Architecture Design
+
+Another key design consideration for neural networks is determining the architecture. The word architecture refers to the overall structure of the network: how many units it should have and how these units should be connected to each other.
+
+Most neural networks are organized into groups of units called layers. Most
+
+neural network architectures arrange these layers in a chain structure, with each
+
+layer being a function of the layer that preceded it. In this structure, the first layer
+
+is given by
+
+
+
+
+
+h(1) = g(1) W (1)x + b (1) ,
+
+(6.40)
+
+the second layer is given by
+
+
+
+
+
+h (2) = g(2) W (2) h(1) + b(2) ,
+
+(6.41)
+
+and so on.
+
+197
+
+

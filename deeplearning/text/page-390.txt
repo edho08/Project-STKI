@@ -1,0 +1,47 @@
+CHAPTER 10. SEQUENCE MODELING: RECURRENT AND RECURSIVE NETS
+
+10.1 Unfolding Computational Graphs
+
+A computational graph is a way to formalize the structure of a set of computations, such as those involved in mapping inputs and parameters to outputs and loss. Please refer to section 6.5.1 for a general introduction. In this section we explain the idea of unfolding a recursive or recurrent computation into a computational graph that has a repetitive structure, typically corresponding to a chain of events. Unfolding this graph results in the sharing of parameters across a deep network structure.
+
+For example, consider the classical form of a dynamical system:
+
+s(t) = f (s(t-1); ),
+
+(10.1)
+
+where s(t) is called the state of the system.
+
+Equation 10.1 is recurrent because the definition of s at time t refers back to the same definition at time t - 1.
+
+For a finite number of time steps , the graph can be unfolded by applying the definition  - 1 times. For example, if we unfold equation 10.1 for  = 3 time steps, we obtain
+
+s(3) =f (s(2); ) =f (f (s(1); ); )
+
+(10.2) (10.3)
+
+Unfolding the equation by repeatedly applying the definition in this way has yielded an expression that does not involve recurrence. Such an expression can now be represented by a traditional directed acyclic computational graph. The unfolded computational graph of equation 10.1 and equation 10.3 is illustrated in figure 10.1.
+
+s(... ) f
+
+s(t-1) f
+
+s(t) f
+
+s(t+1) f
+
+s(... )
+
+Figure 10.1: The classical dynamical system described by equation 10.1, illustrated as an unfolded computational graph. Each node represents the state at some time t and the function f maps the state at t to the state at t + 1. The same parameters (the same value of  used to parametrize f ) are used for all time steps.
+
+As another example, let us consider a dynamical system driven by an external
+
+signal x(t),
+
+s(t) = f (s(t-1) , x(t); ),
+
+(10.4)
+
+375
+
+

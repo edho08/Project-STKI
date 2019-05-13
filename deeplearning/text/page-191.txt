@@ -1,0 +1,119 @@
+CHAPTER 6. DEEP FEEDFORWARD NETWORKS
+
+and b = 0.
+
+ w=
+
+1 -2
+
+ ,
+
+(6.6)
+
+We can now walk through the way that the model processes a batch of inputs.
+
+Let X be the design matrix containing all four points in the binary input space,
+
+with one example per row:
+
+0 0
+
+X
+
+=
+
+
+
+0 1
+
+1 0
+
+ .
+
+(6.7)
+
+11
+
+The first step in the neural network is to multiply the input matrix by the first
+
+layer's weight matrix:
+
+
+
+
+
+00
+
+XW
+
+=
+
+
+
+1 1
+
+1 1
+
+ .
+
+(6.8)
+
+22
+
+Next, we add the bias vector c, to obtain
+
+ 0 -1 
+
+
+
+1 1
+
+0 0
+
+.
+
+21
+
+(6.9)
+
+In this space, all of the examples lie along a line with slope 1. As we move along
+
+this line, the output needs to begin at 0, then rise to 1, then drop back down to 0.
+
+A linear model cannot implement such a function. To finish computing the value
+
+of h for each example, we apply the rectified linear transformation: 0 0
+
+
+
+1 1
+
+0 0
+
+
+
+.
+
+(6.10)
+
+21
+
+This transformation has changed the relationship between the examples. They no longer lie on a single line. As shown in figure 6.1, they now lie in a space where a linear model can solve the problem.
+
+We finish by multiplying by the weight vector w:
+
+0 
+
+
+
+1 1
+
+.
+
+0
+
+(6.11)
+
+176
+
+

@@ -1,0 +1,104 @@
+CHAPTER 5. MACHINE LEARNING BASICS
+
+where the expectation is over the data (seen as samples from a random variable)
+and  is the true underlying value of  used to define the data generating distribution. An estimator ^m is said to be unbiased if bias(^m) = 0, which implies that E (^m) = . An estimator ^m is said to be asymptotically unbiased if limm bias(^m) = 0, which implies that limm E(^m) = .
+
+Example: Bernoulli Distribution Consider a set of samples {x(1), . . . , x(m)}
+
+that are independently and identically distributed according to a Bernoulli distri-
+
+bution with mean :
+
+P (x(i); ) = x(i) (1 - )(1-x(i)) .
+
+(5.21)
+
+A common estimator for the  parameter of this distribution is the mean of the
+
+training samples:
+
+^m
+
+=
+
+1 m
+
+m x(i).
+i=1
+
+(5.22)
+
+To determine whether this estimator is biased, we can substitute equation 5.22
+
+into equation 5.20:
+
+bias(^m)
+
+= =
+
+E[^m] 1
+E m
+
+-  m
+x
+
+
+(i)
+
+-
+
+
+
+i=1
+
+=
+
+1 m
+
+ m
+
+ E x(i)
+
+-
+
+
+
+i=1
+
+=
+
+1  m
+
+1
+
+
+
+
+
+x(i) x (i)(1 - )(1-x(i) ) - 
+
+m
+
+i=1 x(i)=0
+
+=
+
+1
+
+ m () - 
+
+m
+
+i=1
+
+=- =0
+
+(5.23) (5.24) (5.25) (5.26) (5.27) (5.28)
+
+Since bias(^) = 0, we say that our estimator ^ is unbiased.
+
+Example: Gaussian Distribution Estimator of the Mean Now, consider a set of samples {x(1), . . . , x(m)} that are independently and identically distributed according to a Gaussian distribution p(x(i)) = N (x(i); µ, 2 ), where i  {1, . . . , m}.
+
+125
+
+

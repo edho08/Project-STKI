@@ -1,0 +1,74 @@
+CHAPTER 4. NUMERICAL COMPUTATION
+
+x  R2 with x constrained to have exactly unit L2 norm, we can instead minimize g() = f ([cos , sin ] ) with respect to  , then return [cos , sin ] as the solution to the original problem. This approach requires creativity; the transformation between optimization problems must be designed specifically for each case we encounter.
+
+The Karush­Kuhn­Tucker (KKT) approach1 provides a very general solution to constrained optimization. With the KKT approach, we introduce a new function called the generalized Lagrangian or generalized Lagrange function.
+
+To define the Lagrangian, we first need to describe S in terms of equations and inequalities. We want a description of S in terms of m functions g(i) and n functions h(j) so that S = {x | i, g(i)(x) = 0 and j, h(j) (x )  0}. The equations involving g(i) are called the equality constraints and the inequalities involving h(j) are called inequality constraints.
+
+We introduce new variables i and  j for each constraint, these are called the KKT multipliers. The generalized Lagrangian is then defined as
+
+L(x, , ) = f (x) +  i g(i) (x) +  j h(j)(x).
+
+i
+
+j
+
+(4.14)
+
+We can now solve a constrained minimization problem using unconstrained optimization of the generalized Lagrangian. Observe that, so long as at least one feasible point exists and f (x) is not permitted to have value , then
+
+min max max L(x, , ).
+x  ,0
+
+(4.15)
+
+has the same optimal objective function value and set of optimal points x as
+
+minf (x).
+xS
+This follows because any time the constraints are satisfied,
+
+(4.16)
+
+max max L(x, , ) = f (x),
+ ,0
+while any time a constraint is violated,
+
+(4.17)
+
+max max L(x, , ) = .
+ ,0
+
+(4.18)
+
+1
+The
+
+KKT
+
+approach
+
+generalizes
+
+the
+
+method
+
+of
+
+Lagrange
+
+multipliers
+
+which
+
+allows
+
+equality
+
+constraints but not inequality constraints.
+
+94
+
+

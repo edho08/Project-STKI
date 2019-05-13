@@ -1,0 +1,36 @@
+CHAPTER 3. PROBABILITY AND INFORMATION THEORY
+
+describe the entire joint probability distribution can be very inefficient (both computationally and statistically).
+Instead of using a single function to represent a probability distribution, we can split a probability distribution into many factors that we multiply together. For example, suppose we have three random variables: a, b and c. Suppose that a influences the value of b and b influences the value of c, but that a and c are independent given b. We can represent the probability distribution over all three variables as a product of probability distributions over two variables:
+
+p(a, b, c) = p(a)p(b | a)p(c | b).
+
+(3.52)
+
+These factorizations can greatly reduce the number of parameters needed to describe the distribution. Each factor uses a number of parameters that is exponential in the number of variables in the factor. This means that we can greatly reduce the cost of representing a distribution if we are able to find a factorization into distributions over fewer variables.
+We can describe these kinds of factorizations using graphs. Here we use the word "graph" in the sense of graph theory: a set of vertices that may be connected to each other with edges. When we represent the factorization of a probability distribution with a graph, we call it a structured probabilistic model or graphical model.
+
+There are two main kinds of structured probabilistic models: directed and undirected. Both kinds of graphical models use a graph G in which each node in the graph corresponds to a random variable, and an edge connecting two random variables means that the probability distribution is able to represent direct interactions between those two random variables.
+
+Directed models use graphs with directed edges, and they represent fac-
+
+torizations into conditional probability distributions, as in the example above.
+
+Specifically, a directed model contains one factor for every random variable xi in
+
+the distribution, and that factor consists of the conditional distribution over xi
+
+given the parents of xi, denoted P aG(xi ):
+
+ p(x) = p (xi | P aG (xi)) .
+
+(3.53)
+
+i
+
+See figure 3.7 for an example of a directed graph and the factorization of probability distributions it represents.
+Undirected models use graphs with undirected edges, and they represent factorizations into a set of functions; unlike in the directed case, these functions
+
+77
+
+

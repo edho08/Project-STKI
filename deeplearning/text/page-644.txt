@@ -1,0 +1,65 @@
+CHAPTER 18. CONFRONTING THE PARTITION FUNCTION
+
+intermediate distributions, bridge sampling relies on a single distribution p, known as the bridge, to interpolate between a distribution with known partition function,
+
+p0, and a distribution p1 for which we are trying to estimate the partition function Z1 .
+
+Bridge sampling estimates the ratio Z1/Z0 as the ratio of the expected impor-
+
+tance weights between p~0 and p~ and between p~1 and p~:
+
+Z1 Z0
+
+
+
+K
+k=1
+
+p~(x(0k))   K p~0(x(0k)) k=1
+
+p~ (x(1k)) p~1 (x(1k))
+
+(18.62)
+
+If the bridge distribution p is chosen carefully to have a large overlap of support with both p0 and p1, then bridge sampling can allow the distance between two distributions (or more formally, DKL(p0p1)) to be much larger than with standard importance sampling.
+
+It can be shown that the optimal bridging distribution is given by p(opt)(x) 
+
+p~0(x)p~1 (x) rp~0(x)+p~1 (x)
+
+where r = Z1/Z0 .
+
+At
+
+first,
+
+this
+
+appears
+
+to
+
+be
+
+an
+
+unworkable
+
+solution
+
+as it would seem to require the very quantity we are trying to estimate, Z1/Z0.
+
+However, it is possible to start with a coarse estimate of r and use the resulting
+
+bridge distribution to refine our estimate iteratively (Neal, 2005). That is, we
+
+iteratively re-estimate the ratio and use each iteration to update the value of r.
+
+Linked importance sampling Both AIS and bridge sampling have their advantages. If DKL (p0p1) is not too large (because p0 and p1 are sufficiently close) bridge sampling can be a more effective means of estimating the ratio of partition
+functions than AIS. If, however, the two distributions are too far apart for a single distribution p to bridge the gap then one can at least use AIS with potentially many intermediate distributions to span the distance between p0 and p1. Neal (2005) showed how his linked importance sampling method leveraged the power of the bridge sampling strategy to bridge the intermediate distributions used in AIS to significantly improve the overall partition function estimates.
+
+Estimating the partition function while training While AIS has become accepted as the standard method for estimating the partition function for many undirected models, it is sufficiently computationally intensive that it remains infeasible to use during training. However, alternative strategies that have been explored to maintain an estimate of the partition function throughout training
+Using a combination of bridge sampling, short-chain AIS and parallel tempering, Desjardins et al. (2011) devised a scheme to track the partition function of an
+629
+
+

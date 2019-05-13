@@ -1,0 +1,53 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+
+Algorithm 8.4 The AdaGrad algorithm
+
+Require: Global learning rate 
+
+Require: Initial parameter  Require: Small constant , perhaps 10-7, for numerical stability
+
+Initialize gradient accumulation variable r = 0
+
+while stopping criterion not met do
+
+Sample a minibatch of m examples from the training set {x(1), . . . , x(m)} with
+
+corresponding targets y(i).
+
+Compute
+
+gradient:
+
+g
+
+
+
+1 m
+
+
+
+
+i
+
+L(f (x(i);
+
+),
+
+y(i) )
+
+Accumulate squared gradient: r  r + g  g
+
+Compute update:   -+r  g. (Division and square root applied element-wise)
+
+Apply update:    + 
+
+end while
+
+have made the learning rate too small before arriving at such a convex structure. RMSProp uses an exponentially decaying average to discard history from the extreme past so that it can converge rapidly after finding a convex bowl, as if it were an instance of the AdaGrad algorithm initialized within that bowl.
+RMSProp is shown in its standard form in algorithm 8.5 and combined with Nesterov momentum in algorithm 8.6. Compared to AdaGrad, the use of the moving average introduces a new hyperparameter, , that controls the length scale of the moving average.
+Empirically, RMSProp has been shown to be an effective and practical optimization algorithm for deep neural networks. It is currently one of the go-to optimization methods being employed routinely by deep learning practitioners.
+8.5.3 Adam
+Adam (Kingma and Ba, 2014) is yet another adaptive learning rate optimization algorithm and is presented in algorithm 8.7. The name "Adam" derives from the phrase "adaptive moments." In the context of the earlier algorithms, it is perhaps best seen as a variant on the combination of RMSProp and momentum with a few important distinctions. First, in Adam, momentum is incorporated directly as an estimate of the first order moment (with exponential weighting) of the gradient. The most straightforward way to add momentum to RMSProp is to apply momentum to the rescaled gradients. The use of momentum in combination with rescaling does not have a clear theoretical motivation. Second, Adam includes
+308
+
+

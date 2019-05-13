@@ -1,0 +1,55 @@
+CHAPTER 10. SEQUENCE MODELING: RECURRENT AND RECURSIVE NETS
+
+y (1)
+
+y (2)
+
+y (3)
+
+y (4)
+
+y (5)
+
+y (...)
+
+Figure 10.7: Fully connected graphical model for a sequence y(1), y (2), . . . , y(t), . . .: every past observation y(i) may influence the conditional distribution of some y(t) (for t > i),
+given the previous values. Parametrizing the graphical model directly according to this graph (as in equation 10.6) might be very inefficient, with an ever growing number of inputs and parameters for each element of the sequence. RNNs obtain the same full
+connectivity but efficient parametrization, as illustrated in figure 10.8.
+
+is where
+
+L =  L(t)
+t
+L(t) = - log P (y(t) = y(t) | y(t-1), y (t-2), . . . , y (1)).
+
+(10.32) (10.33)
+
+h(1)
+
+h(2)
+
+h(3)
+
+h(4)
+
+h(5)
+
+h(... )
+
+y (1)
+
+y (2)
+
+y (3)
+
+y (4)
+
+y (5)
+
+y (...)
+
+Figure 10.8: Introducing the state variable in the graphical model of the RNN, even though it is a deterministic function of its inputs, helps to see how we can obtain a very efficient parametrization, based on equation 10.5. Every stage in the sequence (for h(t) and y(t) ) involves the same structure (the same number of inputs for each node) and can share the same parameters with the other stages.
+The edges in a graphical model indicate which variables depend directly on other variables. Many graphical models aim to achieve statistical and computational efficiency by omitting edges that do not correspond to strong interactions. For
+388
+
+
