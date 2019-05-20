@@ -50,23 +50,7 @@ class CosinePageRank:
         
         #kembalikan nilai rank dengan mengkalikan matrix H iterasi ke iteration dengan vector rank
         return H @ rank
-    
-class TextRank(CosinePageRank):
-    #class algoritma peringkasan text rank
-    def summarize(self, text, percentage=0.3):
-        # ambil banyak instan yang akan diekstrak.
-        count = math.ceil(percentage * len(text))
-        
-        #sort rank dokumen secara descending. ambil dokumen dengan nilai rank tertinggi sebanyak count
-        ranked_doc = np.argsort(-self.rank)[:count]
-        
-        #join string dari dokumen-dokumen yang telah diambil
-        summarized = ' '.join([text[r][0] for r in ranked_doc])
-        
-        #kembalikan string hasil peringkasan
-        return summarized
-
-
+		
     def toFile(self, folder):
         #Menyimpan class ke file pada folder
         try:
@@ -84,6 +68,21 @@ class TextRank(CosinePageRank):
             for r in self.rank:
                 file.write(str(r)+"\n")
             file.write('\n')
+class TextRank(CosinePageRank):
+    #class algoritma peringkasan text rank
+    def summarize(self, text, percentage=0.3):
+        # ambil banyak instan yang akan diekstrak.
+        count = math.ceil(percentage * len(text))
+        
+        #sort rank dokumen secara descending. ambil dokumen dengan nilai rank tertinggi sebanyak count
+        ranked_doc = np.argsort(-self.rank)[:count]
+        
+        #join string dari dokumen-dokumen yang telah diambil
+        summarized = ' '.join([text[r][0] for r in ranked_doc])
+        
+        #kembalikan string hasil peringkasan
+        return summarized
+
     
        
 def load_from_file(folder):
